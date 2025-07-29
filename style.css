@@ -434,3 +434,84 @@ footer .social-icons a:hover {
         margin: 1.5rem auto 2.5rem;
     }
 }
+
+/* ================================================================
+   Estilos da Seção CTA WhatsApp (Versão Fundo de Vídeo)
+   ================================================================ */
+#cta-whatsapp {
+    position: relative; /* Essencial para posicionar os filhos (vídeo e overlay) */
+    padding: 140px 40px;
+    overflow: hidden; /* Garante que nada vaze da seção */
+}
+
+.cta-video-background {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    transform: translateX(-50%) translateY(-50%);
+    z-index: 1; /* Fica no fundo */
+}
+
+.cta-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(249, 249, 249, 0.9); /* Sobreposição BRANCA semi-transparente. Mude a opacidade (0.9) se quiser o vídeo mais ou menos visível */
+    backdrop-filter: blur(5px); /* Efeito de desfoque para mais elegância */
+    -webkit-backdrop-filter: blur(5px);
+    z-index: 2; /* Fica acima do vídeo */
+}
+
+.cta-content-container {
+    position: relative; /* Precisa ser relativo para ficar na frente */
+    z-index: 3; /* Fica na frente de tudo */
+}
+
+#cta-whatsapp .section-title-cta {
+    font-family: 'Playfair Display', serif;
+    font-size: 3rem;
+    color: var(--dark-blue);
+    margin-bottom: 1.5rem;
+    font-weight: 700;
+}
+
+#cta-whatsapp .lead-cta {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.15rem;
+    color: var(--slate);
+    line-height: 1.8;
+    max-width: 650px;
+    margin: 0 auto 2.5rem auto; /* Centraliza o parágrafo */
+}
+
+#cta-whatsapp .btn-cta {
+    background-color: #25D366; /* Cor principal do WhatsApp */
+    color: var(--white);
+    border: none;
+    padding: 16px 40px;
+    font-weight: 600;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+    font-size: 1.05rem;
+    text-transform: none; /* Deixa o texto do botão normal */
+    letter-spacing: 0;
+    box-shadow: 0 10px 25px rgba(37, 211, 102, 0.2);
+}
+
+#cta-whatsapp .btn-cta:hover {
+    background-color: #1DA851;
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(29, 168, 81, 0.25);
+}
+
+#cta-whatsapp .btn-cta i {
+    margin-right: 10px;
+    font-size: 1.3rem;
+    vertical-align: -4px;
+}

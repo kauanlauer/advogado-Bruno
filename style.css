@@ -1,5 +1,5 @@
 /* ================================================================
-    ARQUIVO DE ESTILO - VERSÃO COM LAYOUT ELEGANTE
+    ARQUIVO DE ESTILO - VERSÃO COM CONTEÚDO ATUALIZADO
     ================================================================
 */
 
@@ -49,7 +49,7 @@ p { line-height: 1.8; font-size: 1.05rem; }
     overflow: hidden; 
     display: flex; 
     align-items: center; 
-    justify-content: flex-start; /* Alinha o conteúdo (container) à esquerda */
+    justify-content: flex-start;
 }
 #bgvideo { 
     position: absolute; 
@@ -63,7 +63,6 @@ p { line-height: 1.8; font-size: 1.05rem; }
     transform: translateX(-50%) translateY(-50%); 
 }
 
-/* Overlay com gradiente lateral para melhorar a legibilidade do texto à esquerda */
 .hero-overlay { 
     position: absolute; 
     top: 0; 
@@ -74,28 +73,26 @@ p { line-height: 1.8; font-size: 1.05rem; }
     z-index: -99; 
 }
 
-/* Conteúdo do Hero não é mais centralizado */
 .hero-content {
     text-align: left;
 }
 
 .hero-content h1 { 
-    font-size: clamp(2.8rem, 5.5vw, 4.8rem); /* Tamanho de fonte responsivo e imponente */
+    font-size: clamp(2.8rem, 5.5vw, 4.8rem); 
     color: var(--white); 
     font-weight: 700;
     text-shadow: 0 2px 25px rgba(0, 0, 0, 0.5);
-    letter-spacing: 1px; /* Espaçamento entre letras para um toque de sofisticação */
+    letter-spacing: 1px;
 }
 .hero-content .lead { 
     font-size: 1.25rem; 
     color: var(--light-slate); 
-    max-width: 550px; /* Limita a largura do parágrafo para melhor leitura */
-    margin: 2rem 0 2.5rem 0; /* Margem ajustada para alinhamento à esquerda */
+    max-width: 550px; 
+    margin: 2rem 0 2.5rem 0;
     text-shadow: 0 1px 10px rgba(0, 0, 0, 0.4);
     font-weight: 400;
 }
 
-/* NOVO: Estilos para o indicador de rolagem */
 .scroll-down-indicator {
     position: absolute;
     bottom: 40px;
@@ -128,18 +125,9 @@ p { line-height: 1.8; font-size: 1.05rem; }
     animation: scroll-wheel 2.2s infinite ease-in-out;
 }
 @keyframes scroll-wheel {
-    0% {
-        opacity: 0;
-        top: 10px;
-    }
-    50% {
-        opacity: 1;
-        top: 15px;
-    }
-    100% {
-        opacity: 0;
-        top: 30px;
-    }
+    0% { opacity: 0; top: 10px; }
+    50% { opacity: 1; top: 15px; }
+    100% { opacity: 0; top: 30px; }
 }
 
 
@@ -173,29 +161,82 @@ h2.section-title::after { content: ''; position: absolute; bottom: 0; left: 50%;
 #sobre .section-title { text-align: left !important; }
 #sobre .section-title::after { left: 0; transform: translateX(0); }
 
-/* Seção de Estatísticas */
-#stats { background-color: var(--white); }
-.stat-icon { font-size: 2.8rem; color: var(--primary-gold); margin-bottom: 1rem; display: block; opacity: 0.8; }
-.stat-counter { font-family: 'Montserrat', sans-serif; font-size: 3.8rem; font-weight: 700; color: var(--dark-blue); }
-.stat-label { font-size: 0.9rem; color: var(--slate); text-transform: uppercase; letter-spacing: 1.5px; }
+/* NOVO: Estilo para a informação de idiomas */
+.languages-info {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    background-color: #f8f9fa;
+    padding: 15px 20px;
+    border-radius: 8px;
+    border-left: 4px solid var(--primary-gold);
+}
+.languages-info i {
+    font-size: 1.8rem;
+    color: var(--primary-gold);
+}
+.languages-info div {
+    display: flex;
+    flex-direction: column;
+}
+.languages-info strong {
+    color: var(--dark-blue);
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 2px;
+}
+.languages-info span {
+    font-size: 0.95rem;
+    color: var(--slate);
+}
 
-/* Seção Áreas de Atuação */
+
+/* SEÇÃO ÁREAS DE ATUAÇÃO */
 .area-card { 
     background-color: var(--white); 
-    padding: 45px 30px; 
+    padding: 40px 35px; 
     border-radius: 12px; 
     text-align: center; 
     transition: all 0.4s ease; 
     border: 1px solid #EAEAEA; 
     height: 100%; 
+    display: flex;
+    flex-direction: column;
 }
 .area-card:hover { 
     transform: translateY(-10px); 
     border-color: var(--primary-gold);
     box-shadow: 0 20px 50px var(--shadow-color); 
 }
-.area-card .icon { font-size: 3rem; color: var(--primary-gold); margin-bottom: 25px; transition: transform 0.4s ease; }
+.area-card .icon { font-size: 3rem; color: var(--primary-gold); margin-bottom: 20px; transition: transform 0.4s ease; }
 .area-card:hover .icon { transform: scale(1.1); }
+.area-card h5 {
+    margin-bottom: 25px;
+    font-size: 1.5rem;
+}
+.specialties-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: left;
+    color: var(--slate);
+    font-size: 1rem;
+}
+.specialties-list li {
+    margin-bottom: 12px;
+    position: relative;
+    padding-left: 28px;
+}
+.specialties-list li::before {
+    content: '\F26E';
+    font-family: 'bootstrap-icons';
+    position: absolute;
+    left: 0;
+    top: 2px;
+    color: var(--primary-gold);
+    font-weight: bold;
+}
+
 
 /* Seção Depoimentos */
 .testimonial-card { max-width: 800px; margin: 0 auto; background-color: var(--light-bg); padding: 50px; border-radius: 12px; text-align: center; border-left: 5px solid var(--primary-gold); }
@@ -208,17 +249,6 @@ h2.section-title::after { content: ''; position: absolute; bottom: 0; left: 50%;
 .accordion-button { font-family: 'Montserrat', sans-serif; font-weight: 600; font-size: 1.1rem; color: var(--dark-blue); }
 .accordion-button:not(.collapsed) { background-color: var(--white); color: var(--primary-gold); box-shadow: none; }
 .accordion-button:focus { box-shadow: 0 0 0 0.25rem rgba(185, 151, 103, 0.2); }
-
-/* Seção de Artigos */
-.article-card { background-color: #fff; border-radius: 12px; overflow: hidden; transition: all 0.3s ease; height: 100%; box-shadow: 0 10px 30px var(--shadow-color); border: none; }
-.article-card:hover { transform: translateY(-10px); box-shadow: 0 20px 40px rgba(0,0,0,0.1); }
-.article-card-img { width: 100%; height: 220px; object-fit: cover; }
-.article-card-body { padding: 30px; }
-.article-card-title { font-family: 'Montserrat', sans-serif; font-weight: 600; font-size: 1.2rem; margin-bottom: 15px; }
-.badge.bg-primary-gold { background-color: var(--primary-gold) !important; color: #fff; }
-.stretched-link::after { position: absolute; top: 0; right: 0; bottom: 0; left: 0; z-index: 1; content: ""; }
-.lazy-load { opacity: 0; transition: opacity 0.5s ease-in-out; }
-.lazy-load.loaded { opacity: 1; }
 
 /* Rodapé Profissional */
 footer {
@@ -330,7 +360,6 @@ footer .social-icons a:hover {
     .whatsapp-float { width: 55px; height: 55px; bottom: 20px; right: 20px; }
     .back-to-top-btn { width: 45px; height: 45px; bottom: 85px; right: 25px; }
 
-    /* Ajustes do rodapé para mobile */
     footer { text-align: center; }
     .footer-main .col-lg-4 {
         display: flex;
@@ -339,7 +368,6 @@ footer .social-icons a:hover {
     }
     .contact-list li { justify-content: center; }
 
-    /* Centraliza o conteúdo do Hero em telas menores */
     .hero-section-video {
         justify-content: center;
     }

@@ -336,10 +336,25 @@ SEÇÃO DE CHAMADA PARA AÇÃO (WHATSAPP) - VERSÃO ELEGANTE
     <!-- BANNER DE COOKIES -->
     <div id="cookie-banner" class="cookie-banner"><div class="container d-flex justify-content-between align-items-center"><p class="cookie-text mb-0">Usamos cookies para melhorar sua experiência em nosso site. Ao continuar, você concorda com nossa <a href="#">Política de Privacidade</a>.</p><button id="accept-cookies-btn" class="btn btn-primary btn-sm">Aceitar</button></div></div>
 
-    <!-- BOTÃO WHATSAPP FLUTUANTE COM NÚMERO REAL -->
-    <a href="https://api.whatsapp.com/send?phone=554198052279&text=Olá!%20Gostaria%20de%20mais%20informações." class="whatsapp-float" target="_blank" aria-label="Fale pelo WhatsApp">
-        <i class="bi bi-whatsapp"></i>
-    </a>
+    <!-- ===== INÍCIO DA ALTERAÇÃO ===== -->
+    <!-- REMOVA O CÓDIGO ANTIGO DO BOTÃO WHATSAPP DAQUI -->
+    
+    <!-- NOVO WIDGET WHATSAPP FLUTUANTE -->
+    <div id="whatsapp-widget" class="whatsapp-widget-container">
+        <!-- Balão de mensagem que aparecerá após alguns segundos -->
+        <div class="whatsapp-bubble">
+            Quer falar agora com um <strong>advogado online</strong>?
+            <button id="close-whatsapp-bubble" class="whatsapp-close-btn" aria-label="Fechar">×</button>
+        </div>
+        <!-- Link clicável com a foto do advogado -->
+        <a href="https://api.whatsapp.com/send?phone=554198052279&text=Olá!%20Gostaria%20de%20mais%20informações." class="whatsapp-profile" target="_blank" aria-label="Fale pelo WhatsApp">
+            <img src="bruno.png" alt="Dr. Bruno Miranda">
+            <!-- Indicador verde de 'online' -->
+            <span class="whatsapp-online-indicator"></span>
+        </a>
+    </div>
+    <!-- ===== FIM DA ALTERAÇÃO ===== -->
+
 
     <!-- BOTÃO VOLTAR AO TOPO -->
     <a href="#" id="back-to-top-btn" class="back-to-top-btn" aria-label="Voltar ao topo"><i class="bi bi-arrow-up"></i></a>

@@ -17,6 +17,12 @@ class SiteManager {
         this.cookieBanner = document.getElementById('cookie-banner');
         this.acceptCookiesBtn = document.getElementById('accept-cookies-btn');
 
+        // ===== INÍCIO DA ALTERAÇÃO =====
+        // Seleciona os novos elementos do widget do WhatsApp
+        this.whatsappBubble = document.querySelector('.whatsapp-bubble');
+        this.closeWhatsappBubbleBtn = document.getElementById('close-whatsapp-bubble');
+        // ===== FIM DA ALTERAÇÃO =====
+
         // Adiciona os ouvintes de eventos
         this.addEventListeners();
     }
@@ -44,6 +50,32 @@ class SiteManager {
         // Ouve o clique no botão de aceitar cookies
         if (this.acceptCookiesBtn) {
             this.acceptCookiesBtn.addEventListener('click', this.handleCookieAccept.bind(this));
+        }
+
+        // ===== INÍCIO DA ALTERAÇÃO =====
+        // Adiciona o evento de clique para fechar o balão do WhatsApp
+        if (this.closeWhatsappBubbleBtn) {
+            this.closeWhatsappBubbleBtn.addEventListener('click', () => {
+                // Adiciona a classe 'hidden' para esconder o balão
+                this.whatsappBubble.classList.add('hidden');
+                // Salva no sessionStorage para não mostrar o balão novamente nesta sessão
+                sessionStorage.setItem('whatsappBubbleClosed', 'true');
+            });
+        }
+        // ===== FIM DA ALTERAÇÃO =====
+    }
+    
+    /**
+     * Gerencia a exibição inicial do balão do WhatsApp.
+     */
+    initWhatsappWidget() {
+        // Verifica se o usuário já fechou o balão nesta sessão
+        if (sessionStorage.getItem('whatsappBubbleClosed') === 'true') {
+            if (this.whatsappBubble) {
+                // Se sim, esconde o balão e remove a animação de entrada
+                this.whatsappBubble.classList.add('hidden');
+                this.whatsappBubble.style.animation = 'none';
+            }
         }
     }
 
@@ -197,6 +229,7 @@ class SiteManager {
         this.initStatCounters();
         this.initLazyLoading();
         this.initCookieBanner();
+        this.initWhatsappWidget(); // <-- Adicionado para controlar o widget
         this.logPerformanceTips();
     }
 }

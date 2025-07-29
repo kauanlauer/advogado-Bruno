@@ -515,3 +515,150 @@ footer .social-icons a:hover {
     font-size: 1.3rem;
     vertical-align: -4px;
 }
+
+/* ================================================================
+   AJUSTES E NOVO WIDGET WHATSAPP FLUTUANTE
+   ================================================================ */
+
+/* Esconde o botão flutuante antigo para não haver conflito */
+.whatsapp-float {
+    display: none !important;
+}
+
+/* Ajusta a posição do botão "Voltar ao Topo" para não sobrepor o novo widget */
+.back-to-top-btn {
+    bottom: 120px; /* Aumenta a distância da base */
+    right: 45px;
+}
+
+/* Estilos do novo Widget do WhatsApp */
+.whatsapp-widget-container {
+    position: fixed;
+    bottom: 40px;
+    right: 40px;
+    display: flex;
+    align-items: flex-end; /* Alinha os itens na base */
+    gap: 15px; /* Espaço entre a foto e o balão */
+    z-index: 1050;
+}
+
+.whatsapp-profile {
+    position: relative;
+    display: block;
+    width: 65px;
+    height: 65px;
+    border-radius: 50%;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.whatsapp-profile:hover {
+    transform: scale(1.1); /* Efeito de zoom ao passar o mouse */
+}
+
+.whatsapp-profile img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover; /* Garante que a imagem preencha o círculo sem distorcer */
+    border: 3px solid white; /* Borda branca ao redor da foto */
+}
+
+.whatsapp-online-indicator {
+    position: absolute;
+    bottom: 2px;
+    right: 2px;
+    width: 15px;
+    height: 15px;
+    background-color: #25D366; /* Verde do WhatsApp */
+    border-radius: 50%;
+    border: 2px solid white;
+}
+
+.whatsapp-bubble {
+    background-color: white;
+    padding: 15px 20px;
+    border-radius: 12px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    position: relative;
+    font-size: 1rem;
+    color: var(--slate);
+    max-width: 250px;
+    opacity: 0; /* Começa invisível para a animação */
+    transform: translateY(20px); /* Posição inicial da animação */
+    /* A animação começa após 2s que a página carregou */
+    animation: fadeInBubble 0.5s ease-out 2s forwards;
+    display: block;
+}
+
+.whatsapp-bubble strong {
+    color: var(--dark-blue);
+    font-weight: 600;
+}
+
+/* Cria o triângulo (seta) do balão de conversa */
+.whatsapp-bubble::after {
+    content: '';
+    position: absolute;
+    bottom: 15px;
+    right: -10px;
+    width: 0;
+    height: 0;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    border-left: 10px solid white;
+}
+
+.whatsapp-close-btn {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    width: 24px;
+    height: 24px;
+    background-color: var(--slate);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    font-size: 16px;
+    line-height: 24px;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    padding: 0;
+}
+
+.whatsapp-close-btn:hover {
+    background-color: var(--dark-blue);
+}
+
+/* Animação para o balão aparecer suavemente */
+@keyframes fadeInBubble {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Classe para esconder o balão quando o 'x' for clicado */
+.whatsapp-bubble.hidden {
+    display: none;
+}
+
+/* Ajustes para telas de celular */
+@media (max-width: 767.98px) {
+    .whatsapp-widget-container {
+        right: 20px;
+        bottom: 20px;
+    }
+    
+    /* Em telas pequenas, o balão não aparece para não poluir a tela */
+    .whatsapp-bubble {
+        display: none;
+    }
+    
+    /* Ajusta o botão de voltar ao topo para não sobrepor a foto */
+    .back-to-top-btn {
+        bottom: 95px;
+        right: 20px;
+    }
+}

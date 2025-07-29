@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dr. Bruno Miranda - Advocacia Especializada</title>
     
-    <!-- NOVO: Ícone da Guia (Favicon) -->
+    <!-- Ícone da Guia (Favicon) -->
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23b99767'%3e%3cpath d='M21.5,2.5h-19C1.67,2.5,1,3.17,1,4v0c0,0.83,0.67,1.5,1.5,1.5h19c0.83,0,1.5-0.67,1.5-1.5v0C23,3.17,22.33,2.5,21.5,2.5z M12,6c-0.83,0-1.5,0.67-1.5,1.5v12c0,0.83,0.67,1.5,1.5,1.5s1.5-0.67,1.5-1.5v-12C13.5,6.67,12.83,6,12,6z M4.5,9C3.67,9,3,9.67,3,10.5v6C3,17.33,3.67,18,4.5,18S6,17.33,6,16.5v-6C6,9.67,5.33,9,4.5,9z M19.5,9c-0.83,0-1.5,0.67-1.5,1.5v6c0,0.83,0.67,1.5,1.5,1.5s1.5-0.67,1.5-1.5v-6C21,9.67,20.33,9,19.5,9z M1,19.5h22c0.83,0,1.5,0.67,1.5,1.5s-0.67,1.5-1.5,1.5H1c-0.83,0-1.5-0.67-1.5-1.5S0.17,19.5,1,19.5z'%3e%3c/path%3e%3c/svg%3e">
 
     <meta name="description" content="Escritório de advocacia especializado em soluções jurídicas personalizadas com foco em resultados e atendimento humanizado.">
@@ -58,7 +58,7 @@
     <!-- BARRA DE NAVEGAÇÃO -->
     <nav id="mainNavbar" class="navbar navbar-expand-lg fixed-top">
         <div class="container">
-            <!-- LOGO (Substituir pela sua imagem) -->
+            <!-- LOGO -->
             <a class="navbar-brand" href="#">
                 <img src="https://placehold.co/180x50/FFFFFF/0A192F?text=BRUNO+MIRANDA" alt="Logo Bruno Miranda Advocacia">
             </a>
@@ -84,17 +84,32 @@
         </div>
     </nav>
 
-    <!-- SEÇÃO INÍCIO (HERO) COM VÍDEO -->
+    <!-- SEÇÃO INÍCIO (HERO) COM VÍDEO - LAYOUT ELEGANTE -->
     <header id="inicio" class="hero-section-video">
         <video playsinline autoplay muted loop poster="fundo.mp4" id="bgvideo">
             <source src="fundo.mp4" type="video/mp4">
         </video>
         <div class="hero-overlay"></div>
-        <div class="hero-content container text-center">
-            <h1 data-aos="fade-up">Soluções Jurídicas Modernas e Eficazes</h1>
-            <p class="lead" data-aos="fade-up" data-aos-delay="200">Defendendo seus direitos com estratégia, dedicação e um olhar para o futuro.</p>
-            <button class="btn btn-primary mt-3" data-aos="fade-up" data-aos-delay="400" data-bs-toggle="modal" data-bs-target="#contactModal">Agende sua Consulta</button>
+        
+        <!-- Conteúdo alinhado à esquerda para um visual mais corporativo -->
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8">
+                    <div class="hero-content">
+                        <h1 data-aos="fade-up">Soluções Jurídicas Modernas e Eficazes</h1>
+                        <p class="lead" data-aos="fade-up" data-aos-delay="200">Defendendo seus direitos com estratégia, dedicação e um olhar para o futuro.</p>
+                        <button class="btn btn-primary mt-4" data-aos="fade-up" data-aos-delay="400" data-bs-toggle="modal" data-bs-target="#contactModal">Agende sua Consulta</button>
+                    </div>
+                </div>
+            </div>
         </div>
+
+        <!-- NOVO: Indicador de rolagem para baixo -->
+        <a href="#sobre" class="scroll-down-indicator" aria-label="Rolar para baixo">
+            <div class="mouse">
+                <span></span>
+            </div>
+        </a>
     </header>
 
     <!-- Conteúdo principal -->
@@ -149,7 +164,7 @@
                 <div id="testimonialCarousel" class="carousel slide" data-bs-ride="carousel">
                     <div class="carousel-inner">
                         <div class="carousel-item active"><div class="testimonial-card"><div class="stars mb-3"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></div><p class="fst-italic">"O Dr. Bruno foi extremamente atencioso e profissional. Conseguiu resolver meu caso de forma rápida e eficiente. Recomendo a todos!"</p><p class="author mt-4 mb-0">Maria S., Cliente de Direito de Família</p></div></div>
-                        <div class="carousel-item"><div class="testimonial-card"><div class="stars mb-3"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></div><p class="fst-italic">"Assessoria jurídica impecável. A abordagem estratégica do Dr. Bruno foi fundamental para o sucesso da minha empresa. Transparência e competência."</p<p class="author mt-4 mb-0">João P., Cliente Empresarial</p></div></div>
+                        <div class="carousel-item"><div class="testimonial-card"><div class="stars mb-3"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></div><p class="fst-italic">"Assessoria jurídica impecável. A abordagem estratégica do Dr. Bruno foi fundamental para o sucesso da minha empresa. Transparência e competência."</p><p class="author mt-4 mb-0">João P., Cliente Empresarial</p></div></div>
                         <div class="carousel-item"><div class="testimonial-card"><div class="stars mb-3"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></div><p class="fst-italic">"Tive todo o suporte necessário durante um processo trabalhista complicado. O Dr. Bruno me manteve informado de cada passo. Excelente profissional."</p><p class="author mt-4 mb-0">Carlos L., Cliente de Direito Trabalhista</p></div></div>
                     </div>
                     <button class="carousel-control-prev" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="prev"><span class="carousel-control-prev-icon" aria-hidden="true"></span><span class="visually-hidden">Previous</span></button>
@@ -190,7 +205,7 @@
             </div>
         </section>
 
-         <!-- NOVO RODAPÉ PROFISSIONAL -->
+         <!-- RODAPÉ PROFISSIONAL -->
     <footer>
         <div class="container footer-main">
             <div class="row">
@@ -265,10 +280,6 @@
 
     <!-- BOTÃO VOLTAR AO TOPO -->
     <a href="#" id="back-to-top-btn" class="back-to-top-btn" aria-label="Voltar ao topo"><i class="bi bi-arrow-up"></i></a>
-
-    <!-- NOVO: Elementos para o Cursor Personalizado -->
-    <div class="cursor-dot"></div>
-    <div class="cursor-outline"></div>
 
     <!-- SCRIPTS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>

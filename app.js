@@ -184,14 +184,6 @@ class SiteManager {
 
     /**
      * DICAS DE OTIMIZAÇÃO DE PERFORMANCE
-     * O código não pode fazer isso sozinho, mas aqui estão as instruções para você:
-     * 1. COMPRESSÃO DE IMAGENS: Antes de fazer o upload de imagens (como a foto do advogado ou dos artigos),
-     * use um serviço online como 'TinyPNG' ou 'Squoosh' para reduzir o tamanho do arquivo sem perder
-     * muita qualidade. Imagens menores carregam muito mais rápido.
-     * 2. FORMATOS MODERNOS: Se possível, salve as imagens em formatos como .WEBP, que são menores e
-     * mais eficientes que .JPG ou .PNG.
-     * 3. VÍDEO: O seu vídeo já está sendo carregado de forma eficiente (streaming), o que é ótimo.
-     * Apenas garanta que o arquivo de vídeo em si não seja excessivamente pesado.
      */
     logPerformanceTips() {
         console.log("Lembrete de Performance: Comprima todas as imagens antes de colocar o site em produção!");

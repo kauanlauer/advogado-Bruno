@@ -1,5 +1,5 @@
 /* ================================================================
-    ARQUIVO DE ESTILO - VERSÃO COM LEGIBILIDADE APRIMORADA
+    ARQUIVO DE ESTILO - VERSÃO COM LAYOUT ELEGANTE
     ================================================================
 */
 
@@ -42,34 +42,106 @@ p { line-height: 1.8; font-size: 1.05rem; }
 .navbar.scrolled .nav-link:hover, .navbar.scrolled .nav-link.active { color: var(--primary-gold); }
 
 /* Seção Hero com Vídeo e Gradiente */
-.hero-section-video { position: relative; height: 100vh; width: 100%; overflow: hidden; display: flex; align-items: center; justify-content: center; }
-#bgvideo { position: absolute; top: 50%; left: 50%; min-width: 100%; min-height: 100%; width: auto; height: auto; z-index: -100; transform: translateX(-50%) translateY(-50%); }
+.hero-section-video { 
+    position: relative; 
+    height: 100vh; 
+    width: 100%; 
+    overflow: hidden; 
+    display: flex; 
+    align-items: center; 
+    justify-content: flex-start; /* Alinha o conteúdo (container) à esquerda */
+}
+#bgvideo { 
+    position: absolute; 
+    top: 50%; 
+    left: 50%; 
+    min-width: 100%; 
+    min-height: 100%; 
+    width: auto; 
+    height: auto; 
+    z-index: -100; 
+    transform: translateX(-50%) translateY(-50%); 
+}
 
-/* MUDANÇA: Sobreposição de fundo mais forte para melhorar o contraste */
+/* Overlay com gradiente lateral para melhorar a legibilidade do texto à esquerda */
 .hero-overlay { 
     position: absolute; 
     top: 0; 
     left: 0; 
     height: 100%; 
     width: 100%; 
-    background: linear-gradient(to top, rgba(10, 25, 47, 0.9) 0%, rgba(10, 25, 47, 0.65) 100%); 
+    background: linear-gradient(80deg, rgba(10, 25, 47, 0.9) 20%, rgba(10, 25, 47, 0.6) 50%, rgba(10, 25, 47, 0.1) 100%);
     z-index: -99; 
 }
 
-/* MUDANÇA: Adição de sombra no texto para destacá-lo */
+/* Conteúdo do Hero não é mais centralizado */
+.hero-content {
+    text-align: left;
+}
+
 .hero-content h1 { 
-    font-size: clamp(2.8rem, 5.5vw, 4.5rem); 
+    font-size: clamp(2.8rem, 5.5vw, 4.8rem); /* Tamanho de fonte responsivo e imponente */
     color: var(--white); 
     font-weight: 700;
-    text-shadow: 0 2px 20px rgba(0, 0, 0, 0.5); /* Sombra mais forte */
+    text-shadow: 0 2px 25px rgba(0, 0, 0, 0.5);
+    letter-spacing: 1px; /* Espaçamento entre letras para um toque de sofisticação */
 }
 .hero-content .lead { 
-    font-size: 1.3rem; 
+    font-size: 1.25rem; 
     color: var(--light-slate); 
-    max-width: 650px; 
-    margin: 1.5rem auto 2.5rem;
-    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.4); /* Sombra mais forte */
+    max-width: 550px; /* Limita a largura do parágrafo para melhor leitura */
+    margin: 2rem 0 2.5rem 0; /* Margem ajustada para alinhamento à esquerda */
+    text-shadow: 0 1px 10px rgba(0, 0, 0, 0.4);
+    font-weight: 400;
 }
+
+/* NOVO: Estilos para o indicador de rolagem */
+.scroll-down-indicator {
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+    cursor: pointer;
+    opacity: 0.8;
+    transition: opacity 0.3s ease;
+}
+.scroll-down-indicator:hover {
+    opacity: 1;
+}
+.scroll-down-indicator .mouse {
+    width: 28px;
+    height: 50px;
+    border: 2px solid rgba(255, 255, 255, 0.7);
+    border-radius: 60px;
+    position: relative;
+}
+.scroll-down-indicator .mouse > span {
+    width: 4px;
+    height: 10px;
+    background: rgba(255, 255, 255, 0.7);
+    border-radius: 4px;
+    display: block;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: scroll-wheel 2.2s infinite ease-in-out;
+}
+@keyframes scroll-wheel {
+    0% {
+        opacity: 0;
+        top: 10px;
+    }
+    50% {
+        opacity: 1;
+        top: 15px;
+    }
+    100% {
+        opacity: 0;
+        top: 30px;
+    }
+}
+
 
 /* Botões com Estilo Premium */
 .btn-primary { 
@@ -93,7 +165,7 @@ p { line-height: 1.8; font-size: 1.05rem; }
 
 /* Estilos Gerais de Seção */
 .section-padding { padding: 120px 40px; }
-.bg-light { background-color: #f8f9fa !important; } /* Mantido para compatibilidade */
+.bg-light { background-color: #f8f9fa !important; }
 .bg-white { background-color: var(--white) !important; }
 h2.section-title { font-size: 2.8rem; text-align: center; margin-bottom: 70px; font-weight: 700; position: relative; padding-bottom: 20px; letter-spacing: 0.5px; }
 h2.section-title::after { content: ''; position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); width: 70px; height: 3px; background-color: var(--primary-gold); opacity: 0.5; }
@@ -266,4 +338,15 @@ footer .social-icons a:hover {
         align-items: center;
     }
     .contact-list li { justify-content: center; }
+
+    /* Centraliza o conteúdo do Hero em telas menores */
+    .hero-section-video {
+        justify-content: center;
+    }
+    .hero-content {
+        text-align: center;
+    }
+    .hero-content .lead {
+        margin: 1.5rem auto 2.5rem;
+    }
 }

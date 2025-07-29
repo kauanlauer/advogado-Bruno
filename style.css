@@ -93,6 +93,13 @@ p { line-height: 1.8; font-size: 1.05rem; }
     font-weight: 400;
 }
 
+/* NOVO: Estilo para a logo na seção Hero */
+.hero-logo {
+    max-width: 90%;
+    height: auto;
+    filter: drop-shadow(0 0 20px rgba(0, 0, 0, 0.6)); /* Sombra para destacar a logo do fundo */
+}
+
 .scroll-down-indicator {
     position: absolute;
     bottom: 40px;
@@ -161,7 +168,7 @@ h2.section-title::after { content: ''; position: absolute; bottom: 0; left: 50%;
 #sobre .section-title { text-align: left !important; }
 #sobre .section-title::after { left: 0; transform: translateX(0); }
 
-/* NOVO: Estilo para a informação de idiomas */
+/* Estilo para a informação de idiomas */
 .languages-info {
     display: flex;
     align-items: center;

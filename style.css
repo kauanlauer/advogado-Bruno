@@ -375,6 +375,47 @@ footer .social-icons a:hover {
     .whatsapp-float { width: 55px; height: 55px; bottom: 20px; right: 20px; }
     .back-to-top-btn { width: 45px; height: 45px; bottom: 85px; right: 25px; }
 
+    /* ===== INÍCIO DAS ALTERAÇÕES PARA O MENU MOBILE ===== */
+
+    /* Força o menu mobile a ter sempre um fundo branco e sombra */
+    .navbar {
+        background-color: var(--white) !important;
+        padding: 0.8rem 0;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        border-bottom: 1px solid #eee;
+    }
+
+    /* Aumenta o tamanho do logo para melhor visualização */
+    .navbar-brand img {
+        height: 45px; /* Aumentado de 40px para 45px */
+    }
+
+    /* Ajusta a cor dos links para serem visíveis no fundo branco */
+    .navbar-nav .nav-link {
+        color: var(--slate);
+    }
+
+    /* Ajusta a cor do link ativo/hover para o dourado padrão */
+    .navbar-nav .nav-link:hover, 
+    .navbar-nav .nav-link.active {
+        color: var(--primary-gold);
+    }
+    
+    /* Altera o ícone do menu "hambúrguer" para uma cor escura, visível no fundo branco */
+    .navbar-toggler-icon {
+        background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(0, 0, 0, 0.7)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+    }
+
+    /* Remove a necessidade da classe '.scrolled' para o menu mobile, pois ele já tem o estilo fixo */
+    .navbar.scrolled {
+        padding: 0.8rem 0; /* Garante que não haja "pulo" no padding */
+    }
+    .navbar.scrolled .navbar-brand img {
+        transform: none; /* Remove a animação de diminuir o logo no scroll */
+    }
+
+    /* ===== FIM DAS ALTERAÇÕES PARA O MENU MOBILE ===== */
+
     footer { text-align: center; }
     .footer-main .col-lg-4 {
         display: flex;

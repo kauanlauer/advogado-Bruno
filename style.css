@@ -1,12 +1,3 @@
-/* ================================================================
-    ARQUIVO DE ESTILO - TEMA TRIBUNAL / FOCO EM MOBILE NATIVO
-    ================================================================
-    - Versão mobile totalmente refeita para parecer um app nativo.
-    - Tipografia maior e mais legível em telas pequenas.
-    - Espaçamento generoso para facilitar o toque e a leitura.
-    - Botões e links otimizados para o polegar.
-    - Layout limpo e focado no conteúdo principal.
-*/
 
 /* PALETA DE CORES - TEMA TRIBUNAL */
 :root {
@@ -19,6 +10,7 @@
     --light-gold: #d1b894;
     --shadow-color: rgba(0, 0, 0, 0.08);
 }
+
 
 /* ESTILOS GERAIS E PARA DESKTOP (BASE) */
 body {
@@ -42,7 +34,6 @@ p {
     line-height: 1.8; 
     font-size: 1.05rem; 
 }
-
 .section-padding { padding: 120px 40px; }
 h2.section-title { font-size: 2.8rem; text-align: center; margin-bottom: 70px; font-weight: 700; position: relative; padding-bottom: 20px; letter-spacing: 0.5px; }
 h2.section-title::after { content: ''; position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); width: 70px; height: 3px; background-color: var(--primary-gold); opacity: 0.5; }
@@ -71,7 +62,7 @@ h2.section-title::after { content: ''; position: absolute; bottom: 0; left: 50%;
 .hero-section-video { position: relative; height: 100vh; width: 100%; overflow: hidden; display: flex; align-items: center; justify-content: flex-start; }
 #bgvideo { position: absolute; top: 50%; left: 50%; min-width: 100%; min-height: 100%; width: auto; height: auto; z-index: -100; transform: translateX(-50%) translateY(-50%); }
 .hero-overlay { position: absolute; top: 0; left: 0; height: 100%; width: 100%; background: linear-gradient(80deg, rgba(44, 30, 23, 0.9) 20%, rgba(44, 30, 23, 0.6) 50%, rgba(44, 30, 23, 0.1) 100%); z-index: -99; }
-.hero-content h1 { font-size: clamp(2.8rem, 5.5vw, 4.8rem); color: var(--white); font-weight: 700; text-shadow: 0 2px 25px rgba(0, 0, 0, 0.5); letter-spacing: 1px; }
+.hero-content h1 { font-size: clamp(2.8rem, 5.5vw, 4.8rem); color: var(--beige-bg); font-weight: 700; text-shadow: 0 2px 25px rgba(0, 0, 0, 0.5); letter-spacing: 1px; }
 .hero-content .lead { font-size: 1.25rem; color: #e0d9ce; max-width: 550px; margin: 2rem 0 2.5rem 0; text-shadow: 0 1px 10px rgba(0, 0, 0, 0.4); font-weight: 400; }
 .hero-logo { max-width: 90%; height: auto; filter: drop-shadow(0 0 20px rgba(0, 0, 0, 0.6)); }
 
@@ -209,7 +200,7 @@ footer h5::after { content: ''; position: absolute; bottom: 0; left: 0; width: 3
 .page-header { position: relative; height: 60vh; width: 100%; overflow: hidden; display: flex; align-items: center; justify-content: center; text-align: center; color: var(--white); }
 .page-header #bgvideo { position: absolute; top: 50%; left: 50%; min-width: 100%; min-height: 100%; width: auto; height: auto; z-index: -100; transform: translateX(-50%) translateY(-50%); }
 .page-header .hero-overlay { position: absolute; top: 0; left: 0; height: 100%; width: 100%; z-index: -99; background-color: rgba(44, 30, 23, 0.92); backdrop-filter: blur(2px); -webkit-backdrop-filter: blur(2px); }
-.page-header h1 { font-size: clamp(2.5rem, 5vw, 4rem); color: var(--white); text-shadow: 0 2px 8px rgba(0, 0, 0, 0.7); }
+.page-header h1 { font-size: clamp(2.5rem, 5vw, 4rem); color: var(--beige-bg); text-shadow: 0 2px 8px rgba(0, 0, 0, 0.7); }
 .page-header .lead { font-size: 1.2rem; color: #e0d9ce; max-width: 600px; margin-left: auto; margin-right: auto; text-shadow: 0 1px 6px rgba(0, 0, 0, 0.7); }
 .policy-content { background-color: transparent; padding-top: 0; }
 .policy-content .container .col-lg-10 { background-color: var(--white); padding: 60px; border-radius: 12px; box-shadow: 0 15px 50px rgba(0,0,0,0.08); margin-top: -100px; position: relative; z-index: 10; }
@@ -229,7 +220,7 @@ footer h5::after { content: ''; position: absolute; bottom: 0; left: 0; width: 3
 .parallax-section { background-image: url('tribunal.png'); background-attachment: fixed; background-position: center; background-repeat: no-repeat; background-size: cover; position: relative; }
 .parallax-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(44, 30, 23, 0.88); z-index: 1; }
 .parallax-section .container { position: relative; z-index: 2; }
-.parallax-section .section-title, .parallax-section .section-title p { color: #ffffff; }
+.parallax-section .section-title, .parallax-section .section-title p { color: var(--beige-bg) }
 .parallax-section .section-title::after { background-color: rgba(185, 151, 103, 0.7); }
 .parallax-section .area-card { background: rgba(255, 255, 255, 0.05); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.15); color: var(--white); }
 .parallax-section .area-card h5 { color: var(--white); }
@@ -238,197 +229,283 @@ footer h5::after { content: ''; position: absolute; bottom: 0; left: 0; width: 3
 .parallax-section .testimonial-card-google { background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.2); }
 .parallax-section .testimonial-card-google .card-header { border-bottom-color: rgba(255, 255, 255, 0.2); }
 .parallax-section .testimonial-card-google .client-name { color: var(--white); }
-.parallax-section .testimonial-card-google .card-body p { color: #e0d9ce; }
-.parallax-section .testimonial-card-google .card-footer, .parallax-section .testimonial-card-google .card-footer strong { color: #c3bcae; }
+.parallax-section .testimonial-card-google .card-body p { color: #ffffff; }
+.parallax-section .testimonial-card-google .card-footer, .parallax-section .testimonial-card-google .card-footer strong { color: #ffffff; }
+
+/* ================================================================
+   NOVO: ESTILOS PARA A SEÇÃO DE ARTIGOS
+   ================================================================ */
+.article-card {
+    background-color: var(--white);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.07);
+    transition: all 0.4s ease;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.article-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+}
+
+.article-image-link {
+    display: block;
+    overflow: hidden;
+}
+
+.article-image {
+    transition: transform 0.5s ease;
+}
+
+.article-card:hover .article-image {
+    transform: scale(1.05);
+}
+
+.article-content {
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1; /* Faz o conteúdo ocupar o espaço restante */
+}
+
+.article-meta {
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.8rem;
+    color: var(--text-light);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.article-category {
+    font-weight: 600;
+    color: var(--primary-gold);
+}
+
+.article-title {
+    font-size: 1.25rem;
+    margin-bottom: 15px;
+    line-height: 1.4;
+}
+
+.article-title a {
+    text-decoration: none;
+    color: var(--dark-wood);
+    transition: color 0.3s ease;
+}
+
+.article-title a:hover {
+    color: var(--primary-gold);
+}
+
+.article-excerpt {
+    font-size: 0.95rem;
+    margin-bottom: 20px;
+    flex-grow: 1; /* Empurra o botão "Leia Mais" para baixo */
+}
+
+.btn-read-more {
+    text-decoration: none;
+    color: var(--primary-gold);
+    font-weight: 600;
+    transition: color 0.3s ease;
+    align-self: flex-start; /* Alinha o botão à esquerda */
+}
+
+.btn-read-more:hover {
+    color: var(--dark-wood);
+}
+
+.btn-read-more i {
+    transition: transform 0.3s ease;
+    vertical-align: middle;
+}
+
+.btn-read-more:hover i {
+    transform: translateX(5px);
+}
 
 
 /* ================================================================
    INÍCIO - ESTILOS PARA MOBILE (APARÊNCIA DE APP NATIVO)
-   ================================================================ 
-   Aqui começa a mágica. Todas as regras dentro deste bloco só
-   afetam telas com largura de até 767px (celulares).
-*/
+   ================================================================ */
 @media (max-width: 767.98px) {
     
     /* --- MELHORIAS GERAIS DE LAYOUT E ESPAÇAMENTO --- */
-    
-    /* Aumenta o espaçamento das seções para não ficarem coladas */
-    .section-padding {
-        padding: 80px 20px; /* Mais espaço vertical, menos horizontal */
-    }
-
-    /* Títulos de seção maiores e mais fáceis de ler */
-    h2.section-title {
-        font-size: 2.1rem; /* Aumenta o tamanho da fonte */
-        margin-bottom: 40px; /* Menos margem, mais compacto */
-        text-align: left; /* Títulos alinhados à esquerda, como em apps */
-    }
-    
-    /* Ajusta o sublinhado do título para a esquerda */
-    h2.section-title::after {
-        left: 0;
-        transform: translateX(0);
-        width: 50px; /* Linha mais curta e sutil */
-    }
+    .section-padding { padding: 80px 20px; }
+    h2.section-title { font-size: 2.1rem; margin-bottom: 40px; text-align: left; }
+    h2.section-title::after { left: 0; transform: translateX(0); width: 50px; }
 
     /* --- BARRA DE NAVEGAÇÃO (CABEÇALHO DO APP) --- */
-
-    /* Garante que a navbar seja sempre sólida, como um cabeçalho de app */
-    .navbar {
-        background-color: var(--dark-wood) !important;
-        padding: 1rem 0;
-        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        transform: none !important; /* Remove qualquer animação de scroll */
-    }
-
-    /* Ajusta o tamanho do logo para mobile */
-    .navbar-brand img {
-        height: 35px; /* Um pouco menor para caber melhor */
-    }
-
-    /* Melhora o menu hamburguer que abre */
-    .navbar-collapse {
-        background-color: var(--dark-wood);
-        margin: 0 -20px; /* Faz o menu ocupar a tela toda */
-        padding: 20px 20px 20px 20px;
-        border-top: 1px solid var(--medium-wood);
-    }
-    
-    .navbar-nav .nav-link {
-        color: var(--beige-bg);
-        font-size: 1.2rem; /* Letras maiores para facilitar o toque */
-        padding: 15px 0; /* Mais espaço vertical */
-    }
-
-    .navbar-nav .nav-link:hover, 
-    .navbar-nav .nav-link.active {
-        color: var(--primary-gold);
-    }
-
-    /* Botão de contato dentro do menu */
-    .navbar .nav-item .btn {
-        width: 100%; /* Ocupa a largura toda */
-        margin-top: 15px;
-        padding: 15px;
-        font-size: 1.1rem;
-    }
+    .navbar { background-color: var(--dark-wood) !important; padding: 1rem 0; box-shadow: 0 2px 10px rgba(0,0,0,0.1); transform: none !important; }
+    .navbar-brand img { height: 35px; }
+    .navbar-collapse { background-color: var(--dark-wood); margin: 0 -20px; padding: 20px 20px 20px 20px; border-top: 1px solid var(--medium-wood); }
+    .navbar-nav .nav-link { color: var(--beige-bg); font-size: 1.2rem; padding: 15px 0; }
+    .navbar-nav .nav-link:hover, .navbar-nav .nav-link.active { color: var(--primary-gold); }
+    .navbar .nav-item .btn { width: 100%; margin-top: 15px; padding: 15px; font-size: 1.1rem; }
 
     /* --- SEÇÃO HERO (TELA INICIAL DO APP) --- */
-
-    .hero-section-video {
-        justify-content: center; /* Centraliza o conteúdo */
-        text-align: center; /* Alinha o texto ao centro */
-    }
-
-    /* Título principal maior e mais impactante */
-    .hero-content h1 {
-        font-size: 2.5rem; /* Tamanho ideal para mobile */
-    }
-
-    /* Texto de apoio mais legível */
-    .hero-content .lead {
-        font-size: 1.1rem;
-        margin: 1.5rem auto 2.5rem;
-    }
-
-    /* Botão de ação principal com mais destaque */
-    .hero-content .btn-primary {
-        width: 90%; /* Quase a largura toda, fácil de tocar */
-        padding: 20px; /* Bem alto para o polegar */
-        font-size: 1.1rem;
-    }
-
-    /* Esconde o indicador de rolagem, é mais intuitivo em apps */
-    .scroll-down-indicator {
-        display: none;
-    }
+    .hero-section-video { justify-content: center; text-align: center; }
+    .hero-content h1 { font-size: 2.5rem; }
+    .hero-content .lead { font-size: 1.1rem; margin: 1.5rem auto 2.5rem; }
+    .hero-content .btn-primary { width: 90%; padding: 20px; font-size: 1.1rem; }
+    .scroll-down-indicator { display: none; }
 
     /* --- CARDS E CONTEÚDO --- */
-
-    /* Imagem do advogado com borda mais sutil */
-    #sobre img {
-        border-width: 6px;
-    }
-
-    /* Cards de Atuação empilhados com bom espaçamento */
-    .area-card {
-        margin-bottom: 25px; /* Espaço entre os cards */
-    }
+    #sobre img { border-width: 6px; }
+    .area-card { margin-bottom: 25px; }
+    .article-card { margin-bottom: 25px; } /* Espaçamento para cards de artigo */
 
     /* --- BOTÕES FLUTUANTES E CHAT --- */
-
-    /* Reposiciona o botão "Voltar ao Topo" */
-    .back-to-top-btn {
-        width: 45px;
-        height: 45px;
-        bottom: 20px;
-        right: 20px;
-        box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-    }
-
-    /* Otimiza o chat para mobile */
-    #chat-widget-container {
-        bottom: 20px;
-        right: 20px;
-    }
-
-    /* Esconde o balão de texto no mobile para não poluir a tela */
-    .chat-launcher-bubble {
-        display: none;
-    }
-
-    /* Ajusta o tamanho do botão do chat */
-    .chat-launcher {
-        width: 60px;
-        height: 60px;
-    }
-
-    /* Janela do chat ocupa quase a tela toda */
-    .chat-window {
-        width: calc(100vw - 30px); /* Largura total menos um respiro */
-        height: calc(100vh - 100px); /* Altura quase total */
-        position: fixed;
-        bottom: 90px; /* Posição acima do botão */
-        right: 15px;
-        margin-bottom: 0;
-    }
+    .back-to-top-btn { width: 45px; height: 45px; bottom: 20px; right: 20px; box-shadow: 0 4px 12px rgba(0,0,0,0.2); }
+    #chat-widget-container { bottom: 20px; right: 20px; }
+    .chat-launcher-bubble { display: none; }
+    .chat-launcher { width: 60px; height: 60px; }
+    .chat-window { width: calc(100vw - 30px); height: calc(100vh - 100px); position: fixed; bottom: 90px; right: 15px; margin-bottom: 0; }
 
     /* --- RODAPÉ (ABA DE INFORMAÇÕES DO APP) --- */
-    
-    footer {
-        text-align: center;
-    }
-
-    /* Centraliza o conteúdo do rodapé */
-    .footer-main .col-lg-4 {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        margin-bottom: 40px;
-    }
-    
-    footer h5::after {
-        left: 50%;
-        transform: translateX(-50%);
-    }
-
-    .contact-list li {
-        justify-content: center;
-    }
+    footer { text-align: center; }
+    .footer-main .col-lg-4 { display: flex; flex-direction: column; align-items: center; margin-bottom: 40px; }
+    footer h5::after { left: 50%; transform: translateX(-50%); }
+    .contact-list li { justify-content: center; }
 
     /* --- AJUSTES FINAIS --- */
-    .testimonial-card-wrapper,
-    .parallax-section .testimonial-card-wrapper {
-      padding: 0; /* Remove padding lateral nos depoimentos */
-    }
-    
-    .testimonials .carousel-control-prev, 
-    .testimonials .carousel-control-next {
-      display: none; /* Esconde setas do carrossel */
-    }
+    .testimonial-card-wrapper, .parallax-section .testimonial-card-wrapper { padding: 0; }
+    .testimonials .carousel-control-prev, .testimonials .carousel-control-next { display: none; }
+    .policy-content .container .col-lg-10 { padding: 30px 20px; margin-top: -60px; }
+}
 
-    .policy-content .container .col-lg-10 {
-        padding: 30px 20px; /* Menos padding na pág. de política */
-        margin-top: -60px;
+
+/* ================================================================
+   ESTILOS PARA A PÁGINA DE ARTIGO INDIVIDUAL
+   ================================================================ */
+
+/* Aplica o fundo fixo apenas em páginas com esta classe */
+body.article-page {
+    background-color: #000;
+    background-image: url('tribunal.png');
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+}
+
+.page-header {
+    background: transparent;
+    height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.page-header .hero-overlay {
+    background: linear-gradient(to bottom, rgba(28, 20, 15, 0.85) 0%, rgba(28, 20, 15, 0) 100%);
+}
+
+/* CORREÇÃO DE LEGIBILIDADE NO CABEÇALHO DO ARTIGO */
+.page-header h1 {
+    color: var(--white);
+    text-shadow: 0 2px 10px rgba(0,0,0,0.5); /* Sombra suave para destacar */
+}
+
+.page-header .lead {
+    color: #ffffff; /* Tom mais claro para o subtítulo */
+    text-shadow: 0 1px 5px rgba(0,0,0,0.5);
+}
+
+
+.policy-content {
+    background-color: var(--beige-bg);
+    padding-top: 0;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+
+.policy-content .container .col-lg-8 {
+    background-color: var(--white);
+    padding: 50px 60px;
+    border-radius: 12px;
+    box-shadow: 0 15px 50px rgba(0,0,0,0.1);
+    margin-top: -120px;
+    position: relative;
+    z-index: 10;
+}
+
+/* CORREÇÃO: Estilo para o blockquote */
+.blockquote {
+    border-left: 4px solid var(--primary-gold);
+    padding-left: 20px;
+    margin: 30px 0;
+    font-style: italic;
+    color: var(--text-light);
+    background-color: transparent; /* Remove o fundo escuro */
+}
+
+.blockquote p {
+    font-size: 1.1rem;
+}
+
+.blockquote-footer {
+    color: var(--text-light);
+}
+
+
+/* Ajustes para mobile na página de artigo */
+@media (max-width: 767.98px) {
+    .policy-content .container .col-lg-8 {
+        padding: 30px 20px;
+        margin-top: -80px;
     }
+}
+
+
+/* ================================================================
+   INÍCIO - ESTILOS PARA MOBILE (APARÊNCIA DE APP NATIVO)
+   ================================================================ */
+@media (max-width: 767.98px) {
+    
+    /* --- MELHORIAS GERAIS DE LAYOUT E ESPAÇAMENTO --- */
+    .section-padding { padding: 80px 20px; }
+    h2.section-title { font-size: 2.1rem; margin-bottom: 40px; text-align: left; }
+    h2.section-title::after { left: 0; transform: translateX(0); width: 50px; }
+
+    /* --- BARRA DE NAVEGAÇÃO (CABEÇALHO DO APP) --- */
+    .navbar { background-color: var(--dark-wood) !important; padding: 1rem 0; box-shadow: 0 2px 10px rgba(0,0,0,0.1); transform: none !important; }
+    .navbar-brand img { height: 35px; }
+    .navbar-collapse { background-color: var(--dark-wood); margin: 0 -20px; padding: 20px 20px 20px 20px; border-top: 1px solid var(--medium-wood); }
+    .navbar-nav .nav-link { color: var(--beige-bg); font-size: 1.2rem; padding: 15px 0; }
+    .navbar-nav .nav-link:hover, .navbar-nav .nav-link.active { color: var(--primary-gold); }
+    .navbar .nav-item .btn { width: 100%; margin-top: 15px; padding: 15px; font-size: 1.1rem; }
+
+    /* --- SEÇÃO HERO (TELA INICIAL DO APP) --- */
+    .hero-section-video { justify-content: center; text-align: center; }
+    .hero-content h1 { font-size: 2.5rem; }
+    .hero-content .lead { font-size: 1.1rem; margin: 1.5rem auto 2.5rem; }
+    .hero-content .btn-primary { width: 90%; padding: 20px; font-size: 1.1rem; }
+    .scroll-down-indicator { display: none; }
+
+    /* --- CARDS E CONTEÚDO --- */
+    #sobre img { border-width: 6px; }
+    .area-card { margin-bottom: 25px; }
+    .article-card { margin-bottom: 25px; } /* Espaçamento para cards de artigo */
+
+    /* --- BOTÕES FLUTUANTES E CHAT --- */
+    .back-to-top-btn { width: 45px; height: 45px; bottom: 20px; right: 20px; box-shadow: 0 4px 12px rgba(0,0,0,0.2); }
+    #chat-widget-container { bottom: 20px; right: 20px; }
+    .chat-launcher-bubble { display: none; }
+    .chat-launcher { width: 60px; height: 60px; }
+    .chat-window { width: calc(100vw - 30px); height: calc(100vh - 100px); position: fixed; bottom: 90px; right: 15px; margin-bottom: 0; }
+
+    /* --- RODAPÉ (ABA DE INFORMAÇÕES DO APP) --- */
+    footer { text-align: center; }
+    .footer-main .col-lg-4 { display: flex; flex-direction: column; align-items: center; margin-bottom: 40px; }
+    footer h5::after { left: 50%; transform: translateX(-50%); }
+    .contact-list li { justify-content: center; }
+
+    /* --- AJUSTES FINAIS --- */
+    .testimonial-card-wrapper, .parallax-section .testimonial-card-wrapper { padding: 0; }
+    .testimonials .carousel-control-prev, .testimonials .carousel-control-next { display: none; }
 }

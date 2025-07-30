@@ -24,7 +24,7 @@ body {
 }
 
 /* Tipografia Refinada */
-h1, h2, h3, h4, h5, h6 { font-family: 'Playfair Display', serif; color: #ffffff var(--dark-blue); font-weight: 700; }
+h1, h2, h3, h4, h5, h6 { font-family: 'Playfair Display', serif; color: var(--dark-blue); font-weight: 700; }
 p { line-height: 1.8; font-size: 1.05rem; }
 
 /* Barra de Navegação Elegante */
@@ -460,6 +460,14 @@ h2.section-title::after { content: ''; position: absolute; bottom: 0; left: 50%;
     display: flex;
     flex-direction: column;
     align-items: flex-end;
+    /* CORREÇÃO: Impede que o container bloqueie os cliques */
+    pointer-events: none;
+}
+
+/* CORREÇÃO: Habilita os cliques apenas nos elementos filhos que precisam */
+#launcher-wrapper,
+#chat-window {
+    pointer-events: auto;
 }
 
 /* Wrapper para o botão e o balão de mensagem */

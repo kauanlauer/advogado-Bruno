@@ -517,148 +517,261 @@ footer .social-icons a:hover {
 }
 
 /* ================================================================
-   AJUSTES E NOVO WIDGET WHATSAPP FLUTUANTE
+   WIDGET DE CHAT INTERATIVO (VERSÃO COM BALÃO)
    ================================================================ */
 
-/* Esconde o botão flutuante antigo para não haver conflito */
-.whatsapp-float {
-    display: none !important;
-}
-
-/* Ajusta a posição do botão "Voltar ao Topo" para não sobrepor o novo widget */
-.back-to-top-btn {
-    bottom: 120px; /* Aumenta a distância da base */
-    right: 45px;
-}
-
-/* Estilos do novo Widget do WhatsApp */
-.whatsapp-widget-container {
+/* Container principal do widget */
+#chat-widget-container {
     position: fixed;
-    bottom: 40px;
-    right: 40px;
-    display: flex;
-    align-items: flex-end; /* Alinha os itens na base */
-    gap: 15px; /* Espaço entre a foto e o balão */
+    bottom: 30px;
+    right: 30px;
     z-index: 1050;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
 }
 
-.whatsapp-profile {
+/* Wrapper para o botão e o balão de mensagem */
+#launcher-wrapper {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+/* Balão de mensagem ao lado do botão */
+.chat-launcher-bubble {
+    background-color: white;
+    padding: 15px 20px;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    margin-right: 15px;
     position: relative;
-    display: block;
+    opacity: 1;
+    transform: translateX(0);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    width: 260px;
+    color: var(--dark-blue);
+    font-size: 0.95rem;
+    line-height: 1.4;
+}
+
+/* Triângulo/seta do balão, apontando para o botão */
+.chat-launcher-bubble::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: -10px;
+    margin-top: -10px;
+    border-width: 10px;
+    border-style: solid;
+    border-color: transparent transparent transparent white;
+}
+
+/* Botão flutuante para abrir o chat */
+.chat-launcher {
     width: 65px;
     height: 65px;
+    background-color: var(--dark-blue);
     border-radius: 50%;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-    transition: transform 0.3s ease;
+    border: 3px solid white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.18, 0.89, 0.32, 1.28);
+    position: relative;
+    padding: 0;
+    overflow: hidden;
 }
 
-.whatsapp-profile:hover {
-    transform: scale(1.1); /* Efeito de zoom ao passar o mouse */
+.chat-launcher:hover {
+    transform: scale(1.1);
 }
 
-.whatsapp-profile img {
+/* Avatar dentro do botão */
+.launcher-avatar {
     width: 100%;
     height: 100%;
-    border-radius: 50%;
-    object-fit: cover; /* Garante que a imagem preencha o círculo sem distorcer */
-    border: 3px solid white; /* Borda branca ao redor da foto */
+    object-fit: cover;
+    transition: opacity 0.3s ease;
 }
 
-.whatsapp-online-indicator {
+/* Indicador online no botão */
+.launcher-online-indicator {
     position: absolute;
     bottom: 2px;
     right: 2px;
     width: 15px;
     height: 15px;
-    background-color: #25D366; /* Verde do WhatsApp */
+    background-color: #25d366;
     border-radius: 50%;
     border: 2px solid white;
+    transition: opacity 0.3s ease;
 }
 
-.whatsapp-bubble {
-    background-color: white;
+/* Ícone de fechar (inicialmente invisível) */
+.chat-launcher .icon-close {
+    position: absolute;
+    font-size: 28px;
+    color: white;
+    transform: scale(0);
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    opacity: 0;
+}
+
+/* Janela do chat */
+.chat-window {
+    width: 350px;
+    background-color: var(--white);
+    border-radius: 15px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+    margin-bottom: 20px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s;
+    visibility: hidden;
+}
+
+/* --- ESTADOS QUANDO O CHAT ESTÁ ABERTO --- */
+
+#chat-widget-container.open .chat-window {
+    opacity: 1;
+    transform: translateY(0);
+    visibility: visible;
+}
+
+#chat-widget-container.open .chat-launcher-bubble {
+    opacity: 0;
+    transform: translateX(20px);
+    pointer-events: none;
+}
+
+#chat-widget-container.open .chat-launcher {
+    transform: rotate(360deg);
+}
+
+#chat-widget-container.open .launcher-avatar,
+#chat-widget-container.open .launcher-online-indicator {
+    opacity: 0;
+}
+
+#chat-widget-container.open .chat-launcher .icon-close {
+    transform: scale(1) rotate(-360deg);
+    opacity: 1;
+}
+
+/* --- RESTANTE DO CSS DO CHAT (SEM ALTERAÇÕES) --- */
+
+.chat-header {
+    background: linear-gradient(90deg, var(--dark-blue), #122b4e);
+    color: white;
     padding: 15px 20px;
-    border-radius: 12px;
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
-    position: relative;
-    font-size: 1rem;
-    color: var(--slate);
-    max-width: 250px;
-    opacity: 0; /* Começa invisível para a animação */
-    transform: translateY(20px); /* Posição inicial da animação */
-    /* A animação começa após 2s que a página carregou */
-    animation: fadeInBubble 0.5s ease-out 2s forwards;
-    display: block;
+    display: flex;
+    align-items: center;
 }
 
-.whatsapp-bubble strong {
-    color: var(--dark-blue);
+.chat-avatar {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    border: 2px solid var(--primary-gold);
+    margin-right: 15px;
+    object-fit: cover;
+}
+
+.chat-name {
     font-weight: 600;
+    font-size: 1.1rem;
 }
 
-/* Cria o triângulo (seta) do balão de conversa */
-.whatsapp-bubble::after {
-    content: '';
-    position: absolute;
-    bottom: 15px;
-    right: -10px;
-    width: 0;
-    height: 0;
-    border-top: 10px solid transparent;
-    border-bottom: 10px solid transparent;
-    border-left: 10px solid white;
+.chat-status {
+    font-size: 0.8rem;
+    color: #25d366;
+    opacity: 0.9;
 }
 
-.whatsapp-close-btn {
-    position: absolute;
-    top: -5px;
-    right: -5px;
-    width: 24px;
-    height: 24px;
-    background-color: var(--slate);
+.chat-close-btn {
+    background: none;
+    border: none;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 28px;
+    margin-left: auto;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.chat-close-btn:hover {
+    color: white;
+}
+
+.chat-body {
+    padding: 20px;
+    background-color: #f4f7f9;
+    flex-grow: 1;
+}
+
+.message {
+    margin-bottom: 15px;
+}
+
+.message p {
+    background-color: #e9ecef;
+    padding: 12px 18px;
+    border-radius: 20px;
+    max-width: 90%;
+    line-height: 1.5;
+    font-size: 0.95rem;
+    margin-bottom: 5px;
+    color: var(--dark-blue);
+}
+
+.message.received p {
+    border-bottom-left-radius: 5px;
+}
+
+.message.cta {
+    text-align: center;
+}
+
+.message.cta p {
+    background: none;
+    padding: 0;
+    font-weight: 500;
+}
+
+.btn-chat {
+    background-color: var(--primary-gold);
     color: white;
     border: none;
-    border-radius: 50%;
-    font-size: 16px;
-    line-height: 24px;
-    text-align: center;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    padding: 0;
+    border-radius: 50px;
+    padding: 12px 25px;
+    font-weight: 600;
+    text-decoration: none;
+    display: inline-block;
+    transition: all 0.3s;
+    margin-top: 5px;
 }
 
-.whatsapp-close-btn:hover {
-    background-color: var(--dark-blue);
+.btn-chat:hover {
+    background-color: var(--light-gold);
+    color: white;
+    transform: translateY(-2px);
 }
 
-/* Animação para o balão aparecer suavemente */
-@keyframes fadeInBubble {
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-/* Classe para esconder o balão quando o 'x' for clicado */
-.whatsapp-bubble.hidden {
-    display: none;
-}
-
-/* Ajustes para telas de celular */
 @media (max-width: 767.98px) {
-    .whatsapp-widget-container {
-        right: 20px;
+    .chat-window {
+        width: calc(100vw - 40px);
+        right: -20px; /* Ajusta a posição da janela */
+    }
+    #chat-widget-container {
         bottom: 20px;
-    }
-    
-    /* Em telas pequenas, o balão não aparece para não poluir a tela */
-    .whatsapp-bubble {
-        display: none;
-    }
-    
-    /* Ajusta o botão de voltar ao topo para não sobrepor a foto */
-    .back-to-top-btn {
-        bottom: 95px;
         right: 20px;
+    }
+    .chat-launcher-bubble {
+        display: none; /* Em telas pequenas, escondemos o balão para não poluir */
     }
 }

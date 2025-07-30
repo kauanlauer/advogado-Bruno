@@ -337,22 +337,54 @@ SEÇÃO DE CHAMADA PARA AÇÃO (WHATSAPP) - VERSÃO ELEGANTE
     <div id="cookie-banner" class="cookie-banner"><div class="container d-flex justify-content-between align-items-center"><p class="cookie-text mb-0">Usamos cookies para melhorar sua experiência em nosso site. Ao continuar, você concorda com nossa <a href="#">Política de Privacidade</a>.</p><button id="accept-cookies-btn" class="btn btn-primary btn-sm">Aceitar</button></div></div>
 
     <!-- ===== INÍCIO DA ALTERAÇÃO ===== -->
-    <!-- REMOVA O CÓDIGO ANTIGO DO BOTÃO WHATSAPP DAQUI -->
+   
     
     <!-- NOVO WIDGET WHATSAPP FLUTUANTE -->
-    <div id="whatsapp-widget" class="whatsapp-widget-container">
-        <!-- Balão de mensagem que aparecerá após alguns segundos -->
-        <div class="whatsapp-bubble">
-            Quer falar agora com um <strong>advogado online</strong>?
-            <button id="close-whatsapp-bubble" class="whatsapp-close-btn" aria-label="Fechar">×</button>
+   <!-- NOVO CHAT WIDGET INTERATIVO -->
+<div id="chat-widget-container">
+    <!-- JANELA DO CHAT (COMEÇA ESCONDIDA) -->
+    <div id="chat-window" class="chat-window">
+        <!-- CABEÇALHO DO CHAT -->
+        <div class="chat-header">
+            <img src="bruno.png" alt="Dr. Bruno" class="chat-avatar">
+            <div class="chat-info">
+                <div class="chat-name">Dr. Bruno Miranda</div>
+                <div class="chat-status">Online agora</div>
+            </div>
+            <button id="close-chat-btn" class="chat-close-btn" aria-label="Fechar Chat">&times;</button>
         </div>
-        <!-- Link clicável com a foto do advogado -->
-        <a href="https://api.whatsapp.com/send?phone=554198052279&text=Olá!%20Gostaria%20de%20mais%20informações." class="whatsapp-profile" target="_blank" aria-label="Fale pelo WhatsApp">
-            <img src="bruno.png" alt="Dr. Bruno Miranda">
-            <!-- Indicador verde de 'online' -->
-            <span class="whatsapp-online-indicator"></span>
-        </a>
+        <!-- CORPO DO CHAT (MENSAGENS) -->
+        <div class="chat-body">
+            <div class="message received">
+                <p>Sei que passar por questões jurídicas pode ser um momento difícil e solitário.</p>
+                <p>Quero que saiba que estou aqui para te ajudar a encontrar a melhor solução, com segurança e tranquilidade.</p>
+            </div>
+            <div class="message cta">
+                <p>Vamos conversar sobre o seu caso?</p>
+                <a href="https://api.whatsapp.com/send?phone=554198052279&text=Olá!%20Vi%20o%20site%20e%20gostaria%20de%20falar%20sobre%20meu%20caso." target="_blank" class="btn btn-chat">
+                    Sim, vamos lá <i class="bi bi-arrow-right"></i>
+                </a>
+            </div>
+        </div>
     </div>
+
+    <!-- Wrapper para o balão e o botão -->
+    <div id="launcher-wrapper">
+        <!-- Balão de mensagem que aparece ao lado do botão -->
+        <div class="chat-launcher-bubble">
+            Quer falar agora com um <strong>advogado online?</strong>
+        </div>
+
+        <!-- Botão para abrir o chat -->
+        <button id="chat-launcher" class="chat-launcher">
+            <img src="bruno.png" alt="Falar com Dr. Bruno" class="launcher-avatar">
+            <span class="launcher-online-indicator"></span>
+            <!-- Ícone de fechar para a transição -->
+            <i class="bi bi-x-lg icon-close"></i>
+        </button>
+    </div>
+</div>
+<!-- FIM DO NOVO CHAT WIDGET INTERATIVO -->
     <!-- ===== FIM DA ALTERAÇÃO ===== -->
 
 

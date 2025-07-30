@@ -1,6 +1,6 @@
 /**
  * Classe para gerenciar as funcionalidades interativas do site.
- * Versão aprimorada com novas seções e interatividades.
+ * Versão aprimorada com chat interativo.
  */
 class SiteManager {
     /**
@@ -17,10 +17,11 @@ class SiteManager {
         this.cookieBanner = document.getElementById('cookie-banner');
         this.acceptCookiesBtn = document.getElementById('accept-cookies-btn');
 
-        // ===== INÍCIO DA ALTERAÇÃO =====
-        // Seleciona os novos elementos do widget do WhatsApp
-        this.whatsappBubble = document.querySelector('.whatsapp-bubble');
-        this.closeWhatsappBubbleBtn = document.getElementById('close-whatsapp-bubble');
+        // ===== INÍCIO DA ALTERAÇÃO - ELEMENTOS DO NOVO CHAT =====
+        // Seleciona os elementos do novo widget de chat
+        this.chatContainer = document.getElementById('chat-widget-container');
+        this.chatLauncher = document.getElementById('chat-launcher');
+        this.closeChatBtn = document.getElementById('close-chat-btn');
         // ===== FIM DA ALTERAÇÃO =====
 
         // Adiciona os ouvintes de eventos
@@ -52,32 +53,29 @@ class SiteManager {
             this.acceptCookiesBtn.addEventListener('click', this.handleCookieAccept.bind(this));
         }
 
-        // ===== INÍCIO DA ALTERAÇÃO =====
-        // Adiciona o evento de clique para fechar o balão do WhatsApp
-        if (this.closeWhatsappBubbleBtn) {
-            this.closeWhatsappBubbleBtn.addEventListener('click', () => {
-                // Adiciona a classe 'hidden' para esconder o balão
-                this.whatsappBubble.classList.add('hidden');
-                // Salva no sessionStorage para não mostrar o balão novamente nesta sessão
-                sessionStorage.setItem('whatsappBubbleClosed', 'true');
+        // ===== INÍCIO DA ALTERAÇÃO - EVENTOS DO NOVO CHAT =====
+        // Adiciona o evento de clique para abrir/fechar o chat
+        if (this.chatLauncher) {
+            this.chatLauncher.addEventListener('click', () => {
+                this.chatContainer.classList.toggle('open');
+            });
+        }
+        
+        // Adiciona o evento de clique para o botão 'X' dentro do chat
+        if (this.closeChatBtn) {
+            this.closeChatBtn.addEventListener('click', () => {
+                this.chatContainer.classList.remove('open');
             });
         }
         // ===== FIM DA ALTERAÇÃO =====
     }
     
+    // ===== INÍCIO DA ALTERAÇÃO - REMOÇÃO DA FUNÇÃO ANTIGA =====
     /**
-     * Gerencia a exibição inicial do balão do WhatsApp.
+     * A função initWhatsappWidget() foi removida pois não é mais necessária.
+     * O controle do novo chat é feito pelos eventos e CSS.
      */
-    initWhatsappWidget() {
-        // Verifica se o usuário já fechou o balão nesta sessão
-        if (sessionStorage.getItem('whatsappBubbleClosed') === 'true') {
-            if (this.whatsappBubble) {
-                // Se sim, esconde o balão e remove a animação de entrada
-                this.whatsappBubble.classList.add('hidden');
-                this.whatsappBubble.style.animation = 'none';
-            }
-        }
-    }
+    // ===== FIM DA ALTERAÇÃO =====
 
     /**
      * Inicializa a biblioteca de animações (AOS).
@@ -229,7 +227,6 @@ class SiteManager {
         this.initStatCounters();
         this.initLazyLoading();
         this.initCookieBanner();
-        this.initWhatsappWidget(); // <-- Adicionado para controlar o widget
         this.logPerformanceTips();
     }
 }

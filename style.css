@@ -235,6 +235,10 @@ footer h5::after { content: ''; position: absolute; bottom: 0; left: 0; width: 3
 /* ================================================================
    NOVO: ESTILOS PARA A SEÇÃO DE ARTIGOS
    ================================================================ */
+   .parallax-section .section-title h2,
+.parallax-section .section-title p {
+    color: var(--beige-bg); /* Usa a cor bege clara definida no topo do seu CSS */
+}
 .article-card {
     background-color: var(--white);
     border-radius: 8px;

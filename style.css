@@ -253,94 +253,6 @@ h2.section-title::after { content: ''; position: absolute; bottom: 0; left: 50%;
 }
 
 
-/* Seção Depoimentos */
-.testimonial-card { max-width: 800px; margin: 0 auto; background-color: var(--light-bg); padding: 50px; border-radius: 12px; text-align: center; border-left: 5px solid var(--primary-gold); }
-.testimonial-card .author { font-weight: 600; margin-top: 20px; color: var(--dark-blue); }
-.testimonial-card .stars { color: #fbbc05; font-size: 1.2rem; }
-#testimonialCarousel .carousel-control-prev-icon, #testimonialCarousel .carousel-control-next-icon { background-color: var(--dark-blue); border-radius: 50%; padding: 22px; background-size: 50%; }
-
-/* Seção FAQ */
-.accordion-item { border: none; border-radius: 12px !important; margin-bottom: 1rem; background-color: var(--white); box-shadow: 0 5px 25px var(--shadow-color); }
-.accordion-button { font-family: 'Montserrat', sans-serif; font-weight: 600; font-size: 1.1rem; color: var(--dark-blue); }
-.accordion-button:not(.collapsed) { background-color: var(--white); color: var(--primary-gold); box-shadow: none; }
-.accordion-button:focus { box-shadow: 0 0 0 0.25rem rgba(185, 151, 103, 0.2); }
-
-/* Rodapé Profissional */
-footer {
-    padding-top: 80px;
-    background-color: var(--dark-blue);
-    color: var(--slate);
-}
-.footer-main {
-    padding-bottom: 60px;
-}
-.footer-logo {
-    height: 40px;
-    margin-bottom: 20px;
-    opacity: 0.8;
-}
-footer h5 {
-    font-family: 'Playfair Display', serif;
-    color: var(--white);
-    font-size: 1.3rem;
-    margin-bottom: 25px;
-    font-weight: 700;
-}
-footer p {
-    color: var(--slate);
-    font-size: 0.95rem;
-}
-.contact-list {
-    list-style: none;
-    padding: 0;
-}
-.contact-list li {
-    margin-bottom: 15px;
-    display: flex;
-    align-items: center;
-}
-.contact-list li i {
-    color: var(--primary-gold);
-    margin-right: 15px;
-    font-size: 1.2rem;
-}
-.contact-list li a {
-    color: var(--slate);
-    text-decoration: none;
-    transition: color 0.3s ease;
-}
-.contact-list li a:hover {
-    color: var(--primary-gold);
-}
-footer .social-icons a {
-    color: var(--slate);
-    font-size: 1.6rem;
-    margin-right: 20px;
-    transition: all 0.3s ease;
-}
-footer .social-icons a:hover {
-    color: var(--primary-gold);
-    transform: translateY(-3px);
-}
-.footer-bottom {
-    padding: 25px 0;
-    background-color: #08162a;
-}
-.footer-bottom p {
-    margin: 0;
-    font-size: 0.9rem;
-    color: var(--slate);
-}
-.footer-bottom .developer a {
-    color: var(--primary-gold);
-    text-decoration: none;
-    font-weight: 500;
-    transition: color 0.3s ease;
-}
-.footer-bottom .developer a:hover {
-    color: var(--white);
-}
-
 /* Modal de Contato */
 .modal-content { border-radius: 12px; border: none; }
 .modal-header { border-bottom: 1px solid #dee2e6; }
@@ -899,4 +811,256 @@ footer .social-icons a:hover {
   .testimonial-card-google {
     padding: 20px;
   }
+}
+
+/* ================================================================
+   NOVO: Rodapé Profissional
+   ================================================================ */
+footer {
+    background-color: var(--dark-blue);
+    color: var(--slate);
+    padding-top: 80px;
+}
+
+.footer-main {
+    padding-bottom: 40px;
+}
+
+.footer-logo {
+    max-width: 200px;
+    margin-bottom: 20px;
+}
+
+footer h5 {
+    color: var(--white);
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    font-size: 1.1rem;
+    margin-bottom: 25px;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+footer h5::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 30px;
+    height: 2px;
+    background-color: var(--primary-gold);
+}
+
+.contact-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.contact-list li {
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+}
+
+.contact-list li i {
+    color: var(--primary-gold);
+    margin-right: 15px;
+    font-size: 1.2rem;
+}
+
+.contact-list li a {
+    color: var(--slate);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.contact-list li a:hover {
+    color: var(--light-gold);
+}
+
+.social-icons a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 45px;
+    height: 45px;
+    background-color: rgba(255, 255, 255, 0.05);
+    color: var(--light-slate);
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 1.3rem;
+    transition: all 0.3s ease;
+}
+
+.social-icons a:hover {
+    background-color: var(--primary-gold);
+    color: var(--white);
+    transform: translateY(-3px);
+}
+
+.footer-bottom {
+    background-color: #081428; /* Um tom um pouco diferente para contraste */
+    padding: 25px 0;
+    font-size: 0.9rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-bottom .copyright,
+.footer-bottom .developer {
+    color: var(--slate);
+    margin: 0;
+}
+
+.footer-bottom a {
+    color: var(--light-slate);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-bottom a:hover {
+    color: var(--primary-gold);
+}
+
+/* Responsividade do Rodapé */
+@media (max-width: 767.98px) {
+    footer {
+        text-align: center;
+    }
+    footer h5::after {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    .contact-list li {
+        justify-content: center;
+    }
+}
+
+/* ================================================================
+   NOVO: Estilos para Páginas Internas (Política de Privacidade)
+   ================================================================ */
+
+/* Cabeçalho de páginas internas */
+.page-header {
+    position: relative;
+    height: 60vh; /* Altura menor que o hero da home */
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: var(--white);
+}
+
+.page-header #bgvideo {
+    /* Reutiliza o estilo do vídeo de fundo da home */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -100;
+    transform: translateX(-50%) translateY(-50%);
+}
+
+.page-header .hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: -99;
+    /* ALTERAÇÃO: Sobreposição mais escura e sólida para garantir a legibilidade do texto */
+    background-color: rgba(10, 25, 47, 0.92);
+    /* Adiciona um leve desfoque no vídeo atrás para um efeito mais profissional */
+    backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(2px);
+}
+
+.page-header h1 {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    color: var(--white);
+    /* ALTERAÇÃO: Sombra de texto mais nítida para melhor contraste */
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.7);
+}
+
+.page-header .lead {
+    font-size: 1.2rem;
+    color: var(--light-slate);
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    /* ALTERAÇÃO: Sombra de texto mais nítida para melhor contraste */
+    text-shadow: 0 1px 6px rgba(0, 0, 0, 0.7);
+}
+
+/* Conteúdo da política de privacidade */
+.policy-content {
+    background-color: var(--white); /* Fundo branco para o conteúdo */
+    padding-top: 0; /* Remove o padding-top para colar no header */
+}
+
+.policy-content .container .col-lg-10 {
+    background-color: var(--white);
+    padding: 60px;
+    border-radius: 12px;
+    box-shadow: 0 15px 50px rgba(0,0,0,0.08);
+    /* ALTERAÇÃO: Reduz o deslocamento para cima para um visual mais equilibrado */
+    margin-top: -100px; 
+    position: relative;
+    z-index: 10;
+}
+
+.policy-content h2 {
+    font-size: 1.8rem;
+    color: var(--dark-blue);
+    margin-top: 40px;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #f0f0f0;
+}
+
+.policy-content h2:first-of-type {
+    margin-top: 0;
+}
+
+.policy-content p, .policy-content li {
+    font-size: 1.05rem;
+    line-height: 1.9;
+    color: #555;
+}
+
+.policy-content ul {
+    list-style-type: none; /* Remove os pontos padrão */
+    padding-left: 0;
+    margin-top: 15px;
+}
+
+.policy-content li {
+    margin-bottom: 12px;
+    padding-left: 30px; /* Espaço para o ícone */
+    position: relative;
+}
+
+.policy-content li::before {
+    content: '\F28A'; /* Ícone de check do bootstrap icons */
+    font-family: 'bootstrap-icons';
+    position: absolute;
+    left: 0;
+    top: 5px;
+    color: var(--primary-gold);
+    font-weight: bold;
+}
+
+.policy-content a {
+    color: var(--primary-gold);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.policy-content a:hover {
+    text-decoration: underline;
 }

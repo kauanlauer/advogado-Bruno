@@ -1064,3 +1064,39 @@ footer h5::after {
 .policy-content a:hover {
     text-decoration: underline;
 }
+
+/* ================================================================
+   NOVO: Estilos para o Seletor de Idiomas com Bandeiras
+   ================================================================ */
+.language-switcher {
+    padding: 0.2rem 0.3rem !important;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    line-height: 1;
+    margin: 0 3px; /* Espaço entre as bandeiras */
+    opacity: 0.7;
+}
+
+.language-switcher:hover {
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+.language-switcher.active {
+    opacity: 1;
+    box-shadow: 0 0 0 2px var(--primary-gold);
+    transform: scale(1.05);
+}
+
+.navbar.scrolled .language-switcher.active {
+     box-shadow: 0 0 0 2px var(--primary-gold);
+}
+
+.flag-icon {
+    width: 28px; /* Tamanho da bandeira */
+    height: auto;
+    border-radius: 3px;
+    vertical-align: middle;
+    /* Adiciona uma borda sutil para melhor definição */
+    border: 1px solid rgba(0,0,0,0.1);
+}

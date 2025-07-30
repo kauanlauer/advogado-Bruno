@@ -253,6 +253,94 @@ h2.section-title::after { content: ''; position: absolute; bottom: 0; left: 50%;
 }
 
 
+/* Seção Depoimentos */
+.testimonial-card { max-width: 800px; margin: 0 auto; background-color: var(--light-bg); padding: 50px; border-radius: 12px; text-align: center; border-left: 5px solid var(--primary-gold); }
+.testimonial-card .author { font-weight: 600; margin-top: 20px; color: var(--dark-blue); }
+.testimonial-card .stars { color: #fbbc05; font-size: 1.2rem; }
+#testimonialCarousel .carousel-control-prev-icon, #testimonialCarousel .carousel-control-next-icon { background-color: var(--dark-blue); border-radius: 50%; padding: 22px; background-size: 50%; }
+
+/* Seção FAQ */
+.accordion-item { border: none; border-radius: 12px !important; margin-bottom: 1rem; background-color: var(--white); box-shadow: 0 5px 25px var(--shadow-color); }
+.accordion-button { font-family: 'Montserrat', sans-serif; font-weight: 600; font-size: 1.1rem; color: var(--dark-blue); }
+.accordion-button:not(.collapsed) { background-color: var(--white); color: var(--primary-gold); box-shadow: none; }
+.accordion-button:focus { box-shadow: 0 0 0 0.25rem rgba(185, 151, 103, 0.2); }
+
+/* Rodapé Profissional */
+footer {
+    padding-top: 80px;
+    background-color: var(--dark-blue);
+    color: var(--slate);
+}
+.footer-main {
+    padding-bottom: 60px;
+}
+.footer-logo {
+    height: 40px;
+    margin-bottom: 20px;
+    opacity: 0.8;
+}
+footer h5 {
+    font-family: 'Playfair Display', serif;
+    color: var(--white);
+    font-size: 1.3rem;
+    margin-bottom: 25px;
+    font-weight: 700;
+}
+footer p {
+    color: var(--slate);
+    font-size: 0.95rem;
+}
+.contact-list {
+    list-style: none;
+    padding: 0;
+}
+.contact-list li {
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+}
+.contact-list li i {
+    color: var(--primary-gold);
+    margin-right: 15px;
+    font-size: 1.2rem;
+}
+.contact-list li a {
+    color: var(--slate);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+.contact-list li a:hover {
+    color: var(--primary-gold);
+}
+footer .social-icons a {
+    color: var(--slate);
+    font-size: 1.6rem;
+    margin-right: 20px;
+    transition: all 0.3s ease;
+}
+footer .social-icons a:hover {
+    color: var(--primary-gold);
+    transform: translateY(-3px);
+}
+.footer-bottom {
+    padding: 25px 0;
+    background-color: #08162a;
+}
+.footer-bottom p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: var(--slate);
+}
+.footer-bottom .developer a {
+    color: var(--primary-gold);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+.footer-bottom .developer a:hover {
+    color: var(--white);
+}
+
 /* Modal de Contato */
 .modal-content { border-radius: 12px; border: none; }
 .modal-header { border-bottom: 1px solid #dee2e6; }

@@ -345,6 +345,25 @@ h2.section-title::after { content: ''; position: absolute; bottom: 0; left: 50%;
     .hero-content .lead {
         margin: 1.5rem auto 2.5rem;
     }
+
+    /* ===== INÍCIO: Ajustes para o seletor de idiomas no menu mobile ===== */
+    .navbar-collapse {
+        padding-bottom: 1rem; /* Adiciona espaço no final do menu colapsado */
+    }
+
+    .navbar .language-switcher-li {
+        justify-content: center; /* Centraliza as bandeiras horizontalmente */
+        margin-top: 1rem; /* Espaço acima */
+        padding-top: 1rem; /* Espaço interno acima */
+        border-top: 1px solid #eee; /* Linha separadora sutil */
+        /* Remove margens laterais desnecessárias no mobile */
+        margin-left: 0 !important; 
+    }
+
+    .navbar .language-switcher-li .flag-icon {
+        width: 32px; /* Aumenta um pouco o tamanho para facilitar o toque */
+    }
+    /* ===== FIM: Ajustes para o seletor de idiomas no menu mobile ===== */
 }
 
 /* ================================================================

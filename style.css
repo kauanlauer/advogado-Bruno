@@ -82,22 +82,103 @@ h2.section-title::after { content: ''; position: absolute; bottom: 0; left: 50%;
 .languages-info strong { color: var(--dark-wood); font-size: 1rem; font-weight: 600; margin-bottom: 2px; }
 .languages-info span { font-size: 0.95rem; color: var(--text-light); }
 
-/* CARDS DE ATUAÇÃO - DESKTOP */
-.area-card { 
-    background-color: var(--white); 
-    padding: 40px 35px; 
-    border-radius: 8px;
-    text-align: center; 
-    transition: all 0.4s ease; 
-    height: 100%; 
-    display: flex;
-    flex-direction: column;
-    border: 1px solid #ddd;
-    box-shadow: 0 0 0 5px var(--white), 0 0 0 6px #ddd, 0 10px 20px var(--shadow-color);
+/* ================================================================
+   MELHORIA DA SEÇÃO ÁREAS DE ATUAÇÃO (CARD PREMIUM)
+   ================================================================ */
+
+/* Ajuste do Título da Seção para combinar */
+#areas .section-title {
+color: #f5f0e8;
+    font-weight: 700;
+    text-transform: uppercase; /* Força o título em maiúsculas */
+    letter-spacing: 3px; /* Espaçamento para elegância */
+    margin-bottom: 10px;
 }
-.area-card:hover { 
-    transform: translateY(-10px); 
-    box-shadow: 0 0 0 5px var(--white), 0 0 0 6px var(--primary-gold), 0 20px 40px var(--shadow-color); 
+
+#areas .section-subtitle {
+    font-family: 'Montserrat', sans-serif;
+    color: var(--primary-gold);
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 2px;
+    margin-bottom: 60px;
+    display: block;
+    text-align: center;
+}
+
+/* Estilo do Cartão (Card) */
+.area-card {
+    background: #ffffff; /* Fundo branco para contraste máximo */
+    padding: 50px 30px; /* Espaçamento interno generoso */
+    border-radius: 4px; /* Bordas levemente arredondadas */
+    border-bottom: 4px solid var(--primary-gold); /* Detalhe dourado na base */
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08); /* Sombra suave e moderna */
+    text-align: center;
+    height: 100%; /* Garante que todos tenham a mesma altura */
+    transition: all 0.4s ease; /* Animação suave */
+    position: relative;
+    top: 0;
+}
+
+/* Efeito ao passar o mouse (Hover) */
+.area-card:hover {
+    top: -10px; /* O card sobe levemente */
+    box-shadow: 0 20px 45px rgba(185, 151, 103, 0.25); /* Sombra dourada difusa */
+}
+
+/* Ícone do Card */
+.area-card .icon {
+    font-size: 2.5rem; /* Ícone grande */
+    color: var(--primary-gold);
+    margin-bottom: 25px;
+    display: inline-block;
+}
+
+/* Título do Card (Direito Civil, etc) */
+.area-card h5 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    color: var(--dark-wood);
+    text-transform: uppercase; /* Maiúsculas */
+    letter-spacing: 2px;
+    margin-bottom: 25px;
+    position: relative;
+    padding-bottom: 15px;
+}
+
+/* Linha decorativa abaixo do título do card */
+.area-card h5::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 40px;
+    height: 1px;
+    background-color: var(--light-gold); /* Linha fina dourada */
+}
+
+/* Lista de especialidades */
+.specialties-list {
+    list-style: none; /* Remove bolinhas da lista */
+    padding: 0;
+    margin: 0;
+}
+
+.specialties-list li {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.85rem; /* Tamanho legível */
+    font-weight: 600;
+    color:#ffffff;
+    text-transform: uppercase; /* Itens em maiúsculas */
+    letter-spacing: 1px;
+    padding: 12px 0; /* Espaço entre os itens */
+    border-bottom: 1px solid rgba(0,0,0,0.04); /* Linha divisória ultra sutil */
+}
+
+/* Remove a linha do último item */
+.specialties-list li:last-child {
+    border-bottom: none;
 }
 .area-card .icon { font-size: 3rem; color: var(--primary-gold); margin-bottom: 20px; transition: transform 0.4s ease; }
 .area-card:hover .icon { transform: scale(1.1); }
@@ -223,7 +304,7 @@ footer h5::after { content: ''; position: absolute; bottom: 0; left: 0; width: 3
 .parallax-section .section-title, .parallax-section .section-title p { color: var(--beige-bg) }
 .parallax-section .section-title::after { background-color: rgba(185, 151, 103, 0.7); }
 .parallax-section .area-card { background: rgba(255, 255, 255, 0.05); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.15); color: var(--white); }
-.parallax-section .area-card h5 { color: var(--white); }
+.parallax-section .area-card h5 { color: #f5f0e8; }
 .parallax-section .area-card .specialties-list { color: #e0d9ce; }
 .parallax-section .area-card .icon { color: var(--light-gold); }
 .parallax-section .testimonial-card-google { background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.2); }

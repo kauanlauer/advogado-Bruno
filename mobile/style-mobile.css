@@ -540,6 +540,16 @@ body {
 
 
 .floating-wrapper {
-    z-index: 10001 !important; /* Garante que fique acima de TUDO */
-    position: fixed;            /* Garante que flutue na tela */
+    position: fixed !important;    /* Fixa na tela */
+    bottom: 25px !important;       /* 25px de distância do fundo */
+    right: 20px !important;        /* 20px de distância da direita */
+    z-index: 10002 !important;     /* Número altíssimo para ficar na frente de TUDO */
+    display: block !important;     /* Garante que o elemento exista */
+}
+
+/* Garante que o ícone do whats dentro dele também apareça */
+.floating-wrapper a {
+    display: block !important;
+    opacity: 1 !important;
+    visibility: visible !important;
 }

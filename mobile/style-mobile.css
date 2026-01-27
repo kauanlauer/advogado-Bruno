@@ -428,3 +428,123 @@ body {
 
 .animate-on-scroll { opacity: 0; transform: translateY(30px); transition: all 0.8s ease; }
 .animate-on-scroll.is-visible { opacity: 1; transform: translateY(0); }
+
+/* ============================================================
+   CÓDIGOS COMPLEMENTARES (COLE NO FINAL DO SEU STYLE-MOBILE.CSS)
+   ============================================================ */
+
+/* 1. COR DA SELEÇÃO DE TEXTO
+   (Deixa a cor dourada quando o usuário seleciona um texto no site) */
+::selection {
+    background: var(--gold);
+    color: #1a120f; /* Texto fica escuro para ler melhor */
+}
+
+/* 2. ESTILO DA SEÇÃO FAQ (PERGUNTAS FREQUENTES)
+   Ajusta o fundo branco padrão do Bootstrap para o tema escuro */
+
+/* Título da Seção (que estava sem estilo) */
+.section-title {
+    font-family: var(--font-serif);
+    color: var(--gold);
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 2rem;
+    position: relative;
+}
+
+/* Caixa da Pergunta */
+.accordion-item {
+    background-color: rgba(255, 255, 255, 0.02); /* Fundo vidro escuro */
+    border: 1px solid rgba(185, 151, 103, 0.2); /* Borda fina dourada */
+    border-radius: 6px !important;
+    margin-bottom: 12px;
+    overflow: hidden;
+}
+
+/* Botão da Pergunta (Estado Normal) */
+.accordion-button {
+    background-color: transparent !important;
+    color: rgba(255, 255, 255, 0.9) !important;
+    font-family: var(--font-serif);
+    font-size: 1.1rem;
+    padding: 20px;
+    box-shadow: none !important; /* Remove borda azul padrão */
+    transition: all 0.3s ease;
+}
+
+/* Botão da Pergunta (QUANDO SELECIONADO/ABERTO) */
+.accordion-button:not(.collapsed) {
+    background-color: rgba(185, 151, 103, 0.1) !important; /* Fundo dourado suave */
+    color: var(--gold) !important; /* Texto dourado */
+    border-bottom: 1px solid rgba(185, 151, 103, 0.2);
+}
+
+/* Ícone da Seta (Ajuste de cor) */
+.accordion-button::after {
+    filter: invert(1) brightness(200%); /* Deixa a seta branca */
+    background-size: 1.1rem;
+    transition: transform 0.3s ease;
+}
+
+/* Ícone da Seta (Quando aberto) */
+.accordion-button:not(.collapsed)::after {
+    /* Filtro para tentar simular o dourado na seta SVG padrão */
+    filter: sepia(100%) hue-rotate(5deg) saturate(500%) contrast(0.8);
+    transform: rotate(-180deg);
+}
+
+/* Texto da Resposta */
+.accordion-body {
+    background-color: rgba(0, 0, 0, 0.3);
+    color: #cccccc;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    padding: 20px 25px;
+    border-top: none;
+}
+
+/* 3. BANNER DE COOKIES
+   Fixa ele no rodapé e dá o estilo dark */
+.cookie-banner {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(26, 18, 15, 0.98);
+    backdrop-filter: blur(5px);
+    border-top: 1px solid var(--gold);
+    z-index: 9999;
+    padding: 15px 0;
+    box-shadow: 0 -5px 20px rgba(0,0,0,0.5);
+    /* Se quiser esconder inicialmente e mostrar via JS, adicione display: none aqui */
+}
+
+.cookie-text {
+    font-size: 0.8rem;
+    color: #ccc;
+    line-height: 1.4;
+}
+
+.cookie-text a {
+    color: var(--gold);
+    text-decoration: underline;
+}
+
+#accept-cookies-btn {
+    background-color: var(--gold);
+    color: #fff;
+    border: none;
+    font-size: 0.8rem;
+    font-weight: 600;
+    padding: 8px 20px;
+    text-transform: uppercase;
+    border-radius: 2px;
+    margin-left: 10px;
+    transition: 0.3s;
+}
+
+#accept-cookies-btn:hover {
+    background-color: var(--gold-hover);
+    color: #1a120f;
+}

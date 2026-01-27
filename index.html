@@ -448,6 +448,7 @@
 
     <!-- CHAT WIDGET INTERATIVO -->
     <div id="chat-widget-container">
+        
         <div id="chat-window" class="chat-window">
             <div class="chat-header">
                 <img src="Bruno.jpeg" alt="Dr. Bruno" class="chat-avatar">
@@ -464,20 +465,25 @@
                 </div>
                 <div class="message cta">
                     <p>Vamos conversar sobre o seu caso?</p>
-                    <a href="https://api.whatsapp.com/send?phone=554198052279&text=Olá!%20Vi%20o%20site%20e%20gostaria%20de%20falar%20sobre%20meu%20caso." target="_blank" class="btn btn-chat">
+                    <a href="https://wa.me/554198052279?text=Olá!%20Vi%20o%20site%20e%20gostaria%20de%20falar%20sobre%20meu%20caso." target="_blank" class="btn btn-chat">
                         Sim, vamos lá <i class="bi bi-arrow-right"></i>
                     </a>
                 </div>
             </div>
         </div>
+
         <div id="launcher-wrapper">
-            <div class="chat-launcher-bubble">
+            
+            <div id="chat-bubble" class="chat-launcher-bubble">
                 Quer falar agora com um <strong>advogado online?</strong>
             </div>
+
             <button id="chat-launcher" class="chat-launcher">
                 <img src="Bruno.jpeg" alt="Falar com Dr. Bruno" class="launcher-avatar">
-                <span class="launcher-online-indicator"></span>
-                <i class="bi bi-x-lg icon-close"></i>
+                
+                <span id="notification-badge" class="notification-badge">1</span>
+                
+                <i class="bi bi-x-lg icon-close" style="display: none;"></i>
             </button>
         </div>
     </div>

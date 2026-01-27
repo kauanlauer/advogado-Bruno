@@ -9,7 +9,7 @@ class SiteManager {
     constructor() {
         // Seleção de todos os elementos que terão interatividade
         this.navbar = document.getElementById('mainNavbar');
-        this.backToTopButton = document.getElementById('back-to-top-btn');
+    
         this.statCounters = document.querySelectorAll('.stat-counter');
         this.lazyImages = document.querySelectorAll('img.lazy-load');
         this.newsletterForm = document.getElementById('newsletter-form');
@@ -237,4 +237,73 @@ class SiteManager {
 document.addEventListener('DOMContentLoaded', () => {
     const site = new SiteManager();
     site.init();
+});
+
+
+
+
+
+
+document.addEventListener('DOMContentLoaded', function() {
+        const chatLauncher = document.getElementById('chat-launcher');
+        const chatWindow = document.getElementById('chat-window');
+        const closeChatBtn = document.getElementById('close-chat-btn');
+        const chatBubble = document.getElementById('chat-bubble');
+        const notificationBadge = document.getElementById('notification-badge');
+        
+        let isChatOpen = false;
+
+        // SEQUÊNCIA AUTOMÁTICA
+        setTimeout(() => {
+            // 1. Mostra o balão primeiro
+            if (!isChatOpen) chatBubble.classList.add('visible');
+            
+            // 2. Depois de 6 segundos, troca o balão pela notificação vermelha
+            setTimeout(() => {
+                if (!isChatOpen) {
+                    chatBubble.classList.remove('visible'); // Tira o balão
+                    notificationBadge.classList.add('show'); // Mostra a bolinha vermelha
+                }
+            }, 6000); 
+
+        }, 2000); // Começa 2 segundos após abrir o site
+
+        // ABRIR/FECHAR CHAT
+        function toggleChat() {
+            isChatOpen = !isChatOpen;
+            if (isChatOpen) {
+                chatWindow.classList.add('active');
+                notificationBadge.classList.remove('show'); // Remove a notificação ao clicar
+                chatBubble.classList.remove('visible');
+            } else {
+                chatWindow.classList.remove('active');
+            }
+        }
+
+        chatLauncher.addEventListener('click', toggleChat);
+        closeChatBtn.addEventListener('click', toggleChat);
+    });
+
+
+    // Captura o botão
+this.backToTopButton = document.getElementById('back-to-top-btn');
+
+// Função para mostrar/esconder o botão ao rolar a página
+window.addEventListener('scroll', () => {
+    if (window.scrollY > 300) {
+        // Adiciona a classe que torna o botão visível à esquerda
+        this.backToTopButton.classList.add('visible');
+    } else {
+        // Remove a classe quando estiver no topo
+        this.backToTopButton.classList.remove('visible');
+    }
+});
+
+// Função para voltar ao topo ao clicar
+this.backToTopButton.addEventListener('click', (e) => {
+    e.preventDefault();
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
 });

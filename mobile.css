@@ -3,9 +3,725 @@
    Arquivo separado para facilitar manutenção
    ================================================================ */
 
+/* ===== RESET MOBILE - IMPEDE PROBLEMAS DE ZOOM ===== */
+* {
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+}
+
+html {
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+}
+
+body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
 /* ================================================================
    MEDIA QUERY PRINCIPAL - CELULARES (até 768px)
    ================================================================ */
+@media (max-width: 768px) {
+    
+    /* ===== CONFIGURAÇÕES GERAIS ===== */
+    body {
+        font-size: 16px;
+        overflow-x: hidden;
+        width: 100%;
+        position: relative;
+    }
+    
+    /* Remove margens/padding indesejados */
+    .container-fluid {
+        padding-left: 0;
+        padding-right: 0;
+    }
+    
+    p {
+        font-size: 1rem;
+        line-height: 1.6;
+    }
+    
+    .section-padding {
+        padding: 50px 20px;
+    }
+    
+    h2.section-title {
+        font-size: 1.75rem;
+        margin-bottom: 35px;
+        padding: 0 10px;
+        text-align: center;
+    }
+    
+    /* ===== NAVBAR (MENU) ===== */
+    .navbar {
+        padding: 0.75rem 0;
+        background-color: rgba(44, 30, 23, 0.98) !important;
+        backdrop-filter: blur(10px);
+    }
+    
+    .navbar.scrolled {
+        padding: 0.75rem 0;
+    }
+    
+    .navbar-brand img {
+        height: 32px;
+    }
+    
+    /* Menu collapse */
+    .navbar-collapse {
+        background-color: rgba(44, 30, 23, 0.98);
+        padding: 15px;
+        margin-top: 10px;
+        border-radius: 8px;
+        box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+    }
+    
+    .navbar-nav {
+        gap: 0;
+    }
+    
+    .navbar-nav .nav-link {
+        padding: 12px 10px;
+        font-size: 1rem;
+        border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+    
+    .navbar-nav .nav-link:last-child {
+        border-bottom: none;
+    }
+    
+    .navbar-nav .btn-primary {
+        width: 100%;
+        margin-top: 10px;
+        padding: 12px;
+    }
+    
+    .language-switcher-li {
+        justify-content: center;
+        margin-top: 10px;
+        padding-top: 10px;
+        border-top: 1px solid rgba(255,255,255,0.08);
+    }
+    
+    .flag-icon {
+        width: 28px;
+        height: 20px;
+    }
+    
+    /* ===== HERO (SEÇÃO INICIAL) ===== */
+    .hero-section-video {
+        height: 100vh;
+        min-height: 550px;
+        width: 100%;
+        position: relative;
+    }
+    
+    #bgvideo {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+    }
+    
+    .hero-overlay {
+        background: linear-gradient(
+            180deg, 
+            rgba(44, 30, 23, 0.88) 0%, 
+            rgba(44, 30, 23, 0.78) 100%
+        );
+    }
+    
+    .hero-content {
+        text-align: center;
+        padding: 0 20px;
+        position: relative;
+        z-index: 2;
+    }
+    
+    .hero-content h1 {
+        font-size: 1.9rem;
+        line-height: 1.25;
+        margin-bottom: 20px;
+        letter-spacing: 0.5px;
+    }
+    
+    .hero-content .lead {
+        font-size: 1rem;
+        margin: 15px auto 25px;
+        max-width: 100%;
+        line-height: 1.5;
+    }
+    
+    .hero-content .btn-primary {
+        width: 100%;
+        max-width: 280px;
+        padding: 14px 25px;
+        font-size: 0.95rem;
+    }
+    
+    .hero-logo {
+        display: none;
+    }
+    
+    .scroll-down-indicator {
+        bottom: 15px;
+        transform: translateX(-50%) scale(0.85);
+    }
+    
+    /* ===== SEÇÃO SOBRE ===== */
+    #sobre {
+        padding: 50px 15px;
+    }
+    
+    #sobre .row {
+        flex-direction: column;
+    }
+    
+    #sobre img {
+        margin-bottom: 25px;
+        max-width: 100%;
+        border: 3px solid #fff;
+        border-radius: 8px;
+    }
+    
+    #sobre .section-title {
+        text-align: center !important;
+        margin-bottom: 8px;
+        font-size: 1.8rem;
+    }
+    
+    #sobre .section-title::after {
+        left: 50% !important;
+        transform: translateX(-50%) !important;
+    }
+    
+    .oab-number {
+        text-align: center;
+        display: block;
+        margin-bottom: 20px;
+        font-size: 0.95rem;
+    }
+    
+    #sobre p {
+        text-align: left;
+        padding: 0;
+        font-size: 0.98rem;
+    }
+    
+    .languages-info {
+        flex-direction: row;
+        text-align: left;
+        padding: 15px;
+        gap: 12px;
+        margin-top: 20px;
+    }
+    
+    .languages-info i {
+        font-size: 2rem;
+    }
+    
+    .languages-info strong {
+        font-size: 0.95rem;
+    }
+    
+    .languages-info span {
+        font-size: 0.85rem;
+    }
+    
+    /* ===== ESTATÍSTICAS ===== */
+    .stat-item {
+        margin-bottom: 25px;
+    }
+    
+    .stat-counter {
+        font-size: 2.5rem;
+    }
+    
+    /* ===== ÁREAS DE ATUAÇÃO ===== */
+    #areas {
+        padding: 50px 15px;
+    }
+    
+    #areas .section-title {
+        font-size: 1.7rem;
+        margin-bottom: 12px;
+    }
+    
+    #areas .section-subtitle {
+        font-size: 0.72rem;
+        margin-bottom: 35px;
+        letter-spacing: 1.5px;
+    }
+    
+    .area-card {
+        padding: 30px 18px;
+        margin-bottom: 18px;
+        border-radius: 6px;
+    }
+    
+    .area-card .icon {
+        font-size: 2rem;
+        margin-bottom: 18px;
+    }
+    
+    .area-card h5 {
+        font-size: 1.15rem;
+        margin-bottom: 18px;
+        letter-spacing: 1px;
+    }
+    
+    .specialties-list {
+        text-align: center;
+    }
+    
+    .specialties-list li {
+        font-size: 0.78rem;
+        padding: 9px 0;
+        padding-left: 0;
+        text-align: center;
+        letter-spacing: 0.5px;
+    }
+    
+    .specialties-list li::before {
+        display: none;
+    }
+    
+    /* ===== ARTIGOS ===== */
+    #articles .article-card {
+        margin-bottom: 20px;
+    }
+    
+    /* ===== DEPOIMENTOS ===== */
+    #testimonials {
+        padding: 50px 15px;
+    }
+    
+    #testimonials .testimonial-item {
+        padding: 20px 15px;
+        margin-bottom: 18px;
+    }
+    
+    .testimonial-item img {
+        width: 55px;
+        height: 55px;
+    }
+    
+    .testimonial-item h6 {
+        font-size: 0.95rem;
+    }
+    
+    .testimonial-item p {
+        font-size: 0.88rem;
+    }
+    
+    /* ===== FAQ ===== */
+    #faq {
+        padding: 50px 15px;
+    }
+    
+    #faq .accordion-button {
+        font-size: 0.92rem;
+        padding: 14px 12px;
+    }
+    
+    #faq .accordion-body {
+        font-size: 0.88rem;
+        padding: 14px 12px;
+    }
+    
+    /* ===== CTA WHATSAPP ===== */
+    #cta-whatsapp {
+        padding: 50px 20px;
+        min-height: auto;
+    }
+    
+    .cta-video-background {
+        display: none;
+    }
+    
+    .cta-overlay {
+        background: var(--dark-wood);
+    }
+    
+    .section-title-cta {
+        font-size: 1.75rem;
+        margin-bottom: 18px;
+        line-height: 1.3;
+    }
+    
+    .lead-cta {
+        font-size: 0.95rem;
+        padding: 0 5px;
+        margin-bottom: 25px;
+        line-height: 1.5;
+    }
+    
+    .btn-cta {
+        width: 100%;
+        max-width: 300px;
+        padding: 15px 20px;
+        font-size: 0.92rem;
+        justify-content: center;
+    }
+    
+    /* ===== MODAL DE CONTATO ===== */
+    .modal-dialog {
+        margin: 15px;
+    }
+    
+    .modal-header h5 {
+        font-size: 1.05rem;
+    }
+    
+    .modal-body {
+        padding: 20px 15px;
+    }
+    
+    .modal-body p {
+        font-size: 0.9rem;
+    }
+    
+    .btn-contact-modal {
+        font-size: 0.95rem;
+        padding: 13px 12px;
+    }
+    
+    .btn-contact-modal i {
+        font-size: 1.25rem;
+        margin-right: 10px;
+    }
+    
+    /* ===== RODAPÉ ===== */
+    footer {
+        padding: 35px 0 15px;
+    }
+    
+    .footer-main {
+        padding: 0 15px;
+    }
+    
+    .footer-main .row {
+        text-align: center;
+    }
+    
+    .footer-main .col-lg-4,
+    .footer-main .col-md-6 {
+        margin-bottom: 25px;
+    }
+    
+    .footer-logo {
+        max-width: 140px;
+        margin: 0 auto 12px;
+    }
+    
+    footer h5 {
+        font-size: 1.05rem;
+        margin-bottom: 18px;
+    }
+    
+    footer p {
+        font-size: 0.88rem;
+    }
+    
+    .contact-list {
+        padding: 0;
+    }
+    
+    .contact-list li {
+        font-size: 0.88rem;
+        padding: 8px 0;
+        text-align: center;
+    }
+    
+    .contact-list li i {
+        font-size: 1rem;
+    }
+    
+    .social-icons {
+        justify-content: center;
+        gap: 12px;
+        margin-top: 15px;
+    }
+    
+    .social-icons a {
+        width: 42px;
+        height: 42px;
+        font-size: 1.15rem;
+    }
+    
+    .footer-bottom {
+        padding: 18px 15px;
+        margin-top: 20px;
+    }
+    
+    .footer-bottom .container {
+        flex-direction: column;
+        gap: 8px;
+    }
+    
+    .footer-bottom p {
+        font-size: 0.8rem;
+        margin-bottom: 8px;
+        line-height: 1.4;
+    }
+    
+    .footer-bottom .copyright {
+        order: 1;
+    }
+    
+    .footer-bottom .developer {
+        order: 2;
+    }
+    
+    .footer-bottom p:last-child {
+        order: 3;
+        color: rgba(255,255,255,0.5);
+        font-size: 0.75rem;
+    }
+    
+    /* ===== CHAT WIDGET ===== */
+    #chat-widget-container {
+        position: fixed;
+        bottom: 15px;
+        right: 15px;
+        z-index: 1000;
+    }
+    
+    #chat-window {
+        position: fixed;
+        width: calc(100vw - 30px);
+        max-width: 100%;
+        height: 420px;
+        bottom: 80px;
+        right: 15px;
+        border-radius: 10px;
+        box-shadow: 0 8px 30px rgba(0,0,0,0.3);
+    }
+    
+    #chat-window.active {
+        display: flex;
+    }
+    
+    .chat-header {
+        padding: 14px;
+    }
+    
+    .chat-avatar {
+        width: 42px;
+        height: 42px;
+    }
+    
+    .chat-name {
+        font-size: 0.98rem;
+    }
+    
+    .chat-status {
+        font-size: 0.72rem;
+    }
+    
+    .chat-close-btn {
+        font-size: 1.3rem;
+    }
+    
+    .chat-body {
+        padding: 14px;
+        overflow-y: auto;
+    }
+    
+    .chat-body .message {
+        font-size: 0.88rem;
+        padding: 11px;
+        margin-bottom: 11px;
+        line-height: 1.4;
+    }
+    
+    .chat-body .btn-chat {
+        width: 100%;
+        padding: 11px;
+        font-size: 0.88rem;
+    }
+    
+    #launcher-wrapper {
+        position: relative;
+    }
+    
+    #chat-launcher {
+        width: 52px;
+        height: 52px;
+    }
+    
+    .launcher-avatar {
+        width: 100%;
+        height: 100%;
+    }
+    
+    .chat-launcher-bubble {
+        width: 210px;
+        bottom: 68px;
+        right: 0;
+        font-size: 0.82rem;
+        padding: 11px;
+        line-height: 1.3;
+    }
+    
+    .chat-launcher-bubble::after {
+        right: 18px;
+    }
+    
+    .notification-badge {
+        width: 17px;
+        height: 17px;
+        font-size: 9px;
+        top: -2px;
+        right: -2px;
+    }
+    
+    /* ===== BOTÃO VOLTAR AO TOPO ===== */
+    .back-to-top-btn {
+        width: 42px;
+        height: 42px;
+        bottom: 15px;
+        left: 15px;
+        font-size: 1.15rem;
+        border-radius: 50%;
+    }
+    
+    /* ===== BANNER DE COOKIES ===== */
+    .cookie-banner {
+        flex-direction: column;
+        padding: 18px 15px;
+        text-align: center;
+    }
+    
+    .cookie-text {
+        font-size: 0.82rem;
+        margin-bottom: 12px !important;
+        line-height: 1.4;
+    }
+    
+    #accept-cookies-btn {
+        width: 100%;
+        max-width: 180px;
+        padding: 10px 20px;
+    }
+    
+    /* ===== BOTÕES GERAIS ===== */
+    .btn-primary {
+        padding: 13px 26px;
+        font-size: 0.95rem;
+        border-radius: 6px;
+    }
+    
+    .btn-primary.btn-sm {
+        padding: 10px 18px;
+        font-size: 0.85rem;
+    }
+    
+    /* ===== IMAGENS ===== */
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+    
+    /* ===== ESPAÇAMENTOS ===== */
+    .container {
+        padding-left: 15px;
+        padding-right: 15px;
+        max-width: 100%;
+    }
+    
+    .row {
+        margin-left: -10px;
+        margin-right: -10px;
+    }
+    
+    .col,
+    [class*="col-"] {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+    
+    /* ===== FIX PARA SCROLL HORIZONTAL ===== */
+    .row, .container, .container-fluid {
+        overflow-x: hidden;
+    }
+}
+
+/* ================================================================
+   CELULARES PEQUENOS (até 380px)
+   ================================================================ */
+@media (max-width: 380px) {
+    
+    body {
+        font-size: 15px;
+    }
+    
+    .hero-content h1 {
+        font-size: 1.65rem;
+    }
+    
+    h2.section-title {
+        font-size: 1.5rem;
+    }
+    
+    .section-padding {
+        padding: 45px 12px;
+    }
+    
+    .btn-primary {
+        padding: 12px 22px;
+        font-size: 0.88rem;
+    }
+    
+    #chat-window {
+        height: 380px;
+    }
+    
+    .chat-launcher-bubble {
+        width: 190px;
+        font-size: 0.78rem;
+    }
+    
+    .footer-bottom p {
+        font-size: 0.75rem;
+    }
+}
+
+/* ================================================================
+   TABLETS (769px até 1024px)
+   ================================================================ */
+@media (min-width: 769px) and (max-width: 1024px) {
+    
+    .section-padding {
+        padding: 70px 25px;
+    }
+    
+    h2.section-title {
+        font-size: 2.1rem;
+    }
+    
+    .hero-content h1 {
+        font-size: 2.6rem;
+    }
+    
+    .hero-content .lead {
+        font-size: 1.08rem;
+    }
+    
+    .area-card {
+        padding: 35px 22px;
+    }
+    
+    .navbar-brand img {
+        height: 36px;
+    }
+}
 @media (max-width: 768px) {
     
     /* ===== CONFIGURAÇÕES GERAIS ===== */

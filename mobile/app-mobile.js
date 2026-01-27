@@ -66,3 +66,40 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 });
+
+// =========================================
+// 6. CONTROLE DE COOKIES (POLÍTICA DE PRIVACIDADE)
+// =========================================
+
+// Seleciona o banner e o botão no HTML
+const cookieBanner = document.querySelector('.cookie-banner');
+const acceptCookiesBtn = document.getElementById('accept-cookies-btn');
+
+// 1. Verifica se o usuário JÁ aceitou antes ao carregar a página
+if (localStorage.getItem('cookiesAccepted') === 'true') {
+    // Se já aceitou, esconde o banner imediatamente
+    if (cookieBanner) {
+        cookieBanner.style.display = 'none';
+    }
+} else {
+    // Se NÃO aceitou, garante que ele apareça
+    if (cookieBanner) {
+        cookieBanner.style.display = 'block';
+    }
+}
+
+// 2. O que acontece ao clicar em "Aceitar"
+if (acceptCookiesBtn) {
+    acceptCookiesBtn.addEventListener('click', function() {
+        // Ação 1: Esconde o banner visualmente
+        if (cookieBanner) {
+            cookieBanner.style.opacity = '0'; // Efeito de sumir devagar (opcional)
+            setTimeout(() => {
+                cookieBanner.style.display = 'none'; // Remove da tela
+            }, 300);
+        }
+
+        // Ação 2: Salva no navegador que está aceito
+        localStorage.setItem('cookiesAccepted', 'true');
+    });
+}

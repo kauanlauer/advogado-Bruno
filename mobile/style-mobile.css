@@ -331,13 +331,8 @@ body {
 
 /* WIDGET CHAT FLUTUANTE (Desktop Like) */
 .floating-wrapper {
-    position: fixed;
-    bottom: 30px;
-    right: 20px;
-    z-index: 1000;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
+    z-index: 10000 !important; /* Número bem alto para ficar acima de tudo */
+    position: fixed; /* Garante que flutue */
 }
 
 .chat-bubble {

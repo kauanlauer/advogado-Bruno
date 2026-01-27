@@ -2,267 +2,234 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <!-- Viewport otimizado para celulares modernos -->
+    <!-- Viewport essencial para celulares -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <meta name="theme-color" content="#2c1e17">
-    <title>Dr. Bruno Miranda - Advocacia</title>
+    <title>Dr. Bruno Miranda - Advocacia Especializada</title>
     
+    <!-- Ícone da aba -->
     <link rel="icon" type="image/png" href="../logom.png">
-    <meta name="description" content="Advocacia especializada em Direito Civil, Administrativo e Criminal">
     
-    <!-- Bootstrap CSS (Framework para layout) -->
+    <!-- Bootstrap 5 CSS (Framework Profissional) -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Ícones do Bootstrap -->
+    
+    <!-- Ícones Bootstrap -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     
-    <!-- Google Fonts (Tipografia Premium) -->
+    <!-- Google Fonts (Fontes Premium) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
     
-    <!-- Seu CSS Personalizado -->
+    <!-- CSS Personalizado -->
     <link rel="stylesheet" href="style-mobile.css">
 </head>
-<body>
+<body data-bs-spy="scroll" data-bs-target="#navbar-example">
 
-    <!-- NAVBAR (Menu Superior) -->
-    <nav class="navbar-mobile">
-        <div class="container-fluid d-flex justify-content-between align-items-center">
-            <a href="#" class="logo-link">
-                <img src="../logo.png" alt="Bruno Miranda" class="navbar-logo">
+    <!-- BARRA DE NAVEGAÇÃO (NAVBAR) -->
+    <nav class="navbar navbar-dark fixed-top trans-navbar" id="mainNav">
+        <div class="container-fluid">
+            <!-- Logo -->
+            <a class="navbar-brand" href="#">
+                <img src="../logo.png" alt="Bruno Miranda Logo" class="nav-logo">
             </a>
-            <button class="menu-btn" id="menuToggle" aria-label="Abrir Menu">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
+            
+            <!-- Botão Menu (Hambúrguer) -->
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+                <span class="bi bi-list fs-1 text-gold"></span>
             </button>
+            
+            <!-- Menu Lateral (Offcanvas do Bootstrap) -->
+            <div class="offcanvas offcanvas-end bg-dark-wood" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+                <div class="offcanvas-header border-bottom border-secondary">
+                    <h5 class="offcanvas-title text-gold font-serif" id="offcanvasNavbarLabel">Menu</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body">
+                    <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                        <li class="nav-item"><a class="nav-link active" href="#inicio" onclick="closeMenu()">Início</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#sobre" onclick="closeMenu()">O Advogado</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#areas" onclick="closeMenu()">Áreas de Atuação</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#depoimentos" onclick="closeMenu()">Depoimentos</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#contato" onclick="closeMenu()">Contato</a></li>
+                    </ul>
+                    <div class="mt-4 text-center">
+                        <a href="https://wa.me/554198052279" class="btn btn-gold w-100">
+                            <i class="bi bi-whatsapp me-2"></i> Falar Agora
+                        </a>
+                    </div>
+                </div>
+            </div>
         </div>
     </nav>
 
-    <!-- MENU LATERAL (Offcanvas) -->
-    <div class="side-menu-backdrop" id="menuOverlay"></div>
-    <div class="side-menu" id="sideMenu">
-        <div class="side-menu-header">
-            <img src="../logo.png" alt="Logo" class="menu-logo">
-            <button class="close-btn" id="closeMenu">&times;</button>
-        </div>
-        <ul class="side-menu-list">
-            <li><a href="#inicio" class="menu-link">Início</a></li>
-            <li><a href="#sobre" class="menu-link">O Advogado</a></li>
-            <li><a href="#areas" class="menu-link">Áreas de Atuação</a></li>
-            <li><a href="#depoimentos" class="menu-link">Depoimentos</a></li>
-            <li><a href="#faq" class="menu-link">Dúvidas</a></li>
-        </ul>
-        <div class="menu-footer">
-            <a href="https://wa.me/554198052279" target="_blank" class="btn-menu-whatsapp">
-                <i class="bi bi-whatsapp"></i> WhatsApp
-            </a>
-        </div>
-    </div>
-
-    <!-- HERO SECTION (Capa com Vídeo) -->
-    <header id="inicio" class="hero-section">
-        <!-- Vídeo de Fundo -->
-        <div class="video-background">
-            <!-- COLOQUE O NOME DO SEU VÍDEO AQUI EMBAIXO NO 'src' -->
-            <video autoplay muted loop playsinline poster="../Bruno.jpeg" id="bgVideo">
+    <!-- HERO SECTION (Vídeo de Fundo) -->
+    <section id="inicio" class="hero-mobile d-flex align-items-center justify-content-center text-center text-white position-relative">
+        
+        <!-- Vídeo Background -->
+        <div class="video-wrap">
+            <video autoplay muted loop playsinline id="myVideo">
                 <source src="../video-bg.mp4" type="video/mp4">
             </video>
-            <div class="video-overlay"></div>
+            <div class="overlay"></div> <!-- Camada escura para ler o texto -->
         </div>
 
-        <div class="hero-content fade-up">
-            <img src="../logom.png" alt="Logo Icone" class="hero-icon">
-            <h1>Defesa Estratégica &<br><em>Soluções Modernas</em></h1>
-            <p>Advocacia de excelência com foco em resultados.</p>
+        <!-- Conteúdo Hero -->
+        <div class="container hero-content z-2">
+            <img src="../logom.png" alt="Ícone" class="mb-3 hero-icon fade-in">
+            <h1 class="display-5 font-serif fw-bold mb-3 fade-in">Justiça &<br><span class="text-gold">Excelência</span></h1>
+            <p class="lead mb-4 fade-in delay-1">Defesa estratégica e personalizada para seus direitos.</p>
+            <a href="https://wa.me/554198052279" class="btn btn-gold btn-lg rounded-pill fade-in delay-2 shadow-lg">
+                Consulta Gratuita
+            </a>
             
-            <div class="hero-buttons">
-                <a href="https://wa.me/554198052279" class="btn-gold">
-                    Agendar Consulta
-                </a>
+            <div class="scroll-indicator mt-5">
+                <i class="bi bi-chevron-down text-white-50 animate-bounce"></i>
             </div>
         </div>
-        
-        <div class="scroll-down">
-            <span>Role para ver</span>
-            <i class="bi bi-arrow-down"></i>
-        </div>
-    </header>
+    </section>
 
-    <!-- SOBRE O ADVOGADO -->
-    <section id="sobre" class="section-padding bg-light">
+    <!-- SESSÃO SOBRE -->
+    <section id="sobre" class="py-5 bg-light">
         <div class="container">
-            <div class="profile-card fade-up">
-                <div class="profile-image-container">
-                    <img src="../Bruno.jpeg" alt="Dr. Bruno Miranda" class="profile-img">
-                    <div class="oab-tag">OAB/PR 113.470</div>
-                </div>
-                
-                <div class="profile-text">
-                    <h2 class="section-title">Dr. Bruno Miranda</h2>
-                    <p class="lead-text">Excelência técnica e dedicação exclusiva.</p>
-                    
-                    <p>Bacharel em direito pelo Centro Universitário Santa Cruz e pós-graduado em direito militar pela renomada Escola Mineira de Direito.</p>
-                    <p>Sua paixão pelo conhecimento o mantém em constante aperfeiçoamento, com estudos voltados ao processo penal e à psicologia castrense.</p>
-                    
-                    <div class="badges-container">
-                        <span class="badge-item"><i class="bi bi-check-circle-fill"></i> Direito Militar</span>
-                        <span class="badge-item"><i class="bi bi-check-circle-fill"></i> Direito Penal</span>
+            <div class="card border-0 shadow-sm rounded-4 overflow-hidden bg-white">
+                <div class="position-relative">
+                    <img src="../Bruno.jpeg" class="card-img-top object-fit-cover" alt="Dr. Bruno Miranda" style="height: 400px; object-position: top;">
+                    <div class="position-absolute bottom-0 start-0 w-100 p-3 bg-gradient-dark text-white">
+                        <h3 class="font-serif m-0">Dr. Bruno Miranda</h3>
+                        <small class="text-gold">OAB/PR 113.470</small>
                     </div>
+                </div>
+                <div class="card-body p-4">
+                    <p class="card-text text-muted">
+                        Especialista comprometido com a ética e a técnica jurídica. Pós-graduado em Direito Militar pela Escola Mineira de Direito, atua com rigor na defesa dos interesses de seus clientes.
+                    </p>
+                    <ul class="list-unstyled mt-3">
+                        <li class="mb-2"><i class="bi bi-check-circle-fill text-gold me-2"></i> Direito Penal</li>
+                        <li class="mb-2"><i class="bi bi-check-circle-fill text-gold me-2"></i> Direito Militar</li>
+                        <li class="mb-2"><i class="bi bi-check-circle-fill text-gold me-2"></i> Direito Civil</li>
+                    </ul>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ÁREAS DE ATUAÇÃO (Grid Moderno) -->
-    <section id="areas" class="section-padding section-dark">
+    <!-- SESSÃO ÁREAS DE ATUAÇÃO (Melhorada) -->
+    <section id="areas" class="py-5 bg-dark-wood text-white">
         <div class="container">
-            <div class="section-header text-center fade-up">
-                <span class="overline">Especialidades</span>
-                <h2 class="text-white">Áreas de Atuação</h2>
+            <div class="text-center mb-5">
+                <h6 class="text-gold text-uppercase letter-spacing-2">Especialidades</h6>
+                <h2 class="font-serif display-6">Onde Posso Atuar</h2>
+                <div class="divider mx-auto bg-gold my-3"></div>
             </div>
 
-            <div class="areas-grid">
+            <div class="row g-4">
                 <!-- Card 1 -->
-                <div class="area-card fade-up">
-                    <div class="card-icon"><i class="bi bi-bank2"></i></div>
-                    <h3>Direito Civil</h3>
-                    <p>Contratos, Responsabilidade Civil, Família e Sucessões.</p>
+                <div class="col-12">
+                    <div class="service-card p-4 border border-secondary rounded-3 bg-dark-soft">
+                        <div class="icon-box mb-3 text-gold">
+                            <i class="bi bi-shield-lock fs-1"></i>
+                        </div>
+                        <h4 class="font-serif mb-2">Direito Criminal</h4>
+                        <p class="text-white-50 small mb-0">Defesa em inquéritos, audiências de custódia, tribunal do júri e recursos.</p>
+                    </div>
                 </div>
 
                 <!-- Card 2 -->
-                <div class="area-card fade-up">
-                    <div class="card-icon"><i class="bi bi-briefcase"></i></div>
-                    <h3>Administrativo</h3>
-                    <p>Licitações, Servidores Públicos e Improbidade.</p>
+                <div class="col-12">
+                    <div class="service-card p-4 border border-secondary rounded-3 bg-dark-soft">
+                        <div class="icon-box mb-3 text-gold">
+                            <i class="bi bi-bank fs-1"></i>
+                        </div>
+                        <h4 class="font-serif mb-2">Direito Militar</h4>
+                        <p class="text-white-50 small mb-0">Atuação especializada em processos administrativos e crimes militares.</p>
+                    </div>
                 </div>
 
                 <!-- Card 3 -->
-                <div class="area-card fade-up">
-                    <div class="card-icon"><i class="bi bi-shield-check"></i></div>
-                    <h3>Criminal</h3>
-                    <p>Defesa Criminal, Crimes Econômicos e Júri Popular.</p>
-                </div>
-
-                <!-- Card 4 -->
-                <div class="area-card fade-up">
-                    <div class="card-icon"><i class="bi bi-award"></i></div>
-                    <h3>Direito Militar</h3>
-                    <p>Processo Administrativo, Crimes Militares e Recursos.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- DEPOIMENTOS (Design Limpo) -->
-    <section id="depoimentos" class="section-padding">
-        <div class="container">
-            <h2 class="section-title text-center mb-5 fade-up">O que dizem<br>nossos clientes</h2>
-            
-            <div class="testimonials-scroll fade-up">
-                <!-- Depoimento 1 -->
-                <div class="testimonial-box">
-                    <div class="stars">★★★★★</div>
-                    <p class="review-text">"Excelente profissional! Resolveu meu caso com muita dedicação e transparência. Super recomendo!"</p>
-                    <div class="reviewer">
-                        <strong>Maria Silva</strong>
-                    </div>
-                </div>
-
-                <!-- Depoimento 2 -->
-                <div class="testimonial-box">
-                    <div class="stars">★★★★★</div>
-                    <p class="review-text">"Atendimento humanizado e resultado rápido. Fiquei muito satisfeito com todo o processo."</p>
-                    <div class="reviewer">
-                        <strong>João Santos</strong>
+                <div class="col-12">
+                    <div class="service-card p-4 border border-secondary rounded-3 bg-dark-soft">
+                        <div class="icon-box mb-3 text-gold">
+                            <i class="bi bi-people fs-1"></i>
+                        </div>
+                        <h4 class="font-serif mb-2">Direito Civil</h4>
+                        <p class="text-white-50 small mb-0">Família, contratos, indenizações e responsabilidade civil.</p>
                     </div>
                 </div>
                 
-                <!-- Depoimento 3 -->
-                <div class="testimonial-box">
-                    <div class="stars">★★★★★</div>
-                    <p class="review-text">"Profissional extremamente competente e atencioso. Sempre disponível para dúvidas."</p>
-                    <div class="reviewer">
-                        <strong>Ana Costa</strong>
+                <!-- Card 4 -->
+                <div class="col-12">
+                    <div class="service-card p-4 border border-secondary rounded-3 bg-dark-soft">
+                        <div class="icon-box mb-3 text-gold">
+                            <i class="bi bi-briefcase fs-1"></i>
+                        </div>
+                        <h4 class="font-serif mb-2">Administrativo</h4>
+                        <p class="text-white-50 small mb-0">Defesa de servidores públicos e licitações.</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- FAQ (Accordion Minimalista) -->
-    <section id="faq" class="section-padding bg-light">
+    <!-- DEPOIMENTOS -->
+    <section id="depoimentos" class="py-5 bg-white">
         <div class="container">
-            <h2 class="section-title text-center mb-4 fade-up">Perguntas Frequentes</h2>
+            <h2 class="text-center font-serif mb-5 text-dark-wood">O que dizem</h2>
             
-            <div class="faq-wrapper fade-up">
-                <div class="faq-item">
-                    <button class="faq-trigger">
-                        Como funciona a primeira consulta?
-                        <i class="bi bi-plus-lg"></i>
-                    </button>
-                    <div class="faq-content">
-                        <p>A primeira consulta é o momento para entendermos seu caso e apresentarmos as melhores estratégias. Entre em contato via WhatsApp para agendar.</p>
+            <!-- Carousel Simples Bootstrap -->
+            <div id="testimonialCarousel" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active text-center p-4">
+                        <div class="stars text-warning mb-3">★★★★★</div>
+                        <p class="fst-italic text-muted">"Profissionalismo impecável. O Dr. Bruno me manteve informado durante todo o processo."</p>
+                        <h6 class="mt-3 fw-bold">- Carlos Mendes</h6>
+                    </div>
+                    <div class="carousel-item text-center p-4">
+                        <div class="stars text-warning mb-3">★★★★★</div>
+                        <p class="fst-italic text-muted">"Excelente atendimento. Resolveu uma questão complexa com muita agilidade."</p>
+                        <h6 class="mt-3 fw-bold">- Ana Paula Souza</h6>
                     </div>
                 </div>
-
-                <div class="faq-item">
-                    <button class="faq-trigger">
-                        Qual o valor dos honorários?
-                        <i class="bi bi-plus-lg"></i>
-                    </button>
-                    <div class="faq-content">
-                        <p>Os honorários variam de acordo com a complexidade do caso. Trabalhamos de forma transparente e apresentamos uma proposta personalizada.</p>
-                    </div>
-                </div>
-
-                <div class="faq-item">
-                    <button class="faq-trigger">
-                        O atendimento é online?
-                        <i class="bi bi-plus-lg"></i>
-                    </button>
-                    <div class="faq-content">
-                        <p>Sim! Oferecemos atendimento 100% digital para todo o Brasil, com toda segurança e eficiência.</p>
-                    </div>
-                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon bg-dark rounded-circle p-3" aria-hidden="true"></span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="next">
+                    <span class="carousel-control-next-icon bg-dark rounded-circle p-3" aria-hidden="true"></span>
+                </button>
             </div>
         </div>
     </section>
 
-    <!-- CTA FINAL -->
-    <section class="cta-final section-dark text-center">
+    <!-- CTA FINAL (CONTATO) -->
+    <section id="contato" class="py-5 text-center bg-gold text-white">
         <div class="container">
-            <h2 class="mb-3">Precisa de orientação jurídica?</h2>
-            <p class="mb-4 text-white-50">Não deixe seus direitos para depois.</p>
-            <a href="https://wa.me/554198052279" class="btn-gold btn-lg">
-                Falar com Advogado
+            <h2 class="font-serif mb-3">Precisa de Ajuda Jurídica?</h2>
+            <p class="mb-4">Não deixe para depois. Entre em contato agora mesmo.</p>
+            <a href="https://wa.me/554198052279" class="btn btn-dark btn-lg px-5 rounded-pill shadow">
+                Falar no WhatsApp
             </a>
         </div>
     </section>
 
     <!-- FOOTER -->
-    <footer class="main-footer">
-        <div class="container text-center">
-            <img src="../logo.png" alt="Bruno Miranda" class="footer-logo">
-            
-            <div class="footer-links">
-                <a href="https://www.instagram.com/gabriel.brunomiranda/" target="_blank"><i class="bi bi-instagram"></i></a>
-                <a href="mailto:brunodemiranda.adv@gmail.com"><i class="bi bi-envelope"></i></a>
-                <a href="https://wa.me/554198052279"><i class="bi bi-whatsapp"></i></a>
+    <footer class="bg-dark text-white-50 py-4 text-center">
+        <div class="container">
+            <img src="../logo.png" alt="Logo" style="height: 40px; filter: brightness(0) invert(1);" class="mb-3 opacity-50">
+            <p class="small mb-2">© 2025 Bruno Miranda Advocacia.</p>
+            <div class="d-flex justify-content-center gap-3 fs-4">
+                <a href="#" class="text-white-50"><i class="bi bi-instagram"></i></a>
+                <a href="#" class="text-white-50"><i class="bi bi-envelope"></i></a>
             </div>
-            
-            <p class="copyright">© 2025 Bruno Miranda Advocacia.<br>Todos os direitos reservados.</p>
-            <p class="dev-credit">Dev: Kauan Lauer</p>
         </div>
     </footer>
 
-    <!-- Botão Flutuante WhatsApp -->
-    <a href="https://wa.me/554198052279" class="whatsapp-float" aria-label="Falar no WhatsApp">
+    <!-- Botão Flutuante -->
+    <a href="https://wa.me/554198052279" class="whatsapp-btn shadow-lg">
         <i class="bi bi-whatsapp"></i>
     </a>
 
-    <!-- Scripts -->
+    <!-- Scripts do Bootstrap (Essencial para o Menu funcionar) -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Nosso Script -->
     <script src="app-mobile.js"></script>
 </body>
 </html>

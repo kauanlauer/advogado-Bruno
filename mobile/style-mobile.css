@@ -329,12 +329,6 @@ body {
     border: 1px solid rgba(255,255,255,0.1);
 }
 
-/* WIDGET CHAT FLUTUANTE (Desktop Like) */
-.floating-wrapper {
-    z-index: 10000 !important; /* Número bem alto para ficar acima de tudo */
-    position: fixed; /* Garante que flutue */
-}
-
 .chat-bubble {
     background: white;
     color: #333;
@@ -542,4 +536,10 @@ body {
 #accept-cookies-btn:hover {
     background-color: var(--gold-hover);
     color: #1a120f;
+}
+
+
+.floating-wrapper {
+    z-index: 10001 !important; /* Garante que fique acima de TUDO */
+    position: fixed;            /* Garante que flutue na tela */
 }

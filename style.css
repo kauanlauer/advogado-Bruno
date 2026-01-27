@@ -766,3 +766,166 @@ body.article-page {
         font-size: 1rem; /* Diminui o subtítulo */
     }
 }
+
+
+
+
+
+/* ================================================================
+   MELHORIA DA SEÇÃO DEPOIMENTOS (ESTILO GOOGLE REVIEW PREMIUM)
+   ================================================================ */
+
+/* Ajuste do Fundo da Seção para destacar o card branco */
+#testimonials {
+    /* Fundo escuro (Dark Wood) com transparência para o parallax funcionar */
+    background-color: var(--dark-wood); 
+    position: relative;
+    padding-bottom: 80px; /* Espaço extra embaixo */
+}
+
+/* Título da seção (texto branco para contraste no fundo escuro) */
+#testimonials .section-title h2 {
+    color: #ffffff;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin-bottom: 10px;
+}
+
+#testimonials .section-title p {
+    color: var(--primary-gold);
+    font-family: 'Montserrat', sans-serif;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 2px;
+    margin-bottom: 50px;
+}
+
+/* Container do Carrossel */
+.testimonial-card-wrapper {
+    padding: 10px; /* Margem de segurança */
+    display: flex;
+    justify-content: center;
+}
+
+/* O CARTÃO (Card estilo Google) */
+.testimonial-card-google {
+    background: #ffffff;
+    width: 100%;
+    max-width: 750px; /* Limita a largura no desktop para ficar elegante */
+    padding: 40px;
+    border-radius: 8px; /* Bordas suaves */
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3); /* Sombra forte para destacar do fundo */
+    position: relative;
+    border-top: 4px solid #4285F4; /* Azul Google (ou troque por var(--primary-gold) se preferir dourado) */
+}
+
+/* Cabeçalho do Card (Avatar, Nome e Logo) */
+.testimonial-card-google .card-header {
+    background: transparent;
+    border: none;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Separa info do cliente do logo Google */
+    margin-bottom: 25px;
+}
+
+/* Avatar do Cliente */
+.client-avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 15px;
+}
+
+/* Informações do Cliente (Nome e Estrelas) */
+.client-info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-right: auto; /* Empurra o logo do Google para a direita */
+}
+
+.client-name {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    color: #333;
+    font-size: 1rem;
+}
+
+/* Estrelas de Avaliação */
+.star-rating {
+    color: #FBBC05; /* Amarelo oficial do Google */
+    font-size: 0.9rem;
+    margin-top: 2px;
+}
+
+/* Logo do Google (SVG) */
+.google-logo {
+    opacity: 0.8;
+}
+
+/* Corpo do Card (O Texto do Depoimento) */
+.testimonial-card-google .card-body {
+    padding: 0;
+    margin-bottom: 20px;
+}
+
+.testimonial-card-google .card-body p {
+    font-family: 'Playfair Display', serif; /* Fonte elegante para a fala */
+    font-style: italic;
+    font-size: 1.2rem; /* Texto maior para leitura fácil */
+    line-height: 1.6;
+    color: #555;
+    text-align: left;
+}
+
+/* Rodapé do Card */
+.testimonial-card-google .card-footer {
+    background: transparent;
+    border: none;
+    padding: 0;
+    text-align: right;
+    font-size: 0.8rem;
+    color: #999;
+}
+
+/* Setas do Carrossel (Personalizadas para Dourado) */
+#testimonialCarousel .carousel-control-prev-icon,
+#testimonialCarousel .carousel-control-next-icon {
+    background-color: var(--primary-gold); /* Fundo dourado na seta */
+    border-radius: 50%; /* Seta redonda */
+    background-size: 50%; /* Tamanho do ícone interno */
+    width: 40px;
+    height: 40px;
+}
+
+/* Ajuste de posição das setas para não ficarem em cima do texto no mobile */
+.carousel-control-prev, .carousel-control-next {
+    width: 5%; /* Diminui a área de clique lateral */
+}
+
+/* RESPONSIVIDADE (Celular) */
+@media (max-width: 768px) {
+    .testimonial-card-google {
+        padding: 25px 20px;
+    }
+
+    .testimonial-card-google .card-header {
+        flex-wrap: wrap; /* Permite quebrar linha se necessário */
+    }
+    
+    .client-info {
+        margin-right: 10px;
+    }
+    
+    .testimonial-card-google .card-body p {
+        font-size: 1rem; /* Texto um pouco menor no celular */
+    }
+
+    /* Esconde as setas no celular se preferir navegação por toque, ou ajusta */
+    #testimonialCarousel .carousel-control-prev,
+    #testimonialCarousel .carousel-control-next {
+        display: none; /* No celular, geralmente arrastamos com o dedo */
+    }
+}

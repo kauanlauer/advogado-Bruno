@@ -143,5 +143,100 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // === LOG DE INICIALIZAÇÃO ===
     console.log('✅ Site Mobile Bruno Miranda - Carregado com sucesso!');
-    console.log('📱 Versão: 14.00.27.01.26');
+    console.log('📱 Versão: 14.47.27.01.26');
+});
+
+// ============================================
+// LÓGICA MOBILE - BRUNO MIRANDA
+// ============================================
+
+document.addEventListener('DOMContentLoaded', function() {
+    
+    // 1. MENU LATERAL (Lógica simples e robusta)
+    const menuBtn = document.getElementById('menuToggle');
+    const sideMenu = document.getElementById('sideMenu');
+    const overlay = document.getElementById('menuOverlay');
+    const closeBtn = document.getElementById('closeMenu');
+    const menuLinks = document.querySelectorAll('.menu-link');
+
+    function toggleMenu() {
+        sideMenu.classList.toggle('active');
+        overlay.classList.toggle('active');
+        document.body.style.overflow = sideMenu.classList.contains('active') ? 'hidden' : '';
+    }
+
+    menuBtn.addEventListener('click', toggleMenu);
+    closeBtn.addEventListener('click', toggleMenu);
+    overlay.addEventListener('click', toggleMenu);
+    
+    // Fecha o menu ao clicar em um link
+    menuLinks.forEach(link => {
+        link.addEventListener('click', toggleMenu);
+    });
+
+    // 2. NAVBAR EFEITO SCROLL
+    // Muda a cor da barra ao rolar para baixo
+    const navbar = document.querySelector('.navbar-mobile');
+    
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 50) {
+            navbar.classList.add('scrolled');
+        } else {
+            navbar.classList.remove('scrolled');
+        }
+    });
+
+    // 3. FAQ ACCORDION
+    // Abre e fecha as perguntas
+    const faqItems = document.querySelectorAll('.faq-item');
+
+    faqItems.forEach(item => {
+        const trigger = item.querySelector('.faq-trigger');
+        
+        trigger.addEventListener('click', () => {
+            const isActive = item.classList.contains('active');
+            
+            // Fecha todos
+            faqItems.forEach(i => {
+                i.classList.remove('active');
+                i.querySelector('.faq-content').style.maxHeight = null;
+            });
+
+            // Se não estava ativo, abre
+            if (!isActive) {
+                item.classList.add('active');
+                const content = item.querySelector('.faq-content');
+                content.style.maxHeight = content.scrollHeight + "px";
+            }
+        });
+    });
+
+    // 4. ANIMAÇÕES AO ROLAR (INTERSECTION OBSERVER)
+    // Faz os elementos aparecerem suavemente
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: "0px 0px -50px 0px"
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            }
+        });
+    }, observerOptions);
+
+    document.querySelectorAll('.fade-up').forEach(el => {
+        observer.observe(el);
+    });
+
+    // 5. INICIALIZAÇÃO DO VÍDEO (Garante que toque no mobile)
+    const video = document.getElementById('bgVideo');
+    if(video) {
+        video.play().catch(function(error) {
+            console.log("Autoplay bloqueado pelo navegador, aguardando interação.");
+        });
+    }
+    
+    console.log("Sistema Mobile Carregado com Sucesso.");
 });

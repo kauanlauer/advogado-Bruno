@@ -1,12 +1,11 @@
 /* ======================================================
-   ESTILO MOBILE PREMIUM - BRUNO MIRANDA (VERSÃO FINAL)
-   Baseado na identidade visual Desktop
+   ESTILO MOBILE PROFISSIONAL - BRUNO MIRANDA
    ====================================================== */
 
 :root {
-    --gold: #b99767;            /* Dourado do Desktop */
+    --gold: #b99767;
     --gold-hover: #d1b894;
-    --dark-wood: #1a120f;       /* Fundo muito escuro */
+    --dark-wood: #1a120f;
     --panel-bg: rgba(20, 15, 12, 0.95);
     --text-white: #ffffff;
     --text-grey: #cccccc;
@@ -14,17 +13,24 @@
     --font-serif: 'Playfair Display', serif;
 }
 
+* {
+    -webkit-tap-highlight-color: transparent;
+}
+
 body {
     font-family: var(--font-main);
     background-color: var(--dark-wood);
     color: var(--text-white);
     overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
-/* Tipografia de Luxo */
+/* Tipografia */
 .font-serif { font-family: var(--font-serif); }
 .text-gold { color: var(--gold) !important; }
 .ls-2 { letter-spacing: 2px; }
+.text-light-grey { color: var(--text-grey); }
 
 /* Preloader */
 #preloader {
@@ -41,7 +47,7 @@ body {
     transition: opacity 0.5s ease;
 }
 
-/* VÍDEO DE FUNDO FIXO (Cobre tudo) */
+/* Vídeo de Fundo */
 .video-background-container {
     position: fixed;
     top: 0;
@@ -91,15 +97,21 @@ body {
     padding: 10px 0;
 }
 
-.nav-logo { height: 40px; filter: brightness(0) invert(1); }
+.nav-logo { 
+    height: 40px; 
+    filter: brightness(0) invert(1);
+}
 
-/* Menu Offcanvas (Lateral) */
+/* Menu Offcanvas */
 .offcanvas.bg-wood {
     background-color: #241a15;
     border-left: 1px solid rgba(185, 151, 103, 0.3);
 }
 
-.offcanvas-logo { height: 35px; filter: brightness(0) invert(1); }
+.offcanvas-logo { 
+    height: 35px; 
+    filter: brightness(0) invert(1); 
+}
 
 .nav-link {
     font-family: var(--font-serif);
@@ -110,7 +122,8 @@ body {
     transition: 0.3s;
 }
 
-.nav-link:hover, .nav-link.active {
+.nav-link:hover, 
+.nav-link.active {
     color: var(--gold) !important;
     padding-left: 10px;
 }
@@ -122,7 +135,10 @@ body {
     position: relative;
 }
 
-.hero-icon { width: 70px; opacity: 0.9; }
+.hero-icon { 
+    width: 70px; 
+    opacity: 0.9; 
+}
 
 .hero-title {
     font-family: var(--font-serif);
@@ -146,7 +162,7 @@ body {
     background: var(--gold);
     color: #fff;
     border: none;
-    border-radius: 0; /* Estilo quadrado corporativo */
+    border-radius: 0;
     padding: 14px 30px;
     font-weight: 600;
     letter-spacing: 1px;
@@ -173,7 +189,10 @@ body {
 .btn-gold:hover {
     color: var(--dark-wood);
 }
-.btn-gold:hover::before { width: 100%; }
+
+.btn-gold:hover::before { 
+    width: 100%; 
+}
 
 .scroll-indicator {
     position: absolute;
@@ -187,9 +206,15 @@ body {
     animation: bounce 2s infinite;
 }
 
-/* Sobre (Glassmorphism) */
-.section-padding { padding: 80px 0; }
-.relative-z { position: relative; z-index: 2; }
+/* Seções */
+.section-padding { 
+    padding: 80px 0; 
+}
+
+.relative-z { 
+    position: relative; 
+    z-index: 2; 
+}
 
 .section-bg-overlay {
     position: absolute;
@@ -197,16 +222,17 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(26, 18, 15, 0.9); /* Escurece o vídeo nas seções */
+    background: rgba(26, 18, 15, 0.9);
     z-index: 1;
 }
 
+/* Cards Glassmorphism */
 .glass-card {
     background: rgba(40, 30, 25, 0.7);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
     border: 1px solid rgba(255,255,255,0.1);
-    border-radius: 8px; /* Cantos levemente arredondados */
+    border-radius: 8px;
 }
 
 .bruno-photo {
@@ -249,7 +275,7 @@ body {
     padding-bottom: 10px;
 }
 
-/* Áreas de Atuação - Cards Corporativos */
+/* Áreas de Atuação */
 .service-card {
     background: linear-gradient(145deg, #2a201b, #1f1714);
     border-left: 3px solid var(--gold);
@@ -262,7 +288,10 @@ body {
     box-shadow: 0 5px 15px rgba(0,0,0,0.2);
 }
 
-.service-card:active { transform: scale(0.98); background: #352a24; }
+.service-card:active { 
+    transform: scale(0.98); 
+    background: #352a24; 
+}
 
 .card-icon {
     font-size: 2rem;
@@ -286,10 +315,14 @@ body {
     line-height: 1.4;
 }
 
-.card-arrow { color: rgba(255,255,255,0.2); }
+.card-arrow { 
+    color: rgba(255,255,255,0.2); 
+}
 
 /* Depoimentos */
-.bg-dark-wood { background-color: #140f0c; }
+.bg-dark-wood { 
+    background-color: #140f0c; 
+}
 
 .testimonial-card {
     background: rgba(255,255,255,0.03);
@@ -298,203 +331,82 @@ body {
     border: 1px solid rgba(185, 151, 103, 0.1);
 }
 
-.stars { color: #FFD700; letter-spacing: 2px; }
-.testimonial-text { font-style: italic; color: #ddd; font-weight: 300; }
-.client-name { color: var(--gold); font-family: var(--font-serif); margin-bottom: 0; }
-.client-role { font-size: 0.8rem; color: #666; text-transform: uppercase; }
-
-/* Footer */
-.main-footer {
-    background-color: #0e0a08;
-    padding: 60px 0 30px;
-    border-top: 4px solid var(--gold);
+.stars { 
+    color: #FFD700; 
+    letter-spacing: 2px; 
 }
 
-.footer-logo { width: 140px; filter: brightness(0) invert(1); opacity: 0.6; }
-.footer-cta-title { font-family: var(--font-serif); color: white; margin-bottom: 10px; }
-.footer-contact-item { display: block; color: white; text-decoration: none; margin-bottom: 10px; }
-.dev-link { color: var(--gold); text-decoration: none; }
-
-.social-btn {
-    display: inline-flex;
-    width: 45px;
-    height: 45px;
-    background: rgba(255,255,255,0.05);
-    color: white;
-    border-radius: 50%;
-    align-items: center;
-    justify-content: center;
-    margin: 0 5px;
-    font-size: 1.2rem;
-    border: 1px solid rgba(255,255,255,0.1);
+.testimonial-text { 
+    font-style: italic; 
+    color: #ddd; 
+    font-weight: 300; 
 }
 
-.chat-bubble {
-    background: white;
-    color: #333;
-    padding: 10px 15px;
-    border-radius: 20px 20px 5px 20px;
-    font-size: 0.85rem;
-    font-weight: 600;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-    margin-bottom: 10px;
-    animation: fadeBadge 0.5s ease-out 2s both; /* Aparece depois */
+.client-name { 
+    color: var(--gold); 
+    font-family: var(--font-serif); 
+    margin-bottom: 0; 
 }
 
-.whatsapp-launcher {
-    width: 65px;
-    height: 65px;
-    border-radius: 50%;
-    background: #25D366;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
-    border: 3px solid rgba(255,255,255,0.2);
-    text-decoration: none;
-    overflow: hidden;
+.client-role { 
+    font-size: 0.8rem; 
+    color: #666; 
+    text-transform: uppercase; 
 }
 
-.avatar-float {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    position: absolute;
-    top: 0;
-    left: 0;
-    opacity: 1; /* Mostra a foto do advogado */
-}
-
-.icon-float {
-    position: absolute;
-    bottom: 5px;
-    right: 5px;
-    font-size: 18px;
-    color: white;
-    background: #25D366;
-    border-radius: 50%;
-    padding: 2px;
-}
-
-.status-dot {
-    position: absolute;
-    top: 5px;
-    right: 5px;
-    width: 12px;
-    height: 12px;
-    background: #ff3b30;
-    border: 2px solid white;
-    border-radius: 50%;
-    z-index: 2;
-    animation: pulse 2s infinite;
-}
-
-/* Animações */
-@keyframes bounce {
-    0%, 20%, 50%, 80%, 100% {transform: translateX(-50%) translateY(0);}
-    40% {transform: translateX(-50%) translateY(-10px);}
-}
-
-@keyframes pulse {
-    0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(255, 59, 48, 0.7); }
-    70% { transform: scale(1); box-shadow: 0 0 0 10px rgba(255, 59, 48, 0); }
-    100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(255, 59, 48, 0); }
-}
-
-@keyframes fadeBadge {
-    from { opacity: 0; transform: translateY(10px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
-.animate-fade-up { opacity: 0; transform: translateY(30px); animation: fadeInUp 0.8s forwards; }
-.delay-100 { animation-delay: 0.1s; }
-.delay-200 { animation-delay: 0.2s; }
-
-@keyframes fadeInUp {
-    to { opacity: 1; transform: translateY(0); }
-}
-
-.animate-on-scroll { opacity: 0; transform: translateY(30px); transition: all 0.8s ease; }
-.animate-on-scroll.is-visible { opacity: 1; transform: translateY(0); }
-
-/* ============================================================
-   CÓDIGOS COMPLEMENTARES (COLE NO FINAL DO SEU STYLE-MOBILE.CSS)
-   ============================================================ */
-
-/* 1. COR DA SELEÇÃO DE TEXTO
-   (Deixa a cor dourada quando o usuário seleciona um texto no site) */
-::selection {
-    background: var(--gold);
-    color: #1a120f; /* Texto fica escuro para ler melhor */
-}
-
-/* 2. ESTILO DA SEÇÃO FAQ (PERGUNTAS FREQUENTES)
-   Ajusta o fundo branco padrão do Bootstrap para o tema escuro */
-
-/* Título da Seção (que estava sem estilo) */
+/* FAQ */
 .section-title {
     font-family: var(--font-serif);
     color: var(--gold);
     text-align: center;
     margin-bottom: 40px;
     font-size: 2rem;
-    position: relative;
 }
 
-/* Caixa da Pergunta */
 .accordion-item {
-    background-color: rgba(255, 255, 255, 0.02); /* Fundo vidro escuro */
-    border: 1px solid rgba(185, 151, 103, 0.2); /* Borda fina dourada */
+    background-color: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(185, 151, 103, 0.2);
     border-radius: 6px !important;
     margin-bottom: 12px;
     overflow: hidden;
 }
 
-/* Botão da Pergunta (Estado Normal) */
 .accordion-button {
     background-color: transparent !important;
     color: rgba(255, 255, 255, 0.9) !important;
     font-family: var(--font-serif);
     font-size: 1.1rem;
     padding: 20px;
-    box-shadow: none !important; /* Remove borda azul padrão */
+    box-shadow: none !important;
     transition: all 0.3s ease;
 }
 
-/* Botão da Pergunta (QUANDO SELECIONADO/ABERTO) */
 .accordion-button:not(.collapsed) {
-    background-color: rgba(185, 151, 103, 0.1) !important; /* Fundo dourado suave */
-    color: var(--gold) !important; /* Texto dourado */
+    background-color: rgba(185, 151, 103, 0.1) !important;
+    color: var(--gold) !important;
     border-bottom: 1px solid rgba(185, 151, 103, 0.2);
 }
 
-/* Ícone da Seta (Ajuste de cor) */
 .accordion-button::after {
-    filter: invert(1) brightness(200%); /* Deixa a seta branca */
+    filter: invert(1) brightness(200%);
     background-size: 1.1rem;
     transition: transform 0.3s ease;
 }
 
-/* Ícone da Seta (Quando aberto) */
 .accordion-button:not(.collapsed)::after {
-    /* Filtro para tentar simular o dourado na seta SVG padrão */
     filter: sepia(100%) hue-rotate(5deg) saturate(500%) contrast(0.8);
     transform: rotate(-180deg);
 }
 
-/* Texto da Resposta */
 .accordion-body {
     background-color: rgba(0, 0, 0, 0.3);
     color: #cccccc;
     font-size: 0.95rem;
     line-height: 1.6;
     padding: 20px 25px;
-    border-top: none;
 }
 
-/* 3. BANNER DE COOKIES
-   Fixa ele no rodapé e dá o estilo dark */
+/* Banner de Cookies */
 .cookie-banner {
     position: fixed;
     bottom: 0;
@@ -506,7 +418,6 @@ body {
     z-index: 9999;
     padding: 15px 0;
     box-shadow: 0 -5px 20px rgba(0,0,0,0.5);
-    /* Se quiser esconder inicialmente e mostrar via JS, adicione display: none aqui */
 }
 
 .cookie-text {
@@ -529,7 +440,6 @@ body {
     padding: 8px 20px;
     text-transform: uppercase;
     border-radius: 2px;
-    margin-left: 10px;
     transition: 0.3s;
 }
 
@@ -538,18 +448,252 @@ body {
     color: #1a120f;
 }
 
-
-.floating-wrapper {
-    position: fixed !important;    /* Fixa na tela */
-    bottom: 25px !important;       /* 25px de distância do fundo */
-    right: 20px !important;        /* 20px de distância da direita */
-    z-index: 10002 !important;     /* Número altíssimo para ficar na frente de TUDO */
-    display: block !important;     /* Garante que o elemento exista */
+/* Footer */
+.main-footer {
+    background-color: #0e0a08;
+    padding: 60px 0 30px;
+    border-top: 4px solid var(--gold);
 }
 
-/* Garante que o ícone do whats dentro dele também apareça */
-.floating-wrapper a {
-    display: block !important;
-    opacity: 1 !important;
-    visibility: visible !important;
+.footer-logo { 
+    width: 140px; 
+    filter: brightness(0) invert(1); 
+    opacity: 0.6; 
+}
+
+.footer-cta-title { 
+    font-family: var(--font-serif); 
+    color: white; 
+    margin-bottom: 10px; 
+}
+
+.footer-contact-item { 
+    display: block; 
+    color: white; 
+    text-decoration: none; 
+    margin-bottom: 10px; 
+}
+
+.footer-contact-item:hover {
+    color: var(--gold);
+}
+
+.developer a,
+.copyright a { 
+    color: var(--gold); 
+    text-decoration: none; 
+}
+
+.developer a:hover,
+.copyright a:hover {
+    text-decoration: underline;
+}
+
+.social-btn {
+    display: inline-flex;
+    width: 45px;
+    height: 45px;
+    background: rgba(255,255,255,0.05);
+    color: white;
+    border-radius: 50%;
+    align-items: center;
+    justify-content: center;
+    margin: 0 5px;
+    font-size: 1.2rem;
+    border: 1px solid rgba(255,255,255,0.1);
+    transition: 0.3s;
+}
+
+.social-btn:hover {
+    background: var(--gold);
+    color: white;
+    transform: translateY(-2px);
+}
+
+/* WIDGET DE CHAT FLUTUANTE (CORRIGIDO) */
+.floating-wrapper {
+    position: fixed !important;
+    bottom: 25px !important;
+    right: 20px !important;
+    z-index: 10000 !important;
+    display: flex !important;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.chat-bubble {
+    background: white;
+    color: #333;
+    padding: 10px 15px;
+    border-radius: 20px 20px 5px 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    margin-bottom: 10px;
+    animation: fadeBadge 0.5s ease-out 2s both;
+}
+
+/* BOTÃO WHATSAPP - CÍRCULO PERFEITO COM FOTO */
+.whatsapp-launcher {
+    width: 65px;
+    height: 65px;
+    border-radius: 50% !important; /* FORÇA O CÍRCULO */
+    background: #25D366;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+    border: 3px solid rgba(255,255,255,0.3);
+    text-decoration: none;
+    overflow: hidden; /* CORTA A IMAGEM NO CÍRCULO */
+    transition: 0.3s;
+}
+
+.whatsapp-launcher:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 25px rgba(37, 211, 102, 0.6);
+}
+
+/* FOTO DO ADVOGADO - REDONDA */
+.avatar-float {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* AJUSTA A FOTO PARA PREENCHER O CÍRCULO */
+    object-position: center; /* CENTRALIZA A FOTO */
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 50%; /* GARANTE QUE A FOTO TAMBÉM SEJA REDONDA */
+}
+
+/* ÍCONE DO WHATSAPP (SOBREPOSTO) */
+.icon-float {
+    position: absolute;
+    bottom: 3px;
+    right: 3px;
+    font-size: 20px;
+    color: white;
+    background: #25D366;
+    border-radius: 50%;
+    padding: 4px;
+    border: 2px solid white;
+    z-index: 2;
+}
+
+/* PONTO DE STATUS (ONLINE) */
+.status-dot {
+    position: absolute;
+    top: 3px;
+    right: 3px;
+    width: 14px;
+    height: 14px;
+    background: #ff3b30;
+    border: 2px solid white;
+    border-radius: 50%;
+    z-index: 2;
+    animation: pulse 2s infinite;
+}
+
+/* Animações */
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateX(-50%) translateY(0);
+    }
+    40% {
+        transform: translateX(-50%) translateY(-10px);
+    }
+}
+
+@keyframes pulse {
+    0% { 
+        transform: scale(0.95); 
+        box-shadow: 0 0 0 0 rgba(255, 59, 48, 0.7); 
+    }
+    70% { 
+        transform: scale(1); 
+        box-shadow: 0 0 0 10px rgba(255, 59, 48, 0); 
+    }
+    100% { 
+        transform: scale(0.95); 
+        box-shadow: 0 0 0 0 rgba(255, 59, 48, 0); 
+    }
+}
+
+@keyframes fadeBadge {
+    from { 
+        opacity: 0; 
+        transform: translateY(10px); 
+    }
+    to { 
+        opacity: 1; 
+        transform: translateY(0); 
+    }
+}
+
+@keyframes fadeInUp {
+    to { 
+        opacity: 1; 
+        transform: translateY(0); 
+    }
+}
+
+.animate-fade-up { 
+    opacity: 0; 
+    transform: translateY(30px); 
+    animation: fadeInUp 0.8s forwards; 
+}
+
+.animate-fade-down { 
+    opacity: 0; 
+    transform: translateY(-30px); 
+    animation: fadeInUp 0.8s forwards; 
+}
+
+.delay-100 { animation-delay: 0.1s; }
+.delay-200 { animation-delay: 0.2s; }
+
+.animate-on-scroll { 
+    opacity: 0; 
+    transform: translateY(30px); 
+    transition: all 0.8s ease; 
+}
+
+.animate-on-scroll.is-visible { 
+    opacity: 1; 
+    transform: translateY(0); 
+}
+
+/* Seleção de Texto */
+::selection {
+    background: var(--gold);
+    color: #1a120f;
+}
+
+/* Responsivo */
+@media (max-width: 576px) {
+    .hero-title {
+        font-size: 2.2rem;
+    }
+    
+    .bruno-photo {
+        height: 350px;
+    }
+    
+    .service-card {
+        padding: 20px;
+    }
+    
+    .card-content h3 {
+        font-size: 1.1rem;
+    }
+    
+    .whatsapp-launcher {
+        width: 60px;
+        height: 60px;
+    }
+    
+    .icon-float {
+        font-size: 18px;
+    }
 }

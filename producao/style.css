@@ -1,0 +1,1195 @@
+
+/* PALETA DE CORES - TEMA TRIBUNAL */
+:root {
+    --dark-wood: #2c1e17;
+    --medium-wood: #4a3831;
+    --beige-bg: #f5f0e8;
+    --text-color: #3d3d3d;
+    --text-light: #6e6e6e;
+    --primary-gold: #b99767;
+    --light-gold: #d1b894;
+    --shadow-color: rgba(0, 0, 0, 0.08);
+}
+
+
+/* ESTILOS GERAIS E PARA DESKTOP (BASE) */
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: var(--beige-bg);
+    background-image: linear-gradient(rgba(0,0,0,0.02) 1px, transparent 1px),
+                      linear-gradient(90deg, rgba(0,0,0,0.02) 1px, transparent 1px);
+    background-size: 3px 3px;
+    color: var(--text-light);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6 { 
+    font-family: 'Playfair Display', serif; 
+    color: var(--dark-wood);
+    font-weight: 700; 
+}
+
+p { 
+    line-height: 1.8; 
+    font-size: 1.05rem; 
+}
+.section-padding { padding: 120px 40px; }
+h2.section-title { font-size: 2.8rem; text-align: center; margin-bottom: 70px; font-weight: 700; position: relative; padding-bottom: 20px; letter-spacing: 0.5px; }
+h2.section-title::after { content: ''; position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); width: 70px; height: 3px; background-color: var(--primary-gold); opacity: 0.5; }
+
+/* BARRA DE NAVEGAÇÃO - DESKTOP */
+.navbar { transition: all 0.4s ease; font-family: 'Montserrat', sans-serif; font-weight: 500; padding: 1.5rem 0; background-color: transparent; }
+.navbar.scrolled { 
+    background-color: rgba(44, 30, 23, 0.95);
+    backdrop-filter: blur(12px); 
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1); 
+    padding: 1rem 0; 
+    border-bottom: 1px solid var(--medium-wood); 
+}
+.navbar-brand img { height: 40px; transition: all 0.3s ease; }
+.navbar.scrolled .navbar-brand img { transform: scale(0.95); }
+.navbar-toggler { border: none; }
+.navbar-toggler:focus { box-shadow: none; }
+.navbar-toggler-icon { background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(255, 255, 255, 0.9)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e"); }
+.navbar.scrolled .navbar-toggler-icon { background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(255, 255, 255, 0.9)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e"); }
+.navbar-nav .nav-link { color: rgba(255, 255, 255, 0.85); transition: color 0.3s; position: relative; text-decoration: none; }
+.navbar.scrolled .nav-link { color: rgba(255, 255, 255, 0.85); }
+.navbar-nav .nav-link:hover, .navbar-nav .nav-link.active { color: var(--white); }
+.navbar.scrolled .nav-link:hover, .navbar.scrolled .nav-link.active { color: var(--primary-gold); }
+
+/* HERO - DESKTOP */
+.hero-section-video { position: relative; height: 100vh; width: 100%; overflow: hidden; display: flex; align-items: center; justify-content: flex-start; }
+#bgvideo { position: absolute; top: 50%; left: 50%; min-width: 100%; min-height: 100%; width: auto; height: auto; z-index: -100; transform: translateX(-50%) translateY(-50%); }
+.hero-overlay { position: absolute; top: 0; left: 0; height: 100%; width: 100%; background: linear-gradient(80deg, rgba(44, 30, 23, 0.9) 20%, rgba(44, 30, 23, 0.6) 50%, rgba(44, 30, 23, 0.1) 100%); z-index: -99; }
+.hero-content h1 { font-size: clamp(2.8rem, 5.5vw, 4.8rem); color: var(--beige-bg); font-weight: 700; text-shadow: 0 2px 25px rgba(0, 0, 0, 0.5); letter-spacing: 1px; }
+.hero-content .lead { font-size: 1.25rem; color: #e0d9ce; max-width: 550px; margin: 2rem 0 2.5rem 0; text-shadow: 0 1px 10px rgba(0, 0, 0, 0.4); font-weight: 400; }
+.hero-logo { max-width: 90%; height: auto; filter: drop-shadow(0 0 20px rgba(0, 0, 0, 0.6)); }
+
+/* BOTÕES - DESKTOP */
+.btn-primary { background-color: var(--primary-gold); border-color: var(--primary-gold); color: #fff; padding: 16px 40px; font-weight: 600; border-radius: 8px; transition: all 0.3s ease; font-family: 'Montserrat', sans-serif; box-shadow: 0 4px 20px rgba(185, 151, 103, 0.25); }
+.btn-primary:hover { background-color: var(--light-gold); border-color: var(--light-gold); transform: translateY(-4px); box-shadow: 0 8px 25px rgba(185, 151, 103, 0.35); }
+.btn-primary.btn-sm { padding: 12px 24px; font-size: 0.9rem; }
+
+/* SEÇÃO SOBRE - DESKTOP */
+#sobre img { border-radius: 12px; box-shadow: 0 20px 50px var(--shadow-color); border: 8px solid var(--white); }
+#sobre .section-title { text-align: left !important; }
+#sobre .section-title::after { left: 0; transform: translateX(0); }
+.oab-number { font-family: 'Montserrat', sans-serif; font-size: 1rem; color: var(--primary-gold); font-weight: 500; letter-spacing: 0.5px; margin-top: -10px; }
+.languages-info { display: flex; align-items: center; gap: 15px; background-color: #fff; padding: 15px 20px; border-radius: 8px; border-left: 4px solid var(--primary-gold); }
+.languages-info i { font-size: 1.8rem; color: var(--primary-gold); }
+.languages-info div { display: flex; flex-direction: column; }
+.languages-info strong { color: var(--dark-wood); font-size: 1rem; font-weight: 600; margin-bottom: 2px; }
+.languages-info span { font-size: 0.95rem; color: var(--text-light); }
+
+/* ================================================================
+   MELHORIA DA SEÇÃO ÁREAS DE ATUAÇÃO (CARD PREMIUM)
+   ================================================================ */
+
+/* Ajuste do Título da Seção para combinar */
+#areas .section-title {
+color: #f5f0e8;
+    font-weight: 700;
+    text-transform: uppercase; /* Força o título em maiúsculas */
+    letter-spacing: 3px; /* Espaçamento para elegância */
+    margin-bottom: 10px;
+}
+
+#areas .section-subtitle {
+    font-family: 'Montserrat', sans-serif;
+    color: var(--primary-gold);
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 2px;
+    margin-bottom: 60px;
+    display: block;
+    text-align: center;
+}
+
+/* Estilo do Cartão (Card) */
+.area-card {
+    background: #ffffff; /* Fundo branco para contraste máximo */
+    padding: 50px 30px; /* Espaçamento interno generoso */
+    border-radius: 4px; /* Bordas levemente arredondadas */
+    border-bottom: 4px solid var(--primary-gold); /* Detalhe dourado na base */
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08); /* Sombra suave e moderna */
+    text-align: center;
+    height: 100%; /* Garante que todos tenham a mesma altura */
+    transition: all 0.4s ease; /* Animação suave */
+    position: relative;
+    top: 0;
+}
+
+/* Efeito ao passar o mouse (Hover) */
+.area-card:hover {
+    top: -10px; /* O card sobe levemente */
+    box-shadow: 0 20px 45px rgba(185, 151, 103, 0.25); /* Sombra dourada difusa */
+}
+
+/* Ícone do Card */
+.area-card .icon {
+    font-size: 2.5rem; /* Ícone grande */
+    color: var(--primary-gold);
+    margin-bottom: 25px;
+    display: inline-block;
+}
+
+/* Título do Card (Direito Civil, etc) */
+.area-card h5 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    color: var(--dark-wood);
+    text-transform: uppercase; /* Maiúsculas */
+    letter-spacing: 2px;
+    margin-bottom: 25px;
+    position: relative;
+    padding-bottom: 15px;
+}
+
+/* Linha decorativa abaixo do título do card */
+.area-card h5::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 40px;
+    height: 1px;
+    background-color: var(--light-gold); /* Linha fina dourada */
+}
+
+/* Lista de especialidades */
+.specialties-list {
+    list-style: none; /* Remove bolinhas da lista */
+    padding: 0;
+    margin: 0;
+}
+
+.specialties-list li {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.85rem; /* Tamanho legível */
+    font-weight: 600;
+    color:#ffffff;
+    text-transform: uppercase; /* Itens em maiúsculas */
+    letter-spacing: 1px;
+    padding: 12px 0; /* Espaço entre os itens */
+    border-bottom: 1px solid rgba(0,0,0,0.04); /* Linha divisória ultra sutil */
+}
+
+/* Remove a linha do último item */
+.specialties-list li:last-child {
+    border-bottom: none;
+}
+.area-card .icon { font-size: 3rem; color: var(--primary-gold); margin-bottom: 20px; transition: transform 0.4s ease; }
+.area-card:hover .icon { transform: scale(1.1); }
+.area-card h5 { margin-bottom: 25px; font-size: 1.5rem; }
+.specialties-list { list-style: none; padding: 0; margin: 0; text-align: left; color: var(--text-light); font-size: 1rem; }
+.specialties-list li { margin-bottom: 12px; position: relative; padding-left: 28px; }
+.specialties-list li::before { content: '\F26E'; font-family: 'bootstrap-icons'; position: absolute; left: 0; top: 2px; color: var(--primary-gold); font-weight: bold; }
+
+/* ... (outros estilos de desktop permanecem aqui) ... */
+.scroll-down-indicator { position: absolute; bottom: 40px; left: 50%; transform: translateX(-50%); z-index: 2; cursor: pointer; opacity: 0.8; transition: opacity 0.3s ease; }
+.scroll-down-indicator:hover { opacity: 1; }
+.scroll-down-indicator .mouse { width: 28px; height: 50px; border: 2px solid rgba(255, 255, 255, 0.7); border-radius: 60px; position: relative; }
+.scroll-down-indicator .mouse > span { width: 4px; height: 10px; background: rgba(255, 255, 255, 0.7); border-radius: 4px; display: block; position: absolute; left: 50%; transform: translateX(-50%); animation: scroll-wheel 2.2s infinite ease-in-out; }
+@keyframes scroll-wheel { 0% { opacity: 0; top: 10px; } 50% { opacity: 1; top: 15px; } 100% { opacity: 0; top: 30px; } }
+.modal-content { border-radius: 12px; border: none; background-color: var(--beige-bg); }
+.modal-header { border-bottom: 1px solid #dcd3c5; }
+.btn-contact-modal { font-size: 1.1rem; padding: 15px; text-align: left; font-weight: 500; transition: all 0.3s ease; border-radius: 8px; }
+.btn-contact-modal i { margin-right: 15px; font-size: 1.5rem; vertical-align: middle; }
+.btn-whatsapp { background-color: #25d366; color: white; }
+.btn-whatsapp:hover { background-color: #1da851; color: white; transform: scale(1.02); }
+.btn-phone { background-color: var(--dark-wood); color: white; }
+.btn-phone:hover { background-color: #1f1510; color: white; transform: scale(1.02); }
+.btn-email { background-color: #6c757d; color: white; }
+.btn-email:hover { background-color: #5a6268; color: white; transform: scale(1.02); }
+.cookie-banner { position: fixed; bottom: -100%; left: 0; width: 100%; background-color: var(--dark-wood); color: var(--beige-bg); padding: 1.2rem; z-index: 1060; transition: bottom 0.5s ease-in-out; box-shadow: 0 -2px 10px rgba(0,0,0,0.1); border-top: 2px solid var(--primary-gold); }
+.cookie-banner.visible { bottom: 0; }
+.cookie-text { font-size: 0.9rem; }
+.cookie-text a { color: var(--primary-gold); text-decoration: underline; }
+
+
+.cta-video-background { position: absolute; top: 50%; left: 50%; min-width: 100%; min-height: 100%; width: auto; height: auto; transform: translateX(-50%) translateY(-50%); z-index: 1; }
+.cta-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(245, 240, 232, 0.9); backdrop-filter: blur(5px); -webkit-backdrop-filter: blur(5px); z-index: 2; }
+.cta-content-container { position: relative; z-index: 3; }
+#chat-widget-container { position: fixed; bottom: 30px; right: 30px; z-index: 1050; display: flex; flex-direction: column; align-items: flex-end; pointer-events: none; }
+#launcher-wrapper, #chat-window { pointer-events: auto; }
+#launcher-wrapper { display: flex; align-items: center; cursor: pointer; }
+.chat-launcher-bubble { background-color: white; padding: 15px 20px; border-radius: 12px; box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1); margin-right: 15px; position: relative; opacity: 1; transform: translateX(0); transition: opacity 0.3s ease, transform 0.3s ease; width: 260px; color: var(--dark-wood); font-size: 0.95rem; line-height: 1.4; }
+.chat-launcher-bubble::after { content: ''; position: absolute; top: 50%; right: -10px; margin-top: -10px; border-width: 10px; border-style: solid; border-color: transparent transparent transparent white; }
+.chat-launcher { width: 65px; height: 65px; background-color: var(--dark-wood); border-radius: 50%; border: 3px solid white; display: flex; justify-content: center; align-items: center; box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15); cursor: pointer; transition: all 0.4s cubic-bezier(0.18, 0.89, 0.32, 1.28); position: relative; padding: 0; overflow: hidden; }
+.chat-launcher:hover { transform: scale(1.1); }
+.launcher-avatar { width: 100%; height: 100%; object-fit: cover; transition: opacity 0.3s ease; }
+.launcher-online-indicator { position: absolute; bottom: 2px; right: 2px; width: 15px; height: 15px; background-color: #25d366; border-radius: 50%; border: 2px solid white; transition: opacity 0.3s ease; }
+.chat-launcher .icon-close { position: absolute; font-size: 28px; color: white; transform: scale(0); transition: transform 0.3s ease, opacity 0.3s ease; opacity: 0; }
+.chat-window { width: 350px; background-color: var(--white); border-radius: 15px; box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15); margin-bottom: 20px; overflow: hidden; display: flex; flex-direction: column; opacity: 0; transform: translateY(20px); transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s; visibility: hidden; }
+#chat-widget-container.open .chat-window { opacity: 1; transform: translateY(0); visibility: visible; }
+#chat-widget-container.open .chat-launcher-bubble { opacity: 0; transform: translateX(20px); pointer-events: none; }
+#chat-widget-container.open .chat-launcher { transform: rotate(360deg); }
+#chat-widget-container.open .launcher-avatar, #chat-widget-container.open .launcher-online-indicator { opacity: 0; }
+#chat-widget-container.open .chat-launcher .icon-close { transform: scale(1) rotate(-360deg); opacity: 1; }
+.chat-header { background: linear-gradient(90deg, var(--dark-wood), var(--medium-wood)); color: white; padding: 15px 20px; display: flex; align-items: center; }
+.chat-avatar { width: 45px; height: 45px; border-radius: 50%; border: 2px solid var(--primary-gold); margin-right: 15px; object-fit: cover; }
+.chat-name { font-weight: 600; font-size: 1.1rem; }
+.chat-status { font-size: 0.8rem; color: #25d366; opacity: 0.9; }
+.chat-close-btn { background: none; border: none; color: rgba(255, 255, 255, 0.7); font-size: 28px; margin-left: auto; cursor: pointer; transition: color 0.2s; }
+.chat-close-btn:hover { color: white; }
+.chat-body { padding: 20px; background-color: #f4f7f9; flex-grow: 1; }
+.message { margin-bottom: 15px; }
+.message p { background-color: #e9ecef; padding: 12px 18px; border-radius: 20px; max-width: 90%; line-height: 1.5; font-size: 0.95rem; margin-bottom: 5px; color: var(--dark-wood); }
+.message.received p { border-bottom-left-radius: 5px; }
+.message.cta { text-align: center; }
+.message.cta p { background: none; padding: 0; font-weight: 500; }
+.btn-chat { background-color: var(--primary-gold); color: white; border: none; border-radius: 50px; padding: 12px 25px; font-weight: 600; text-decoration: none; display: inline-block; transition: all 0.3s; margin-top: 5px; }
+.btn-chat:hover { background-color: var(--light-gold); color: white; transform: translateY(-2px); }
+.testimonial-card-wrapper { display: flex; justify-content: center; padding: 0 15%; }
+.testimonial-card-google { background: #fff; border: 1px solid #ddd; border-radius: 12px; padding: 25px 30px; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05); max-width: 700px; width: 100%; transition: all 0.3s ease; }
+.testimonial-card-google .card-header { display: flex; align-items: center; border-bottom: 1px solid #eee; padding-bottom: 15px; margin-bottom: 15px; }
+.testimonial-card-google .client-avatar { width: 50px; height: 50px; border-radius: 50%; margin-right: 15px; object-fit: cover; }
+.testimonial-card-google .client-info { flex-grow: 1; }
+.testimonial-card-google .client-name { font-weight: 600; color: var(--dark-wood); font-size: 1.1rem; }
+.testimonial-card-google .star-rating { font-size: 0.9rem; color: #fbbc05; }
+.testimonial-card-google .google-logo { margin-left: auto; }
+.testimonial-card-google .card-body p { font-style: normal; line-height: 1.7; color: var(--text-color); margin: 0; font-size: 1rem; }
+.testimonial-card-google .card-footer { margin-top: 20px; font-size: 0.9rem; color: #666; }
+.testimonials .carousel-control-prev-icon, .testimonials .carousel-control-next-icon { background-color: rgba(255, 255, 255, 0.3); border-radius: 50%; width: 40px; height: 40px; background-size: 50% 50%; }
+.testimonials .carousel-control-prev { left: 5%; }
+.testimonials .carousel-control-next { right: 5%; }
+footer { background-color: var(--dark-wood); color: var(--beige-bg); padding-top: 80px; }
+.footer-main { padding-bottom: 40px; }
+.footer-logo { max-width: 200px; margin-bottom: 20px; }
+footer h5 { color: var(--white); font-family: 'Montserrat', sans-serif; font-weight: 600; font-size: 1.1rem; margin-bottom: 25px; position: relative; padding-bottom: 10px; }
+footer h5::after { content: ''; position: absolute; bottom: 0; left: 0; width: 30px; height: 2px; background-color: var(--primary-gold); }
+.contact-list { list-style: none; padding: 0; margin: 0; }
+.contact-list li { margin-bottom: 15px; display: flex; align-items: center; }
+.contact-list li i { color: var(--primary-gold); margin-right: 15px; font-size: 1.2rem; }
+.contact-list li a { color: var(--beige-bg); text-decoration: none; transition: color 0.3s ease; }
+.contact-list li a:hover { color: var(--light-gold); }
+.social-icons a { display: inline-flex; justify-content: center; align-items: center; width: 45px; height: 45px; background-color: var(--medium-wood); color: var(--beige-bg); border-radius: 8px; text-decoration: none; font-size: 1.3rem; transition: all 0.3s ease; }
+.social-icons a:hover { background-color: var(--primary-gold); color: var(--white); transform: translateY(-3px); }
+.footer-bottom { background-color: #1f1510; padding: 25px 0; font-size: 0.9rem; border-top: 1px solid var(--medium-wood); }
+.footer-bottom .copyright, .footer-bottom .developer { color: #a39e93; margin: 0; }
+.footer-bottom a { color: var(--beige-bg); text-decoration: none; transition: color 0.3s ease; }
+.footer-bottom a:hover { color: var(--primary-gold); }
+.page-header { position: relative; height: 60vh; width: 100%; overflow: hidden; display: flex; align-items: center; justify-content: center; text-align: center; color: var(--white); }
+.page-header #bgvideo { position: absolute; top: 50%; left: 50%; min-width: 100%; min-height: 100%; width: auto; height: auto; z-index: -100; transform: translateX(-50%) translateY(-50%); }
+.page-header .hero-overlay { position: absolute; top: 0; left: 0; height: 100%; width: 100%; z-index: -99; background-color: rgba(44, 30, 23, 0.92); backdrop-filter: blur(2px); -webkit-backdrop-filter: blur(2px); }
+.page-header h1 { font-size: clamp(2.5rem, 5vw, 4rem); color: var(--beige-bg); text-shadow: 0 2px 8px rgba(0, 0, 0, 0.7); }
+.page-header .lead { font-size: 1.2rem; color: #e0d9ce; max-width: 600px; margin-left: auto; margin-right: auto; text-shadow: 0 1px 6px rgba(0, 0, 0, 0.7); }
+.policy-content { background-color: transparent; padding-top: 0; }
+.policy-content .container .col-lg-10 { background-color: var(--white); padding: 60px; border-radius: 12px; box-shadow: 0 15px 50px rgba(0,0,0,0.08); margin-top: -100px; position: relative; z-index: 10; }
+.policy-content h2 { font-size: 1.8rem; color: var(--dark-wood); margin-top: 40px; margin-bottom: 20px; padding-bottom: 10px; border-bottom: 2px solid #f0f0f0; }
+.policy-content h2:first-of-type { margin-top: 0; }
+.policy-content p, .policy-content li { font-size: 1.05rem; line-height: 1.9; color: var(--text-light); }
+.policy-content ul { list-style-type: none; padding-left: 0; margin-top: 15px; }
+.policy-content li { margin-bottom: 12px; padding-left: 30px; position: relative; }
+.policy-content li::before { content: '\F28A'; font-family: 'bootstrap-icons'; position: absolute; left: 0; top: 5px; color: var(--primary-gold); font-weight: bold; }
+.policy-content a { color: var(--primary-gold); text-decoration: none; font-weight: 500; }
+.policy-content a:hover { text-decoration: underline; }
+.language-switcher { padding: 0.2rem 0.3rem !important; border-radius: 4px; transition: all 0.3s ease; line-height: 1; margin: 0 3px; opacity: 0.7; }
+.language-switcher:hover { opacity: 1; transform: scale(1.1); }
+.language-switcher.active { opacity: 1; box-shadow: 0 0 0 2px var(--primary-gold); transform: scale(1.05); }
+.navbar.scrolled .language-switcher.active { box-shadow: 0 0 0 2px var(--primary-gold); }
+.flag-icon { width: 28px; height: auto; border-radius: 3px; vertical-align: middle; border: 1px solid rgba(0,0,0,0.1); }
+.parallax-section { background-image: url('tribunal.png'); background-attachment: fixed; background-position: center; background-repeat: no-repeat; background-size: cover; position: relative; }
+.parallax-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(44, 30, 23, 0.88); z-index: 1; }
+.parallax-section .container { position: relative; z-index: 2; }
+.parallax-section .section-title, .parallax-section .section-title p { color: var(--beige-bg) }
+.parallax-section .section-title::after { background-color: rgba(185, 151, 103, 0.7); }
+.parallax-section .area-card { background: rgba(255, 255, 255, 0.05); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.15); color: var(--white); }
+.parallax-section .area-card h5 { color: #f5f0e8; }
+.parallax-section .area-card .specialties-list { color: #e0d9ce; }
+.parallax-section .area-card .icon { color: var(--light-gold); }
+.parallax-section .testimonial-card-google { background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.2); }
+.parallax-section .testimonial-card-google .card-header { border-bottom-color: rgba(255, 255, 255, 0.2); }
+.parallax-section .testimonial-card-google .client-name { color: var(--white); }
+.parallax-section .testimonial-card-google .card-body p { color: #ffffff; }
+.parallax-section .testimonial-card-google .card-footer, .parallax-section .testimonial-card-google .card-footer strong { color: #ffffff; }
+
+/* ================================================================
+   NOVO: ESTILOS PARA A SEÇÃO DE ARTIGOS
+   ================================================================ */
+   .parallax-section .section-title h2,
+.parallax-section .section-title p {
+    color: var(--beige-bg); /* Usa a cor bege clara definida no topo do seu CSS */
+}
+.article-card {
+    background-color: var(--white);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.07);
+    transition: all 0.4s ease;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.article-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+}
+
+.article-image-link {
+    display: block;
+    overflow: hidden;
+}
+
+.article-image {
+    transition: transform 0.5s ease;
+}
+
+.article-card:hover .article-image {
+    transform: scale(1.05);
+}
+
+.article-content {
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1; /* Faz o conteúdo ocupar o espaço restante */
+}
+
+.article-meta {
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.8rem;
+    color: var(--text-light);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.article-category {
+    font-weight: 600;
+    color: var(--primary-gold);
+}
+
+.article-title {
+    font-size: 1.25rem;
+    margin-bottom: 15px;
+    line-height: 1.4;
+}
+
+.article-title a {
+    text-decoration: none;
+    color: var(--dark-wood);
+    transition: color 0.3s ease;
+}
+
+.article-title a:hover {
+    color: var(--primary-gold);
+}
+
+.article-excerpt {
+    font-size: 0.95rem;
+    margin-bottom: 20px;
+    flex-grow: 1; /* Empurra o botão "Leia Mais" para baixo */
+}
+
+.btn-read-more {
+    text-decoration: none;
+    color: var(--primary-gold);
+    font-weight: 600;
+    transition: color 0.3s ease;
+    align-self: flex-start; /* Alinha o botão à esquerda */
+}
+
+.btn-read-more:hover {
+    color: var(--dark-wood);
+}
+
+.btn-read-more i {
+    transition: transform 0.3s ease;
+    vertical-align: middle;
+}
+
+.btn-read-more:hover i {
+    transform: translateX(5px);
+}
+
+
+/* ================================================================
+   INÍCIO - ESTILOS PARA MOBILE (APARÊNCIA DE APP NATIVO)
+   ================================================================ */
+@media (max-width: 767.98px) {
+    
+    /* --- MELHORIAS GERAIS DE LAYOUT E ESPAÇAMENTO --- */
+    .section-padding { padding: 80px 20px; }
+    h2.section-title { font-size: 2.1rem; margin-bottom: 40px; text-align: left; }
+    h2.section-title::after { left: 0; transform: translateX(0); width: 50px; }
+
+    /* --- BARRA DE NAVEGAÇÃO (CABEÇALHO DO APP) --- */
+    .navbar { background-color: var(--dark-wood) !important; padding: 1rem 0; box-shadow: 0 2px 10px rgba(0,0,0,0.1); transform: none !important; }
+    .navbar-brand img { height: 35px; }
+    .navbar-collapse { background-color: var(--dark-wood); margin: 0 -20px; padding: 20px 20px 20px 20px; border-top: 1px solid var(--medium-wood); }
+    .navbar-nav .nav-link { color: var(--beige-bg); font-size: 1.2rem; padding: 15px 0; }
+    .navbar-nav .nav-link:hover, .navbar-nav .nav-link.active { color: var(--primary-gold); }
+    .navbar .nav-item .btn { width: 100%; margin-top: 15px; padding: 15px; font-size: 1.1rem; }
+
+    /* --- SEÇÃO HERO (TELA INICIAL DO APP) --- */
+    .hero-section-video { justify-content: center; text-align: center; }
+    .hero-content h1 { font-size: 2.5rem; }
+    .hero-content .lead { font-size: 1.1rem; margin: 1.5rem auto 2.5rem; }
+    .hero-content .btn-primary { width: 90%; padding: 20px; font-size: 1.1rem; }
+    .scroll-down-indicator { display: none; }
+
+    /* --- CARDS E CONTEÚDO --- */
+    #sobre img { border-width: 6px; }
+    .area-card { margin-bottom: 25px; }
+    .article-card { margin-bottom: 25px; } /* Espaçamento para cards de artigo */
+
+    /* --- BOTÕES FLUTUANTES E CHAT --- */
+    .back-to-top-btn { width: 45px; height: 45px; bottom: 20px; right: 20px; box-shadow: 0 4px 12px rgba(0,0,0,0.2); }
+    #chat-widget-container { bottom: 20px; right: 20px; }
+    .chat-launcher-bubble { display: none; }
+    .chat-launcher { width: 60px; height: 60px; }
+    .chat-window { width: calc(100vw - 30px); height: calc(100vh - 100px); position: fixed; bottom: 90px; right: 15px; margin-bottom: 0; }
+
+    /* --- RODAPÉ (ABA DE INFORMAÇÕES DO APP) --- */
+    footer { text-align: center; }
+    .footer-main .col-lg-4 { display: flex; flex-direction: column; align-items: center; margin-bottom: 40px; }
+    footer h5::after { left: 50%; transform: translateX(-50%); }
+    .contact-list li { justify-content: center; }
+
+    /* --- AJUSTES FINAIS --- */
+    .testimonial-card-wrapper, .parallax-section .testimonial-card-wrapper { padding: 0; }
+    .testimonials .carousel-control-prev, .testimonials .carousel-control-next { display: none; }
+    .policy-content .container .col-lg-10 { padding: 30px 20px; margin-top: -60px; }
+}
+
+
+/* ================================================================
+   ESTILOS PARA A PÁGINA DE ARTIGO INDIVIDUAL
+   ================================================================ */
+
+
+/* ================================================================
+   MELHORIA DA SEÇÃO ARTIGOS (BLOG PREMIUM)
+   ================================================================ */
+
+/* Ajuste do Título da Seção (Consistência com a seção anterior) */
+#articles .section-title {
+    color: #252423;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin-bottom: 10px;
+}
+
+#articles .section-subtitle {
+    font-family: 'Montserrat', sans-serif;
+    color: var(--primary-gold);
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 2px;
+    margin-bottom: 60px;
+    display: block;
+    text-align: center;
+}
+
+/* Container do Card de Artigo */
+.article-card {
+    background-color: #ffffff;
+    border: none;
+    border-radius: 4px; /* Bordas levemente arredondadas */
+    overflow: hidden; /* Garante que a imagem respeite a borda */
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05); /* Sombra leve */
+    transition: all 0.4s ease;
+    height: 100%; /* Altura igual para todos */
+    display: flex;
+    flex-direction: column;
+}
+
+/* Efeito Hover no Card Inteiro */
+.article-card:hover {
+    transform: translateY(-10px); /* Sobe ao passar o mouse */
+    box-shadow: 0 20px 40px rgba(185, 151, 103, 0.2); /* Sombra dourada */
+}
+
+/* Área da Imagem */
+.article-image-link {
+    display: block;
+    overflow: hidden;
+    position: relative;
+    height: 240px; /* Altura fixa para alinhar as imagens */
+}
+
+.article-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Cobre a área sem distorcer */
+    transition: transform 0.6s ease;
+}
+
+/* Zoom suave na imagem ao passar o mouse */
+.article-card:hover .article-image {
+    transform: scale(1.05);
+}
+
+/* Conteúdo do Artigo (Texto) */
+.article-content {
+    padding: 30px;
+    flex-grow: 1; /* Ocupa o espaço restante */
+    display: flex;
+    flex-direction: column;
+    border-bottom: 3px solid transparent; /* Prepara para a borda dourada */
+    transition: border-color 0.3s;
+}
+
+.article-card:hover .article-content {
+    border-bottom-color: var(--primary-gold); /* Borda aparece no hover */
+}
+
+/* Metadados (Data e Categoria) */
+.article-meta {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--primary-gold);
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.article-meta span {
+    margin-right: 15px;
+}
+
+/* Título do Artigo */
+.article-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem;
+    font-weight: 700;
+    line-height: 1.4;
+    text-transform: uppercase; /* Força maiúsculas */
+    margin-bottom: 15px;
+}
+
+.article-title a {
+    color: var(--dark-wood);
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.article-title a:hover {
+    color: var(--primary-gold);
+}
+
+/* Resumo do texto */
+.article-excerpt {
+    font-size: 0.9rem;
+    color: var(--text-light);
+    line-height: 1.6;
+    margin-bottom: 25px;
+    flex-grow: 1;
+}
+
+/* Botão Leia Mais */
+.btn-read-more {
+    display: inline-flex;
+    align-items: center;
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--dark-wood);
+    text-decoration: none;
+    transition: all 0.3s ease;
+    align-self: flex-start; /* Alinha à esquerda */
+}
+
+.btn-read-more i {
+    margin-left: 5px;
+    transition: transform 0.3s;
+    font-size: 1.1rem;
+}
+
+.btn-read-more:hover {
+    color: var(--primary-gold);
+}
+
+.btn-read-more:hover i {
+    transform: translateX(5px); /* Setinha move para a direita */
+}
+
+
+
+
+
+
+/* Aplica o fundo fixo apenas em páginas com esta classe */
+body.article-page {
+    background-color: #000;
+    background-image: url('tribunal.png');
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+}
+
+.page-header {
+    background: transparent;
+    height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.page-header .hero-overlay {
+    background: linear-gradient(to bottom, rgba(28, 20, 15, 0.85) 0%, rgba(28, 20, 15, 0) 100%);
+}
+
+/* CORREÇÃO DE LEGIBILIDADE NO CABEÇALHO DO ARTIGO */
+.page-header h1 {
+    color: var(--beige-bg);
+    text-shadow: 0 2px 10px rgba(0,0,0,0.5); /* Sombra suave para destacar */
+}
+
+.page-header .lead {
+    color: var(--beige-bg); /* Tom mais claro para o subtítulo */
+    text-shadow: 0 1px 5px rgba(0,0,0,0.5);
+}
+
+
+.policy-content {
+    background-color: var(--beige-bg);
+    padding-top: 0;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+
+.policy-content .container .col-lg-8 {
+    background-color: var(--beige-bg);
+    padding: 50px 60px;
+    border-radius: 12px;
+    box-shadow: 0 15px 50px rgba(0,0,0,0.1);
+    margin-top: -120px;
+    position: relative;
+    z-index: 10;
+}
+
+/* CORREÇÃO: Estilo para o blockquote */
+.blockquote {
+    border-left: 4px solid var(--primary-gold);
+    padding-left: 20px;
+    margin: 30px 0;
+    font-style: italic;
+    color: var(--text-light);
+    background-color: transparent; /* Remove o fundo escuro */
+}
+
+.blockquote p {
+    font-size: 1.1rem;
+}
+
+.blockquote-footer {
+    color: var(--text-light);
+}
+
+
+/* Ajustes para mobile na página de artigo */
+@media (max-width: 767.98px) {
+    .policy-content .container .col-lg-8 {
+        padding: 30px 20px;
+        margin-top: -80px;
+    }
+}
+
+
+/* ================================================================
+   INÍCIO - ESTILOS PARA MOBILE (APARÊNCIA DE APP NATIVO)
+   ================================================================ */
+@media (max-width: 767.98px) {
+    
+    /* --- MELHORIAS GERAIS DE LAYOUT E ESPAÇAMENTO --- */
+    .section-padding { padding: 80px 20px; }
+    h2.section-title { font-size: 2.1rem; margin-bottom: 40px; text-align: left; }
+    h2.section-title::after { left: 0; transform: translateX(0); width: 50px; }
+
+    /* --- BARRA DE NAVEGAÇÃO (CABEÇALHO DO APP) --- */
+    .navbar { background-color: var(--dark-wood) !important; padding: 1rem 0; box-shadow: 0 2px 10px rgba(0,0,0,0.1); transform: none !important; }
+    .navbar-brand img { height: 35px; }
+    .navbar-collapse { background-color: var(--dark-wood); margin: 0 -20px; padding: 20px 20px 20px 20px; border-top: 1px solid var(--medium-wood); }
+    .navbar-nav .nav-link { color: var(--beige-bg); font-size: 1.2rem; padding: 15px 0; }
+    .navbar-nav .nav-link:hover, .navbar-nav .nav-link.active { color: var(--primary-gold); }
+    .navbar .nav-item .btn { width: 100%; margin-top: 15px; padding: 15px; font-size: 1.1rem; }
+
+    /* --- SEÇÃO HERO (TELA INICIAL DO APP) --- */
+    .hero-section-video { justify-content: center; text-align: center; }
+    .hero-content h1 { font-size: 2.5rem; }
+    .hero-content .lead { font-size: 1.1rem; margin: 1.5rem auto 2.5rem; }
+    .hero-content .btn-primary { width: 90%; padding: 20px; font-size: 1.1rem; }
+    .scroll-down-indicator { display: none; }
+
+    /* --- CARDS E CONTEÚDO --- */
+    #sobre img { border-width: 6px; }
+    .area-card { margin-bottom: 25px; }
+    .article-card { margin-bottom: 25px; } /* Espaçamento para cards de artigo */
+
+    /* --- BOTÕES FLUTUANTES E CHAT --- */
+    .back-to-top-btn { width: 45px; height: 45px; bottom: 20px; right: 20px; box-shadow: 0 4px 12px rgba(0,0,0,0.2); }
+    #chat-widget-container { bottom: 20px; right: 20px; }
+    .chat-launcher-bubble { display: none; }
+    .chat-launcher { width: 60px; height: 60px; }
+    .chat-window { width: calc(100vw - 30px); height: calc(100vh - 100px); position: fixed; bottom: 90px; right: 15px; margin-bottom: 0; }
+
+    /* --- RODAPÉ (ABA DE INFORMAÇÕES DO APP) --- */
+    footer { text-align: center; }
+    .footer-main .col-lg-4 { display: flex; flex-direction: column; align-items: center; margin-bottom: 40px; }
+    footer h5::after { left: 50%; transform: translateX(-50%); }
+    .contact-list li { justify-content: center; }
+
+    /* --- AJUSTES FINAIS --- */
+    .testimonial-card-wrapper, .parallax-section .testimonial-card-wrapper { padding: 0; }
+    .testimonials .carousel-control-prev, .testimonials .carousel-control-next { display: none; }
+    
+    /* ================================================================
+       NOVO: CORREÇÃO DO TÍTULO DO ARTIGO NO MOBILE
+       ================================================================ */
+    .page-header {
+        height: 50vh; /* Diminui a altura do cabeçalho no mobile */
+        align-items: flex-end; /* Alinha o conteúdo na parte de baixo */
+        padding-bottom: 120px; /* Adiciona um espaço para empurrar o texto para cima (e para baixo da borda) */
+    }
+    
+    .page-header h1 {
+        font-size: 2.2rem; /* Diminui o tamanho da fonte do título */
+        line-height: 1.3; /* Melhora o espaçamento entre linhas */
+    }
+    
+    .page-header .lead {
+        font-size: 1rem; /* Diminui o subtítulo */
+    }
+}
+
+
+
+
+
+/* ================================================================
+   MELHORIA DA SEÇÃO DEPOIMENTOS (ESTILO GOOGLE REVIEW PREMIUM)
+   ================================================================ */
+
+/* Ajuste do Fundo da Seção para destacar o card branco */
+#testimonials {
+    /* Fundo escuro (Dark Wood) com transparência para o parallax funcionar */
+    background-color: var(--dark-wood); 
+    position: relative;
+    padding-bottom: 80px; /* Espaço extra embaixo */
+}
+
+/* Título da seção (texto branco para contraste no fundo escuro) */
+#testimonials .section-title h2 {
+    color: #ffffff;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin-bottom: 10px;
+}
+
+#testimonials .section-title p {
+    color: var(--primary-gold);
+    font-family: 'Montserrat', sans-serif;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 2px;
+    margin-bottom: 50px;
+}
+
+/* Container do Carrossel */
+.testimonial-card-wrapper {
+    padding: 10px; /* Margem de segurança */
+    display: flex;
+    justify-content: center;
+}
+
+/* O CARTÃO (Card estilo Google) */
+.testimonial-card-google {
+    background: #ffffff;
+    width: 100%;
+    max-width: 750px; /* Limita a largura no desktop para ficar elegante */
+    padding: 40px;
+    border-radius: 8px; /* Bordas suaves */
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3); /* Sombra forte para destacar do fundo */
+    position: relative;
+    border-top: 4px solid #4285F4; /* Azul Google (ou troque por var(--primary-gold) se preferir dourado) */
+}
+
+/* Cabeçalho do Card (Avatar, Nome e Logo) */
+.testimonial-card-google .card-header {
+    background: transparent;
+    border: none;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Separa info do cliente do logo Google */
+    margin-bottom: 25px;
+}
+
+/* Avatar do Cliente */
+.client-avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 15px;
+}
+
+/* Informações do Cliente (Nome e Estrelas) */
+.client-info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-right: auto; /* Empurra o logo do Google para a direita */
+}
+
+.client-name {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    color: #333;
+    font-size: 1rem;
+}
+
+/* Estrelas de Avaliação */
+.star-rating {
+    color: #FBBC05; /* Amarelo oficial do Google */
+    font-size: 0.9rem;
+    margin-top: 2px;
+}
+
+/* Logo do Google (SVG) */
+.google-logo {
+    opacity: 0.8;
+}
+
+/* Corpo do Card (O Texto do Depoimento) */
+.testimonial-card-google .card-body {
+    padding: 0;
+    margin-bottom: 20px;
+}
+
+.testimonial-card-google .card-body p {
+    font-family: 'Playfair Display', serif; /* Fonte elegante para a fala */
+    font-style: italic;
+    font-size: 1.2rem; /* Texto maior para leitura fácil */
+    line-height: 1.6;
+    color: #555;
+    text-align: left;
+}
+
+/* Rodapé do Card */
+.testimonial-card-google .card-footer {
+    background: transparent;
+    border: none;
+    padding: 0;
+    text-align: right;
+    font-size: 0.8rem;
+    color: #999;
+}
+
+/* Setas do Carrossel (Personalizadas para Dourado) */
+#testimonialCarousel .carousel-control-prev-icon,
+#testimonialCarousel .carousel-control-next-icon {
+    background-color: var(--primary-gold); /* Fundo dourado na seta */
+    border-radius: 50%; /* Seta redonda */
+    background-size: 50%; /* Tamanho do ícone interno */
+    width: 40px;
+    height: 40px;
+}
+
+/* Ajuste de posição das setas para não ficarem em cima do texto no mobile */
+.carousel-control-prev, .carousel-control-next {
+    width: 5%; /* Diminui a área de clique lateral */
+}
+
+/* RESPONSIVIDADE (Celular) */
+@media (max-width: 768px) {
+    .testimonial-card-google {
+        padding: 25px 20px;
+    }
+
+    .testimonial-card-google .card-header {
+        flex-wrap: wrap; /* Permite quebrar linha se necessário */
+    }
+    
+    .client-info {
+        margin-right: 10px;
+    }
+    
+    .testimonial-card-google .card-body p {
+        font-size: 1rem; /* Texto um pouco menor no celular */
+    }
+
+    /* Esconde as setas no celular se preferir navegação por toque, ou ajusta */
+    #testimonialCarousel .carousel-control-prev,
+    #testimonialCarousel .carousel-control-next {
+        display: none; /* No celular, geralmente arrastamos com o dedo */
+    }
+}
+
+
+
+
+/* ================================================================
+   MELHORIA DA SEÇÃO CTA WHATSAPP (CORREÇÃO DE LEGIBILIDADE)
+   ================================================================ */
+
+/* Garante que o container ocupe o espaço certo e centralize */
+#cta-whatsapp {
+    position: relative;
+    padding: 100px 0; /* Mais espaço vertical para respiro */
+    overflow: hidden;
+    color: #ffffff;
+    display: flex;
+    align-items: center; /* Centraliza verticalmente */
+    min-height: 500px;   /* Altura mínima garantida */
+}
+
+/* Configuração do Vídeo de Fundo */
+.cta-video-background {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: 0;
+    transform: translateX(-50%) translateY(-50%);
+    object-fit: cover; /* Garante que o vídeo cubra tudo sem distorcer */
+}
+
+/* A MÁSCARA ESCURA (O segredo da legibilidade) */
+.cta-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* Gradiente escuro: começa preto sólido e vai ficando levemente transparente */
+    background: linear-gradient(to bottom, rgba(32, 22, 16, 0.9), rgba(44, 30, 23, 0.8));
+    z-index: 1;
+}
+
+/* Container do conteúdo (Texto e Botão) */
+.cta-content-container {
+    position: relative;
+    z-index: 2; /* Fica acima do vídeo e da máscara */
+}
+
+/* Título (Nós podemos te ajudar) */
+.section-title-cta {
+    font-family: 'Playfair Display', serif;
+    font-size: 3rem; /* Bem grande */
+    font-weight: 700;
+    color: #ffffff;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 25px;
+    /* Sombra suave no texto para destacar do vídeo */
+    text-shadow: 0 2px 10px rgba(0,0,0,0.5); 
+}
+
+/* Parágrafo de texto */
+.lead-cta {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 400;
+    line-height: 1.8; /* Espaçamento entre linhas para facilitar leitura */
+    color: #f0f0f0; /* Branco levemente suave */
+    max-width: 700px; /* Impede que o texto fique muito largo na tela */
+    margin: 0 auto 40px auto; /* Centraliza o bloco de texto */
+}
+
+/* Botão do WhatsApp - Estilo Premium */
+.btn-cta {
+    background-color: var(--primary-gold); /* Dourado */
+    color: #fff; /* Texto Branco */
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    padding: 18px 40px; /* Botão grande e clicável */
+    border-radius: 4px;
+    font-size: 1rem;
+    border: 2px solid var(--primary-gold);
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px; /* Espaço entre ícone e texto */
+    box-shadow: 0 4px 15px rgba(185, 151, 103, 0.4);
+}
+
+/* Efeito ao passar o mouse no botão */
+.btn-cta:hover {
+    background-color: transparent;
+    color: var(--primary-gold); /* Texto vira dourado */
+    border-color: var(--primary-gold);
+    transform: translateY(-3px); /* Sobe levemente */
+}
+
+/* RESPONSIVIDADE (Celular) */
+@media (max-width: 768px) {
+    .section-title-cta {
+        font-size: 2rem; /* Diminui um pouco no celular */
+    }
+    .lead-cta {
+        font-size: 1rem;
+        padding: 0 15px; /* Margem lateral para não colar na borda */
+    }
+    .btn-cta {
+        width: 100%; /* Botão ocupa largura total no celular */
+        justify-content: center;
+    }
+}
+
+
+
+/* ================================================================
+   CHAT WIDGET - NOTIFICAÇÃO ESTILO APP (CORRIGIDO)
+   ================================================================ */
+
+/* Container geral para garantir posicionamento */
+#launcher-wrapper {
+    position: relative;
+    display: inline-block;
+}
+
+/* O Botão da Foto (Launcher) */
+#chat-launcher {
+    /* IMPORTANTE: Permite que a bolinha saia para fora do botão */
+    overflow: visible !important; 
+    position: relative; 
+    /* Seus estilos originais de tamanho e borda */
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    transition: transform 0.3s ease;
+    background: transparent;
+}
+
+/* A Foto dentro do botão */
+.launcher-avatar {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%; /* A foto é redonda */
+    object-fit: cover;
+    display: block;
+    border: 2px solid #ffffff; /* Borda branca na foto para separar */
+}
+
+/* A NOTIFICAÇÃO VERMELHA (PENDURADA NO CANTO) */
+.notification-badge {
+    position: absolute;
+    /* Posicionamento negativo para "vazar" para fora */
+    top: -2px; 
+    right: -2px; 
+    
+    background-color: #ff3b30; /* Vermelho vibrante (estilo iOS) */
+    color: #ffffff;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    
+    /* Tamanho da bolinha */
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    
+    /* Centraliza o número "1" */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    /* Sombra e Borda para destacar do fundo */
+    border: 2px solid #ffffff; 
+    box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+    z-index: 100; /* Fica acima de tudo */
+
+    /* Animação de entrada */
+    opacity: 0;
+    transform: scale(0);
+    transition: all 0.4s cubic-bezier(0.68, -0.55, 0.27, 1.55); /* Efeito de "pulo" elástico */
+}
+
+/* Classe ativada pelo JS para mostrar a bolinha */
+.notification-badge.show {
+    opacity: 1;
+    transform: scale(1);
+}
+
+/* Animação de Pulsar (opcional, para chamar mais atenção) */
+@keyframes notification-pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+.notification-badge.show {
+    animation: notification-pulse 2s infinite;
+}
+
+/* Balão de texto (ajuste fino) */
+.chat-launcher-bubble {
+    position: absolute;
+    bottom: 80px; /* Acima do botão */
+    right: 0;
+    width: 250px;
+    background: #ffffff;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+    font-size: 0.9rem;
+    color: #333;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: all 0.4s ease;
+    z-index: 90;
+}
+
+/* Setinha do balão */
+.chat-launcher-bubble::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    right: 25px;
+    width: 0;
+    height: 0;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-top: 8px solid #ffffff;
+}
+
+.chat-launcher-bubble.visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+
+
+.back-to-top-btn { 
+    position: fixed; 
+    width: 50px; 
+    height: 50px; 
+    bottom: 40px; 
+    left: 40px; /* Alterado de right para left */
+    background-color: var(--primary-gold); 
+    color: #fff; 
+    border-radius: 8px; 
+    text-align: center; 
+    font-size: 1.5rem; 
+    z-index: 99; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    opacity: 0; 
+    visibility: hidden; 
+    transform: translateY(20px); 
+    transition: all 0.4s ease; 
+    box-shadow: 0 5px 15px rgba(0,0,0,0.15); 
+}
+
+/* Mantém o restante igual */
+.back-to-top-btn.visible { opacity: 1; visibility: visible; transform: translateY(0); }
+.back-to-top-btn:hover { background-color: var(--light-gold); transform: translateY(-3px); }

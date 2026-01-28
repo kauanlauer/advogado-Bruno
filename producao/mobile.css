@@ -1,0 +1,179 @@
+/* ARQUIVO: mobile.css
+   OBJETIVO: Estilos exclusivos para celulares e tablets (telas menores).
+   Este arquivo substitui as regras do style.css quando necessário.
+*/
+
+/* --- AJUSTES GERAIS PARA MOBILE --- */
+@media (max-width: 991px) {
+    
+    /* Ajuste de espaçamento global para não ficar tudo grudado nas bordas */
+    section {
+        padding: 60px 0 !important; /* Reduz o espaçamento gigante das seções */
+    }
+
+    /* Melhora a leitura dos títulos no celular */
+    h1 {
+        font-size: 2.2rem !important; /* Diminui o título principal */
+        line-height: 1.2 !important;
+    }
+
+    h2 {
+        font-size: 1.8rem !important;
+        margin-bottom: 20px !important;
+    }
+
+    p {
+        font-size: 1rem !important; /* Garante que o texto não fique minúsculo */
+        line-height: 1.6 !important;
+        text-align: justify; /* Texto justificado fica mais organizado em blocos pequenos */
+    }
+
+    /* --- MENU DE NAVEGAÇÃO (NAVBAR) --- */
+    .navbar {
+        background-color: var(--beige-bg) !important; /* Garante fundo sólido no mobile */
+        padding: 15px 0 !important;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    }
+
+    .navbar-brand img {
+        height: 40px !important; /* Ajusta logo para não estourar */
+        width: auto;
+    }
+
+    /* Botão do menu (hambúrguer) */
+    .navbar-toggler {
+        border: none !important;
+        color: var(--dark-wood) !important;
+    }
+
+    .navbar-toggler:focus {
+        box-shadow: none !important; /* Remove aquela borda azul feia ao clicar */
+    }
+
+    /* O menu quando abre */
+    .navbar-collapse {
+        background: #fff;
+        margin-top: 15px;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    }
+
+    .nav-link {
+        padding: 12px 0 !important;
+        border-bottom: 1px solid rgba(0,0,0,0.05);
+        text-align: center;
+    }
+
+    /* Botão de destaque no menu */
+    .nav-item .btn-gold {
+        width: 100%; /* Botão ocupa a largura toda no celular */
+        margin-top: 15px !important;
+        margin-left: 0 !important;
+    }
+
+    /* --- SEÇÃO HERO (TOPO DO SITE) --- */
+    #home {
+        padding-top: 120px !important; /* Espaço para não ficar atrás do menu */
+        padding-bottom: 60px !important;
+        text-align: center; /* Centraliza tudo no celular */
+        height: auto !important; /* Remove altura fixa */
+        background-attachment: scroll !important; /* Remove efeito parallax que trava celular */
+    }
+
+    #home h1, #home p {
+        text-align: center !important;
+    }
+
+    #home .btn {
+        width: 100%; /* Botão grande para clicar fácil */
+        padding: 15px !important;
+        margin-bottom: 10px;
+    }
+
+    /* Ajuste da imagem do advogado no topo (se houver) */
+    .hero-image-container {
+        margin-top: 40px;
+        display: block;
+    }
+    
+    .hero-image-container img {
+        max-width: 80%; /* Não ocupa a tela toda */
+        margin: 0 auto;
+    }
+
+    /* --- SEÇÃO SOBRE --- */
+    .about-image {
+        margin-bottom: 30px; /* Espaço entre foto e texto */
+    }
+
+    /* --- SEÇÃO ÁREAS DE ATUAÇÃO (CARDS) --- */
+    .practice-area-card {
+        margin-bottom: 20px; /* Separa os cards um do outro */
+        padding: 25px !important;
+    }
+
+    /* Ícones das áreas maiores para toque */
+    .practice-area-card i {
+        font-size: 3rem !important;
+    }
+
+    /* --- ESTATÍSTICAS --- */
+    .stat-item {
+        margin-bottom: 40px; /* Separa os números */
+    }
+
+    /* --- RODAPÉ (FOOTER) --- */
+    footer {
+        text-align: center !important;
+    }
+
+    footer .col-lg-4 {
+        margin-bottom: 40px;
+    }
+
+    /* --- CHAT WIDGET NO MOBILE --- */
+    /* Deixa o chat mais discreto no celular para não tapar o conteúdo */
+    #chat-widget-container {
+        width: 90% !important; /* Não ocupa 100% da largura */
+        right: 5% !important;
+        bottom: 80px !important; /* Fica acima do botão do WhatsApp */
+        height: 60vh !important; /* Ocupa 60% da altura da tela */
+    }
+
+    /* O botão flutuante (cabeça do advogado) */
+    .chat-launcher {
+        width: 55px !important;
+        height: 55px !important;
+        bottom: 20px !important;
+        right: 20px !important;
+    }
+
+    .launcher-avatar {
+        width: 55px !important;
+        height: 55px !important;
+    }
+
+    /* Balão de "Quer falar agora?" */
+    .chat-launcher-bubble {
+        width: 200px !important;
+        right: 10px !important;
+        bottom: 85px !important;
+        font-size: 0.8rem !important;
+    }
+
+    /* Botão Voltar ao Topo */
+    .back-to-top-btn {
+        width: 40px !important;
+        height: 40px !important;
+        bottom: 20px !important;
+        left: 20px !important; /* Mantém na esquerda como no original */
+        font-size: 1rem !important;
+    }
+}
+
+/* --- AJUSTES EXTRAS PARA TELAS MUITO PEQUENAS (Iphone SE, Antigos) --- */
+@media (max-width: 380px) {
+    h1 { font-size: 1.8rem !important; }
+    .btn { font-size: 0.9rem !important; }
+}

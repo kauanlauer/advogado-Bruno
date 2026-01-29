@@ -81,7 +81,7 @@
                             <!-- ARTIGO 2 -->
                             <div id="article-2" class="article-body" style="display: none;">
                                 <h2>A Natureza do Processo Administrativo Disciplinar (PAD)</h2>
-                                <p>O Processo Administrativo Disciplinar, conhecido como PAD, é o instrumento pelo qual a administração pública militar apura a responsabilidade de um servidor por infração praticada no exercício de suas atribuições, ou que tenha relação com as atribuições do cargo em que se encontre investido.</p>
+                                <p>O Processo Administrativo Disciplinar (PAD) é um instrumento por meio do qual as Forças Armadas apuram possíveis transgressões disciplinares cometidas por militares. Ele é regulado por normas específicas de cada Força (Exército, Marinha e Aeronáutica) e por princípios constitucionais que protegem o militar acusado.</p>
                                 <p>É um procedimento formal, que deve obrigatoriamente garantir ao militar acusado os direitos constitucionais à ampla defesa e ao contraditório. Isso significa que ele tem o direito de ser notificado de todos os atos, de produzir provas, de ser ouvido e de ser assistido por um advogado.</p>
                                 <h2>Fases Essenciais do PAD</h2>
                                 <p>Um PAD geralmente se divide em três fases principais:</p>
@@ -129,8 +129,53 @@
         </footer>
     </div> <!-- Fim do .scrollable-content -->
 
+    <!-- CHAT WIDGET INTERATIVO DO WHATSAPP -->
+    <div id="chat-widget-container">
+        
+        <div id="chat-window" class="chat-window">
+            <div class="chat-header">
+                <img src="Bruno.jpeg" alt="Dr. Bruno" class="chat-avatar">
+                <div class="chat-info">
+                    <div class="chat-name">Dr. Bruno Miranda</div>
+                    <div class="chat-status">Online agora</div>
+                </div>
+                <button id="close-chat-btn" class="chat-close-btn" aria-label="Fechar Chat">&times;</button>
+            </div>
+            <div class="chat-body">
+                <div class="message received">
+                    <p>Sei que passar por questões jurídicas pode ser um momento difícil e solitário.</p>
+                    <p>Quero que saiba que estou aqui para te ajudar a encontrar a melhor solução, com segurança e tranquilidade.</p>
+                </div>
+                <div class="message cta">
+                    <p>Vamos conversar sobre o seu caso?</p>
+                    <a href="https://wa.me/554198052279?text=Olá!%20Vi%20o%20site%20e%20gostaria%20de%20falar%20sobre%20meu%20caso." target="_blank" class="btn btn-chat">
+                        Sim, vamos lá <i class="bi bi-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div id="launcher-wrapper">
+            
+            <div id="chat-bubble" class="chat-launcher-bubble">
+                Quer falar agora com um <strong>advogado online?</strong>
+            </div>
+
+            <button id="chat-launcher" class="chat-launcher">
+                <img src="Bruno.jpeg" alt="Falar com Dr. Bruno" class="launcher-avatar">
+                
+                <span id="notification-badge" class="notification-badge">1</span>
+                
+                <i class="bi bi-x-lg icon-close" style="display: none;"></i>
+            </button>
+        </div>
+    </div>
+
+    <!-- BOTÃO VOLTAR AO TOPO -->
+    <a href="#" id="back-to-top-btn" class="back-to-top-btn" aria-label="Voltar ao topo"><i class="bi bi-arrow-up"></i></a>
+
     <!-- SCRIPTS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="app.js"></script>
 
@@ -163,10 +208,12 @@
                     articleElement.style.display = 'block';
                     document.title = `${articleData.title} - Dr. Bruno Miranda`;
                     document.getElementById('article-main-title').textContent = articleData.title;
-                    document.getElementById('article-meta-info').innerHTML = `<span>${articleData.category}</span> &bull; <span>${articleData.date}</span>`;
+                    document.getElementById('article-meta-info').innerHTML = `<span>${articleData.category}</span> • ${articleData.date}`;
+                } else {
+                    window.location.href = 'index.html#articles';
                 }
             } else {
-                document.getElementById('article-main-title').textContent = 'Artigo não encontrado';
+                window.location.href = 'index.html#articles';
             }
         });
     </script>

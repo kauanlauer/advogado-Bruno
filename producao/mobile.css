@@ -1,536 +1,834 @@
 /* ===============================================
-   MOBILE.CSS - VERSÃO MOBILE NATIVA COMPLETA
-   Deixa o site igual ao PC, mas otimizado pro celular
+   MOBILE.CSS - DESIGN PREMIUM ESCURO
+   Transforma o site atual no visual das imagens
    =============================================== */
 
-/* --- AJUSTES GERAIS PARA CELULAR --- */
+/* --- DISPOSITIVOS MOBILE (0-991px) --- */
 @media (max-width: 991px) {
     
-    /* Remove o fundo de textura no mobile (economiza processamento) */
+    /* RESET COMPLETO - Remove estilos antigos */
+    * {
+        -webkit-tap-highlight-color: transparent;
+    }
+
+    /* CORPO - Fundo escuro premium */
     body {
+        font-family: 'Montserrat', sans-serif !important;
+        background-color: #1a120f !important;
         background-image: none !important;
-        background-color: #f5f0e8 !important;
+        color: #ffffff !important;
+        overflow-x: hidden;
     }
 
-    /* Ajusta espaçamento das seções para não ficar muito grande */
-    .section-padding {
-        padding: 60px 20px !important;
+    /* PRELOADER */
+    #preloader {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: #1a120f;
+        z-index: 9999;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: opacity 0.5s ease;
     }
 
-    /* Títulos ficam menores mas legíveis */
-    h1 {
-        font-size: 2rem !important;
-        line-height: 1.3 !important;
+    .spinner-border {
+        color: #b99767 !important;
     }
 
-    h2.section-title {
-        font-size: 2rem !important;
-        margin-bottom: 40px !important;
+    /* VÍDEO DE FUNDO - Mantém funcionando */
+    .video-background-container, .hero-section-video {
+        position: fixed !important;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        z-index: -1;
+        overflow: hidden;
     }
 
-    h3 {
-        font-size: 1.5rem !important;
+    #bgVideo, #bgvideo {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        min-width: 100%;
+        min-height: 100%;
+        width: auto;
+        height: auto;
+        object-fit: cover;
     }
 
-    p {
-        font-size: 1rem !important;
-        line-height: 1.6 !important;
+    .video-overlay, .hero-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(180deg, 
+            rgba(26,18,15,0.85) 0%, 
+            rgba(26,18,15,0.6) 50%, 
+            rgba(26,18,15,0.95) 100%);
+        z-index: 1;
     }
 
-    /* --- MENU (NAVBAR) --- */
-    .navbar {
-        background-color: rgba(44, 30, 23, 0.98) !important;
-        padding: 12px 0 !important;
-        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    /* NAVBAR - Escura e elegante */
+    .navbar, #mainNavbar, #navbar-mobile {
+        background: transparent !important;
+        transition: all 0.4s ease;
+        padding: 15px 0 !important;
+        border-bottom: none !important;
     }
 
-    .navbar-brand img {
-        height: 35px !important;
+    .navbar.scrolled {
+        background: rgba(26, 18, 15, 0.98) !important;
+        backdrop-filter: blur(10px);
+        border-bottom: 1px solid rgba(185, 151, 103, 0.2) !important;
+        padding: 10px 0 !important;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.3);
     }
 
-    /* Botão hamburguer (menu) */
-    .navbar-toggler {
-        padding: 8px 12px;
-        border: 1px solid rgba(255, 255, 255, 0.2) !important;
+    .navbar-brand img, .nav-logo {
+        height: 40px !important;
+        filter: brightness(0) invert(1);
+    }
+
+    .navbar-toggler, .custom-toggler {
+        border: none !important;
+        padding: 5px !important;
     }
 
     .navbar-toggler:focus {
         box-shadow: none !important;
     }
 
-    /* Menu quando abre */
-    .navbar-collapse {
-        background-color: rgba(44, 30, 23, 0.98);
-        margin-top: 15px;
-        padding: 20px;
-        border-radius: 8px;
-        box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    .navbar-toggler-icon {
+        background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='%23b99767' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
     }
 
-    .nav-link {
-        padding: 15px 0 !important;
-        text-align: center;
-        color: rgba(255, 255, 255, 0.9) !important;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-        font-size: 1rem !important;
-    }
-
-    .nav-link:hover {
+    .bi-list {
         color: #b99767 !important;
     }
 
-    /* Botão "Fale Conosco" no menu */
-    .nav-item .btn-primary {
-        width: 100%;
-        margin-top: 10px !important;
-        margin-left: 0 !important;
-        padding: 14px 30px !important;
+    /* MENU OFFCANVAS - Escuro premium */
+    .offcanvas, .offcanvas.bg-wood, .navbar-collapse {
+        background-color: #241a15 !important;
+        border-left: 1px solid rgba(185, 151, 103, 0.3);
     }
 
-    /* Seletor de idioma (bandeiras) */
-    .language-switcher-li {
+    .offcanvas-header {
+        border-bottom: 1px solid rgba(255,255,255,0.1) !important;
+        padding: 20px !important;
+    }
+
+    .offcanvas-logo {
+        height: 35px !important;
+        filter: brightness(0) invert(1);
+    }
+
+    .btn-close-white, .btn-close {
+        filter: brightness(0) invert(1);
+    }
+
+    .offcanvas-body {
+        padding: 20px !important;
+    }
+
+    .nav-link {
+        font-family: 'Playfair Display', serif !important;
+        font-size: 1.3rem !important;
+        color: rgba(255,255,255,0.7) !important;
+        border-bottom: 1px solid rgba(255,255,255,0.05) !important;
+        padding: 15px 0 !important;
+        transition: 0.3s;
+        text-align: left !important;
+    }
+
+    .nav-link:hover, 
+    .nav-link.active {
+        color: #b99767 !important;
+        padding-left: 10px !important;
+    }
+
+    .menu-footer {
+        margin-top: 30px;
+        padding-top: 20px;
+        border-top: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .social-links-menu a {
+        display: inline-flex;
+        width: 40px;
+        height: 40px;
+        background: rgba(255,255,255,0.05);
+        color: white;
+        border-radius: 50%;
+        align-items: center;
         justify-content: center;
-        margin-top: 15px !important;
-        padding-top: 15px;
-        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        margin: 0 5px;
+        border: 1px solid rgba(255,255,255,0.1);
+        transition: 0.3s;
     }
 
-    .flag-icon {
-        width: 30px !important;
-        height: 22px !important;
+    .social-links-menu a:hover {
+        background: #b99767;
+        color: white;
     }
 
-    /* --- HERO (PRIMEIRA SEÇÃO COM VÍDEO) --- */
-    .hero-section-video {
-        height: 100vh !important;
-        padding: 0 20px;
+    /* BOTÕES PREMIUM */
+    .btn-gold, .btn-primary {
+        background: #b99767 !important;
+        color: #fff !important;
+        border: none !important;
+        border-radius: 0 !important;
+        padding: 14px 30px !important;
+        font-weight: 600 !important;
+        letter-spacing: 1px !important;
+        text-transform: uppercase !important;
+        font-size: 0.85rem !important;
+        transition: 0.3s !important;
+        box-shadow: 0 4px 15px rgba(185, 151, 103, 0.3) !important;
     }
 
-    /* Vídeo de fundo continua funcionando */
-    #bgvideo {
-        display: block !important;
+    .btn-gold:hover, .btn-primary:hover {
+        background: #d1b894 !important;
+        color: #1a120f !important;
+        transform: translateY(-2px);
     }
 
-    .hero-content {
+    .btn-lg {
+        padding: 16px 40px !important;
+        font-size: 0.9rem !important;
+    }
+
+    /* HERO SECTION */
+    .hero-section, #home, #inicio {
+        min-height: 100vh !important;
+        padding-top: 80px !important;
+        padding-bottom: 80px !important;
+        position: relative;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        background: transparent !important;
+    }
+
+    .hero-content, .hero-section .container {
+        position: relative;
+        z-index: 2;
         text-align: center !important;
-        padding: 0 !important;
     }
 
-    .hero-content h1 {
-        font-size: 2.2rem !important;
-        margin-bottom: 20px !important;
+    .consultation-badge {
+        background: rgba(185, 151, 103, 0.2);
+        border: 1px solid #b99767;
+        color: #b99767;
+        padding: 8px 20px;
+        border-radius: 50px;
+        font-size: 0.75rem;
+        font-weight: 600;
+        letter-spacing: 1px;
+        display: inline-block;
+        margin-bottom: 20px;
     }
 
-    .hero-content .lead {
-        font-size: 1.1rem !important;
-        margin: 20px auto 30px auto !important;
+    .hero-icon {
+        width: 70px !important;
+        height: auto;
+        margin-bottom: 20px;
+        opacity: 0.9;
+        filter: drop-shadow(0 4px 10px rgba(0,0,0,0.5));
     }
 
     .hero-logo {
-        max-width: 85% !important;
-        margin: 30px auto 0 auto;
-        display: block;
-    }
-
-    /* Botões do Hero lado a lado se couber */
-    .hero-content .btn {
-        padding: 14px 25px !important;
-        font-size: 0.95rem !important;
-        margin: 8px 5px !important;
-        display: inline-block;
-    }
-
-    /* Indicador de scroll (setinha) */
-    .scroll-down-indicator {
-        display: block !important;
-    }
-
-    /* --- SEÇÃO SOBRE (O ADVOGADO) --- */
-    #sobre .row {
-        text-align: center;
-    }
-
-    #sobre img {
-        max-width: 85%;
+        max-width: 200px !important;
         margin: 0 auto 30px auto;
-        display: block;
     }
 
-    #sobre .section-title {
-        text-align: center !important;
+    .hero-title, .hero-section h1, #home h1, #inicio h1 {
+        font-family: 'Playfair Display', serif !important;
+        font-size: 2.8rem !important;
+        line-height: 1.1 !important;
+        font-weight: 700 !important;
+        margin-bottom: 15px !important;
+        color: #fff !important;
+        text-shadow: 0 4px 10px rgba(0,0,0,0.5) !important;
     }
 
-    #sobre .section-title::after {
+    .text-gold {
+        color: #b99767 !important;
+    }
+
+    .font-serif {
+        font-family: 'Playfair Display', serif !important;
+    }
+
+    .hero-subtitle, .hero-section .lead, #home .lead {
+        font-size: 1.1rem !important;
+        font-weight: 300 !important;
+        color: rgba(255,255,255,0.9) !important;
+        margin-bottom: 30px !important;
+        text-shadow: 0 2px 5px rgba(0,0,0,0.3);
+    }
+
+    /* INDICADOR DE SCROLL */
+    .scroll-indicator, .scroll-down-indicator {
+        position: absolute !important;
+        bottom: 30px !important;
         left: 50% !important;
         transform: translateX(-50%) !important;
+        display: flex !important;
+        flex-direction: column;
+        align-items: center;
+        text-decoration: none;
+        animation: bounce 2s infinite;
+        z-index: 2;
     }
 
-    #sobre p {
-        text-align: left;
+    .scroll-indicator i, .scroll-down-indicator i {
+        color: #b99767 !important;
+        font-size: 1.5rem;
+    }
+
+    /* SEÇÕES */
+    .section-padding {
+        padding: 80px 20px !important;
+        position: relative;
+    }
+
+    .relative-z {
+        position: relative;
+        z-index: 2;
+    }
+
+    .section-bg-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(26, 18, 15, 0.9);
+        z-index: 1;
+    }
+
+    .bg-dark-wood, .bg-dark-gradient {
+        background-color: #140f0c !important;
+    }
+
+    /* PROVA SOCIAL */
+    .social-proof-section {
+        background: rgba(20, 15, 12, 0.5);
+        padding: 40px 0 !important;
+    }
+
+    .proof-item {
+        text-align: center;
+    }
+
+    .proof-number {
+        font-family: 'Playfair Display', serif;
+        font-size: 2.5rem;
+        color: #b99767;
+        font-weight: 700;
+        line-height: 1;
+    }
+
+    .proof-label {
+        font-size: 0.75rem;
+        color: rgba(255,255,255,0.6);
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        margin-top: 5px;
+    }
+
+    /* CARDS GLASSMORPHISM */
+    .glass-card {
+        background: rgba(40, 30, 25, 0.7) !important;
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        border: 1px solid rgba(255,255,255,0.1) !important;
+        border-radius: 8px !important;
+        overflow: hidden;
+    }
+
+    .bruno-photo {
+        height: 400px !important;
+        object-fit: cover;
+        object-position: top center;
+        width: 100%;
+    }
+
+    .photo-overlay {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 50%;
+        background: linear-gradient(to top, rgba(20,15,12,1), transparent);
+    }
+
+    .oab-badge {
+        position: absolute;
+        bottom: 20px;
+        right: 20px;
+        background: #b99767;
+        padding: 5px 15px;
+        border-radius: 2px;
+        text-align: center;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    }
+
+    .separator-gold {
+        width: 60px;
+        height: 3px;
+        background: #b99767;
         margin-bottom: 20px;
     }
 
-    .oab-number {
-        text-align: center;
-        font-size: 1.1rem !important;
+    .ls-2 {
+        letter-spacing: 2px;
     }
 
-    .languages-info {
-        margin-top: 30px;
-        justify-content: center;
-        text-align: center;
+    .text-light-grey {
+        color: #cccccc !important;
     }
 
-    /* --- SEÇÃO ÁREAS DE ATUAÇÃO (CARDS) --- */
-    .parallax-section {
-        background-attachment: scroll !important; /* Remove parallax no mobile */
-    }
-
-    .area-card {
-        margin-bottom: 30px;
-        padding: 30px 20px !important;
-        text-align: center;
-    }
-
-    .area-card .icon {
-        font-size: 3rem !important;
-        margin-bottom: 20px;
-    }
-
-    .area-card h5 {
-        font-size: 1.4rem !important;
-        margin-bottom: 15px;
-    }
-
-    .specialties-list {
-        padding-left: 0;
-        text-align: center;
-    }
-
-    .specialties-list li {
+    .features-list li {
+        margin-bottom: 10px;
         font-size: 0.95rem;
-        padding: 8px 0;
+        border-bottom: 1px solid rgba(255,255,255,0.05);
+        padding-bottom: 10px;
+        color: #cccccc;
     }
 
-    /* --- ESTATÍSTICAS --- */
-    .stat-item {
-        margin-bottom: 40px;
+    .features-list i {
+        color: #b99767;
+        margin-right: 10px;
+    }
+
+    /* ÁREAS DE ATUAÇÃO - CARDS PREMIUM */
+    .service-card, .area-card, .practice-area-card {
+        background: linear-gradient(145deg, #2a201b, #1f1714) !important;
+        border-left: 3px solid #b99767 !important;
+        padding: 25px !important;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        transition: all 0.3s ease;
+        border-radius: 4px !important;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.2) !important;
+        margin-bottom: 20px;
+        border: 1px solid rgba(255,255,255,0.05) !important;
+        border-left: 3px solid #b99767 !important;
+    }
+
+    .service-card:active {
+        transform: scale(0.98);
+        background: #352a24 !important;
+    }
+
+    .card-icon, .area-card .icon, .practice-area-card i {
+        font-size: 2rem !important;
+        color: #b99767 !important;
+        margin-right: 20px;
+        min-width: 50px;
         text-align: center;
     }
 
-    .stat-counter {
-        font-size: 3rem !important;
-    }
-
-    .stat-label {
-        font-size: 1rem !important;
-    }
-
-    /* --- ARTIGOS --- */
-    .article-card {
-        margin-bottom: 30px;
-    }
-
-    .article-card img {
-        height: 200px !important;
-    }
-
-    .article-card h5 {
+    .card-content h3, .area-card h5, .practice-area-card h5 {
+        font-family: 'Playfair Display', serif !important;
         font-size: 1.2rem !important;
+        margin: 0 0 5px 0 !important;
+        color: white !important;
     }
 
-    /* --- DEPOIMENTOS --- */
+    .card-content p, .area-card p, .practice-area-card p {
+        font-size: 0.8rem !important;
+        color: rgba(255,255,255,0.5) !important;
+        margin: 0 !important;
+        line-height: 1.4;
+    }
+
+    .card-arrow {
+        color: rgba(255,255,255,0.2);
+    }
+
+    /* Remove parallax no mobile */
+    .parallax-section {
+        background-attachment: scroll !important;
+    }
+
+    /* DEPOIMENTOS */
     .testimonial-card {
-        margin-bottom: 30px;
-        padding: 25px !important;
+        background: rgba(255,255,255,0.03) !important;
+        padding: 40px 20px !important;
+        border-radius: 8px !important;
+        border: 1px solid rgba(185, 151, 103, 0.1) !important;
+    }
+
+    .stars {
+        color: #FFD700 !important;
+        letter-spacing: 2px;
+        font-size: 1.5rem;
     }
 
     .testimonial-text {
-        font-size: 0.95rem !important;
+        font-style: italic !important;
+        color: #ddd !important;
+        font-weight: 300 !important;
+        line-height: 1.6;
     }
 
-    .testimonial-author {
-        font-size: 1rem !important;
+    .client-name {
+        color: #b99767 !important;
+        font-family: 'Playfair Display', serif !important;
+        margin-bottom: 0 !important;
+        font-weight: 600;
     }
 
-    /* --- FAQ (PERGUNTAS) --- */
+    .client-role {
+        font-size: 0.8rem !important;
+        color: #666 !important;
+        text-transform: uppercase;
+    }
+
+    /* FAQ - ACCORDION ESCURO */
+    .section-title, h2 {
+        font-family: 'Playfair Display', serif !important;
+        color: #b99767 !important;
+        text-align: center;
+        margin-bottom: 40px !important;
+        font-size: 2rem !important;
+    }
+
+    .accordion-item {
+        background-color: rgba(255, 255, 255, 0.02) !important;
+        border: 1px solid rgba(185, 151, 103, 0.2) !important;
+        border-radius: 6px !important;
+        margin-bottom: 12px !important;
+        overflow: hidden;
+    }
+
     .accordion-button {
-        font-size: 1rem !important;
-        padding: 15px !important;
+        background-color: transparent !important;
+        color: rgba(255, 255, 255, 0.9) !important;
+        font-family: 'Playfair Display', serif !important;
+        font-size: 1.1rem !important;
+        padding: 20px !important;
+        box-shadow: none !important;
+        transition: all 0.3s ease;
+    }
+
+    .accordion-button:not(.collapsed) {
+        background-color: rgba(185, 151, 103, 0.1) !important;
+        color: #b99767 !important;
+        border-bottom: 1px solid rgba(185, 151, 103, 0.2);
+    }
+
+    .accordion-button::after {
+        filter: invert(1) brightness(200%);
+        background-size: 1.1rem;
+    }
+
+    .accordion-button:not(.collapsed)::after {
+        filter: sepia(100%) hue-rotate(5deg) saturate(500%) contrast(0.8);
     }
 
     .accordion-body {
+        background-color: rgba(0, 0, 0, 0.3) !important;
+        color: #cccccc !important;
         font-size: 0.95rem !important;
+        line-height: 1.6;
+        padding: 20px 25px !important;
     }
 
-    /* --- NEWSLETTER --- */
-    #newsletter .section-title {
-        font-size: 1.8rem !important;
+    /* FOOTER */
+    .main-footer, footer {
+        background-color: #0e0a08 !important;
+        padding: 60px 20px 30px !important;
+        border-top: 4px solid #b99767 !important;
     }
 
-    #newsletter-form {
-        flex-direction: column;
+    .footer-logo {
+        width: 140px;
+        filter: brightness(0) invert(1);
+        opacity: 0.6;
     }
 
-    #newsletter-form input {
+    .footer-cta-title {
+        font-family: 'Playfair Display', serif;
+        color: white !important;
         margin-bottom: 10px;
-        width: 100% !important;
     }
 
-    #newsletter-form button {
-        width: 100%;
+    .footer-contact-item {
+        display: block;
+        color: white !important;
+        text-decoration: none;
+        margin-bottom: 10px;
     }
 
-    /* --- RODAPÉ --- */
-    footer {
-        text-align: center !important;
-        padding: 40px 20px !important;
+    .footer-contact-item:hover {
+        color: #b99767 !important;
     }
 
-    footer .col-lg-4 {
-        margin-bottom: 30px;
-    }
-
-    footer h5 {
-        margin-bottom: 20px;
-    }
-
-    footer .social-icons {
+    .social-btn {
+        display: inline-flex;
+        width: 45px;
+        height: 45px;
+        background: rgba(255,255,255,0.05);
+        color: white !important;
+        border-radius: 50%;
+        align-items: center;
         justify-content: center;
+        margin: 0 5px;
+        font-size: 1.2rem;
+        border: 1px solid rgba(255,255,255,0.1);
+        transition: 0.3s;
+        text-decoration: none;
     }
 
-    /* --- MODAL DE CONTATO --- */
-    .modal-dialog {
-        margin: 20px !important;
+    .social-btn:hover {
+        background: #b99767 !important;
+        color: white !important;
+        transform: translateY(-2px);
     }
 
-    .modal-content {
-        padding: 20px !important;
-    }
-
-    .contact-form input,
-    .contact-form textarea,
-    .contact-form select {
-        font-size: 1rem !important;
-        padding: 12px !important;
-    }
-
-    /* --- MODAL SENTIMENTAL (POPUP) --- */
-    .sentimental-modal-content {
-        margin: 20px;
-        padding: 30px 20px !important;
-    }
-
-    .sentimental-title {
-        font-size: 1.8rem !important;
-    }
-
-    .sentimental-text {
-        font-size: 0.95rem !important;
-    }
-
-    .btn-sentimental-whatsapp {
-        padding: 14px 30px !important;
-        font-size: 1rem !important;
-        width: 100%;
-    }
-
-    .sentimental-close {
-        top: 10px !important;
-        right: 10px !important;
-        width: 35px !important;
-        height: 35px !important;
-        font-size: 1.5rem !important;
-    }
-
-    /* --- CHAT WHATSAPP (WIDGET) --- */
-    #chat-widget-container {
-        width: 90% !important;
-        max-width: 350px;
-        right: 5% !important;
-        bottom: 85px !important;
-        height: 65vh !important;
-        max-height: 500px;
-    }
-
-    .chat-launcher {
-        width: 60px !important;
-        height: 60px !important;
-        bottom: 20px !important;
-        right: 20px !important;
-    }
-
-    .launcher-avatar {
-        width: 60px !important;
-        height: 60px !important;
-    }
-
-    .chat-launcher-bubble {
-        width: 220px !important;
-        right: 15px !important;
-        bottom: 90px !important;
-        font-size: 0.85rem !important;
-        padding: 12px 15px !important;
-    }
-
-    #notification-badge {
-        top: -5px !important;
-        right: -5px !important;
-        width: 20px !important;
-        height: 20px !important;
-        font-size: 0.7rem !important;
-    }
-
-    /* Janela do chat */
-    #chat-window {
-        border-radius: 15px;
-    }
-
-    .chat-header {
-        padding: 15px !important;
-    }
-
-    .chat-header h4 {
-        font-size: 1rem !important;
-    }
-
-    .chat-body {
-        padding: 15px !important;
-    }
-
-    .chat-message {
-        font-size: 0.9rem !important;
-        padding: 12px 15px !important;
-    }
-
-    .chat-footer {
-        padding: 12px !important;
-    }
-
-    .chat-footer .btn {
-        font-size: 0.9rem !important;
-        padding: 12px 20px !important;
-    }
-
-    /* --- BOTÃO VOLTAR AO TOPO --- */
-    .back-to-top-btn {
-        width: 45px !important;
-        height: 45px !important;
-        bottom: 20px !important;
-        left: 20px !important;
-        font-size: 1.2rem !important;
-    }
-
-    /* --- COOKIE BANNER --- */
-    #cookie-banner {
+    /* BANNER DE COOKIES */
+    .cookie-banner, #cookie-banner {
+        position: fixed !important;
         bottom: 0 !important;
         left: 0 !important;
-        right: 0 !important;
         width: 100% !important;
-        border-radius: 0 !important;
-        padding: 20px !important;
-        text-align: center;
+        background-color: rgba(26, 18, 15, 0.98) !important;
+        backdrop-filter: blur(5px);
+        border-top: 1px solid #b99767 !important;
+        z-index: 9999 !important;
+        padding: 15px 20px !important;
+        box-shadow: 0 -5px 20px rgba(0,0,0,0.5);
+        display: none;
     }
 
-    #cookie-banner p {
-        font-size: 0.9rem !important;
-        margin-bottom: 15px;
+    .cookie-banner.visible {
+        display: block !important;
     }
 
-    #cookie-banner .btn {
-        width: 100%;
+    .cookie-text {
+        font-size: 0.8rem !important;
+        color: #ccc !important;
+        line-height: 1.4;
+    }
+
+    .cookie-text a {
+        color: #b99767 !important;
+        text-decoration: underline;
+    }
+
+    #accept-cookies-btn {
+        background-color: #b99767 !important;
+        color: #fff !important;
+        border: none !important;
+        font-size: 0.8rem !important;
+        font-weight: 600 !important;
+        padding: 8px 20px !important;
+        text-transform: uppercase !important;
+        border-radius: 2px !important;
+    }
+
+    #accept-cookies-btn:hover {
+        background-color: #d1b894 !important;
+        color: #1a120f !important;
+    }
+
+    /* CHAT WHATSAPP FLUTUANTE */
+    .floating-wrapper, #chat-widget-container {
+        position: fixed !important;
+        bottom: 25px !important;
+        right: 20px !important;
+        z-index: 10000 !important;
+        display: flex !important;
+        flex-direction: column;
+        align-items: flex-end;
+    }
+
+    .chat-bubble, .chat-launcher-bubble {
+        background: white;
+        color: #333;
+        padding: 10px 15px;
+        border-radius: 20px 20px 5px 20px;
+        font-size: 0.85rem;
+        font-weight: 600;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.2);
         margin-bottom: 10px;
     }
 
-    /* --- AJUSTES DE IMAGENS --- */
-    img {
-        max-width: 100%;
-        height: auto;
+    .whatsapp-launcher, .chat-launcher {
+        width: 65px !important;
+        height: 65px !important;
+        border-radius: 50% !important;
+        background: #25D366 !important;
+        display: flex !important;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4) !important;
+        border: 3px solid rgba(255,255,255,0.3) !important;
+        text-decoration: none;
+        overflow: hidden;
+        transition: 0.3s;
     }
 
-    /* Imagens com lazy load */
-    img.lazy-load {
+    .whatsapp-launcher:hover {
+        transform: scale(1.05);
+    }
+
+    .avatar-float, .launcher-avatar {
+        width: 100% !important;
+        height: 100% !important;
+        object-fit: cover;
+        object-position: center;
+        position: absolute;
+        top: 0;
+        left: 0;
+        border-radius: 50%;
+    }
+
+    .icon-float {
+        position: absolute;
+        bottom: 3px;
+        right: 3px;
+        font-size: 20px;
+        color: white;
+        background: #25D366;
+        border-radius: 50%;
+        padding: 4px;
+        border: 2px solid white;
+        z-index: 2;
+    }
+
+    .status-dot, #notification-badge {
+        position: absolute;
+        top: 3px;
+        right: 3px;
+        width: 14px;
+        height: 14px;
+        background: #ff3b30;
+        border: 2px solid white;
+        border-radius: 50%;
+        z-index: 2;
+        animation: pulse 2s infinite;
+    }
+
+    /* ANIMAÇÕES */
+    @keyframes bounce {
+        0%, 20%, 50%, 80%, 100% {
+            transform: translateX(-50%) translateY(0);
+        }
+        40% {
+            transform: translateX(-50%) translateY(-10px);
+        }
+    }
+
+    @keyframes pulse {
+        0% { 
+            transform: scale(0.95); 
+            box-shadow: 0 0 0 0 rgba(255, 59, 48, 0.7); 
+        }
+        70% { 
+            transform: scale(1); 
+            box-shadow: 0 0 0 10px rgba(255, 59, 48, 0); 
+        }
+        100% { 
+            transform: scale(0.95); 
+            box-shadow: 0 0 0 0 rgba(255, 59, 48, 0); 
+        }
+    }
+
+    @keyframes fadeInUp {
+        to { 
+            opacity: 1; 
+            transform: translateY(0); 
+        }
+    }
+
+    .animate-fade-up {
         opacity: 0;
-        transition: opacity 0.3s ease;
+        transform: translateY(30px);
+        animation: fadeInUp 0.8s forwards;
     }
 
-    img.lazy-load.loaded {
+    .animate-fade-down {
+        opacity: 0;
+        transform: translateY(-30px);
+        animation: fadeInUp 0.8s forwards;
+    }
+
+    .delay-100 { animation-delay: 0.1s; }
+    .delay-200 { animation-delay: 0.2s; }
+
+    .animate-on-scroll {
+        opacity: 0;
+        transform: translateY(30px);
+        transition: all 0.8s ease;
+    }
+
+    .animate-on-scroll.is-visible {
         opacity: 1;
-    }
-}
-
-/* --- AJUSTES PARA CELULARES MUITO PEQUENOS (iPhone SE, antigos) --- */
-@media (max-width: 380px) {
-    
-    h1 {
-        font-size: 1.8rem !important;
+        transform: translateY(0);
     }
 
-    h2.section-title {
-        font-size: 1.7rem !important;
-    }
-
-    .hero-content h1 {
-        font-size: 1.9rem !important;
-    }
-
-    .btn {
-        font-size: 0.9rem !important;
-        padding: 12px 20px !important;
-    }
-
-    .area-card {
-        padding: 25px 15px !important;
-    }
-
-    .chat-launcher {
-        width: 55px !important;
-        height: 55px !important;
-    }
-
-    .launcher-avatar {
-        width: 55px !important;
-        height: 55px !important;
-    }
-}
-
-/* --- MODO PAISAGEM (LANDSCAPE) --- */
-@media (max-width: 991px) and (orientation: landscape) {
-    
-    .hero-section-video {
-        height: auto !important;
-        min-height: 100vh;
-        padding: 100px 20px 60px 20px;
-    }
-
-    .section-padding {
-        padding: 50px 20px !important;
-    }
-
-    #chat-widget-container {
-        height: 80vh !important;
-    }
-}
-
-/* --- OTIMIZAÇÕES DE PERFORMANCE MOBILE --- */
-@media (max-width: 991px) {
-    
-    /* Remove animações pesadas no mobile */
+    /* OTIMIZAÇÕES */
     * {
         animation-duration: 0.5s !important;
         transition-duration: 0.3s !important;
     }
 
-    /* Suaviza scrolling */
     html {
         scroll-behavior: smooth;
     }
 
-    /* Remove sombras muito pesadas */
-    .navbar.scrolled,
-    .area-card,
-    .article-card,
-    .testimonial-card {
-        box-shadow: 0 4px 15px rgba(0,0,0,0.1) !important;
+    ::selection {
+        background: #b99767;
+        color: #1a120f;
+    }
+
+    /* Textos e cores gerais */
+    p, span, div {
+        color: #cccccc;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+        color: #ffffff !important;
+    }
+
+    .text-white {
+        color: #ffffff !important;
+    }
+
+    .text-white-50 {
+        color: rgba(255,255,255,0.5) !important;
+    }
+}
+
+/* CELULARES PEQUENOS */
+@media (max-width: 576px) {
+    .hero-title {
+        font-size: 2.2rem !important;
+    }
+    
+    .bruno-photo {
+        height: 350px !important;
+    }
+    
+    .service-card {
+        padding: 20px !important;
+    }
+    
+    .whatsapp-launcher {
+        width: 60px !important;
+        height: 60px !important;
     }
 }

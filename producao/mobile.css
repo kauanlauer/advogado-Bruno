@@ -1,179 +1,536 @@
-/* ARQUIVO: mobile.css
-   OBJETIVO: Estilos exclusivos para celulares e tablets (telas menores).
-   Este arquivo substitui as regras do style.css quando necessário.
-*/
+/* ===============================================
+   MOBILE.CSS - VERSÃO MOBILE NATIVA COMPLETA
+   Deixa o site igual ao PC, mas otimizado pro celular
+   =============================================== */
 
-/* --- AJUSTES GERAIS PARA MOBILE --- */
+/* --- AJUSTES GERAIS PARA CELULAR --- */
 @media (max-width: 991px) {
     
-    /* Ajuste de espaçamento global para não ficar tudo grudado nas bordas */
-    section {
-        padding: 60px 0 !important; /* Reduz o espaçamento gigante das seções */
+    /* Remove o fundo de textura no mobile (economiza processamento) */
+    body {
+        background-image: none !important;
+        background-color: #f5f0e8 !important;
     }
 
-    /* Melhora a leitura dos títulos no celular */
+    /* Ajusta espaçamento das seções para não ficar muito grande */
+    .section-padding {
+        padding: 60px 20px !important;
+    }
+
+    /* Títulos ficam menores mas legíveis */
     h1 {
-        font-size: 2.2rem !important; /* Diminui o título principal */
-        line-height: 1.2 !important;
+        font-size: 2rem !important;
+        line-height: 1.3 !important;
     }
 
-    h2 {
-        font-size: 1.8rem !important;
-        margin-bottom: 20px !important;
+    h2.section-title {
+        font-size: 2rem !important;
+        margin-bottom: 40px !important;
+    }
+
+    h3 {
+        font-size: 1.5rem !important;
     }
 
     p {
-        font-size: 1rem !important; /* Garante que o texto não fique minúsculo */
+        font-size: 1rem !important;
         line-height: 1.6 !important;
-        text-align: justify; /* Texto justificado fica mais organizado em blocos pequenos */
     }
 
-    /* --- MENU DE NAVEGAÇÃO (NAVBAR) --- */
+    /* --- MENU (NAVBAR) --- */
     .navbar {
-        background-color: var(--beige-bg) !important; /* Garante fundo sólido no mobile */
-        padding: 15px 0 !important;
-        box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        background-color: rgba(44, 30, 23, 0.98) !important;
+        padding: 12px 0 !important;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
     }
 
     .navbar-brand img {
-        height: 40px !important; /* Ajusta logo para não estourar */
-        width: auto;
+        height: 35px !important;
     }
 
-    /* Botão do menu (hambúrguer) */
+    /* Botão hamburguer (menu) */
     .navbar-toggler {
-        border: none !important;
-        color: var(--dark-wood) !important;
+        padding: 8px 12px;
+        border: 1px solid rgba(255, 255, 255, 0.2) !important;
     }
 
     .navbar-toggler:focus {
-        box-shadow: none !important; /* Remove aquela borda azul feia ao clicar */
+        box-shadow: none !important;
     }
 
-    /* O menu quando abre */
+    /* Menu quando abre */
     .navbar-collapse {
-        background: #fff;
+        background-color: rgba(44, 30, 23, 0.98);
         margin-top: 15px;
         padding: 20px;
         border-radius: 8px;
-        box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        box-shadow: 0 10px 30px rgba(0,0,0,0.2);
     }
 
     .nav-link {
-        padding: 12px 0 !important;
-        border-bottom: 1px solid rgba(0,0,0,0.05);
+        padding: 15px 0 !important;
+        text-align: center;
+        color: rgba(255, 255, 255, 0.9) !important;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        font-size: 1rem !important;
+    }
+
+    .nav-link:hover {
+        color: #b99767 !important;
+    }
+
+    /* Botão "Fale Conosco" no menu */
+    .nav-item .btn-primary {
+        width: 100%;
+        margin-top: 10px !important;
+        margin-left: 0 !important;
+        padding: 14px 30px !important;
+    }
+
+    /* Seletor de idioma (bandeiras) */
+    .language-switcher-li {
+        justify-content: center;
+        margin-top: 15px !important;
+        padding-top: 15px;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .flag-icon {
+        width: 30px !important;
+        height: 22px !important;
+    }
+
+    /* --- HERO (PRIMEIRA SEÇÃO COM VÍDEO) --- */
+    .hero-section-video {
+        height: 100vh !important;
+        padding: 0 20px;
+    }
+
+    /* Vídeo de fundo continua funcionando */
+    #bgvideo {
+        display: block !important;
+    }
+
+    .hero-content {
+        text-align: center !important;
+        padding: 0 !important;
+    }
+
+    .hero-content h1 {
+        font-size: 2.2rem !important;
+        margin-bottom: 20px !important;
+    }
+
+    .hero-content .lead {
+        font-size: 1.1rem !important;
+        margin: 20px auto 30px auto !important;
+    }
+
+    .hero-logo {
+        max-width: 85% !important;
+        margin: 30px auto 0 auto;
+        display: block;
+    }
+
+    /* Botões do Hero lado a lado se couber */
+    .hero-content .btn {
+        padding: 14px 25px !important;
+        font-size: 0.95rem !important;
+        margin: 8px 5px !important;
+        display: inline-block;
+    }
+
+    /* Indicador de scroll (setinha) */
+    .scroll-down-indicator {
+        display: block !important;
+    }
+
+    /* --- SEÇÃO SOBRE (O ADVOGADO) --- */
+    #sobre .row {
         text-align: center;
     }
 
-    /* Botão de destaque no menu */
-    .nav-item .btn-gold {
-        width: 100%; /* Botão ocupa a largura toda no celular */
-        margin-top: 15px !important;
-        margin-left: 0 !important;
+    #sobre img {
+        max-width: 85%;
+        margin: 0 auto 30px auto;
+        display: block;
     }
 
-    /* --- SEÇÃO HERO (TOPO DO SITE) --- */
-    #home {
-        padding-top: 120px !important; /* Espaço para não ficar atrás do menu */
-        padding-bottom: 60px !important;
-        text-align: center; /* Centraliza tudo no celular */
-        height: auto !important; /* Remove altura fixa */
-        background-attachment: scroll !important; /* Remove efeito parallax que trava celular */
-    }
-
-    #home h1, #home p {
+    #sobre .section-title {
         text-align: center !important;
     }
 
-    #home .btn {
-        width: 100%; /* Botão grande para clicar fácil */
-        padding: 15px !important;
-        margin-bottom: 10px;
+    #sobre .section-title::after {
+        left: 50% !important;
+        transform: translateX(-50%) !important;
     }
 
-    /* Ajuste da imagem do advogado no topo (se houver) */
-    .hero-image-container {
-        margin-top: 40px;
-        display: block;
-    }
-    
-    .hero-image-container img {
-        max-width: 80%; /* Não ocupa a tela toda */
-        margin: 0 auto;
+    #sobre p {
+        text-align: left;
+        margin-bottom: 20px;
     }
 
-    /* --- SEÇÃO SOBRE --- */
-    .about-image {
-        margin-bottom: 30px; /* Espaço entre foto e texto */
+    .oab-number {
+        text-align: center;
+        font-size: 1.1rem !important;
+    }
+
+    .languages-info {
+        margin-top: 30px;
+        justify-content: center;
+        text-align: center;
     }
 
     /* --- SEÇÃO ÁREAS DE ATUAÇÃO (CARDS) --- */
-    .practice-area-card {
-        margin-bottom: 20px; /* Separa os cards um do outro */
-        padding: 25px !important;
+    .parallax-section {
+        background-attachment: scroll !important; /* Remove parallax no mobile */
     }
 
-    /* Ícones das áreas maiores para toque */
-    .practice-area-card i {
+    .area-card {
+        margin-bottom: 30px;
+        padding: 30px 20px !important;
+        text-align: center;
+    }
+
+    .area-card .icon {
         font-size: 3rem !important;
+        margin-bottom: 20px;
+    }
+
+    .area-card h5 {
+        font-size: 1.4rem !important;
+        margin-bottom: 15px;
+    }
+
+    .specialties-list {
+        padding-left: 0;
+        text-align: center;
+    }
+
+    .specialties-list li {
+        font-size: 0.95rem;
+        padding: 8px 0;
     }
 
     /* --- ESTATÍSTICAS --- */
     .stat-item {
-        margin-bottom: 40px; /* Separa os números */
+        margin-bottom: 40px;
+        text-align: center;
     }
 
-    /* --- RODAPÉ (FOOTER) --- */
+    .stat-counter {
+        font-size: 3rem !important;
+    }
+
+    .stat-label {
+        font-size: 1rem !important;
+    }
+
+    /* --- ARTIGOS --- */
+    .article-card {
+        margin-bottom: 30px;
+    }
+
+    .article-card img {
+        height: 200px !important;
+    }
+
+    .article-card h5 {
+        font-size: 1.2rem !important;
+    }
+
+    /* --- DEPOIMENTOS --- */
+    .testimonial-card {
+        margin-bottom: 30px;
+        padding: 25px !important;
+    }
+
+    .testimonial-text {
+        font-size: 0.95rem !important;
+    }
+
+    .testimonial-author {
+        font-size: 1rem !important;
+    }
+
+    /* --- FAQ (PERGUNTAS) --- */
+    .accordion-button {
+        font-size: 1rem !important;
+        padding: 15px !important;
+    }
+
+    .accordion-body {
+        font-size: 0.95rem !important;
+    }
+
+    /* --- NEWSLETTER --- */
+    #newsletter .section-title {
+        font-size: 1.8rem !important;
+    }
+
+    #newsletter-form {
+        flex-direction: column;
+    }
+
+    #newsletter-form input {
+        margin-bottom: 10px;
+        width: 100% !important;
+    }
+
+    #newsletter-form button {
+        width: 100%;
+    }
+
+    /* --- RODAPÉ --- */
     footer {
         text-align: center !important;
+        padding: 40px 20px !important;
     }
 
     footer .col-lg-4 {
-        margin-bottom: 40px;
+        margin-bottom: 30px;
     }
 
-    /* --- CHAT WIDGET NO MOBILE --- */
-    /* Deixa o chat mais discreto no celular para não tapar o conteúdo */
+    footer h5 {
+        margin-bottom: 20px;
+    }
+
+    footer .social-icons {
+        justify-content: center;
+    }
+
+    /* --- MODAL DE CONTATO --- */
+    .modal-dialog {
+        margin: 20px !important;
+    }
+
+    .modal-content {
+        padding: 20px !important;
+    }
+
+    .contact-form input,
+    .contact-form textarea,
+    .contact-form select {
+        font-size: 1rem !important;
+        padding: 12px !important;
+    }
+
+    /* --- MODAL SENTIMENTAL (POPUP) --- */
+    .sentimental-modal-content {
+        margin: 20px;
+        padding: 30px 20px !important;
+    }
+
+    .sentimental-title {
+        font-size: 1.8rem !important;
+    }
+
+    .sentimental-text {
+        font-size: 0.95rem !important;
+    }
+
+    .btn-sentimental-whatsapp {
+        padding: 14px 30px !important;
+        font-size: 1rem !important;
+        width: 100%;
+    }
+
+    .sentimental-close {
+        top: 10px !important;
+        right: 10px !important;
+        width: 35px !important;
+        height: 35px !important;
+        font-size: 1.5rem !important;
+    }
+
+    /* --- CHAT WHATSAPP (WIDGET) --- */
     #chat-widget-container {
-        width: 90% !important; /* Não ocupa 100% da largura */
+        width: 90% !important;
+        max-width: 350px;
         right: 5% !important;
-        bottom: 80px !important; /* Fica acima do botão do WhatsApp */
-        height: 60vh !important; /* Ocupa 60% da altura da tela */
+        bottom: 85px !important;
+        height: 65vh !important;
+        max-height: 500px;
     }
 
-    /* O botão flutuante (cabeça do advogado) */
+    .chat-launcher {
+        width: 60px !important;
+        height: 60px !important;
+        bottom: 20px !important;
+        right: 20px !important;
+    }
+
+    .launcher-avatar {
+        width: 60px !important;
+        height: 60px !important;
+    }
+
+    .chat-launcher-bubble {
+        width: 220px !important;
+        right: 15px !important;
+        bottom: 90px !important;
+        font-size: 0.85rem !important;
+        padding: 12px 15px !important;
+    }
+
+    #notification-badge {
+        top: -5px !important;
+        right: -5px !important;
+        width: 20px !important;
+        height: 20px !important;
+        font-size: 0.7rem !important;
+    }
+
+    /* Janela do chat */
+    #chat-window {
+        border-radius: 15px;
+    }
+
+    .chat-header {
+        padding: 15px !important;
+    }
+
+    .chat-header h4 {
+        font-size: 1rem !important;
+    }
+
+    .chat-body {
+        padding: 15px !important;
+    }
+
+    .chat-message {
+        font-size: 0.9rem !important;
+        padding: 12px 15px !important;
+    }
+
+    .chat-footer {
+        padding: 12px !important;
+    }
+
+    .chat-footer .btn {
+        font-size: 0.9rem !important;
+        padding: 12px 20px !important;
+    }
+
+    /* --- BOTÃO VOLTAR AO TOPO --- */
+    .back-to-top-btn {
+        width: 45px !important;
+        height: 45px !important;
+        bottom: 20px !important;
+        left: 20px !important;
+        font-size: 1.2rem !important;
+    }
+
+    /* --- COOKIE BANNER --- */
+    #cookie-banner {
+        bottom: 0 !important;
+        left: 0 !important;
+        right: 0 !important;
+        width: 100% !important;
+        border-radius: 0 !important;
+        padding: 20px !important;
+        text-align: center;
+    }
+
+    #cookie-banner p {
+        font-size: 0.9rem !important;
+        margin-bottom: 15px;
+    }
+
+    #cookie-banner .btn {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    /* --- AJUSTES DE IMAGENS --- */
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    /* Imagens com lazy load */
+    img.lazy-load {
+        opacity: 0;
+        transition: opacity 0.3s ease;
+    }
+
+    img.lazy-load.loaded {
+        opacity: 1;
+    }
+}
+
+/* --- AJUSTES PARA CELULARES MUITO PEQUENOS (iPhone SE, antigos) --- */
+@media (max-width: 380px) {
+    
+    h1 {
+        font-size: 1.8rem !important;
+    }
+
+    h2.section-title {
+        font-size: 1.7rem !important;
+    }
+
+    .hero-content h1 {
+        font-size: 1.9rem !important;
+    }
+
+    .btn {
+        font-size: 0.9rem !important;
+        padding: 12px 20px !important;
+    }
+
+    .area-card {
+        padding: 25px 15px !important;
+    }
+
     .chat-launcher {
         width: 55px !important;
         height: 55px !important;
-        bottom: 20px !important;
-        right: 20px !important;
     }
 
     .launcher-avatar {
         width: 55px !important;
         height: 55px !important;
     }
+}
 
-    /* Balão de "Quer falar agora?" */
-    .chat-launcher-bubble {
-        width: 200px !important;
-        right: 10px !important;
-        bottom: 85px !important;
-        font-size: 0.8rem !important;
+/* --- MODO PAISAGEM (LANDSCAPE) --- */
+@media (max-width: 991px) and (orientation: landscape) {
+    
+    .hero-section-video {
+        height: auto !important;
+        min-height: 100vh;
+        padding: 100px 20px 60px 20px;
     }
 
-    /* Botão Voltar ao Topo */
-    .back-to-top-btn {
-        width: 40px !important;
-        height: 40px !important;
-        bottom: 20px !important;
-        left: 20px !important; /* Mantém na esquerda como no original */
-        font-size: 1rem !important;
+    .section-padding {
+        padding: 50px 20px !important;
+    }
+
+    #chat-widget-container {
+        height: 80vh !important;
     }
 }
 
-/* --- AJUSTES EXTRAS PARA TELAS MUITO PEQUENAS (Iphone SE, Antigos) --- */
-@media (max-width: 380px) {
-    h1 { font-size: 1.8rem !important; }
-    .btn { font-size: 0.9rem !important; }
+/* --- OTIMIZAÇÕES DE PERFORMANCE MOBILE --- */
+@media (max-width: 991px) {
+    
+    /* Remove animações pesadas no mobile */
+    * {
+        animation-duration: 0.5s !important;
+        transition-duration: 0.3s !important;
+    }
+
+    /* Suaviza scrolling */
+    html {
+        scroll-behavior: smooth;
+    }
+
+    /* Remove sombras muito pesadas */
+    .navbar.scrolled,
+    .area-card,
+    .article-card,
+    .testimonial-card {
+        box-shadow: 0 4px 15px rgba(0,0,0,0.1) !important;
+    }
 }

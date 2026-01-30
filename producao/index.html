@@ -1,14 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <script type="text/javascript">
-        (function() {
-            var isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
-            if (isMobile) {
-                window.location.href = "./mobile/index.html";
-            }
-        })();
-    </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Dr. Bruno Miranda</title>
@@ -94,9 +86,9 @@
                         <a class="nav-link language-switcher active" href="index.html" title="Português">
                             <img src="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/flags/4x3/br.svg" alt="Bandeira do Brasil" class="flag-icon">
                         </a>
-                        <a class="nav-link language-switcher" href="index-en.html" title="English">
+                       <!-- <a class="nav-link language-switcher" href="index-en.html" title="English">
                             <img src="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/flags/4x3/us.svg" alt="Bandeira dos Estados Unidos" class="flag-icon">
-                        </a>
+                        </a>-->
                     </li>
                 </ul>
             </div>
@@ -104,26 +96,48 @@
     </nav>
 
     <!-- SEÇÃO INÍCIO (HERO) COM VÍDEO -->
-    <header id="inicio" class="hero-section-video">
-        <video playsinline autoplay muted loop poster="fundo.mp4" id="bgvideo">
-            <source src="fundo.mp4" type="video/mp4">
-        </video>
-        <div class="hero-overlay"></div>
-        
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-7">
-                    <div class="hero-content">
-                        <h1 data-aos="fade-up">Soluções Jurídicas Modernas e Eficazes</h1>
-                        <p class="lead" data-aos="fade-up" data-aos-delay="200">Defendendo seus direitos com estratégia, dedicação e um olhar para o futuro.</p>
-                        <button class="btn btn-primary mt-4" data-aos="fade-up" data-aos-delay="400" data-bs-toggle="modal" data-bs-target="#contactModal">Agende sua Consulta</button>
-                    </div>
+  <div class="modal fade" id="sentimentalModal" tabindex="-1" aria-labelledby="sentimentalModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="sentimental-modal-content">
+            
+            <!-- Vídeo de fundo (opcional, se não carregar usa o fundo escuro) -->
+            <!-- Certifique-se de que o arquivo fundo.mp4 existe na pasta -->
+            <video class="sentimental-video-bg" autoplay muted loop playsinline>
+                <source src="fundo.mp4" type="video/mp4">
+            </video>
+            
+            <!-- Camada escura sobre o vídeo -->
+            <div class="sentimental-overlay"></div>
+
+            <!-- BOTÃO DE FECHAR (IMPORTANTE: data-bs-dismiss="modal") -->
+            <button type="button" class="sentimental-close" data-bs-dismiss="modal" aria-label="Close">
+                <!-- Ícone X (usando caractere unicode se não tiver FontAwesome, ou <i> se tiver) -->
+                <span aria-hidden="true">&times;</span>
+            </button>
+
+            <!-- Conteúdo do Modal -->
+            <div class="sentimental-modal-body">
+                <!-- Ícone de coração pulsando -->
+                <i class="fas fa-heartbeat sentimental-icon"></i>
+                
+                <h2 class="sentimental-title">Não deixe seus direitos para depois</h2>
+                
+                <div class="sentimental-text">
+                    Sabemos que lidar com questões jurídicas pode ser estressante e desgastante. 
+                    <br><br>
+                    <strong>Você não precisa enfrentar isso sozinho.</strong>
+                    <br>
+                    Nossa equipe está pronta para ouvir sua história e lutar pelo que é justo.
                 </div>
-                <div class="col-lg-5 d-none d-lg-flex align-items-center justify-content-center">
-                    <img src="logom.png" alt="Logo Bruno Miranda" class="hero-logo" data-aos="fade-left" data-aos-delay="600">
-                </div>
+
+                <!-- Botão de Ação -->
+                <a href="https://wa.me/SEUNUMERO" target="_blank" class="btn-sentimental-whatsapp">
+                    <i class="fab fa-whatsapp"></i> Falar com um Especialista Agora
+                </a>
             </div>
         </div>
+    </div>
+</div>
 
         <a href="#sobre" class="scroll-down-indicator" aria-label="Rolar para baixo">
             <div class="mouse">
@@ -418,7 +432,7 @@
                 <div class="container d-flex flex-column flex-md-row justify-content-between text-center">
                     <p class="copyright mb-2 mb-md-0">&copy; 2025 Bruno Miranda Advocacia. Todos os direitos reservados. | <a href="politica-de-privacidade.html">Política de Privacidade</a></p>
                     <p class="developer">Desenvolvido por <a href="https://api.whatsapp.com/send?phone=5541999426605&text=Olá!%20Vi%20o%20site%20que%20você%20desenvolveu%20e%20gostaria%20de%20mais%20informações." target="_blank">Kauan Lauer</a></p>
-                    <p>Versão 13.52.27.01.26</p> <!--Versão hora.minutos.dia.mes.ano-->
+                    <p>Versão 10.39.30.01.26</p> <!--Versão hora.minutos.dia.mes.ano-->
                 </div>
             </div>
         </footer>
@@ -508,5 +522,331 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="app.js"></script>
+
+    <!-- MODAL SENTIMENTAL - ABRE APÓS 30 SEGUNDOS -->
+    <div class="modal fade" id="sentimentalModal" tabindex="-1" aria-labelledby="sentimentalModalLabel" aria-hidden="true" data-bs-backdrop="static" data-bs-keyboard="false">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content sentimental-modal-content">
+                <!-- Vídeo de fundo -->
+                <video autoplay muted loop playsinline class="sentimental-video-bg">
+                    <source src="fundo1.mp4" type="video/mp4">
+                </video>
+                <div class="sentimental-overlay"></div>
+                
+                <div class="modal-body sentimental-modal-body">
+                    <button type="button" class="btn-close sentimental-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+                    
+                    <div class="sentimental-content">
+                        <div class="sentimental-icon">
+                            <i class="bi bi-heart-fill"></i>
+                        </div>
+                        
+                        <h2 class="sentimental-title">Você Não Está Sozinho</h2>
+                        
+                        <p class="sentimental-text">
+                            Sei que enfrentar um problema jurídico pode ser <strong>assustador e solitário</strong>. 
+                            Muitas vezes, você pode se sentir <strong>perdido</strong>, sem saber por onde começar.
+                        </p>
+                        
+                        <p class="sentimental-text">
+                            Mas quero que saiba: <strong>você não precisa passar por isso sozinho</strong>.
+                        </p>
+                        
+                        <div class="sentimental-doctor">
+                            <img src="Bruno.jpeg" alt="Dr. Bruno Miranda" class="sentimental-doctor-img">
+                            <div class="sentimental-doctor-info">
+                                <h4>Dr. Bruno Miranda</h4>
+                                <p>Advogado especializado</p>
+                            </div>
+                        </div>
+                        
+                        <p class="sentimental-highlight">
+                            Estou aqui para te <strong>ouvir</strong>, te <strong>orientar</strong> e 
+                            lutar pelos seus <strong>direitos</strong> com toda dedicação que você merece.
+                        </p>
+                        
+                        <div class="sentimental-cta">
+                            <p class="sentimental-question">Vamos conversar sobre o seu caso agora?</p>
+                            <a href="https://api.whatsapp.com/send?phone=554198052279&text=Olá%20Dr.%20Bruno!%20Vi%20seu%20site%20e%20preciso%20de%20ajuda%20com%20meu%20caso." 
+                               target="_blank" 
+                               class="btn btn-sentimental-whatsapp">
+                                <i class="bi bi-whatsapp"></i> 
+                                Sim, quero conversar agora
+                            </a>
+                            <p class="sentimental-guarantee">
+                                <i class="bi bi-shield-check"></i> Atendimento sigiloso e humanizado
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <style>
+        /* Estilos do Modal Sentimental */
+        .sentimental-modal-content {
+            border: none;
+            border-radius: 20px;
+            overflow: hidden;
+            position: relative;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+        }
+
+        .sentimental-video-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 0;
+        }
+
+        .sentimental-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(13, 27, 42, 0.95), rgba(27, 38, 59, 0.92));
+            z-index: 1;
+        }
+
+        .sentimental-modal-body {
+            position: relative;
+            z-index: 2;
+            padding: 50px 40px;
+            text-align: center;
+        }
+
+        .sentimental-close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            opacity: 0.8;
+            transition: all 0.3s ease;
+            z-index: 10;
+        }
+
+        .sentimental-close:hover {
+            opacity: 1;
+            background: rgba(255, 255, 255, 0.2);
+            transform: rotate(90deg);
+        }
+
+        .sentimental-icon {
+            font-size: 60px;
+            color: #c9a961;
+            margin-bottom: 20px;
+            animation: heartbeat 1.5s infinite;
+        }
+
+        @keyframes heartbeat {
+            0%, 100% { transform: scale(1); }
+            10%, 30% { transform: scale(1.1); }
+            20%, 40% { transform: scale(1); }
+        }
+
+        .sentimental-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 42px;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 30px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .sentimental-text {
+            font-size: 18px;
+            color: #e0e0e0;
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+
+        .sentimental-text strong {
+            color: #c9a961;
+            font-weight: 600;
+        }
+
+        .sentimental-doctor {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            margin: 35px 0;
+            padding: 25px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            border: 2px solid rgba(201, 169, 97, 0.3);
+        }
+
+        .sentimental-doctor-img {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            border: 3px solid #c9a961;
+            box-shadow: 0 5px 15px rgba(201, 169, 97, 0.3);
+        }
+
+        .sentimental-doctor-info h4 {
+            color: #ffffff;
+            font-size: 22px;
+            font-weight: 600;
+            margin: 0;
+        }
+
+        .sentimental-doctor-info p {
+            color: #c9a961;
+            font-size: 16px;
+            margin: 5px 0 0 0;
+        }
+
+        .sentimental-highlight {
+            font-size: 20px;
+            color: #ffffff;
+            line-height: 1.8;
+            margin: 30px 0;
+            padding: 20px;
+            background: rgba(201, 169, 97, 0.1);
+            border-left: 4px solid #c9a961;
+            border-radius: 8px;
+        }
+
+        .sentimental-highlight strong {
+            color: #c9a961;
+        }
+
+        .sentimental-cta {
+            margin-top: 35px;
+        }
+
+        .sentimental-question {
+            font-size: 22px;
+            color: #ffffff;
+            font-weight: 600;
+            margin-bottom: 25px;
+        }
+
+        .btn-sentimental-whatsapp {
+            background: linear-gradient(135deg, #25D366, #128C7E);
+            color: white;
+            padding: 18px 45px;
+            font-size: 20px;
+            font-weight: 600;
+            border-radius: 50px;
+            border: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 25px rgba(37, 211, 102, 0.4);
+            text-decoration: none;
+        }
+
+        .btn-sentimental-whatsapp:hover {
+            background: linear-gradient(135deg, #128C7E, #25D366);
+            transform: translateY(-3px);
+            box-shadow: 0 12px 35px rgba(37, 211, 102, 0.6);
+            color: white;
+        }
+
+        .btn-sentimental-whatsapp i {
+            font-size: 28px;
+        }
+
+        .sentimental-guarantee {
+            margin-top: 20px;
+            color: #c9a961;
+            font-size: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        .sentimental-guarantee i {
+            font-size: 18px;
+        }
+
+        /* Animação de entrada do modal */
+        .modal.fade .sentimental-modal-content {
+            transform: scale(0.8);
+            opacity: 0;
+        }
+
+        .modal.show .sentimental-modal-content {
+            transform: scale(1);
+            opacity: 1;
+            transition: all 0.4s ease;
+        }
+
+        /* Responsivo */
+        @media (max-width: 768px) {
+            .sentimental-modal-body {
+                padding: 30px 20px;
+            }
+
+            .sentimental-title {
+                font-size: 32px;
+            }
+
+            .sentimental-text {
+                font-size: 16px;
+            }
+
+            .sentimental-doctor {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .sentimental-highlight {
+                font-size: 18px;
+            }
+
+            .sentimental-question {
+                font-size: 20px;
+            }
+
+            .btn-sentimental-whatsapp {
+                padding: 15px 35px;
+                font-size: 18px;
+            }
+        }
+    </style>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Verifica se já foi mostrado
+        const modalShown = sessionStorage.getItem('sentimentalModalShown');
+        
+        if (!modalShown) {
+            // Configura o tempo para 30 segundos (30000ms)
+            // Para testar rápido, mude 30000 para 3000 (3 segundos)
+            setTimeout(function() {
+                // Cria a instância do modal usando Bootstrap
+                var myModalElement = document.getElementById('sentimentalModal');
+                
+                // Verifica se o elemento existe para evitar erros
+                if (myModalElement) {
+                    var sentimentalModal = new bootstrap.Modal(myModalElement, {
+                        backdrop: true, // Permite fechar clicando fora
+                        keyboard: true  // Permite fechar com a tecla ESC
+                    });
+                    
+                    sentimentalModal.show();
+                    
+                    // Salva na sessão para não abrir de novo se a pessoa der F5
+                    sessionStorage.setItem('sentimentalModalShown', 'true');
+                }
+            }, 30000); 
+        }
+    });
+</script>
+
 </body>
 </html>

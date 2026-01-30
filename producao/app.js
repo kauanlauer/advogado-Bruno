@@ -17,12 +17,13 @@ class SiteManager {
         this.cookieBanner = document.getElementById('cookie-banner');
         this.acceptCookiesBtn = document.getElementById('accept-cookies-btn');
 
-        // ===== INÍCIO DA ALTERAÇÃO - ELEMENTOS DO NOVO CHAT =====
-        // Seleciona os elementos do novo widget de chat
+        // Elementos do chat WhatsApp
         this.chatContainer = document.getElementById('chat-widget-container');
         this.chatLauncher = document.getElementById('chat-launcher');
         this.closeChatBtn = document.getElementById('close-chat-btn');
-        // ===== FIM DA ALTERAÇÃO =====
+        
+        // Botão voltar ao topo
+        this.backToTopButton = document.getElementById('back-to-top-btn');
 
         // Adiciona os ouvintes de eventos
         this.addEventListeners();
@@ -40,7 +41,7 @@ class SiteManager {
 
         // Ouve o clique no botão de voltar ao topo
         if (this.backToTopButton) {
-            this.backToTopButton.addEventListener('click', this.scrollToTop);
+            this.backToTopButton.addEventListener('click', this.scrollToTop.bind(this));
         }
 
         // Ouve o envio do formulário de newsletter
@@ -53,7 +54,6 @@ class SiteManager {
             this.acceptCookiesBtn.addEventListener('click', this.handleCookieAccept.bind(this));
         }
 
-        // ===== INÍCIO DA ALTERAÇÃO - EVENTOS DO NOVO CHAT =====
         // Adiciona o evento de clique para abrir/fechar o chat
         if (this.chatLauncher) {
             this.chatLauncher.addEventListener('click', () => {
@@ -67,15 +67,7 @@ class SiteManager {
                 this.chatContainer.classList.remove('open');
             });
         }
-        // ===== FIM DA ALTERAÇÃO =====
     }
-    
-    // ===== INÍCIO DA ALTERAÇÃO - REMOÇÃO DA FUNÇÃO ANTIGA =====
-    /**
-     * A função initWhatsappWidget() foi removida pois não é mais necessária.
-     * O controle do novo chat é feito pelos eventos e CSS.
-     */
-    // ===== FIM DA ALTERAÇÃO =====
 
     /**
      * Inicializa a biblioteca de animações (AOS).
@@ -93,9 +85,9 @@ class SiteManager {
      * Adiciona/remove a classe 'scrolled' para mudar o estilo.
      */
     handleNavbarScroll() {
-        if (window.scrollY > 50) {
+        if (this.navbar && window.scrollY > 50) {
             this.navbar.classList.add('scrolled');
-        } else {
+        } else if (this.navbar) {
             this.navbar.classList.remove('scrolled');
         }
     }
@@ -116,9 +108,9 @@ class SiteManager {
      * Mostra ou esconde o botão "Voltar ao Topo" com base na rolagem.
      */
     handleBackToTopButton() {
-        if (window.scrollY > 300) {
+        if (this.backToTopButton && window.scrollY > 300) {
             this.backToTopButton.classList.add('visible');
-        } else {
+        } else if (this.backToTopButton) {
             this.backToTopButton.classList.remove('visible');
         }
     }
@@ -138,6 +130,8 @@ class SiteManager {
      * Animação de contagem para as estatísticas quando elas se tornam visíveis.
      */
     initStatCounters() {
+        if (!this.statCounters || this.statCounters.length === 0) return;
+        
         const observer = new IntersectionObserver((entries, observer) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
@@ -172,6 +166,8 @@ class SiteManager {
      * As imagens só são carregadas quando estão próximas de entrar na tela.
      */
     initLazyLoading() {
+        if (!this.lazyImages || this.lazyImages.length === 0) return;
+        
         const observer = new IntersectionObserver((entries, observer) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
@@ -193,6 +189,8 @@ class SiteManager {
      * Verifica se o usuário já aceitou os cookies no passado.
      */
     initCookieBanner() {
+        if (!this.cookieBanner) return;
+        
         // Verifica se o cookie de consentimento já foi aceito
         if (!localStorage.getItem('cookieConsent')) {
             // Se não foi, mostra o banner após 2 segundos
@@ -213,6 +211,51 @@ class SiteManager {
     }
 
     /**
+     * Inicializa o popup de WhatsApp com animação automática
+     */
+    initWhatsAppPopup() {
+        const chatLauncher = document.getElementById('chat-launcher');
+        const chatWindow = document.getElementById('chat-window');
+        const closeChatBtn = document.getElementById('close-chat-btn');
+        const chatBubble = document.getElementById('chat-bubble');
+        const notificationBadge = document.getElementById('notification-badge');
+        
+        if (!chatLauncher) return; // Se não encontrar o elemento, não faz nada
+        
+        let isChatOpen = false;
+
+        // SEQUÊNCIA AUTOMÁTICA
+        setTimeout(() => {
+            // 1. Mostra o balão primeiro
+            if (!isChatOpen && chatBubble) chatBubble.classList.add('visible');
+            
+            // 2. Depois de 6 segundos, troca o balão pela notificação vermelha
+            setTimeout(() => {
+                if (!isChatOpen && chatBubble && notificationBadge) {
+                    chatBubble.classList.remove('visible'); // Tira o balão
+                    notificationBadge.classList.add('show'); // Mostra a bolinha vermelha
+                }
+            }, 6000); 
+
+        }, 2000); // Começa 2 segundos após abrir o site
+
+        // ABRIR/FECHAR CHAT
+        function toggleChat() {
+            isChatOpen = !isChatOpen;
+            if (isChatOpen) {
+                if (chatWindow) chatWindow.classList.add('active');
+                if (notificationBadge) notificationBadge.classList.remove('show'); // Remove a notificação ao clicar
+                if (chatBubble) chatBubble.classList.remove('visible');
+            } else {
+                if (chatWindow) chatWindow.classList.remove('active');
+            }
+        }
+
+        chatLauncher.addEventListener('click', toggleChat);
+        if (closeChatBtn) closeChatBtn.addEventListener('click', toggleChat);
+    }
+
+    /**
      * DICAS DE OTIMIZAÇÃO DE PERFORMANCE
      */
     logPerformanceTips() {
@@ -227,6 +270,7 @@ class SiteManager {
         this.initStatCounters();
         this.initLazyLoading();
         this.initCookieBanner();
+        this.initWhatsAppPopup(); // Inicializa o popup do WhatsApp
         this.logPerformanceTips();
     }
 }
@@ -237,73 +281,4 @@ class SiteManager {
 document.addEventListener('DOMContentLoaded', () => {
     const site = new SiteManager();
     site.init();
-});
-
-
-
-
-
-
-document.addEventListener('DOMContentLoaded', function() {
-        const chatLauncher = document.getElementById('chat-launcher');
-        const chatWindow = document.getElementById('chat-window');
-        const closeChatBtn = document.getElementById('close-chat-btn');
-        const chatBubble = document.getElementById('chat-bubble');
-        const notificationBadge = document.getElementById('notification-badge');
-        
-        let isChatOpen = false;
-
-        // SEQUÊNCIA AUTOMÁTICA
-        setTimeout(() => {
-            // 1. Mostra o balão primeiro
-            if (!isChatOpen) chatBubble.classList.add('visible');
-            
-            // 2. Depois de 6 segundos, troca o balão pela notificação vermelha
-            setTimeout(() => {
-                if (!isChatOpen) {
-                    chatBubble.classList.remove('visible'); // Tira o balão
-                    notificationBadge.classList.add('show'); // Mostra a bolinha vermelha
-                }
-            }, 6000); 
-
-        }, 2000); // Começa 2 segundos após abrir o site
-
-        // ABRIR/FECHAR CHAT
-        function toggleChat() {
-            isChatOpen = !isChatOpen;
-            if (isChatOpen) {
-                chatWindow.classList.add('active');
-                notificationBadge.classList.remove('show'); // Remove a notificação ao clicar
-                chatBubble.classList.remove('visible');
-            } else {
-                chatWindow.classList.remove('active');
-            }
-        }
-
-        chatLauncher.addEventListener('click', toggleChat);
-        closeChatBtn.addEventListener('click', toggleChat);
-    });
-
-
-    // Captura o botão
-this.backToTopButton = document.getElementById('back-to-top-btn');
-
-// Função para mostrar/esconder o botão ao rolar a página
-window.addEventListener('scroll', () => {
-    if (window.scrollY > 300) {
-        // Adiciona a classe que torna o botão visível à esquerda
-        this.backToTopButton.classList.add('visible');
-    } else {
-        // Remove a classe quando estiver no topo
-        this.backToTopButton.classList.remove('visible');
-    }
-});
-
-// Função para voltar ao topo ao clicar
-this.backToTopButton.addEventListener('click', (e) => {
-    e.preventDefault();
-    window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
-    });
 });

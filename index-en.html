@@ -1,427 +1,625 @@
 <!DOCTYPE html>
-<html lang="en-US">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dr. Bruno Miranda - Attorney at Law</title>
-    
-    <!-- Favicon -->
+    <title>Bruno Miranda Law Firm | Strategic Defense and Human-Centered Service</title>
+    <meta name="description" content="Law firm focused on Civil, Administrative, and Criminal Law. Confidential, strategic, and direct service with an attorney.">
+    <meta name="keywords" content="attorney, law firm, civil law, administrative law, criminal law, military law, Bruno Miranda">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:title" content="Bruno Miranda Law Firm | Strategic Defense and Human-Centered Service">
+    <meta property="og:description" content="Confidential, strategic, and direct service with an attorney for civil, administrative, and criminal cases.">
+    <meta property="og:image" content="https://www.brunomirandaadv.com.br/Bruno.jpeg">
+    <meta property="og:url" content="https://www.brunomirandaadv.com.br/index-en.html">
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:title" content="Bruno Miranda Advocacia">
+    <meta property="twitter:description" content="Technical defense with strategy, clarity, and professional confidentiality.">
+    <meta property="twitter:image" content="https://www.brunomirandaadv.com.br/Bruno.jpeg">
+    <link rel="canonical" href="https://www.brunomirandaadv.com.br/index-en.html">
     <link rel="icon" type="image/png" href="logom.png">
 
-    <meta name="description" content="Law office specializing in Civil, Administrative, and Criminal Law.">
-    <meta name="keywords" content="lawyer, law, advocacy, bruno miranda, civil law, administrative law, criminal law, military law">
-
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Bootstrap Icons -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-
-    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="preload" as="image" href="logo.png">
+    <link rel="preload" as="image" href="Bruno.jpeg">
 
-    <!-- Animation Library (AOS) -->
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-
-    <!-- Link to our custom CSS file -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="style.css">
-    
-    <!-- SEO OPTIMIZATION: Schema Markup -->
+
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "Attorney",
-      "name": "Bruno Miranda Advocacy",
+      "name": "Bruno Miranda Advocacia",
       "image": "Bruno.jpeg",
       "telephone": "+554198052279",
       "email": "brunodemiranda.adv@gmail.com",
       "address": {
         "@type": "PostalAddress",
-        "streetAddress": "Main Ave, 123, Suite 45",
         "addressLocality": "Curitiba",
         "addressRegion": "PR",
-        "postalCode": "80000-000",
         "addressCountry": "BR"
       },
-      "url": "YOUR_WEBSITE_URL_HERE.com",
-      "description": "Advocacy specializing in Civil, Administrative, and Criminal Law.",
+      "url": "https://www.brunomirandaadv.com.br",
+      "description": "Law practice focused on Civil, Administrative, and Criminal Law.",
       "priceRange": "$$$"
     }
     </script>
 </head>
-<body data-bs-spy="scroll" data-bs-target="#mainNavbar">
+<body data-bs-spy="scroll" data-bs-target="#mainNavbar" data-bs-offset="120">
 
-    <!-- NAVIGATION BAR -->
     <nav id="mainNavbar" class="navbar navbar-expand-lg fixed-top">
-        <div class="container">
-            <!-- LOGO -->
-            <a class="navbar-brand" href="index-en.html">
-                <img src="logo.png" alt="Logo Bruno Miranda Advocacy">
+        <div class="container nav-shell">
+            <a class="navbar-brand" href="#inicio" aria-label="Go to home">
+                <img src="logo.png" alt="Logo Bruno Miranda Advocacia">
             </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Open menu">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
-                <!-- MENU LINKS -->
-                <ul class="navbar-nav ms-auto align-items-center">
-                    <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#about">The Lawyer</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#areas">Practice Areas</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#testimonials">Testimonials</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#faq">FAQ</a></li>
-                    <!-- Contact Button -->
-                    <li class="nav-item ms-lg-3 mt-3 mt-lg-0">
-                        <button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#contactModal">
-                            <i class="bi bi-envelope-fill"></i> Contact Us
-                        </button>
-                    </li>
-                    <!-- Language Switcher with Flags (with class for mobile adjustment) -->
-                    <li class="nav-item d-flex align-items-center ms-lg-3 mt-3 mt-lg-0 language-switcher-li">
-                        <a class="nav-link language-switcher" href="index.html" title="Português">
-                            <img src="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/flags/4x3/br.svg" alt="Bandeira do Brasil" class="flag-icon">
+                <div class="nav-menu-surface ms-lg-auto">
+                    <ul class="navbar-nav align-items-lg-center nav-links-compact">
+                        <li class="nav-item"><a class="nav-link" href="#inicio">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#sobre">The Lawyer</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#credenciais">Credentials</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#areas">Practice Areas</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#casos">Cases</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#metodo">How It Works</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#testimonials">Testimonials</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#faq">FAQ</a></li>
+                    </ul>
+                    <div class="language-switch" role="group" aria-label="Select language">
+                        <a class="lang-option" href="index.html" aria-label="Portuguese version">
+                            <img class="lang-flag" src="https://flagcdn.com/br.svg" alt="Brazil flag" loading="lazy" decoding="async">
+                            <span>PT</span>
                         </a>
-                        <a class="nav-link language-switcher active" href="index-en.html" title="English">
-                            <img src="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/flags/4x3/us.svg" alt="Bandeira dos Estados Unidos" class="flag-icon">
+                        <a class="lang-option active" href="index-en.html" aria-label="English version">
+                            <img class="lang-flag" src="https://flagcdn.com/us.svg" alt="United States flag" loading="lazy" decoding="async">
+                            <span>EN</span>
                         </a>
-                    </li>
-                </ul>
+                    </div>
+                    <button class="btn btn-primary btn-nav" data-bs-toggle="modal" data-bs-target="#contactModal">
+                        <i class="bi bi-chat-dots-fill"></i> Strategic Consultation
+                    </button>
+                </div>
             </div>
         </div>
     </nav>
 
-    <!-- HOME SECTION (HERO) WITH VIDEO -->
-    <header id="home" class="hero-section-video">
-        <video playsinline autoplay muted loop poster="fundo.mp4" id="bgvideo">
+    <header id="inicio" class="hero-section">
+        <video class="hero-video" autoplay muted loop playsinline preload="metadata" disablepictureinpicture poster="Bruno.jpeg">
             <source src="fundo.mp4" type="video/mp4">
         </video>
         <div class="hero-overlay"></div>
-        
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-7">
-                    <div class="hero-content">
-                        <h1 data-aos="fade-up">Modern and Effective Legal Solutions</h1>
-                        <p class="lead" data-aos="fade-up" data-aos-delay="200">Defending your rights with strategy, dedication, and a forward-looking approach.</p>
-                        <button class="btn btn-primary mt-4" data-aos="fade-up" data-aos-delay="400" data-bs-toggle="modal" data-bs-target="#contactModal">Schedule Your Consultation</button>
-                    </div>
-                </div>
-                <div class="col-lg-5 d-none d-lg-flex align-items-center justify-content-center">
-                    <img src="logom.png" alt="Logo Bruno Miranda" class="hero-logo" data-aos="fade-left" data-aos-delay="600">
-                </div>
+        <div class="hero-grid-pattern"></div>
+        <div class="hero-wood-frame" aria-hidden="true"></div>
+
+        <div class="container hero-content reveal">
+            <p class="hero-kicker">High-Precision Law Practice | OAB/PR 113.470</p>
+            <h1>Technical defense for those who need results and legal certainty.</h1>
+            <p class="hero-lead">Direct service with an attorney for Civil, Administrative, and Criminal Law, with clear communication, strategy, and full confidentiality.</p>
+
+            <div class="hero-actions">
+                <a href="https://wa.me/554198052279?text=Hello!%20I%20need%20legal%20guidance%20about%20my%20case." target="_blank" class="btn btn-primary btn-lg">
+                    <i class="bi bi-whatsapp"></i> Talk now on WhatsApp
+                </a>
+                <button class="btn btn-outline-gold btn-lg" data-bs-toggle="modal" data-bs-target="#contactModal">
+                    Request a Callback
+                </button>
+            </div>
+
+            <div class="hero-trust">
+                <span><i class="bi bi-shield-check"></i> Confidential service</span>
+                <span><i class="bi bi-lightning-charge"></i> Fast response during business hours</span>
+                <span><i class="bi bi-person-check"></i> Direct contact with the attorney</span>
             </div>
         </div>
 
-        <a href="#about" class="scroll-down-indicator" aria-label="Scroll down">
-            <div class="mouse">
-                <span></span>
-            </div>
+        <a href="#sobre" class="scroll-indicator" aria-label="Scroll to content">
+            <span></span>
         </a>
     </header>
 
-    <!-- Main content -->
-    <main class="main-content">
-        <!-- ABOUT SECTION -->
-        <section id="about" class="section-padding">
+    <main>
+        <section class="authority-strip section-light reveal" aria-label="Authority elements">
             <div class="container">
-                <div class="row align-items-center">
-                    <div class="col-lg-5" data-aos="fade-right" data-aos-duration="1000">
-                        <img src="Bruno.jpeg" class="img-fluid" alt="Portrait of lawyer Bruno Miranda">
-                    </div>
-                    <div class="col-lg-6 offset-lg-1" data-aos="fade-left" data-aos-duration="1000">
-                        <h2 class="section-title ps-0 mb-2">The Lawyer</h2>
-                        <p class="oab-number mb-4">OAB/PR 113.470</p>
-                        <p>With a solid academic background, Dr. Bruno Miranda holds a law degree from Centro Universitário Santa Cruz and a postgraduate degree in military law from the renowned Escola Mineira de Direito.</p>
-                        <p>His passion for knowledge keeps him in constant improvement, with studies and research focused on criminal procedure and military psychology, ensuring an always up-to-date and cutting-edge legal practice.</p>
-                        <div class="languages-info mt-4">
-                            <i class="bi bi-translate"></i>
-                            <div>
-                                <strong>Languages</strong>
-                                <span>Portuguese and English</span>
-                            </div>
+                <div class="authority-grid">
+                    <article class="authority-item">
+                        <i class="bi bi-bank"></i>
+                        <div>
+                            <strong>Courtroom Presence</strong>
+                            <span>Technical and strategic communication at every stage.</span>
                         </div>
-                    </div>
+                    </article>
+                    <article class="authority-item">
+                        <i class="bi bi-shield-lock"></i>
+                        <div>
+                            <strong>Professional Confidentiality</strong>
+                            <span>Discreet handling to protect your legal position.</span>
+                        </div>
+                    </article>
+                    <article class="authority-item">
+                        <i class="bi bi-check2-square"></i>
+                        <div>
+                            <strong>Method and Order</strong>
+                            <span>Analysis, planning, and execution with predictability.</span>
+                        </div>
+                    </article>
+                    <article class="authority-item">
+                        <i class="bi bi-person-badge"></i>
+                        <div>
+                            <strong>Direct Service</strong>
+                            <span>Contact with the attorney, no intermediaries.</span>
+                        </div>
+                    </article>
                 </div>
             </div>
         </section>
 
-        <!-- PRACTICE AREAS SECTION WITH PARALLAX -->
-        <section id="areas" class="section-padding parallax-section">
-            <div class="parallax-overlay"></div>
+        <section id="credenciais" class="section section-light credentials-section reveal">
             <div class="container">
-                <h2 class="section-title">Practice Areas</h2>
-                <div class="row g-4 justify-content-center">
-                    <div class="col-lg-4 col-md-6" data-aos="fade-up">
-                        <div class="area-card">
-                            <i class="bi bi-people-fill icon"></i>
-                            <h5>Civil Law</h5>
-                            <ul class="specialties-list">
-                                <li>Real Estate</li>
-                                <li>Consumer</li>
-                                <li>Banking</li>
-                                <li>Family</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="150">
-                        <div class="area-card">
-                            <i class="bi bi-shield-exclamation icon"></i>
-                            <h5>Administrative Law</h5>
-                            <ul class="specialties-list">
-                                <li>Military</li>
-                                <li>Disciplinary</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
-                        <div class="area-card">
-                            <i class="bi bi-lock icon"></i>
-                            <h5>Criminal Law</h5>
-                            <ul class="specialties-list">
-                                <li>Common</li>
-                                <li>Military</li>
-                            </ul>
-                        </div>
-                    </div>
+                <div class="section-head text-center">
+                    <p class="section-tag">Credentials</p>
+                    <h2 class="section-title">Professional structure for high-standard legal representation.</h2>
+                </div>
+                <div class="credentials-grid mt-4">
+                    <article class="credential-card">
+                        <i class="bi bi-patch-check-fill"></i>
+                        <h3>Professional Compliance</h3>
+                        <p>OAB/PR 113.470 with practice guided by technique, ethics, and responsibility.</p>
+                    </article>
+                    <article class="credential-card">
+                        <i class="bi bi-mortarboard-fill"></i>
+                        <h3>Education and Specialization</h3>
+                        <p>Solid academic foundation and ongoing updates in high-complexity areas.</p>
+                    </article>
+                    <article class="credential-card">
+                        <i class="bi bi-diagram-3-fill"></i>
+                        <h3>Organized Service</h3>
+                        <p>Structured workflow for diagnosis, legal planning, and predictable execution.</p>
+                    </article>
+                    <article class="credential-card">
+                        <i class="bi bi-clipboard2-check-fill"></i>
+                        <h3>Case Management</h3>
+                        <p>Technical handling focused on legal protection, deadlines, and safe decision-making.</p>
+                    </article>
                 </div>
             </div>
         </section>
-
-        <!-- TESTIMONIALS SECTION WITH PARALLAX -->
-        <section id="testimonials" class="section-padding parallax-section">
-            <div class="parallax-overlay"></div>
-            <div class="container" data-aos="fade-up">
-                <div class="section-title text-center">
-                    <h2>What Our Clients Say</h2>
-                    <p>The trust and success of our clients are our greatest reward.</p>
-                </div>
-                <div id="testimonialCarousel" class="carousel slide" data-bs-ride="carousel">
-                    <div class="carousel-inner">
-                        <div class="carousel-item active">
-                            <div class="testimonial-card-wrapper">
-                                <div class="testimonial-card-google">
-                                    <div class="card-header">
-                                        <img src="https://placehold.co/60x60/E8F0FE/4285F4?text=J" alt="Client Avatar" class="client-avatar">
-                                        <div class="client-info">
-                                            <span class="client-name">J. Alves</span>
-                                            <div class="star-rating">
-                                                <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
-                                            </div>
-                                        </div>
-                                        <div class="google-logo">
-                                            <svg viewBox="0 0 48 48" width="28px" height="28px"><path fill="#4285F4" d="M45.12 24.5c0-1.56-.14-3.06-.4-4.5H24v8.51h11.84c-.51 2.75-2.06 5.08-4.38 6.66v5.52h7.11c4.16-3.83 6.56-9.47 6.56-16.19z"></path><path fill="#34A853" d="M24 46c6.3 0 11.59-2.09 15.45-5.68l-7.11-5.52c-2.1 1.4-4.79 2.23-7.84 2.23-6.02 0-11.12-4.04-12.94-9.47H3.88v5.7C7.74 41.44 15.22 46 24 46z"></path><path fill="#FBBC05" d="M11.06 27.06c-.39-1.18-.6-2.43-.6-3.72s.21-2.54.6-3.72V13.9H3.88c-2.23 4.44-3.48 9.47-3.48 14.82s1.25 10.38 3.48 14.82l7.18-5.7z"></path><path fill="#EA4335" d="M24 10.75c3.42 0 6.47 1.18 8.87 3.46l6.3-6.3C35.59 4.24 30.3 2 24 2 15.22 2 7.74 6.56 3.88 13.9l7.18 5.7c1.82-5.43 6.92-9.47 12.94-9.47z"></path></svg>
-                                        </div>
-                                    </div>
-                                    <div class="card-body">
-                                        <p>"Extremely competent in handling my real estate case. Dr. Bruno showed deep knowledge and guided me safely through the entire process. Highly recommend."</p>
-                                    </div>
-                                    <div class="card-footer">
-                                        <span>Posted on <strong>Google</strong></span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="carousel-item">
-                            <div class="testimonial-card-wrapper">
-                                <div class="testimonial-card-google">
-                                    <div class="card-header">
-                                        <img src="https://placehold.co/60x60/E5F4EA/34A853?text=M" alt="Client Avatar" class="client-avatar">
-                                        <div class="client-info">
-                                            <span class="client-name">Maria C.</span>
-                                            <div class="star-rating">
-                                                <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
-                                            </div>
-                                        </div>
-                                        <div class="google-logo">
-                                            <svg viewBox="0 0 48 48" width="28px" height="28px"><path fill="#4285F4" d="M45.12 24.5c0-1.56-.14-3.06-.4-4.5H24v8.51h11.84c-.51 2.75-2.06 5.08-4.38 6.66v5.52h7.11c4.16-3.83 6.56-9.47 6.56-16.19z"></path><path fill="#34A853" d="M24 46c6.3 0 11.59-2.09 15.45-5.68l-7.11-5.52c-2.1 1.4-4.79 2.23-7.84 2.23-6.02 0-11.12-4.04-12.94-9.47H3.88v5.7C7.74 41.44 15.22 46 24 46z"></path><path fill="#FBBC05" d="M11.06 27.06c-.39-1.18-.6-2.43-.6-3.72s.21-2.54.6-3.72V13.9H3.88c-2.23 4.44-3.48 9.47-3.48 14.82s1.25 10.38 3.48 14.82l7.18-5.7z"></path><path fill="#EA4335" d="M24 10.75c3.42 0 6.47 1.18 8.87 3.46l6.3-6.3C35.59 4.24 30.3 2 24 2 15.22 2 7.74 6.56 3.88 13.9l7.18 5.7c1.82-5.43 6.92-9.47 12.94-9.47z"></path></svg>
-                                        </div>
-                                    </div>
-                                    <div class="card-body">
-                                        <p>"After a car accident, Dr. Bruno was essential in securing my rights. Humane, fast, and very efficient service. I can only thank him for his dedication."</p>
-                                    </div>
-                                    <div class="card-footer">
-                                        <span>Posted on <strong>Google</strong></span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="carousel-item">
-                            <div class="testimonial-card-wrapper">
-                                <div class="testimonial-card-google">
-                                    <div class="card-header">
-                                        <img src="https://placehold.co/60x60/FCE8E6/EA4335?text=R" alt="Client Avatar" class="client-avatar">
-                                        <div class="client-info">
-                                            <span class="client-name">Ricardo P.</span>
-                                            <div class="star-rating">
-                                                <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
-                                            </div>
-                                        </div>
-                                        <div class="google-logo">
-                                            <svg viewBox="0 0 48 48" width="28px" height="28px"><path fill="#4285F4" d="M45.12 24.5c0-1.56-.14-3.06-.4-4.5H24v8.51h11.84c-.51 2.75-2.06 5.08-4.38 6.66v5.52h7.11c4.16-3.83 6.56-9.47 6.56-16.19z"></path><path fill="#34A853" d="M24 46c6.3 0 11.59-2.09 15.45-5.68l-7.11-5.52c-2.1 1.4-4.79 2.23-7.84 2.23-6.02 0-11.12-4.04-12.94-9.47H3.88v5.7C7.74 41.44 15.22 46 24 46z"></path><path fill="#FBBC05" d="M11.06 27.06c-.39-1.18-.6-2.43-.6-3.72s.21-2.54.6-3.72V13.9H3.88c-2.23 4.44-3.48 9.47-3.48 14.82s1.25 10.38 3.48 14.82l7.18-5.7z"></path><path fill="#EA4335" d="M24 10.75c3.42 0 6.47 1.18 8.87 3.46l6.3-6.3C35.59 4.24 30.3 2 24 2 15.22 2 7.74 6.56 3.88 13.9l7.18 5.7c1.82-5.43 6.92-9.47 12.94-9.47z"></path></svg>
-                                        </div>
-                                    </div>
-                                    <div class="card-body">
-                                        <p>"Impeccable professionalism. Dr. Bruno handled a complex family law issue with great sensitivity and speed. I recommend him with my eyes closed."</p>
-                                    </div>
-                                    <div class="card-footer">
-                                        <span>Posted on <strong>Google</strong></span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <button class="carousel-control-prev" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="prev">
-                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Previous</span>
-                    </button>
-                    <button class="carousel-control-next" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="next">
-                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Next</span>
-                    </button>
-                </div>
-            </div>
-        </section>
-
-        <!-- FREQUENTLY ASKED QUESTIONS (FAQ) SECTION -->
-        <section id="faq" class="section-padding">
+        <section id="sobre" class="section section-light">
             <div class="container">
-                <h2 class="section-title">Frequently Asked Questions</h2>
-                <div class="accordion accordion-flush" id="faqAccordion">
-                    <div class="accordion-item" data-aos="fade-up"><h2 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne">Do I have to pay for the first consultation?</button></h2><div id="flush-collapseOne" class="accordion-collapse collapse" data-bs-parent="#faqAccordion"><div class="accordion-body">We offer an initial consultation to evaluate the case, where we discuss the possibilities and next steps. Contact us to understand the conditions.</div></div></div>
-                    <div class="accordion-item" data-aos="fade-up" data-aos-delay="100"><h2 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo">How long can my case take?</button></h2><div id="flush-collapseTwo" class="accordion-collapse collapse" data-bs-parent="#faqAccordion"><div class="accordion-body">The duration of a legal process varies greatly depending on the complexity of the case, the court where it is processed, and other factors. In the initial consultation, we can provide an estimate based on similar cases.</div></div></div>
-                    <div class="accordion-item" data-aos="fade-up" data-aos-delay="200"><h2 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree">What documents do I need to start a case?</button></h2><div id="flush-collapseThree" class="accordion-collapse collapse" data-bs-parent="#faqAccordion"><div class="accordion-body">The necessary documentation depends on the type of action. Generally, personal identification documents (ID, CPF), proof of residence, and all documents related to the case (contracts, emails, receipts, etc.) are required.</div></div></div>
+                <div class="row g-5 align-items-center">
+                    <div class="col-lg-5 reveal">
+                        <div class="portrait-wrapper">
+                            <img src="Bruno.jpeg" alt="Portrait of attorney Bruno Miranda" class="img-fluid" loading="lazy" decoding="async">
+                            <div class="portrait-badge">
+                                <strong>OAB/PR</strong>
+                                <span>113.470</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-7 reveal">
+                        <p class="section-tag">The Lawyer</p>
+                        <h2 class="section-title">Strategic defense with presence, technique, and real commitment to the client.</h2>
+                        <p>Dr. Bruno Miranda practices with a strong legal background, postgraduate studies in Military Law, and ongoing updates in criminal procedure, civil liability, and defense practice.</p>
+                        <p>More than handling legal proceedings, the focus is to protect your legal position and reduce risk with strategic decisions at every stage.</p>
+
+                        <div class="credibility-cards">
+                            <article>
+                                <i class="bi bi-award"></i>
+                                <div>
+                                    <h3>Specialized Practice</h3>
+                                    <p>Civil, Administrative, Criminal, and Military Law.</p>
+                                </div>
+                            </article>
+                            <article>
+                                <i class="bi bi-translate"></i>
+                                <div>
+                                    <h3>Bilingual Service</h3>
+                                    <p>Portuguese and English for clients in Brazil and abroad.</p>
+                                </div>
+                            </article>
+                        </div>
+                        <div class="section-cta-inline">
+                            <a href="https://wa.me/554198052279?text=Hello!%20I%20would%20like%20to%20talk%20about%20my%20case%20with%20Dr.%20Bruno." target="_blank" class="btn btn-outline-gold">
+                                Talk to an attorney about my case
+                            </a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <!-- CALL TO ACTION (WHATSAPP) SECTION -->
-        <section id="cta-whatsapp">
-            <video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop" class="cta-video-background">
-                <source src="fundo1.mp4" type="video/mp4">
+        <section id="areas" class="section section-dark">
+            <div class="container">
+                <div class="section-head text-center reveal">
+                    <p class="section-tag">Practice Areas</p>
+                    <h2 class="section-title">Legal solutions for critical moments and important decisions.</h2>
+                </div>
+                <div class="row g-4 mt-2">
+                    <div class="col-lg-4 col-md-6 reveal">
+                        <article class="area-card">
+                            <i class="bi bi-people-fill"></i>
+                            <h3>Civil Law</h3>
+                            <ul>
+                                <li>Family and Probate</li>
+                                <li>Real Estate and Adverse Possession</li>
+                                <li>Consumer and Banking</li>
+                                <li>Contracts and Damages</li>
+                            </ul>
+                        </article>
+                    </div>
+                    <div class="col-lg-4 col-md-6 reveal">
+                        <article class="area-card">
+                            <i class="bi bi-shield-exclamation"></i>
+                            <h3>Administrative Law</h3>
+                            <ul>
+                                <li>Military and Disciplinary</li>
+                                <li>Public Servant Law</li>
+                                <li>Administrative Proceedings</li>
+                                <li>Specialized Technical Defense</li>
+                            </ul>
+                        </article>
+                    </div>
+                    <div class="col-lg-4 col-md-6 reveal">
+                        <article class="area-card">
+                            <i class="bi bi-lock-fill"></i>
+                            <h3>Criminal Law</h3>
+                            <ul>
+                                <li>Defense in Investigations and Proceedings</li>
+                                <li>Jury Trials</li>
+                                <li>Maria da Penha Law</li>
+                                <li>Common and Military Crimes</li>
+                            </ul>
+                        </article>
+                    </div>
+                </div>
+                <div class="section-cta-inline section-cta-center mt-4">
+                    <a href="#contactModal" data-bs-toggle="modal" data-bs-target="#contactModal" class="btn btn-outline-gold">
+                        I want guidance for my legal area
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section id="metodo" class="section section-light">
+            <div class="container">
+                <div class="section-head text-center reveal">
+                    <p class="section-tag">How It Works</p>
+                    <h2 class="section-title">A simple, strategic process focused on your case.</h2>
+                </div>
+                <div class="steps-grid mt-4">
+                    <article class="step-card reveal">
+                        <span>01</span>
+                        <h3>Initial Assessment</h3>
+                        <p>You explain your case and receive an objective analysis of risks, possible paths, and immediate priorities.</p>
+                    </article>
+                    <article class="step-card reveal">
+                        <span>02</span>
+                        <h3>Action Plan</h3>
+                        <p>Customized legal strategy, with clear communication on deadlines, documents, and next steps.</p>
+                    </article>
+                    <article class="step-card reveal">
+                        <span>03</span>
+                        <h3>Execution and Defense</h3>
+                        <p>Strong technical representation to protect your rights in negotiations, urgent measures, and court proceedings.</p>
+                    </article>
+                </div>
+                <div class="section-cta-inline section-cta-center mt-4">
+                    <a href="https://wa.me/554198052279?text=Hello!%20I%20want%20to%20start%20an%20assessment%20of%20my%20case." target="_blank" class="btn btn-outline-gold">
+                        Start my case assessment
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section id="casos" class="section section-light case-section reveal">
+            <div class="container">
+                <div class="section-head text-center">
+                    <p class="section-tag">Cases and Strategy</p>
+                    <h2 class="section-title">Examples of legal handling for sensitive scenarios.</h2>
+                </div>
+                <div class="case-grid mt-4">
+                    <article class="case-card">
+                        <h3>Asset Situation</h3>
+                        <p><strong>Situation:</strong> risk of asset loss and document conflict.</p>
+                        <p><strong>Strategy:</strong> evidence organization, urgent action, and technical negotiation.</p>
+                        <p><strong>Direction:</strong> rights preservation and reduced legal exposure.</p>
+                    </article>
+                    <article class="case-card">
+                        <h3>Administrative Conflict</h3>
+                        <p><strong>Situation:</strong> administrative proceeding with potential professional impact.</p>
+                        <p><strong>Strategy:</strong> written defense, nullity analysis, and objective legal argument.</p>
+                        <p><strong>Direction:</strong> stronger defense and protection of professional career.</p>
+                    </article>
+                    <article class="case-card">
+                        <h3>Criminal Matter</h3>
+                        <p><strong>Situation:</strong> investigation with immediate risk to freedom and reputation.</p>
+                        <p><strong>Strategy:</strong> preventive action, procedural narrative control, and diligences.</p>
+                        <p><strong>Direction:</strong> fast technical response to preserve fundamental guarantees.</p>
+                    </article>
+                </div>
+                <div class="section-cta-inline section-cta-center mt-4">
+                    <a href="#contactModal" data-bs-toggle="modal" data-bs-target="#contactModal" class="btn btn-outline-gold">
+                        I want legal strategy for my scenario
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section id="testimonials" class="section section-dark testimonials">
+            <div class="container">
+                <div class="section-head text-center reveal">
+                    <p class="section-tag">Testimonials</p>
+                    <h2 class="section-title">Trust built through results and professional presence.</h2>
+                </div>
+                <div class="row g-4 mt-2">
+                    <div class="col-lg-4 reveal">
+                        <article class="testimonial-card">
+                            <div class="stars">★★★★★</div>
+                            <p>“Impeccable service, technical and human. In a short time I already knew exactly what to do in my case.”</p>
+                            <h3>J. Alves</h3>
+                            <span>Client | Real Estate Law</span>
+                        </article>
+                    </div>
+                    <div class="col-lg-4 reveal">
+                        <article class="testimonial-card">
+                            <div class="stars">★★★★★</div>
+                            <p>“I felt secure from the first contact. Clarity, strategy, and quick responses throughout the case.”</p>
+                            <h3>Maria C.</h3>
+                            <span>Client | Civil Liability</span>
+                        </article>
+                    </div>
+                    <div class="col-lg-4 reveal">
+                        <article class="testimonial-card">
+                            <div class="stars">★★★★★</div>
+                            <p>“High-level professionalism. Strong defense and precise guidance in a very delicate moment for me.”</p>
+                            <h3>Ricardo P.</h3>
+                            <span>Client | Family Law</span>
+                        </article>
+                    </div>
+                </div>
+                <div class="section-cta-inline section-cta-center mt-4">
+                    <a href="https://wa.me/554198052279?text=Hello!%20I%20want%20to%20talk%20about%20my%20case%20with%20Dr.%20Bruno." target="_blank" class="btn btn-outline-gold">
+                        I want to talk to an attorney now
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section class="section section-light social-proof-section reveal" aria-label="Social proof block">
+            <div class="container">
+                <div class="social-proof-head">
+                    <div>
+                        <p class="section-tag">Social Proof</p>
+                        <h2 class="section-title">Reviews and perceptions from clients served.</h2>
+                        <p class="social-proof-note">Illustrative testimonials in a public review visual style.</p>
+                    </div>
+                    <a href="#contactModal" class="btn btn-outline-gold" data-bs-toggle="modal" data-bs-target="#contactModal">I want strategic assistance</a>
+                </div>
+                <div class="google-cards mt-4">
+                    <article class="google-card">
+                        <div class="google-card-top">
+                            <strong>A. Pereira</strong>
+                            <span>★★★★★</span>
+                        </div>
+                        <p>“Clear and objective service. The legal strategy was explained in a simple way with strong technical confidence.”</p>
+                        <small>Illustrative testimonial</small>
+                    </article>
+                    <article class="google-card">
+                        <div class="google-card-top">
+                            <strong>R. Almeida</strong>
+                            <span>★★★★★</span>
+                        </div>
+                        <p>“Fast communication, impeccable organization, and guidance that brought confidence during a high-pressure period.”</p>
+                        <small>Illustrative testimonial</small>
+                    </article>
+                    <article class="google-card">
+                        <div class="google-card-top">
+                            <strong>M. Santos</strong>
+                            <span>★★★★★</span>
+                        </div>
+                        <p>“I felt professionalism in every detail. Technical guidance and high-level posture.”</p>
+                        <small>Illustrative testimonial</small>
+                    </article>
+                    <article class="google-card">
+                        <div class="google-card-top">
+                            <strong>L. Costa</strong>
+                            <span>★★★★★</span>
+                        </div>
+                        <p>“Strategy and clarity from the first contact. Human-centered service and firm legal decisions.”</p>
+                        <small>Illustrative testimonial</small>
+                    </article>
+                </div>
+                <div class="review-chip-row" aria-label="Client perception summary">
+                    <span class="review-mini-chip"><i class="bi bi-shield-check"></i> Technical and human service</span>
+                    <span class="review-mini-chip"><i class="bi bi-clock-history"></i> Fast responses</span>
+                    <span class="review-mini-chip"><i class="bi bi-chat-square-text"></i> Clear communication</span>
+                    <span class="review-mini-chip"><i class="bi bi-hand-thumbs-up"></i> Confidence in case handling</span>
+                </div>
+            </div>
+        </section>
+
+        <section id="faq" class="section section-light">
+            <div class="container faq-wrap reveal">
+                <div class="section-head text-center">
+                    <p class="section-tag">Frequently Asked Questions</p>
+                    <h2 class="section-title">Transparency so you can decide with greater confidence.</h2>
+                </div>
+                <div class="accordion accordion-flush mt-4" id="faqAccordion">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqOne">Do I need to pay for the first consultation?</button>
+                        </h2>
+                        <div id="faqOne" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">The initial assessment is used to understand your case and define the best strategy. Terms are explained transparently at first contact.</div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqTwo">How long does it take to reach a solution?</button>
+                        </h2>
+                        <div id="faqTwo" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">Each case has its own dynamics. After the initial assessment, you receive a realistic projection of legal timelines and priorities.</div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqThree">Can I be assisted online?</button>
+                        </h2>
+                        <div id="faqThree" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">Yes. Service is digital and structured, with security, confidentiality, and continuous follow-up throughout Brazil.</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="section-cta-inline section-cta-center mt-4">
+                    <a href="#contactModal" data-bs-toggle="modal" data-bs-target="#contactModal" class="btn btn-outline-gold">
+                        Still have questions? Talk now
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section id="preparation" class="section section-light prep-section reveal" aria-label="Checklist before contact">
+            <div class="container">
+                <div class="section-head text-center">
+                    <p class="section-tag">Before Talking to an Attorney</p>
+                    <h2 class="section-title">Quick checklist to speed up your legal guidance.</h2>
+                </div>
+                <div class="prep-grid mt-4">
+                    <article class="prep-item">
+                        <i class="bi bi-file-earmark-text"></i>
+                        <div>
+                            <h3>Essential documents</h3>
+                            <p>ID, proof of address, and documents related to the case.</p>
+                        </div>
+                    </article>
+                    <article class="prep-item">
+                        <i class="bi bi-calendar-event"></i>
+                        <div>
+                            <h3>Timeline</h3>
+                            <p>Organize facts by date to make assessment and strategy easier.</p>
+                        </div>
+                    </article>
+                    <article class="prep-item">
+                        <i class="bi bi-chat-left-text"></i>
+                        <div>
+                            <h3>Main objective</h3>
+                            <p>Define the result you seek to guide legal handling.</p>
+                        </div>
+                    </article>
+                    <article class="prep-item">
+                        <i class="bi bi-paperclip"></i>
+                        <div>
+                            <h3>Digital evidence</h3>
+                            <p>Separate emails, messages, contracts, receipts, and important records.</p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="contact-banner reveal" id="contato">
+            <video class="contact-banner-video" autoplay muted loop playsinline>
+                <source src="fundo.mp4" type="video/mp4">
             </video>
-            <div class="cta-overlay"></div>
-            <div class="container cta-content-container">
-                <div class="row justify-content-center">
-                    <div class="col-lg-8 text-center">
-                        <h2 class="section-title-cta">We can help you.</h2>
-                        <p class="lead-cta">Contact our team. We will return your message to assist with your legal issues with full priority and confidentiality.</p>
-                        <a href="https://wa.me/5541912345678?text=Hello,%20I'd%20like%20to%20schedule%20a%20consultation." target="_blank" class="btn btn-cta">
-                            <i class="bi bi-whatsapp"></i> Let's talk
-                        </a>
-                    </div>
+            <div class="contact-banner-overlay"></div>
+            <div class="container contact-banner-content text-center">
+                <h2>Your legal issue does not need to wait.</h2>
+                <p>Talk now and receive strategic guidance to protect your rights with confidence.</p>
+                <a href="https://wa.me/554198052279?text=Hello!%20I%20want%20to%20talk%20to%20Dr.%20Bruno%20about%20my%20case." target="_blank" class="btn btn-primary btn-lg">
+                    <i class="bi bi-whatsapp"></i> I want to talk to an attorney
+                </a>
+                <div class="contact-trust-list">
+                    <span><i class="bi bi-chat-dots"></i> Average initial response: fast</span>
+                    <span><i class="bi bi-shield-lock"></i> Professional confidentiality from first contact</span>
+                    <span><i class="bi bi-laptop"></i> Online service throughout Brazil</span>
                 </div>
             </div>
         </section>
+    </main>
 
-        <!-- FOOTER -->
-        <footer>
-            <div class="container footer-main">
-                <div class="row">
-                    <div class="col-lg-4 col-md-6 mb-5 mb-lg-0">
-                        <img src="logo.png" alt="Logo Bruno Miranda Advocacy" class="footer-logo">
-                        <p class="mt-3">Specialized advocacy focused on results, humanized service, and digital solutions for all of Brazil.</p>
+    <footer class="main-footer">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-4">
+                    <img src="logo.png" alt="Logo Bruno Miranda Advocacia" class="footer-logo">
+                    <p>Specialized law firm with strategic representation, human-centered service, and focus on real legal outcomes for clients.</p>
+                </div>
+                <div class="col-lg-4">
+                    <h3>Contact</h3>
+                    <ul class="footer-list">
+                        <li><i class="bi bi-whatsapp"></i> <a href="https://wa.me/554198052279?text=Hello!%20I%20want%20more%20information%20about%20my%20case." target="_blank">(41) 99805-2279</a></li>
+                        <li><i class="bi bi-envelope-fill"></i> <a href="mailto:brunodemiranda.adv@gmail.com">brunodemiranda.adv@gmail.com</a></li>
+                        <li><i class="bi bi-geo-alt-fill"></i> 100% digital service</li>
+                    </ul>
+                </div>
+                <div class="col-lg-4">
+                    <h3>Social</h3>
+                    <div class="social-icons">
+                        <a href="https://www.instagram.com/gabriel.brunomiranda/" target="_blank" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
                     </div>
-                    <div class="col-lg-4 col-md-6 mb-5 mb-lg-0">
-                        <h5>Contact Information</h5>
-                        <ul class="contact-list">
-                            <li><i class="bi bi-whatsapp"></i> <a href="https://api.whatsapp.com/send?phone=554198052279&text=Hello!%20I'd%20like%20more%20information.">(41) 99805-2279</a></li>
-                            <li><i class="bi bi-envelope-open-fill"></i> <a href="mailto:brunodemiranda.adv@gmail.com">brunodemiranda.adv@gmail.com</a></li>
-                            <li><i class="bi bi-geo-alt-fill"></i> 100% Digital Service</li>
-                        </ul>
-                    </div>
-                    <div class="col-lg-4">
-                        <h5>Follow Us</h5>
-                        <div class="social-icons">
-                             <a href="https://www.instagram.com/gabriel.brunomiranda/" target="_blank" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+                    <button class="btn btn-outline-gold mt-4" data-bs-toggle="modal" data-bs-target="#contactModal">Open Contact Center</button>
+                    <div class="footer-sitemap mt-4">
+                        <h3>Navigation</h3>
+                        <div class="sitemap-links">
+                            <a href="#inicio">Home</a>
+                            <a href="#sobre">The Lawyer</a>
+                            <a href="#areas">Practice Areas</a>
+                            <a href="#casos">Cases</a>
+                            <a href="#faq">FAQ</a>
+                            <a href="#contato">Contact</a>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="footer-bottom">
-                <div class="container d-flex flex-column flex-md-row justify-content-between text-center">
-                    <p class="copyright mb-2 mb-md-0">&copy; 2024 Bruno Miranda Advocacy. All rights reserved. | <a href="politica-de-privacidade-en.html">Privacy Policy</a></p>
-                    <p class="developer">Developed by <a href="https://api.whatsapp.com/send?phone=5541999426605&text=Hi!%20I%20saw%20the%20website%20you%20developed%20and%20would%20like%20more%20information." target="_blank">Kauan Lauer</a></p>
-                </div>
+                <p>© <span id="currentYear"></span> Bruno Miranda Advocacia. All rights reserved. | <a href="politica-de-privacidade-en.html">Privacy Policy</a></p>
             </div>
-        </footer>
-    </main>
+        </div>
+    </footer>
 
-    <!-- CONTACT MODAL -->
     <div class="modal fade" id="contactModal" tabindex="-1" aria-labelledby="contactModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
+            <div class="modal-content contact-modal">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="contactModalLabel">Choose the Best Way to Contact Us</h5>
+                    <h2 class="modal-title fs-5" id="contactModalLabel">Contact Center</h2>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <p class="text-center mb-4">We are ready to assist you. Select one of the options below to start the conversation.</p>
-                    <div class="d-grid gap-3">
-                        <a href="https://api.whatsapp.com/send?phone=554198052279&text=Hello!%20I'd%20like%20more%20information." target="_blank" class="btn btn-contact-modal btn-whatsapp">
-                            <i class="bi bi-whatsapp"></i> Start Chat on WhatsApp
-                        </a>
-                        <a href="tel:+554198052279" class="btn btn-contact-modal btn-phone">
-                            <i class="bi bi-telephone-fill"></i> Call the Office
-                        </a>
-                        <a href="mailto:brunodemiranda.adv@gmail.com" class="btn btn-contact-modal btn-email">
-                            <i class="bi bi-envelope-fill"></i> Send an Email
-                        </a>
+                    <p>Choose the best way to start your legal guidance.</p>
+                    <div class="d-grid gap-2">
+                        <a href="https://wa.me/554198052279?text=Hello!%20I%20want%20to%20talk%20about%20my%20case." target="_blank" class="btn btn-contact btn-whatsapp"><i class="bi bi-whatsapp"></i> Start on WhatsApp</a>
+                        <a href="tel:+554198052279" class="btn btn-contact btn-phone"><i class="bi bi-telephone-fill"></i> Call Now</a>
+                        <a href="mailto:brunodemiranda.adv@gmail.com" class="btn btn-contact btn-email"><i class="bi bi-envelope-fill"></i> Send Email</a>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- COOKIE BANNER -->
-    <div id="cookie-banner" class="cookie-banner">
-        <div class="container d-flex justify-content-between align-items-center">
-            <p class="cookie-text mb-0">We use cookies to improve your experience on our site. By continuing, you agree to our <a href="politica-de-privacidade-en.html">Privacy Policy</a>.</p>
-            <button id="accept-cookies-btn" class="btn btn-primary btn-sm">Accept</button>
-        </div>
+    <div id="cookieBanner" class="cookie-banner">
+        <p>This website uses cookies to improve your experience. By continuing, you agree to our <a href="politica-de-privacidade-en.html">Privacy Policy</a>.</p>
+        <button id="acceptCookies" class="btn btn-primary btn-sm">Accept</button>
     </div>
 
-    <!-- WHATSAPP CHAT WIDGET -->
-    <div id="chat-widget-container">
-        <div id="chat-window" class="chat-window">
-            <div class="chat-header">
-                <img src="Bruno.jpeg" alt="Dr. Bruno" class="chat-avatar">
-                <div class="chat-info">
-                    <div class="chat-name">Dr. Bruno Miranda</div>
-                    <div class="chat-status">Online now</div>
-                </div>
-                <button id="close-chat-btn" class="chat-close-btn" aria-label="Close Chat">&times;</button>
-            </div>
-            <div class="chat-body">
-                <div class="message received">
-                    <p>I know that going through legal issues can be a difficult and lonely time.</p>
-                    <p>I want you to know that I'm here to help you find the best solution, with security and peace of mind.</p>
-                </div>
-                <div class="message cta">
-                    <p>Shall we talk about your case?</p>
-                    <a href="https://api.whatsapp.com/send?phone=554198052279&text=Hello!%20I%20saw%20the%20website%20and%20would%20like%20to%20talk%20about%20my%20case." target="_blank" class="btn btn-chat">
-                        Yes, let's go <i class="bi bi-arrow-right"></i>
-                    </a>
-                </div>
-            </div>
-        </div>
-        <div id="launcher-wrapper">
-            <div class="chat-launcher-bubble">
-                Want to talk to an <strong>online lawyer</strong> now?
-            </div>
-            <button id="chat-launcher" class="chat-launcher">
-                <img src="Bruno.jpeg" alt="Talk to Dr. Bruno" class="launcher-avatar">
-                <span class="launcher-online-indicator"></span>
-                <i class="bi bi-x-lg icon-close"></i>
-            </button>
-        </div>
+    <a href="https://wa.me/554198052279?text=Hello!%20I%20saw%20the%20website%20and%20want%20legal%20guidance." class="whatsapp-float" target="_blank" aria-label="Open WhatsApp">
+        <img src="bruno-whatsapp.jpeg" alt="Talk to an attorney">
+        <span><strong>Talk to an attorney</strong><small>Online now</small></span>
+    </a>
+
+    <div id="mobileStickyCta" class="mobile-sticky-cta" role="region" aria-label="Quick action on mobile">
+        <a href="https://wa.me/554198052279?text=Hello!%20I%20need%20legal%20guidance%20about%20my%20case." target="_blank" class="btn btn-primary">
+            <i class="bi bi-whatsapp"></i> Talk now on WhatsApp
+        </a>
     </div>
 
-    <!-- BACK TO TOP BUTTON -->
-    <a href="#" id="back-to-top-btn" class="back-to-top-btn" aria-label="Back to top"><i class="bi bi-arrow-up"></i></a>
+    <button id="backToTop" class="back-to-top" aria-label="Back to top"><i class="bi bi-arrow-up"></i></button>
 
-    <!-- SCRIPTS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="app.js"></script>
 </body>
 </html>

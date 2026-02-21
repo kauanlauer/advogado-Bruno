@@ -1,284 +1,206 @@
-/**
- * Classe para gerenciar as funcionalidades interativas do site.
- * Versão aprimorada com chat interativo.
- */
-class SiteManager {
-    /**
-     * O construtor é executado quando criamos uma nova instância da classe.
-     */
+class SiteExperience {
     constructor() {
-        // Seleção de todos os elementos que terão interatividade
         this.navbar = document.getElementById('mainNavbar');
-    
-        this.statCounters = document.querySelectorAll('.stat-counter');
-        this.lazyImages = document.querySelectorAll('img.lazy-load');
-        this.newsletterForm = document.getElementById('newsletter-form');
-        this.newsletterSuccessMessage = document.getElementById('newsletter-success-message');
-        this.cookieBanner = document.getElementById('cookie-banner');
-        this.acceptCookiesBtn = document.getElementById('accept-cookies-btn');
-
-        // Elementos do chat WhatsApp
-        this.chatContainer = document.getElementById('chat-widget-container');
-        this.chatLauncher = document.getElementById('chat-launcher');
-        this.closeChatBtn = document.getElementById('close-chat-btn');
-        
-        // Botão voltar ao topo
-        this.backToTopButton = document.getElementById('back-to-top-btn');
-
-        // Adiciona os ouvintes de eventos
-        this.addEventListeners();
+        this.backToTop = document.getElementById('backToTop');
+        this.cookieBanner = document.getElementById('cookieBanner');
+        this.acceptCookies = document.getElementById('acceptCookies');
+        this.revealItems = document.querySelectorAll('.reveal');
+        this.navLinks = document.querySelectorAll('.navbar .nav-link[href^="#"]');
+        this.sectionIds = ['inicio', 'sobre', 'credenciais', 'areas', 'casos', 'metodo', 'testimonials', 'faq', 'contato'];
+        this.scrollTicking = false;
     }
 
-    /**
-     * Centraliza a adição de todos os ouvintes de eventos.
-     */
-    addEventListeners() {
-        // Ouve o evento de rolagem da página
+    init() {
+        this.bindEvents();
+        this.updateNavbar();
+        this.updateBackToTop();
+        this.initReveal();
+        this.initActiveNav();
+        this.initAttorneyVideo();
+        this.initCookieBanner();
+        this.setCurrentYear();
+    }
+
+    bindEvents() {
         window.addEventListener('scroll', () => {
-            this.handleNavbarScroll();
-            this.handleBackToTopButton();
-        });
+            if (this.scrollTicking) return;
+            this.scrollTicking = true;
+            window.requestAnimationFrame(() => {
+                this.updateNavbar();
+                this.updateBackToTop();
+                this.scrollTicking = false;
+            });
+        }, { passive: true });
 
-        // Ouve o clique no botão de voltar ao topo
-        if (this.backToTopButton) {
-            this.backToTopButton.addEventListener('click', this.scrollToTop.bind(this));
-        }
-
-        // Ouve o envio do formulário de newsletter
-        if (this.newsletterForm) {
-            this.newsletterForm.addEventListener('submit', this.handleNewsletterSubmit.bind(this));
-        }
-
-        // Ouve o clique no botão de aceitar cookies
-        if (this.acceptCookiesBtn) {
-            this.acceptCookiesBtn.addEventListener('click', this.handleCookieAccept.bind(this));
-        }
-
-        // Adiciona o evento de clique para abrir/fechar o chat
-        if (this.chatLauncher) {
-            this.chatLauncher.addEventListener('click', () => {
-                this.chatContainer.classList.toggle('open');
+        if (this.backToTop) {
+            this.backToTop.addEventListener('click', () => {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
             });
         }
-        
-        // Adiciona o evento de clique para o botão 'X' dentro do chat
-        if (this.closeChatBtn) {
-            this.closeChatBtn.addEventListener('click', () => {
-                this.chatContainer.classList.remove('open');
+
+        if (this.acceptCookies) {
+            this.acceptCookies.addEventListener('click', () => {
+                localStorage.setItem('cookieConsent', 'accepted');
+                this.cookieBanner.classList.remove('show');
             });
         }
-    }
 
-    /**
-     * Inicializa a biblioteca de animações (AOS).
-     */
-    initAOS() {
-        AOS.init({
-            duration: 800, // Duração da animação em milissegundos
-            once: true,    // A animação acontece apenas uma vez
-            offset: 100,   // Distância em pixels para disparar a animação
+        const navLinks = document.querySelectorAll('.navbar .nav-link');
+        const navCollapse = document.getElementById('navbarNav');
+        navLinks.forEach((link) => {
+            link.addEventListener('click', () => {
+                if (window.innerWidth < 992 && navCollapse && navCollapse.classList.contains('show') && window.bootstrap) {
+                    window.bootstrap.Collapse.getOrCreateInstance(navCollapse).hide();
+                }
+            });
         });
     }
 
-    /**
-     * Lida com o efeito de scroll da barra de navegação.
-     * Adiciona/remove a classe 'scrolled' para mudar o estilo.
-     */
-    handleNavbarScroll() {
-        if (this.navbar && window.scrollY > 50) {
+    updateNavbar() {
+        if (!this.navbar) return;
+        if (window.scrollY > 40) {
             this.navbar.classList.add('scrolled');
-        } else if (this.navbar) {
+        } else {
             this.navbar.classList.remove('scrolled');
         }
     }
 
-    /**
-     * Lida com o envio do formulário de newsletter.
-     */
-    handleNewsletterSubmit(event) {
-        event.preventDefault(); // Impede o recarregamento da página
-        this.newsletterSuccessMessage.textContent = 'Obrigado por se inscrever!';
-        this.newsletterSuccessMessage.style.display = 'block';
-        this.newsletterForm.reset();
-        // Esconde a mensagem após 3 segundos
-        setTimeout(() => { this.newsletterSuccessMessage.style.display = 'none'; }, 3000);
-    }
-
-    /**
-     * Mostra ou esconde o botão "Voltar ao Topo" com base na rolagem.
-     */
-    handleBackToTopButton() {
-        if (this.backToTopButton && window.scrollY > 300) {
-            this.backToTopButton.classList.add('visible');
-        } else if (this.backToTopButton) {
-            this.backToTopButton.classList.remove('visible');
+    updateBackToTop() {
+        if (!this.backToTop) return;
+        if (window.scrollY > 420) {
+            this.backToTop.classList.add('show');
+        } else {
+            this.backToTop.classList.remove('show');
         }
     }
 
-    /**
-     * Executa a rolagem suave para o topo da página.
-     */
-    scrollToTop(event) {
-        event.preventDefault();
-        window.scrollTo({
-            top: 0,
-            behavior: 'smooth' // Efeito de rolagem suave
-        });
-    }
-
-    /**
-     * Animação de contagem para as estatísticas quando elas se tornam visíveis.
-     */
-    initStatCounters() {
-        if (!this.statCounters || this.statCounters.length === 0) return;
-        
-        const observer = new IntersectionObserver((entries, observer) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    const counter = entry.target;
-                    const target = +counter.getAttribute('data-target');
-                    const duration = 2000; // Duração da animação em ms
-                    let current = 0;
-                    const increment = target / (duration / 16); // Calcula o incremento por frame
-
-                    const updateCounter = () => {
-                        current += increment;
-                        if (current < target) {
-                            counter.textContent = Math.ceil(current);
-                            requestAnimationFrame(updateCounter); // Continua a animação no próximo frame
-                        } else {
-                            counter.textContent = target; // Garante que o valor final seja exato
-                        }
-                    };
-                    requestAnimationFrame(updateCounter);
-                    observer.unobserve(counter); // Para de observar após a animação
-                }
-            });
-        }, { threshold: 0.7 });
-
-        this.statCounters.forEach(counter => {
-            observer.observe(counter);
-        });
-    }
-
-    /**
-     * Carregamento inteligente de imagens (Lazy Loading).
-     * As imagens só são carregadas quando estão próximas de entrar na tela.
-     */
-    initLazyLoading() {
-        if (!this.lazyImages || this.lazyImages.length === 0) return;
-        
-        const observer = new IntersectionObserver((entries, observer) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    const img = entry.target;
-                    img.src = img.dataset.src; // Troca o placeholder pela imagem real
-                    img.onload = () => img.classList.add('loaded'); // Adiciona classe para efeito de fade-in
-                    observer.unobserve(img);
-                }
-            });
-        });
-
-        this.lazyImages.forEach(img => {
-            observer.observe(img);
-        });
-    }
-
-    /**
-     * Gerencia o banner de cookies.
-     * Verifica se o usuário já aceitou os cookies no passado.
-     */
     initCookieBanner() {
         if (!this.cookieBanner) return;
-        
-        // Verifica se o cookie de consentimento já foi aceito
-        if (!localStorage.getItem('cookieConsent')) {
-            // Se não foi, mostra o banner após 2 segundos
+        const consent = localStorage.getItem('cookieConsent');
+        if (!consent) {
             setTimeout(() => {
-                this.cookieBanner.classList.add('visible');
-            }, 2000);
+                this.cookieBanner.classList.add('show');
+            }, 1200);
         }
     }
 
-    /**
-     * Lida com o clique no botão de aceitar cookies.
-     */
-    handleCookieAccept() {
-        // Salva a preferência do usuário no localStorage para não mostrar novamente
-        localStorage.setItem('cookieConsent', 'true');
-        // Esconde o banner
-        this.cookieBanner.classList.remove('visible');
-    }
+    initReveal() {
+        if (!this.revealItems.length) return;
+        if (!('IntersectionObserver' in window)) {
+            this.revealItems.forEach((item) => item.classList.add('in-view'));
+            return;
+        }
 
-    /**
-     * Inicializa o popup de WhatsApp com animação automática
-     */
-    initWhatsAppPopup() {
-        const chatLauncher = document.getElementById('chat-launcher');
-        const chatWindow = document.getElementById('chat-window');
-        const closeChatBtn = document.getElementById('close-chat-btn');
-        const chatBubble = document.getElementById('chat-bubble');
-        const notificationBadge = document.getElementById('notification-badge');
-        
-        if (!chatLauncher) return; // Se não encontrar o elemento, não faz nada
-        
-        let isChatOpen = false;
-
-        // SEQUÊNCIA AUTOMÁTICA
-        setTimeout(() => {
-            // 1. Mostra o balão primeiro
-            if (!isChatOpen && chatBubble) chatBubble.classList.add('visible');
-            
-            // 2. Depois de 6 segundos, troca o balão pela notificação vermelha
-            setTimeout(() => {
-                if (!isChatOpen && chatBubble && notificationBadge) {
-                    chatBubble.classList.remove('visible'); // Tira o balão
-                    notificationBadge.classList.add('show'); // Mostra a bolinha vermelha
+        const observer = new IntersectionObserver((entries, obs) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('in-view');
+                    obs.unobserve(entry.target);
                 }
-            }, 6000); 
+            });
+        }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
 
-        }, 2000); // Começa 2 segundos após abrir o site
+        this.revealItems.forEach((item) => observer.observe(item));
+    }
 
-        // ABRIR/FECHAR CHAT
-        function toggleChat() {
-            isChatOpen = !isChatOpen;
-            if (isChatOpen) {
-                if (chatWindow) chatWindow.classList.add('active');
-                if (notificationBadge) notificationBadge.classList.remove('show'); // Remove a notificação ao clicar
-                if (chatBubble) chatBubble.classList.remove('visible');
-            } else {
-                if (chatWindow) chatWindow.classList.remove('active');
+    initActiveNav() {
+        if (!this.navLinks.length || !('IntersectionObserver' in window)) return;
+
+        const sectionElements = this.sectionIds
+            .map((id) => document.getElementById(id))
+            .filter(Boolean);
+
+        if (!sectionElements.length) return;
+
+        const linkById = {};
+        this.navLinks.forEach((link) => {
+            const id = link.getAttribute('href').replace('#', '');
+            linkById[id] = link;
+        });
+
+        const sectionObserver = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (!entry.isIntersecting) return;
+                const currentId = entry.target.id;
+                this.navLinks.forEach((link) => link.classList.remove('active'));
+                if (linkById[currentId]) linkById[currentId].classList.add('active');
+            });
+        }, { rootMargin: '-35% 0px -45% 0px', threshold: 0.01 });
+
+        sectionElements.forEach((section) => sectionObserver.observe(section));
+    }
+
+    initAttorneyVideo() {
+        const video = document.getElementById('attorneyVideo');
+        if (!video) return;
+        let audioUnlockBound = false;
+
+        const tryPlayWithSound = async () => {
+            video.muted = false;
+            video.volume = 1;
+            try {
+                await video.play();
+                return true;
+            } catch (_err) {
+                return false;
             }
-        }
+        };
 
-        chatLauncher.addEventListener('click', toggleChat);
-        if (closeChatBtn) closeChatBtn.addEventListener('click', toggleChat);
+        const playMutedFallback = async () => {
+            video.muted = true;
+            try {
+                await video.play();
+            } catch (_err) {
+                // no-op
+            }
+        };
+
+        const unmuteOnFirstInteraction = () => {
+            if (audioUnlockBound) return;
+            audioUnlockBound = true;
+            const unlockAudio = async () => {
+                video.muted = false;
+                try {
+                    await video.play();
+                } catch (_err) {
+                    // no-op
+                }
+                audioUnlockBound = false;
+                window.removeEventListener('click', unlockAudio);
+                window.removeEventListener('touchstart', unlockAudio);
+                window.removeEventListener('keydown', unlockAudio);
+            };
+            window.addEventListener('click', unlockAudio, { once: true, passive: true });
+            window.addEventListener('touchstart', unlockAudio, { once: true, passive: true });
+            window.addEventListener('keydown', unlockAudio, { once: true });
+        };
+
+        if (!('IntersectionObserver' in window)) return;
+
+        const observer = new IntersectionObserver(async (entries) => {
+            entries.forEach(async (entry) => {
+                if (entry.isIntersecting) {
+                    const playedWithSound = await tryPlayWithSound();
+                    if (!playedWithSound) {
+                        await playMutedFallback();
+                        unmuteOnFirstInteraction();
+                    }
+                } else {
+                    video.pause();
+                }
+            });
+        }, { threshold: 0.45 });
+
+        observer.observe(video);
     }
 
-    /**
-     * DICAS DE OTIMIZAÇÃO DE PERFORMANCE
-     */
-    logPerformanceTips() {
-        console.log("Lembrete de Performance: Comprima todas as imagens antes de colocar o site em produção!");
-    }
-
-    /**
-     * Método para inicializar todas as funcionalidades do site.
-     */
-    init() {
-        this.initAOS();
-        this.initStatCounters();
-        this.initLazyLoading();
-        this.initCookieBanner();
-        this.initWhatsAppPopup(); // Inicializa o popup do WhatsApp
-        this.logPerformanceTips();
+    setCurrentYear() {
+        const year = document.getElementById('currentYear');
+        if (year) year.textContent = new Date().getFullYear();
     }
 }
 
-/**
- * Espera o DOM (a estrutura da página) ser completamente construído para iniciar o script.
- */
 document.addEventListener('DOMContentLoaded', () => {
-    const site = new SiteManager();
-    site.init();
+    const siteExperience = new SiteExperience();
+    siteExperience.init();
 });

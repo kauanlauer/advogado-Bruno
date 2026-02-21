@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <title>Vídeos | Bruno Miranda Advocacia</title>
+    <meta name="description" content="Vídeos curtos com orientações jurídicas do Dr. Bruno Miranda.">
+    <link rel="icon" type="image/png" href="logom.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <style>
+        :root {
+            --bg: #070504;
+            --gold: #ba9561;
+            --gold-soft: #d9b27d;
+            --text: #f7e9d5;
+            --muted: #ccbba3;
+        }
+
+        * {
+            box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        html,
+        body {
+            margin: 0;
+            height: 100%;
+            background: #000;
+            font-family: 'Montserrat', sans-serif;
+            overflow: hidden;
+            color: #fff;
+        }
+
+        .reels-feed {
+            height: 100dvh;
+            overflow-y: auto;
+            scroll-snap-type: y mandatory;
+            overscroll-behavior-y: contain;
+            background: radial-gradient(circle at 20% -20%, rgba(186, 149, 97, 0.15), transparent 30%), var(--bg);
+        }
+
+        .reel-item {
+            min-height: 100dvh;
+            scroll-snap-align: start;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #000;
+        }
+
+        .reel-shell {
+            width: min(100vw, 480px);
+            height: 100dvh;
+            position: relative;
+            overflow: hidden;
+            background: #000;
+        }
+
+        .reel-video {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            background: #000;
+            z-index: 1;
+        }
+
+        .loader {
+            position: absolute;
+            z-index: 5;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            width: 42px;
+            height: 42px;
+            border-radius: 999px;
+            border: 3px solid rgba(255, 255, 255, 0.24);
+            border-top-color: var(--gold-soft);
+            animation: spin 0.8s linear infinite;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.2s ease;
+        }
+
+        .reel-shell.loading .loader {
+            opacity: 1;
+        }
+
+        @keyframes spin {
+            to { transform: translate(-50%, -50%) rotate(360deg); }
+        }
+
+        .progress {
+            position: absolute;
+            top: max(8px, env(safe-area-inset-top));
+            left: 10px;
+            right: 10px;
+            height: 3px;
+            border-radius: 999px;
+            background: rgba(255, 255, 255, 0.22);
+            overflow: hidden;
+            z-index: 6;
+        }
+
+        .progress span {
+            display: block;
+            width: 0%;
+            height: 100%;
+            background: linear-gradient(90deg, var(--gold), var(--gold-soft));
+            transition: width 0.15s linear;
+        }
+
+        .top-ui {
+            position: absolute;
+            top: calc(max(12px, env(safe-area-inset-top)) + 8px);
+            left: 12px;
+            right: 12px;
+            z-index: 7;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .back-link,
+        .sound-btn {
+            width: 40px;
+            height: 40px;
+            border-radius: 999px;
+            border: 1px solid rgba(255, 255, 255, 0.24);
+            background: rgba(8, 6, 5, 0.56);
+            color: #fff;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1rem;
+            text-decoration: none;
+            backdrop-filter: blur(5px);
+        }
+
+        .title-mini {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            line-height: 1.18;
+            pointer-events: none;
+        }
+
+        .title-mini strong {
+            font-size: 0.86rem;
+            color: #fff;
+            letter-spacing: 0.2px;
+        }
+
+        .title-mini span {
+            font-size: 0.7rem;
+            color: var(--muted);
+        }
+
+        .bottom-ui {
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 7;
+            padding: 18px 14px calc(max(14px, env(safe-area-inset-bottom)) + 8px);
+            background: linear-gradient(180deg, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.9));
+        }
+
+        .chip {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 6px 10px;
+            border-radius: 999px;
+            border: 1px solid rgba(217, 178, 125, 0.42);
+            background: rgba(11, 8, 6, 0.54);
+            color: #f6e5cd;
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.65px;
+            font-weight: 700;
+        }
+
+        .topic {
+            margin: 10px 0 0;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(1.45rem, 7vw, 2rem);
+            line-height: 1;
+            color: var(--text);
+            text-shadow: 0 2px 16px rgba(0, 0, 0, 0.38);
+        }
+
+        .touch-layer {
+            position: absolute;
+            inset: 0;
+            z-index: 4;
+            cursor: pointer;
+        }
+
+        .tap-indicator {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 8;
+            width: 62px;
+            height: 62px;
+            border-radius: 999px;
+            border: 1px solid rgba(255, 255, 255, 0.26);
+            background: rgba(8, 6, 5, 0.55);
+            color: #fff;
+            display: grid;
+            place-items: center;
+            font-size: 1.35rem;
+            opacity: 0;
+            transition: opacity 0.2s ease;
+            pointer-events: none;
+            backdrop-filter: blur(5px);
+        }
+
+        .tap-indicator.show {
+            opacity: 1;
+        }
+
+        .swipe-hint {
+            position: fixed;
+            z-index: 20;
+            right: 10px;
+            bottom: calc(max(8px, env(safe-area-inset-bottom)) + 10px);
+            padding: 7px 10px;
+            border-radius: 999px;
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            background: rgba(9, 7, 5, 0.68);
+            color: #ead8bd;
+            font-size: 0.7rem;
+            letter-spacing: 0.2px;
+            backdrop-filter: blur(5px);
+        }
+
+        .swipe-hint.hide {
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease, visibility 0.3s ease;
+        }
+
+        .desktop-note {
+            display: none;
+        }
+
+        @media (min-width: 992px) {
+            .reels-feed {
+                display: none;
+            }
+
+            .desktop-note {
+                height: 100vh;
+                display: grid;
+                place-items: center;
+                padding: 24px;
+                text-align: center;
+                background: radial-gradient(circle at 20% -20%, rgba(186, 149, 97, 0.16), transparent 34%), #0e0907;
+            }
+
+            .desktop-note article {
+                width: min(560px, 94vw);
+                padding: 28px;
+                border-radius: 16px;
+                border: 1px solid rgba(217, 178, 125, 0.22);
+                background: linear-gradient(170deg, rgba(25, 17, 13, 0.94), rgba(15, 11, 8, 0.94));
+                box-shadow: 0 22px 48px rgba(0, 0, 0, 0.36);
+            }
+
+            .desktop-note h1 {
+                margin: 0 0 10px;
+                font-family: 'Cormorant Garamond', serif;
+                font-size: 2.2rem;
+                color: #f5e7d2;
+            }
+
+            .desktop-note p {
+                margin: 0;
+                line-height: 1.6;
+                color: #cebca6;
+            }
+
+            .desktop-note a {
+                margin-top: 18px;
+                display: inline-flex;
+                align-items: center;
+                gap: 7px;
+                padding: 10px 16px;
+                border-radius: 12px;
+                text-decoration: none;
+                color: #2f2015;
+                font-weight: 700;
+                background: linear-gradient(140deg, var(--gold-soft), var(--gold));
+            }
+        }
+    </style>
+</head>
+<body>
+    <main class="reels-feed" id="reelsFeed" aria-label="Vídeos curtos do advogado">
+        <article class="reel-item" data-topic="Regularização imobiliária extrajudicial">
+            <section class="reel-shell loading">
+                <div class="progress"><span></span></div>
+
+                <div class="top-ui">
+                    <a class="back-link" href="index.html" aria-label="Voltar para o site"><i class="bi bi-arrow-left"></i></a>
+                    <div class="title-mini">
+                        <strong>Vídeos do Advogado</strong>
+                        <span>Formato vertical</span>
+                    </div>
+                    <button class="sound-btn" type="button" aria-label="Ativar ou desativar som"><i class="bi bi-volume-mute"></i></button>
+                </div>
+
+                <video class="reel-video" playsinline preload="none" loop muted disablepictureinpicture webkit-playsinline>
+                    <source data-src="explicacao.mp4" type="video/mp4">
+                    Seu navegador não suporta reprodução de vídeo.
+                </video>
+
+                <button class="touch-layer" type="button" aria-label="Pausar ou reproduzir vídeo"></button>
+                <div class="loader" aria-hidden="true"></div>
+                <div class="tap-indicator" aria-hidden="true"><i class="bi bi-play-fill"></i></div>
+
+                <div class="bottom-ui">
+                    <span class="chip"><i class="bi bi-building"></i> conteúdo jurídico</span>
+                    <h1 class="topic">Regularização imobiliária extrajudicial</h1>
+                </div>
+            </section>
+        </article>
+    </main>
+
+    <div id="swipeHint" class="swipe-hint"><i class="bi bi-arrow-down-up"></i> deslize para cima ou para baixo</div>
+
+    <section class="desktop-note" aria-label="Aviso para desktop">
+        <article>
+            <h1>Área de vídeos para celular</h1>
+            <p>Esta página foi feita para uma experiência vertical nativa no mobile.</p>
+            <a href="index.html"><i class="bi bi-arrow-left"></i> Voltar ao site principal</a>
+        </article>
+    </section>
+
+    <script>
+        (function () {
+            const feed = document.getElementById('reelsFeed');
+            const hint = document.getElementById('swipeHint');
+            let items = Array.from(document.querySelectorAll('.reel-shell'));
+            if (!feed || !items.length) return;
+
+            if (items.length === 1) {
+                const centerItem = items[0].closest('.reel-item');
+                if (centerItem) {
+                    const cloneTop = centerItem.cloneNode(true);
+                    const cloneBottom = centerItem.cloneNode(true);
+                    feed.prepend(cloneTop);
+                    feed.append(cloneBottom);
+                    items = Array.from(document.querySelectorAll('.reel-shell'));
+                    requestAnimationFrame(() => {
+                        feed.scrollTop = centerItem.offsetTop;
+                    });
+                }
+            }
+
+            let activeVideo = null;
+            let audioUnlocked = false;
+            let userInteracted = false;
+
+            const markInteraction = () => {
+                userInteracted = true;
+            };
+            window.addEventListener('click', markInteraction, { once: true, passive: true });
+            window.addEventListener('touchstart', markInteraction, { once: true, passive: true });
+            window.addEventListener('keydown', markInteraction, { once: true });
+
+            const ensureLoaded = (shell) => {
+                const video = shell.querySelector('.reel-video');
+                const source = video && video.querySelector('source[data-src]');
+                if (!video || !source) return video;
+                if (!source.getAttribute('src')) {
+                    source.setAttribute('src', source.getAttribute('data-src'));
+                    video.load();
+                }
+                return video;
+            };
+
+            const setLoading = (shell, value) => {
+                shell.classList.toggle('loading', value);
+            };
+
+            const showTapIcon = (shell, icon) => {
+                const indicator = shell.querySelector('.tap-indicator');
+                if (!indicator) return;
+                indicator.innerHTML = `<i class="bi ${icon}"></i>`;
+                indicator.classList.add('show');
+                setTimeout(() => indicator.classList.remove('show'), 260);
+            };
+
+            const updateProgress = (video, shell) => {
+                const bar = shell.querySelector('.progress span');
+                if (!bar) return;
+                const percent = video.duration ? (video.currentTime / video.duration) * 100 : 0;
+                bar.style.width = `${Math.max(0, Math.min(100, percent))}%`;
+            };
+
+            const syncSoundIcon = (video, shell) => {
+                const icon = shell.querySelector('.sound-btn i');
+                if (!icon) return;
+                icon.className = video.muted ? 'bi bi-volume-mute' : 'bi bi-volume-up';
+            };
+
+            const tryPlay = async (video, shell) => {
+                setLoading(shell, true);
+                try {
+                    if (audioUnlocked || userInteracted) {
+                        video.muted = false;
+                        await video.play();
+                        audioUnlocked = true;
+                    } else {
+                        video.muted = true;
+                        await video.play();
+                    }
+                } catch (_err) {
+                    video.muted = true;
+                    try {
+                        await video.play();
+                    } catch (_err2) {
+                        // no-op
+                    }
+                } finally {
+                    syncSoundIcon(video, shell);
+                    setLoading(shell, false);
+                }
+            };
+
+            items.forEach((shell) => {
+                const video = ensureLoaded(shell);
+                if (!video) return;
+
+                const touchLayer = shell.querySelector('.touch-layer');
+                const soundBtn = shell.querySelector('.sound-btn');
+
+                video.addEventListener('waiting', () => setLoading(shell, true));
+                video.addEventListener('canplay', () => setLoading(shell, false));
+                video.addEventListener('playing', () => setLoading(shell, false));
+                video.addEventListener('timeupdate', () => updateProgress(video, shell));
+
+                touchLayer && touchLayer.addEventListener('click', () => {
+                    if (video.paused) {
+                        video.play().catch(() => {});
+                        showTapIcon(shell, 'bi-play-fill');
+                    } else {
+                        video.pause();
+                        showTapIcon(shell, 'bi-pause-fill');
+                    }
+                });
+
+                soundBtn && soundBtn.addEventListener('click', (event) => {
+                    event.stopPropagation();
+                    video.muted = !video.muted;
+                    if (!video.muted) {
+                        audioUnlocked = true;
+                        userInteracted = true;
+                        video.play().catch(() => {});
+                    }
+                    syncSoundIcon(video, shell);
+                });
+            });
+
+            if ('IntersectionObserver' in window) {
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach((entry) => {
+                        const shell = entry.target;
+                        const video = shell.querySelector('.reel-video');
+                        if (!video) return;
+
+                        if (entry.isIntersecting) {
+                            if (activeVideo && activeVideo !== video) {
+                                activeVideo.pause();
+                            }
+                            activeVideo = video;
+                            ensureLoaded(shell);
+                            tryPlay(video, shell);
+                        } else {
+                            video.pause();
+                        }
+                    });
+                }, { threshold: 0.72 });
+
+                items.forEach((shell) => observer.observe(shell));
+            } else {
+                const firstVideo = items[0].querySelector('.reel-video');
+                if (firstVideo) {
+                    activeVideo = firstVideo;
+                    tryPlay(firstVideo, items[0]);
+                }
+            }
+
+            feed.addEventListener('scroll', () => {
+                if (hint) hint.classList.add('hide');
+            }, { once: true, passive: true });
+        })();
+    </script>
+</body>
+</html>

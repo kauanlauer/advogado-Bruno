@@ -70,7 +70,7 @@
                         <li class="nav-item"><a class="nav-link" href="#metodo">Como Funciona</a></li>
                         <li class="nav-item"><a class="nav-link" href="#testimonials">Depoimentos</a></li>
                         <li class="nav-item"><a class="nav-link" href="#faq">FAQ</a></li>
-                        <li class="nav-item d-lg-none"><a class="nav-link" href="reels.html"><i class="bi bi-play-circle-fill"></i> Vídeos</a></li>
+                        <li class="nav-item"><a class="nav-link" href="reels.html"><i class="bi bi-play-circle-fill"></i> Vídeos</a></li>
                     </ul>
                     <div class="language-switch" role="group" aria-label="Selecionar idioma">
                         <a class="lang-option active" href="index.html" aria-label="Versão em português">
@@ -236,13 +236,42 @@
             <div class="container">
                 <div class="section-head text-center reveal">
                     <p class="section-tag">Vídeo do Advogado</p>
-                    <h2 class="section-title">Regularização imobiliária extrajudicial</h2>
+                    <h2 class="section-title">Orientações em vídeo</h2>
                 </div>
-                <div class="video-showcase-wrap reveal">
-                    <video id="attorneyVideo" class="adv-video-player" controls playsinline preload="metadata">
-                        <source src="explicacao.mp4" type="video/mp4">
-                        Seu navegador não suporta reprodução de vídeo.
-                    </video>
+                <div id="insightsCarousel" class="carousel slide video-carousel-wrap reveal" data-bs-interval="false" data-bs-touch="true">
+                    <div class="carousel-indicators video-carousel-indicators">
+                        <button type="button" data-bs-target="#insightsCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Vídeo 1"></button>
+                        <button type="button" data-bs-target="#insightsCarousel" data-bs-slide-to="1" aria-label="Vídeo 2"></button>
+                    </div>
+
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <div class="video-card">
+                                <video class="adv-video-player insight-video" controls playsinline preload="metadata">
+                                    <source src="explicacao.mp4" type="video/mp4">
+                                    Seu navegador não suporta reprodução de vídeo.
+                                </video>
+                                <p class="video-caption">Regularização imobiliária extrajudicial</p>
+                            </div>
+                        </div>
+
+                        <div class="carousel-item">
+                            <div class="video-card">
+                                <video class="adv-video-player insight-video" controls playsinline preload="metadata">
+                                    <source src="explicacao2.mp4" type="video/mp4">
+                                    Seu navegador não suporta reprodução de vídeo.
+                                </video>
+                                <p class="video-caption">Orientação jurídica em vídeo</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button class="carousel-control-prev video-carousel-control" type="button" data-bs-target="#insightsCarousel" data-bs-slide="prev" aria-label="Vídeo anterior">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    </button>
+                    <button class="carousel-control-next video-carousel-control" type="button" data-bs-target="#insightsCarousel" data-bs-slide="next" aria-label="Próximo vídeo">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    </button>
                 </div>
             </div>
         </section>

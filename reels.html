@@ -201,6 +201,12 @@
             inset: 0;
             z-index: 4;
             cursor: pointer;
+            border: 0;
+            padding: 0;
+            margin: 0;
+            background: transparent;
+            appearance: none;
+            -webkit-appearance: none;
         }
 
         .tap-indicator {
@@ -249,59 +255,6 @@
             transition: opacity 0.3s ease, visibility 0.3s ease;
         }
 
-        .desktop-note {
-            display: none;
-        }
-
-        @media (min-width: 992px) {
-            .reels-feed {
-                display: none;
-            }
-
-            .desktop-note {
-                height: 100vh;
-                display: grid;
-                place-items: center;
-                padding: 24px;
-                text-align: center;
-                background: radial-gradient(circle at 20% -20%, rgba(186, 149, 97, 0.16), transparent 34%), #0e0907;
-            }
-
-            .desktop-note article {
-                width: min(560px, 94vw);
-                padding: 28px;
-                border-radius: 16px;
-                border: 1px solid rgba(217, 178, 125, 0.22);
-                background: linear-gradient(170deg, rgba(25, 17, 13, 0.94), rgba(15, 11, 8, 0.94));
-                box-shadow: 0 22px 48px rgba(0, 0, 0, 0.36);
-            }
-
-            .desktop-note h1 {
-                margin: 0 0 10px;
-                font-family: 'Cormorant Garamond', serif;
-                font-size: 2.2rem;
-                color: #f5e7d2;
-            }
-
-            .desktop-note p {
-                margin: 0;
-                line-height: 1.6;
-                color: #cebca6;
-            }
-
-            .desktop-note a {
-                margin-top: 18px;
-                display: inline-flex;
-                align-items: center;
-                gap: 7px;
-                padding: 10px 16px;
-                border-radius: 12px;
-                text-decoration: none;
-                color: #2f2015;
-                font-weight: 700;
-                background: linear-gradient(140deg, var(--gold-soft), var(--gold));
-            }
-        }
     </style>
 </head>
 <body>
@@ -334,17 +287,38 @@
                 </div>
             </section>
         </article>
+
+        <article class="reel-item" data-topic="Orientação jurídica em vídeo">
+            <section class="reel-shell loading">
+                <div class="progress"><span></span></div>
+
+                <div class="top-ui">
+                    <a class="back-link" href="index.html" aria-label="Voltar para o site"><i class="bi bi-arrow-left"></i></a>
+                    <div class="title-mini">
+                        <strong>Vídeos do Advogado</strong>
+                        <span>Formato vertical</span>
+                    </div>
+                    <button class="sound-btn" type="button" aria-label="Ativar ou desativar som"><i class="bi bi-volume-mute"></i></button>
+                </div>
+
+                <video class="reel-video" playsinline preload="none" loop muted disablepictureinpicture webkit-playsinline>
+                    <source data-src="explicacao2.mp4" type="video/mp4">
+                    Seu navegador não suporta reprodução de vídeo.
+                </video>
+
+                <button class="touch-layer" type="button" aria-label="Pausar ou reproduzir vídeo"></button>
+                <div class="loader" aria-hidden="true"></div>
+                <div class="tap-indicator" aria-hidden="true"><i class="bi bi-play-fill"></i></div>
+
+                <div class="bottom-ui">
+                    <span class="chip"><i class="bi bi-building"></i> conteúdo jurídico</span>
+                    <h1 class="topic">Orientação jurídica em vídeo</h1>
+                </div>
+            </section>
+        </article>
     </main>
 
     <div id="swipeHint" class="swipe-hint"><i class="bi bi-arrow-down-up"></i> deslize para cima ou para baixo</div>
-
-    <section class="desktop-note" aria-label="Aviso para desktop">
-        <article>
-            <h1>Área de vídeos para celular</h1>
-            <p>Esta página foi feita para uma experiência vertical nativa no mobile.</p>
-            <a href="index.html"><i class="bi bi-arrow-left"></i> Voltar ao site principal</a>
-        </article>
-    </section>
 
     <script>
         (function () {
@@ -352,20 +326,6 @@
             const hint = document.getElementById('swipeHint');
             let items = Array.from(document.querySelectorAll('.reel-shell'));
             if (!feed || !items.length) return;
-
-            if (items.length === 1) {
-                const centerItem = items[0].closest('.reel-item');
-                if (centerItem) {
-                    const cloneTop = centerItem.cloneNode(true);
-                    const cloneBottom = centerItem.cloneNode(true);
-                    feed.prepend(cloneTop);
-                    feed.append(cloneBottom);
-                    items = Array.from(document.querySelectorAll('.reel-shell'));
-                    requestAnimationFrame(() => {
-                        feed.scrollTop = centerItem.offsetTop;
-                    });
-                }
-            }
 
             let activeVideo = null;
             let audioUnlocked = false;

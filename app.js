@@ -16,7 +16,7 @@ class SiteExperience {
         this.updateBackToTop();
         this.initReveal();
         this.initActiveNav();
-        this.initAttorneyVideo();
+        this.initVideoCarousel();
         this.initCookieBanner();
         this.setCurrentYear();
     }
@@ -130,68 +130,24 @@ class SiteExperience {
         sectionElements.forEach((section) => sectionObserver.observe(section));
     }
 
-    initAttorneyVideo() {
-        const video = document.getElementById('attorneyVideo');
-        if (!video) return;
-        let audioUnlockBound = false;
+    initVideoCarousel() {
+        const carouselEl = document.getElementById('insightsCarousel');
+        if (!carouselEl) return;
 
-        const tryPlayWithSound = async () => {
-            video.muted = false;
-            video.volume = 1;
-            try {
-                await video.play();
-                return true;
-            } catch (_err) {
-                return false;
-            }
-        };
-
-        const playMutedFallback = async () => {
-            video.muted = true;
-            try {
-                await video.play();
-            } catch (_err) {
-                // no-op
-            }
-        };
-
-        const unmuteOnFirstInteraction = () => {
-            if (audioUnlockBound) return;
-            audioUnlockBound = true;
-            const unlockAudio = async () => {
-                video.muted = false;
-                try {
-                    await video.play();
-                } catch (_err) {
-                    // no-op
-                }
-                audioUnlockBound = false;
-                window.removeEventListener('click', unlockAudio);
-                window.removeEventListener('touchstart', unlockAudio);
-                window.removeEventListener('keydown', unlockAudio);
-            };
-            window.addEventListener('click', unlockAudio, { once: true, passive: true });
-            window.addEventListener('touchstart', unlockAudio, { once: true, passive: true });
-            window.addEventListener('keydown', unlockAudio, { once: true });
-        };
-
-        if (!('IntersectionObserver' in window)) return;
-
-        const observer = new IntersectionObserver(async (entries) => {
-            entries.forEach(async (entry) => {
-                if (entry.isIntersecting) {
-                    const playedWithSound = await tryPlayWithSound();
-                    if (!playedWithSound) {
-                        await playMutedFallback();
-                        unmuteOnFirstInteraction();
-                    }
-                } else {
-                    video.pause();
-                }
+        const getVideos = () => Array.from(carouselEl.querySelectorAll('.insight-video'));
+        const pauseAllVideos = () => {
+            getVideos().forEach((video) => {
+                video.pause();
             });
-        }, { threshold: 0.45 });
+        };
 
-        observer.observe(video);
+        carouselEl.addEventListener('slide.bs.carousel', () => {
+            pauseAllVideos();
+        });
+
+        document.addEventListener('visibilitychange', () => {
+            if (document.hidden) pauseAllVideos();
+        });
     }
 
     setCurrentYear() {

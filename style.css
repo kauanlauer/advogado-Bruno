@@ -807,6 +807,15 @@ a {
     justify-content: center;
 }
 
+.video-carousel-wrap {
+    margin-top: 22px;
+}
+
+.video-card {
+    display: grid;
+    justify-items: center;
+}
+
 .adv-video-player {
     width: min(100%, 420px);
     display: block;
@@ -816,6 +825,50 @@ a {
     border-radius: 16px;
     border: 1px solid rgba(53, 37, 26, 0.2);
     box-shadow: 0 14px 32px rgba(26, 17, 12, 0.18);
+}
+
+.video-caption {
+    margin-top: 10px;
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: #5f5248;
+    text-align: center;
+}
+
+.video-carousel-indicators {
+    position: static;
+    margin: 0 0 12px;
+}
+
+.video-carousel-indicators [data-bs-target] {
+    width: 24px;
+    height: 4px;
+    border: 0;
+    border-radius: 999px;
+    margin: 0 4px;
+    background-color: rgba(92, 67, 45, 0.25);
+}
+
+.video-carousel-indicators .active {
+    background-color: #b1844f;
+}
+
+.video-carousel-control {
+    width: 46px;
+    top: 50%;
+    transform: translateY(-50%);
+    bottom: auto;
+    opacity: 1;
+}
+
+.video-carousel-control .carousel-control-prev-icon,
+.video-carousel-control .carousel-control-next-icon {
+    width: 36px;
+    height: 36px;
+    border-radius: 999px;
+    background-color: rgba(19, 13, 10, 0.72);
+    background-size: 56%;
+    border: 1px solid rgba(214, 178, 127, 0.35);
 }
 
 .prep-section {
@@ -1644,6 +1697,16 @@ button:focus-visible {
     .review-mini-chip {
         width: 100%;
         justify-content: center;
+    }
+
+    .video-carousel-control {
+        width: 40px;
+    }
+
+    .video-carousel-control .carousel-control-prev-icon,
+    .video-carousel-control .carousel-control-next-icon {
+        width: 30px;
+        height: 30px;
     }
 
     .contact-trust-list {

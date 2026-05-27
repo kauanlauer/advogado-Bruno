@@ -18,7 +18,7 @@
   </defs>
   <g filter="url(#shadow)">
     <text x="300" y="218" text-anchor="middle" font-family="Georgia, Times New Roman, serif" font-size="232" font-weight="700" fill="url(#gold)" stroke="#5f3f1f" stroke-width="2.4">BM</text>
-    <text x="300" y="305" text-anchor="middle" font-family="Montserrat, Arial, sans-serif" font-size="48" font-weight="500" letter-spacing="7" fill="#070707" stroke="#f5f1ea" stroke-width="0.75" paint-order="stroke fill">BRUNO MIRANDA</text>
+    <text x="300" y="305" text-anchor="middle" font-family="Montserrat, Arial, sans-serif" font-size="48" font-weight="500" letter-spacing="7" fill="#ffffff" stroke="rgba(0,0,0,0.3)" stroke-width="0.75" paint-order="stroke fill">BRUNO MIRANDA</text>
     <line x1="22" y1="341" x2="148" y2="341" stroke="url(#goldSoft)" stroke-width="3"/>
     <line x1="452" y1="341" x2="578" y2="341" stroke="url(#goldSoft)" stroke-width="3"/>
     <text x="300" y="356" text-anchor="middle" font-family="Montserrat, Arial, sans-serif" font-size="30" font-weight="700" letter-spacing="5" fill="url(#gold)">OAB/PR 113.470</text>

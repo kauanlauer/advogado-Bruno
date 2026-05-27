@@ -25,9 +25,12 @@
     <link rel="preload" as="image" href="logo-bm-oab.svg">
     <link rel="preload" as="image" href="Bruno.jpeg">
 
+    <!-- Bootstrap CSS (layout grid + componentes) -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-    <link rel="stylesheet" href="style.css">
+    <!-- Estilos customizados MD3 -->
+    <link rel="stylesheet" href="style-new.css">
 
     <script type="application/ld+json">
     {
@@ -51,6 +54,7 @@
 </head>
 <body data-bs-spy="scroll" data-bs-target="#mainNavbar" data-bs-offset="120">
 
+    <!-- ====== NAVBAR ====== -->
     <nav id="mainNavbar" class="navbar navbar-expand-lg fixed-top">
         <div class="container nav-shell">
             <a class="navbar-brand" href="#inicio" aria-label="Go to home">
@@ -61,7 +65,7 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <div class="nav-menu-surface ms-lg-auto">
-                    <ul class="navbar-nav align-items-lg-center nav-links-compact">
+                    <ul class="navbar-nav align-items-lg-center">
                         <li class="nav-item"><a class="nav-link" href="#inicio">Home</a></li>
                         <li class="nav-item"><a class="nav-link" href="#sobre">The Lawyer</a></li>
                         <li class="nav-item"><a class="nav-link" href="#credenciais">Credentials</a></li>
@@ -81,7 +85,7 @@
                             <span>EN</span>
                         </a>
                     </div>
-                    <button class="btn btn-primary btn-nav" data-bs-toggle="modal" data-bs-target="#contactModal">
+                    <button class="btn-nav-cta" data-bs-toggle="modal" data-bs-target="#contactModal">
                         <i class="bi bi-chat-dots-fill"></i> Strategic Consultation
                     </button>
                 </div>
@@ -89,24 +93,25 @@
         </div>
     </nav>
 
+    <!-- ====== HERO ====== -->
     <header id="inicio" class="hero-section">
         <video class="hero-video" autoplay muted loop playsinline preload="metadata" disablepictureinpicture poster="Bruno.jpeg">
             <source src="fundo.mp4" type="video/mp4">
         </video>
         <div class="hero-overlay"></div>
         <div class="hero-grid-pattern"></div>
-        <div class="hero-wood-frame" aria-hidden="true"></div>
+        <div class="hero-frame" aria-hidden="true"></div>
 
         <div class="container hero-content reveal">
             <p class="hero-kicker">High-Precision Law Practice | OAB/PR 113.470</p>
-            <h1>Technical defense for those who need results and legal certainty.</h1>
+            <h1 class="hero-title">Technical defense for those who need results and legal certainty.</h1>
             <p class="hero-lead">Direct service with an attorney for general legal and administrative matters, with clear communication, strategy, and full confidentiality.</p>
 
             <div class="hero-actions">
-                <a href="https://wa.me/554198052279?text=Hello!%20I%20need%20legal%20guidance%20about%20my%20case." target="_blank" class="btn btn-primary btn-lg">
+                <a href="https://wa.me/554198052279?text=Hello!%20I%20need%20legal%20guidance%20about%20my%20case." target="_blank" class="btn-primary-gold text-base">
                     <i class="bi bi-whatsapp"></i> Talk now on WhatsApp
                 </a>
-                <button class="btn btn-outline-gold btn-lg" data-bs-toggle="modal" data-bs-target="#contactModal">
+                <button class="btn-outline-gold-white" data-bs-toggle="modal" data-bs-target="#contactModal">
                     Request a Callback
                 </button>
             </div>
@@ -124,7 +129,9 @@
     </header>
 
     <main>
-        <section class="authority-strip section-light reveal" aria-label="Authority elements">
+
+        <!-- ====== AUTHORITY STRIP ====== -->
+        <section class="authority-strip reveal" aria-label="Authority elements">
             <div class="container">
                 <div class="authority-grid">
                     <article class="authority-item">
@@ -159,7 +166,8 @@
             </div>
         </section>
 
-        <section id="credenciais" class="section section-light credentials-section reveal">
+        <!-- ====== CREDENCIAIS ====== -->
+        <section id="credenciais" class="section section-light reveal">
             <div class="container">
                 <div class="section-head text-center">
                     <p class="section-tag">Credentials</p>
@@ -189,6 +197,8 @@
                 </div>
             </div>
         </section>
+
+        <!-- ====== SOBRE ====== -->
         <section id="sobre" class="section section-light">
             <div class="container">
                 <div class="row g-5 align-items-center">
@@ -204,8 +214,8 @@
                     <div class="col-md-7 reveal">
                         <p class="section-tag">The Lawyer</p>
                         <h2 class="section-title">Strategic defense with presence, technique, and real commitment to the client.</h2>
-                        <p>Dr. Bruno Miranda practices with a solid legal background and is specialized and experienced in handling asset protection, civil liability, and defense strategies in business, civil, family, social security, tax, corporate, and labor matters.</p>
-                        <p>More than handling legal proceedings, the focus is to protect your legal position and reduce risk through strategic action at every stage.</p>
+                        <p class="text-stone text-sm leading-relaxed mb-4">Dr. Bruno Miranda practices with a solid legal background and is specialized and experienced in handling asset protection, civil liability, and defense strategies in business, civil, family, social security, tax, corporate, and labor matters.</p>
+                        <p class="text-stone text-sm leading-relaxed mb-4">More than handling legal proceedings, the focus is to protect your legal position and reduce risk through strategic action at every stage.</p>
 
                         <div class="credibility-cards">
                             <article>
@@ -224,7 +234,7 @@
                             </article>
                         </div>
                         <div class="section-cta-inline">
-                            <a href="https://wa.me/554198052279?text=Hello!%20I%20would%20like%20to%20talk%20about%20my%20case%20with%20Dr.%20Bruno." target="_blank" class="btn btn-outline-gold">
+                            <a href="https://wa.me/554198052279?text=Hello!%20I%20would%20like%20to%20talk%20about%20my%20case%20with%20Dr.%20Bruno." target="_blank" class="btn-outline-gold">
                                 Talk to an attorney about my case
                             </a>
                         </div>
@@ -233,11 +243,12 @@
             </div>
         </section>
 
+        <!-- ====== AREAS DE ATUAÇÃO ====== -->
         <section id="areas" class="section section-dark">
             <div class="container">
                 <div class="section-head text-center reveal">
                     <p class="section-tag">Practice Areas</p>
-                    <h2 class="section-title">Legal solutions for critical moments and important decisions.</h2>
+                    <h2 class="section-title" style="color:#fff;">Legal solutions for critical moments and important decisions.</h2>
                 </div>
                 <div class="row g-4 mt-2">
                     <div class="col-lg-4 col-md-4 reveal">
@@ -278,13 +289,14 @@
                     </div>
                 </div>
                 <div class="section-cta-inline section-cta-center mt-4">
-                    <a href="#contactModal" data-bs-toggle="modal" data-bs-target="#contactModal" class="btn btn-outline-gold">
+                    <a href="#contactModal" data-bs-toggle="modal" data-bs-target="#contactModal" class="btn-outline-gold-white">
                         I want guidance for my legal area
                     </a>
                 </div>
             </div>
         </section>
 
+        <!-- ====== MÉTODO ====== -->
         <section id="metodo" class="section section-light">
             <div class="container">
                 <div class="section-head text-center reveal">
@@ -309,14 +321,15 @@
                     </article>
                 </div>
                 <div class="section-cta-inline section-cta-center mt-4">
-                    <a href="https://wa.me/554198052279?text=Hello!%20I%20want%20to%20start%20an%20assessment%20of%20my%20case." target="_blank" class="btn btn-outline-gold">
+                    <a href="https://wa.me/554198052279?text=Hello!%20I%20want%20to%20start%20an%20assessment%20of%20my%20case." target="_blank" class="btn-outline-gold">
                         Start my case assessment
                     </a>
                 </div>
             </div>
         </section>
 
-        <section id="casos" class="section section-light case-section reveal">
+        <!-- ====== CASOS ====== -->
+        <section id="casos" class="section section-light reveal">
             <div class="container">
                 <div class="section-head text-center">
                     <p class="section-tag">Cases and Strategy</p>
@@ -343,24 +356,25 @@
                     </article>
                 </div>
                 <div class="section-cta-inline section-cta-center mt-4">
-                    <a href="#contactModal" data-bs-toggle="modal" data-bs-target="#contactModal" class="btn btn-outline-gold">
+                    <a href="#contactModal" data-bs-toggle="modal" data-bs-target="#contactModal" class="btn-outline-gold">
                         I want legal strategy for my scenario
                     </a>
                 </div>
             </div>
         </section>
 
-        <section id="testimonials" class="section section-dark testimonials">
+        <!-- ====== DEPOIMENTOS ====== -->
+        <section id="testimonials" class="section section-dark">
             <div class="container">
                 <div class="section-head text-center reveal">
                     <p class="section-tag">Testimonials</p>
-                    <h2 class="section-title">Trust built through results and professional presence.</h2>
+                    <h2 class="section-title" style="color:#fff;">Trust built through results and professional presence.</h2>
                 </div>
                 <div class="row g-4 mt-2">
                     <div class="col-lg-4 reveal">
                         <article class="testimonial-card">
                             <div class="stars">★★★★★</div>
-                            <p>“Impeccable service, technical and human. In a short time I already knew exactly what to do in my case.”</p>
+                            <p>"Impeccable service, technical and human. In a short time I already knew exactly what to do in my case."</p>
                             <h3>J. Alves</h3>
                             <span>Client | Real Estate Law</span>
                         </article>
@@ -368,7 +382,7 @@
                     <div class="col-lg-4 reveal">
                         <article class="testimonial-card">
                             <div class="stars">★★★★★</div>
-                            <p>“I felt secure from the first contact. Clarity, strategy, and quick responses throughout the case.”</p>
+                            <p>"I felt secure from the first contact. Clarity, strategy, and quick responses throughout the case."</p>
                             <h3>Maria C.</h3>
                             <span>Client | Civil Liability</span>
                         </article>
@@ -376,21 +390,22 @@
                     <div class="col-lg-4 reveal">
                         <article class="testimonial-card">
                             <div class="stars">★★★★★</div>
-                            <p>“High-level professionalism. Strong defense and precise guidance in a very delicate moment for me.”</p>
+                            <p>"High-level professionalism. Strong defense and precise guidance in a very delicate moment for me."</p>
                             <h3>Ricardo P.</h3>
                             <span>Client | Family Law</span>
                         </article>
                     </div>
                 </div>
                 <div class="section-cta-inline section-cta-center mt-4">
-                    <a href="https://wa.me/554198052279?text=Hello!%20I%20want%20to%20talk%20about%20my%20case%20with%20Dr.%20Bruno." target="_blank" class="btn btn-outline-gold">
+                    <a href="https://wa.me/554198052279?text=Hello!%20I%20want%20to%20talk%20about%20my%20case%20with%20Dr.%20Bruno." target="_blank" class="btn-outline-gold-white">
                         I want to talk to an attorney now
                     </a>
                 </div>
             </div>
         </section>
 
-        <section class="section section-light social-proof-section reveal" aria-label="Social proof block">
+        <!-- ====== PROVA SOCIAL ====== -->
+        <section class="section section-light reveal" aria-label="Social proof block">
             <div class="container">
                 <div class="social-proof-head">
                     <div>
@@ -398,7 +413,7 @@
                         <h2 class="section-title">Reviews and perceptions from clients served.</h2>
                         <p class="social-proof-note">Illustrative testimonials in a public review visual style.</p>
                     </div>
-                    <a href="#contactModal" class="btn btn-outline-gold" data-bs-toggle="modal" data-bs-target="#contactModal">I want strategic assistance</a>
+                    <a href="#contactModal" class="btn-outline-gold" data-bs-toggle="modal" data-bs-target="#contactModal">I want strategic assistance</a>
                 </div>
                 <div class="google-cards mt-4">
                     <article class="google-card">
@@ -406,7 +421,7 @@
                             <strong>A. Pereira</strong>
                             <span>★★★★★</span>
                         </div>
-                        <p>“Clear and objective service. The legal strategy was explained in a simple way with strong technical confidence.”</p>
+                        <p>"Clear and objective service. The legal strategy was explained in a simple way with strong technical confidence."</p>
                         <small>Illustrative testimonial</small>
                     </article>
                     <article class="google-card">
@@ -414,7 +429,7 @@
                             <strong>R. Almeida</strong>
                             <span>★★★★★</span>
                         </div>
-                        <p>“Fast communication, impeccable organization, and guidance that brought confidence during a high-pressure period.”</p>
+                        <p>"Fast communication, impeccable organization, and guidance that brought confidence during a high-pressure period."</p>
                         <small>Illustrative testimonial</small>
                     </article>
                     <article class="google-card">
@@ -422,7 +437,7 @@
                             <strong>M. Santos</strong>
                             <span>★★★★★</span>
                         </div>
-                        <p>“I felt professionalism in every detail. Technical guidance and high-level posture.”</p>
+                        <p>"I felt professionalism in every detail. Technical guidance and high-level posture."</p>
                         <small>Illustrative testimonial</small>
                     </article>
                     <article class="google-card">
@@ -430,7 +445,7 @@
                             <strong>L. Costa</strong>
                             <span>★★★★★</span>
                         </div>
-                        <p>“Strategy and clarity from the first contact. Human-centered service and firm legal decisions.”</p>
+                        <p>"Strategy and clarity from the first contact. Human-centered service and firm legal decisions."</p>
                         <small>Illustrative testimonial</small>
                     </article>
                 </div>
@@ -443,6 +458,7 @@
             </div>
         </section>
 
+        <!-- ====== FAQ ====== -->
         <section id="faq" class="section section-light">
             <div class="container faq-wrap reveal">
                 <div class="section-head text-center">
@@ -476,14 +492,15 @@
                     </div>
                 </div>
                 <div class="section-cta-inline section-cta-center mt-4">
-                    <a href="#contactModal" data-bs-toggle="modal" data-bs-target="#contactModal" class="btn btn-outline-gold">
+                    <a href="#contactModal" data-bs-toggle="modal" data-bs-target="#contactModal" class="btn-outline-gold">
                         Still have questions? Talk now
                     </a>
                 </div>
             </div>
         </section>
 
-        <section id="preparation" class="section section-light prep-section reveal" aria-label="Checklist before contact">
+        <!-- ====== PREPARAÇÃO ====== -->
+        <section id="preparation" class="section section-light reveal" aria-label="Checklist before contact">
             <div class="container">
                 <div class="section-head text-center">
                     <p class="section-tag">Before Talking to an Attorney</p>
@@ -522,6 +539,7 @@
             </div>
         </section>
 
+        <!-- ====== CONTACT BANNER ====== -->
         <section class="contact-banner reveal" id="contato">
             <video class="contact-banner-video" autoplay muted loop playsinline>
                 <source src="fundo.mp4" type="video/mp4">
@@ -530,7 +548,7 @@
             <div class="container contact-banner-content text-center">
                 <h2>Your legal issue does not need to wait.</h2>
                 <p>Talk now and receive strategic guidance to protect your rights with confidence.</p>
-                <a href="https://wa.me/554198052279?text=Hello!%20I%20want%20to%20talk%20to%20Dr.%20Bruno%20about%20my%20case." target="_blank" class="btn btn-primary btn-lg">
+                <a href="https://wa.me/554198052279?text=Hello!%20I%20want%20to%20talk%20to%20Dr.%20Bruno%20about%20my%20case." target="_blank" class="btn-primary-gold text-base">
                     <i class="bi bi-whatsapp"></i> I want to talk to an attorney
                 </a>
                 <div class="contact-trust-list">
@@ -540,8 +558,10 @@
                 </div>
             </div>
         </section>
+
     </main>
 
+    <!-- ====== FOOTER ====== -->
     <footer class="main-footer">
         <div class="container">
             <div class="row g-4">
@@ -562,8 +582,8 @@
                     <div class="social-icons">
                         <a href="https://www.instagram.com/gabriel.brunomiranda/" target="_blank" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
                     </div>
-                    <button class="btn btn-outline-gold mt-4" data-bs-toggle="modal" data-bs-target="#contactModal">Open Contact Center</button>
-                    <div class="footer-sitemap mt-4">
+                    <button class="btn-outline-gold" data-bs-toggle="modal" data-bs-target="#contactModal" style="margin-top:1rem;">Open Contact Center</button>
+                    <div class="footer-sitemap" style="margin-top:1.5rem;">
                         <h3>Navigation</h3>
                         <div class="sitemap-links">
                             <a href="#inicio">Home</a>
@@ -582,6 +602,7 @@
         </div>
     </footer>
 
+    <!-- ====== MODAL ====== -->
     <div class="modal fade" id="contactModal" tabindex="-1" aria-labelledby="contactModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content contact-modal">
@@ -592,31 +613,35 @@
                 <div class="modal-body">
                     <p>Choose the best way to start your legal guidance.</p>
                     <div class="d-grid gap-2">
-                        <a href="https://wa.me/554198052279?text=Hello!%20I%20want%20to%20talk%20about%20my%20case." target="_blank" class="btn btn-contact btn-whatsapp"><i class="bi bi-whatsapp"></i> Start on WhatsApp</a>
-                        <a href="tel:+554198052279" class="btn btn-contact btn-phone"><i class="bi bi-telephone-fill"></i> Call Now</a>
-                        <a href="mailto:brunodemiranda.adv@gmail.com" class="btn btn-contact btn-email"><i class="bi bi-envelope-fill"></i> Send Email</a>
+                        <a href="https://wa.me/554198052279?text=Hello!%20I%20want%20to%20talk%20about%20my%20case." target="_blank" class="btn-contact btn-whatsapp"><i class="bi bi-whatsapp"></i> Start on WhatsApp</a>
+                        <a href="tel:+554198052279" class="btn-contact btn-phone"><i class="bi bi-telephone-fill"></i> Call Now</a>
+                        <a href="mailto:brunodemiranda.adv@gmail.com" class="btn-contact btn-email"><i class="bi bi-envelope-fill"></i> Send Email</a>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 
+    <!-- ====== COOKIE BANNER ====== -->
     <div id="cookieBanner" class="cookie-banner">
         <p>This website uses cookies to improve your experience. By continuing, you agree to our <a href="politica-de-privacidade-en.html">Privacy Policy</a>.</p>
-        <button id="acceptCookies" class="btn btn-primary btn-sm">Accept</button>
+        <button id="acceptCookies" class="btn-primary-gold" style="font-size:0.82rem;padding:0.45rem 1rem;">Accept</button>
     </div>
 
+    <!-- ====== WHATSAPP FLOAT ====== -->
     <a href="https://wa.me/554198052279?text=Hello!%20I%20saw%20the%20website%20and%20want%20legal%20guidance." class="whatsapp-float" target="_blank" aria-label="Open WhatsApp">
         <img src="bruno-whatsapp.jpeg" alt="Talk to an attorney">
         <span><strong>Talk to an attorney</strong><small>Online now</small></span>
     </a>
 
+    <!-- ====== MOBILE STICKY CTA ====== -->
     <div id="mobileStickyCta" class="mobile-sticky-cta" role="region" aria-label="Quick action on mobile">
-        <a href="https://wa.me/554198052279?text=Hello!%20I%20need%20legal%20guidance%20about%20my%20case." target="_blank" class="btn btn-primary">
+        <a href="https://wa.me/554198052279?text=Hello!%20I%20need%20legal%20guidance%20about%20my%20case." target="_blank" class="btn-primary-gold">
             <i class="bi bi-whatsapp"></i> Talk now on WhatsApp
         </a>
     </div>
 
+    <!-- ====== BACK TO TOP ====== -->
     <button id="backToTop" class="back-to-top" aria-label="Back to top"><i class="bi bi-arrow-up"></i></button>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>

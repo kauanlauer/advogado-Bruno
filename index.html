@@ -25,9 +25,12 @@
     <link rel="preload" as="image" href="logo-bm-oab.svg">
     <link rel="preload" as="image" href="Bruno.jpeg">
 
+    <!-- Bootstrap CSS (layout grid + componentes) -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-    <link rel="stylesheet" href="style.css">
+    <!-- Estilos customizados MD3 -->
+    <link rel="stylesheet" href="style-new.css">
 
     <script type="application/ld+json">
     {
@@ -51,6 +54,7 @@
 </head>
 <body data-bs-spy="scroll" data-bs-target="#mainNavbar" data-bs-offset="120">
 
+    <!-- ====== NAVBAR ====== -->
     <nav id="mainNavbar" class="navbar navbar-expand-lg fixed-top">
         <div class="container nav-shell">
             <a class="navbar-brand" href="#inicio" aria-label="Ir para início">
@@ -61,7 +65,7 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <div class="nav-menu-surface ms-lg-auto">
-                    <ul class="navbar-nav align-items-lg-center nav-links-compact">
+                    <ul class="navbar-nav align-items-lg-center">
                         <li class="nav-item"><a class="nav-link" href="#inicio">Início</a></li>
                         <li class="nav-item"><a class="nav-link" href="#sobre">O Advogado</a></li>
                         <li class="nav-item"><a class="nav-link" href="#credenciais">Credenciais</a></li>
@@ -82,30 +86,30 @@
                             <span>EN</span>
                         </a>
                     </div>
-                    
                 </div>
             </div>
         </div>
     </nav>
 
+    <!-- ====== HERO ====== -->
     <header id="inicio" class="hero-section">
         <video class="hero-video" autoplay muted loop playsinline preload="metadata" disablepictureinpicture poster="Bruno.jpeg">
             <source src="fundo.mp4" type="video/mp4">
         </video>
         <div class="hero-overlay"></div>
         <div class="hero-grid-pattern"></div>
-        <div class="hero-wood-frame" aria-hidden="true"></div>
+        <div class="hero-frame" aria-hidden="true"></div>
 
         <div class="container hero-content reveal">
             <p class="hero-kicker">Advocacia de alta precisão | OAB/PR 113.470</p>
-            <h1>Defesa técnica para quem precisa de resultado e segurança jurídica.</h1>
+            <h1 class="hero-title">Defesa técnica para quem precisa de resultado e segurança jurídica.</h1>
             <p class="hero-lead">Atendimento direto com advogado para assuntos jurídicos e administrativos em geral, com linguagem clara, estratégia e total sigilo.</p>
 
             <div class="hero-actions">
-                <a href="https://wa.me/554198052279?text=Olá!%20Preciso%20de%20orientação%20jurídica%20sobre%20meu%20caso." target="_blank" class="btn btn-primary btn-lg">
+                <a href="https://wa.me/554198052279?text=Olá!%20Preciso%20de%20orientação%20jurídica%20sobre%20meu%20caso." target="_blank" class="btn-primary-gold text-base">
                     <i class="bi bi-whatsapp"></i> Falar agora no WhatsApp
                 </a>
-                <button class="btn btn-outline-gold btn-lg" data-bs-toggle="modal" data-bs-target="#contactModal">
+                <button class="btn-outline-gold-white" data-bs-toggle="modal" data-bs-target="#contactModal">
                     Solicitar Retorno
                 </button>
             </div>
@@ -123,7 +127,9 @@
     </header>
 
     <main>
-        <section class="authority-strip section-light reveal" aria-label="Elementos de autoridade">
+
+        <!-- ====== AUTHORITY STRIP ====== -->
+        <section class="authority-strip reveal" aria-label="Elementos de autoridade">
             <div class="container">
                 <div class="authority-grid">
                     <article class="authority-item">
@@ -158,7 +164,8 @@
             </div>
         </section>
 
-        <section id="credenciais" class="section section-light credentials-section reveal">
+        <!-- ====== CREDENCIAIS ====== -->
+        <section id="credenciais" class="section section-light reveal">
             <div class="container">
                 <div class="section-head text-center">
                     <p class="section-tag">Credenciais</p>
@@ -188,6 +195,8 @@
                 </div>
             </div>
         </section>
+
+        <!-- ====== SOBRE ====== -->
         <section id="sobre" class="section section-light">
             <div class="container">
                 <div class="row g-5 align-items-center">
@@ -203,8 +212,8 @@
                     <div class="col-md-7 reveal">
                         <p class="section-tag">O Advogado</p>
                         <h2 class="section-title">Defesa estratégica com presença, técnica e compromisso real com o cliente.</h2>
-                        <p>Dr. Bruno Miranda atua com formação sólida em Direito, especialista e experiente para lidar com proteção patrimonial, responsabilidade civil e práticas de defesa empresarial, cível, familiar, previdenciária, tributária, societária e trabalhista.</p>
-                        <p>Mais do que conduzir processos, o foco é proteger sua posição jurídica e reduzir risco com atuações estratégicas em cada etapa.</p>
+                        <p class="text-stone text-sm leading-relaxed mb-4">Dr. Bruno Miranda atua com formação sólida em Direito, especialista e experiente para lidar com proteção patrimonial, responsabilidade civil e práticas de defesa empresarial, cível, familiar, previdenciária, tributária, societária e trabalhista.</p>
+                        <p class="text-stone text-sm leading-relaxed mb-4">Mais do que conduzir processos, o foco é proteger sua posição jurídica e reduzir risco com atuações estratégicas em cada etapa.</p>
 
                         <div class="credibility-cards">
                             <article>
@@ -223,7 +232,7 @@
                             </article>
                         </div>
                         <div class="section-cta-inline">
-                            <a href="https://wa.me/554198052279?text=Olá!%20Gostaria%20de%20falar%20sobre%20meu%20caso%20com%20o%20Dr.%20Bruno." target="_blank" class="btn btn-outline-gold">
+                            <a href="https://wa.me/554198052279?text=Olá!%20Gostaria%20de%20falar%20sobre%20meu%20caso%20com%20o%20Dr.%20Bruno." target="_blank" class="btn-outline-gold">
                                 Falar com advogado sobre meu caso
                             </a>
                         </div>
@@ -232,7 +241,8 @@
             </div>
         </section>
 
-        <section id="video-advogado" class="section section-light video-showcase">
+        <!-- ====== VIDEO SHOWCASE ====== -->
+        <section id="video-advogado" class="section section-light">
             <div class="container">
                 <div class="section-head text-center reveal">
                     <p class="section-tag">Vídeo do Advogado</p>
@@ -276,11 +286,12 @@
             </div>
         </section>
 
+        <!-- ====== AREAS DE ATUAÇÃO ====== -->
         <section id="areas" class="section section-dark">
             <div class="container">
                 <div class="section-head text-center reveal">
                     <p class="section-tag">Áreas de Atuação</p>
-                    <h2 class="section-title">Soluções jurídicas para momentos críticos e decisões importantes.</h2>
+                    <h2 class="section-title" style="color:#fff;">Soluções jurídicas para momentos críticos e decisões importantes.</h2>
                 </div>
                 <div class="row g-4 mt-2">
                     <div class="col-lg-4 col-md-4 reveal">
@@ -321,13 +332,14 @@
                     </div>
                 </div>
                 <div class="section-cta-inline section-cta-center mt-4">
-                    <a href="#contactModal" data-bs-toggle="modal" data-bs-target="#contactModal" class="btn btn-outline-gold">
+                    <a href="#contactModal" data-bs-toggle="modal" data-bs-target="#contactModal" class="btn-outline-gold-white">
                         Quero orientação para minha área
                     </a>
                 </div>
             </div>
         </section>
 
+        <!-- ====== MÉTODO ====== -->
         <section id="metodo" class="section section-light">
             <div class="container">
                 <div class="section-head text-center reveal">
@@ -352,14 +364,15 @@
                     </article>
                 </div>
                 <div class="section-cta-inline section-cta-center mt-4">
-                    <a href="https://wa.me/554198052279?text=Olá!%20Quero%20iniciar%20uma%20avaliação%20do%20meu%20caso." target="_blank" class="btn btn-outline-gold">
+                    <a href="https://wa.me/554198052279?text=Olá!%20Quero%20iniciar%20uma%20avaliação%20do%20meu%20caso." target="_blank" class="btn-outline-gold">
                         Iniciar avaliação do meu caso
                     </a>
                 </div>
             </div>
         </section>
 
-        <section id="casos" class="section section-light case-section reveal">
+        <!-- ====== CASOS ====== -->
+        <section id="casos" class="section section-light reveal">
             <div class="container">
                 <div class="section-head text-center">
                     <p class="section-tag">Casos e Estratégia</p>
@@ -386,24 +399,25 @@
                     </article>
                 </div>
                 <div class="section-cta-inline section-cta-center mt-4">
-                    <a href="#contactModal" data-bs-toggle="modal" data-bs-target="#contactModal" class="btn btn-outline-gold">
+                    <a href="#contactModal" data-bs-toggle="modal" data-bs-target="#contactModal" class="btn-outline-gold">
                         Quero estratégia jurídica para meu cenário
                     </a>
                 </div>
             </div>
         </section>
 
-        <section id="testimonials" class="section section-dark testimonials">
+        <!-- ====== DEPOIMENTOS ====== -->
+        <section id="testimonials" class="section section-dark">
             <div class="container">
                 <div class="section-head text-center reveal">
                     <p class="section-tag">Depoimentos</p>
-                    <h2 class="section-title">Confiança construída com resultado e presença profissional.</h2>
+                    <h2 class="section-title" style="color:#fff;">Confiança construída com resultado e presença profissional.</h2>
                 </div>
                 <div class="row g-4 mt-2">
                     <div class="col-lg-4 reveal">
                         <article class="testimonial-card">
                             <div class="stars">★★★★★</div>
-                            <p>“Atendimento impecável, técnico e humano. Em pouco tempo eu já sabia exatamente o que fazer no meu processo.”</p>
+                            <p>"Atendimento impecável, técnico e humano. Em pouco tempo eu já sabia exatamente o que fazer no meu processo."</p>
                             <h3>J. Alves</h3>
                             <span>Cliente | Direito Imobiliário</span>
                         </article>
@@ -411,7 +425,7 @@
                     <div class="col-lg-4 reveal">
                         <article class="testimonial-card">
                             <div class="stars">★★★★★</div>
-                            <p>“Senti segurança desde o primeiro contato. Clareza, estratégia e retorno rápido durante toda a condução do caso.”</p>
+                            <p>"Senti segurança desde o primeiro contato. Clareza, estratégia e retorno rápido durante toda a condução do caso."</p>
                             <h3>Maria C.</h3>
                             <span>Cliente | Responsabilidade Civil</span>
                         </article>
@@ -419,21 +433,22 @@
                     <div class="col-lg-4 reveal">
                         <article class="testimonial-card">
                             <div class="stars">★★★★★</div>
-                            <p>“Profissionalismo de alto nível. Defesa firme e direcionamento preciso em um momento muito delicado para mim.”</p>
+                            <p>"Profissionalismo de alto nível. Defesa firme e direcionamento preciso em um momento muito delicado para mim."</p>
                             <h3>Ricardo P.</h3>
                             <span>Cliente | Direito de Família</span>
                         </article>
                     </div>
                 </div>
                 <div class="section-cta-inline section-cta-center mt-4">
-                    <a href="https://wa.me/554198052279?text=Olá!%20Quero%20conversar%20sobre%20meu%20caso%20com%20o%20Dr.%20Bruno." target="_blank" class="btn btn-outline-gold">
+                    <a href="https://wa.me/554198052279?text=Olá!%20Quero%20conversar%20sobre%20meu%20caso%20com%20o%20Dr.%20Bruno." target="_blank" class="btn-outline-gold-white">
                         Quero falar com advogado agora
                     </a>
                 </div>
             </div>
         </section>
 
-        <section class="section section-light social-proof-section reveal" aria-label="Bloco de prova social">
+        <!-- ====== PROVA SOCIAL ====== -->
+        <section class="section section-light reveal" aria-label="Bloco de prova social">
             <div class="container">
                 <div class="social-proof-head">
                     <div>
@@ -441,7 +456,7 @@
                         <h2 class="section-title">Avaliações e percepções de clientes atendidos.</h2>
                         <p class="social-proof-note">Relatos exemplificativos no padrão visual de avaliação.</p>
                     </div>
-                    <a href="#contactModal" class="btn btn-outline-gold" data-bs-toggle="modal" data-bs-target="#contactModal">Quero atendimento estratégico</a>
+                    <a href="#contactModal" class="btn-outline-gold" data-bs-toggle="modal" data-bs-target="#contactModal">Quero atendimento estratégico</a>
                 </div>
                 <div class="google-cards mt-4">
                     <article class="google-card">
@@ -449,7 +464,7 @@
                             <strong>A. Pereira</strong>
                             <span>★★★★★</span>
                         </div>
-                        <p>“Atendimento claro e objetivo. A estratégia jurídica foi explicada de forma simples e com muita firmeza técnica.”</p>
+                        <p>"Atendimento claro e objetivo. A estratégia jurídica foi explicada de forma simples e com muita firmeza técnica."</p>
                         <small>Relato exemplificativo</small>
                     </article>
                     <article class="google-card">
@@ -457,7 +472,7 @@
                             <strong>R. Almeida</strong>
                             <span>★★★★★</span>
                         </div>
-                        <p>“Comunicação rápida, organização impecável e orientação que trouxe segurança em uma fase de muita pressão.”</p>
+                        <p>"Comunicação rápida, organização impecável e orientação que trouxe segurança em uma fase de muita pressão."</p>
                         <small>Relato exemplificativo</small>
                     </article>
                     <article class="google-card">
@@ -465,7 +480,7 @@
                             <strong>M. Santos</strong>
                             <span>★★★★★</span>
                         </div>
-                        <p>“Senti profissionalismo em cada detalhe do atendimento. Direcionamento técnico e postura de alto nível.”</p>
+                        <p>"Senti profissionalismo em cada detalhe do atendimento. Direcionamento técnico e postura de alto nível."</p>
                         <small>Relato exemplificativo</small>
                     </article>
                     <article class="google-card">
@@ -473,7 +488,7 @@
                             <strong>L. Costa</strong>
                             <span>★★★★★</span>
                         </div>
-                        <p>“Estratégia e clareza desde o primeiro contato. Atendimento humanizado e firme nas decisões jurídicas.”</p>
+                        <p>"Estratégia e clareza desde o primeiro contato. Atendimento humanizado e firme nas decisões jurídicas."</p>
                         <small>Relato exemplificativo</small>
                     </article>
                 </div>
@@ -486,6 +501,7 @@
             </div>
         </section>
 
+        <!-- ====== FAQ ====== -->
         <section id="faq" class="section section-light">
             <div class="container faq-wrap reveal">
                 <div class="section-head text-center">
@@ -519,14 +535,15 @@
                     </div>
                 </div>
                 <div class="section-cta-inline section-cta-center mt-4">
-                    <a href="#contactModal" data-bs-toggle="modal" data-bs-target="#contactModal" class="btn btn-outline-gold">
+                    <a href="#contactModal" data-bs-toggle="modal" data-bs-target="#contactModal" class="btn-outline-gold">
                         Ainda com dúvidas? Fale agora
                     </a>
                 </div>
             </div>
         </section>
 
-        <section id="preparacao" class="section section-light prep-section reveal" aria-label="Checklist antes do contato">
+        <!-- ====== PREPARAÇÃO ====== -->
+        <section id="preparacao" class="section section-light reveal" aria-label="Checklist antes do contato">
             <div class="container">
                 <div class="section-head text-center">
                     <p class="section-tag">Antes de Falar com Advogado</p>
@@ -565,6 +582,7 @@
             </div>
         </section>
 
+        <!-- ====== CONTACT BANNER ====== -->
         <section class="contact-banner reveal" id="contato">
             <video class="contact-banner-video" autoplay muted loop playsinline>
                 <source src="fundo.mp4" type="video/mp4">
@@ -573,7 +591,7 @@
             <div class="container contact-banner-content text-center">
                 <h2>Seu problema jurídico não precisa esperar.</h2>
                 <p>Fale agora e receba orientação estratégica para proteger seus direitos com segurança.</p>
-                <a href="https://wa.me/554198052279?text=Olá!%20Quero%20falar%20com%20o%20Dr.%20Bruno%20sobre%20meu%20caso." target="_blank" class="btn btn-primary btn-lg">
+                <a href="https://wa.me/554198052279?text=Olá!%20Quero%20falar%20com%20o%20Dr.%20Bruno%20sobre%20meu%20caso." target="_blank" class="btn-primary-gold text-base">
                     <i class="bi bi-whatsapp"></i> Quero falar com advogado
                 </a>
                 <div class="contact-trust-list">
@@ -583,8 +601,10 @@
                 </div>
             </div>
         </section>
+
     </main>
 
+    <!-- ====== FOOTER ====== -->
     <footer class="main-footer">
         <div class="container">
             <div class="row g-4">
@@ -605,8 +625,8 @@
                     <div class="social-icons">
                         <a href="https://www.instagram.com/gabriel.brunomiranda/" target="_blank" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
                     </div>
-                    <button class="btn btn-outline-gold mt-4" data-bs-toggle="modal" data-bs-target="#contactModal">Abrir Central de Contato</button>
-                    <div class="footer-sitemap mt-4">
+                    <button class="btn-outline-gold mt-4" data-bs-toggle="modal" data-bs-target="#contactModal" style="margin-top:1rem;">Abrir Central de Contato</button>
+                    <div class="footer-sitemap mt-4" style="margin-top:1.5rem;">
                         <h3>Navegação</h3>
                         <div class="sitemap-links">
                             <a href="#inicio">Início</a>
@@ -625,6 +645,7 @@
         </div>
     </footer>
 
+    <!-- ====== MODAL ====== -->
     <div class="modal fade" id="contactModal" tabindex="-1" aria-labelledby="contactModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content contact-modal">
@@ -635,31 +656,35 @@
                 <div class="modal-body">
                     <p>Escolha a melhor forma para iniciarmos sua orientação jurídica.</p>
                     <div class="d-grid gap-2">
-                        <a href="https://wa.me/554198052279?text=Olá!%20Quero%20falar%20sobre%20meu%20caso." target="_blank" class="btn btn-contact btn-whatsapp"><i class="bi bi-whatsapp"></i> Iniciar no WhatsApp</a>
-                        <a href="tel:+554198052279" class="btn btn-contact btn-phone"><i class="bi bi-telephone-fill"></i> Ligar Agora</a>
-                        <a href="mailto:brunodemiranda.adv@gmail.com" class="btn btn-contact btn-email"><i class="bi bi-envelope-fill"></i> Enviar E-mail</a>
+                        <a href="https://wa.me/554198052279?text=Olá!%20Quero%20falar%20sobre%20meu%20caso." target="_blank" class="btn-contact btn-whatsapp"><i class="bi bi-whatsapp"></i> Iniciar no WhatsApp</a>
+                        <a href="tel:+554198052279" class="btn-contact btn-phone"><i class="bi bi-telephone-fill"></i> Ligar Agora</a>
+                        <a href="mailto:brunodemiranda.adv@gmail.com" class="btn-contact btn-email"><i class="bi bi-envelope-fill"></i> Enviar E-mail</a>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 
+    <!-- ====== COOKIE BANNER ====== -->
     <div id="cookieBanner" class="cookie-banner">
         <p>Este site usa cookies para melhorar sua experiência. Ao continuar, você concorda com nossa <a href="politica-de-privacidade.html">Política de Privacidade</a>.</p>
-        <button id="acceptCookies" class="btn btn-primary btn-sm">Aceitar</button>
+        <button id="acceptCookies" class="btn-primary-gold" style="font-size:0.82rem;padding:0.45rem 1rem;">Aceitar</button>
     </div>
 
+    <!-- ====== WHATSAPP FLOAT ====== -->
     <a href="https://wa.me/554198052279?text=Olá!%20Vi%20o%20site%20e%20quero%20orientação%20jurídica." class="whatsapp-float" target="_blank" aria-label="Abrir WhatsApp">
         <img src="bruno-whatsapp.jpeg" alt="Falar com advogado">
         <span><strong>Falar com advogado</strong><small>Online agora</small></span>
     </a>
 
+    <!-- ====== MOBILE STICKY CTA ====== -->
     <div id="mobileStickyCta" class="mobile-sticky-cta" role="region" aria-label="Ação rápida no celular">
-        <a href="https://wa.me/554198052279?text=Olá!%20Preciso%20de%20orientação%20jurídica%20sobre%20meu%20caso." target="_blank" class="btn btn-primary">
+        <a href="https://wa.me/554198052279?text=Olá!%20Preciso%20de%20orientação%20jurídica%20sobre%20meu%20caso." target="_blank" class="btn-primary-gold">
             <i class="bi bi-whatsapp"></i> Falar agora no WhatsApp
         </a>
     </div>
 
+    <!-- ====== BACK TO TOP ====== -->
     <button id="backToTop" class="back-to-top" aria-label="Voltar ao topo"><i class="bi bi-arrow-up"></i></button>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>

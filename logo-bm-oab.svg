@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400">
+  <defs>
+    <linearGradient id="gold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f6df9e"/>
+      <stop offset="28%" stop-color="#a77731"/>
+      <stop offset="50%" stop-color="#f8e7b6"/>
+      <stop offset="72%" stop-color="#8d5f27"/>
+      <stop offset="100%" stop-color="#d7b56f"/>
+    </linearGradient>
+    <linearGradient id="goldSoft" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#806029"/>
+      <stop offset="50%" stop-color="#f4dfab"/>
+      <stop offset="100%" stop-color="#806029"/>
+    </linearGradient>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="5" stdDeviation="2.5" flood-color="#000000" flood-opacity="0.55"/>
+    </filter>
+  </defs>
+  <g filter="url(#shadow)">
+    <text x="300" y="218" text-anchor="middle" font-family="Georgia, Times New Roman, serif" font-size="232" font-weight="700" fill="url(#gold)" stroke="#5f3f1f" stroke-width="2.4">BM</text>
+    <text x="300" y="305" text-anchor="middle" font-family="Montserrat, Arial, sans-serif" font-size="48" font-weight="500" letter-spacing="7" fill="#070707" stroke="#f5f1ea" stroke-width="0.75" paint-order="stroke fill">BRUNO MIRANDA</text>
+    <line x1="22" y1="341" x2="148" y2="341" stroke="url(#goldSoft)" stroke-width="3"/>
+    <line x1="452" y1="341" x2="578" y2="341" stroke="url(#goldSoft)" stroke-width="3"/>
+    <text x="300" y="356" text-anchor="middle" font-family="Montserrat, Arial, sans-serif" font-size="30" font-weight="700" letter-spacing="5" fill="url(#gold)">OAB/PR 113.470</text>
+  </g>
+</svg>

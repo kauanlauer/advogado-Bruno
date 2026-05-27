@@ -62,7 +62,8 @@ a {
 }
 
 .navbar-brand img {
-    height: 42px;
+    height: 72px;
+    width: auto;
 }
 
 .navbar-toggler {
@@ -1224,6 +1225,7 @@ a {
 
 .footer-logo {
     max-width: 220px;
+    width: 100%;
     margin-bottom: 14px;
 }
 
@@ -1615,7 +1617,30 @@ button:focus-visible {
     }
 }
 
+@media (min-width: 768px) and (max-width: 991.98px) {
+    .hero-content {
+        text-align: left;
+        margin: 0;
+    }
+
+    .hero-actions,
+    .hero-trust {
+        justify-content: flex-start;
+    }
+
+    .authority-grid,
+    .credentials-grid,
+    .case-grid,
+    .google-cards {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+}
+
 @media (max-width: 768px) {
+    .navbar-brand img {
+        height: 54px;
+    }
+
     .section {
         padding: 82px 0;
     }

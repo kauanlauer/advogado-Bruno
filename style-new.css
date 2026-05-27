@@ -76,10 +76,11 @@ img { max-width: 100%; height: auto; display: block; }
 
 /* Logo */
 .navbar-brand img {
-  height: 56px;
+  height: 50px;
   width: auto;
-  transition: opacity .3s ease;
+  transition: opacity .3s ease, transform .3s ease;
 }
+.navbar-brand:hover img { opacity: .85; }
 #mainNavbar.scrolled .navbar-brand img { opacity: .95; }
 
 /* Hamburger branco */
@@ -555,6 +556,7 @@ img { max-width: 100%; height: auto; display: block; }
 
 /* About paragraphs */
 #sobre .section p { font-size: .92rem; color: var(--text-sub); margin-bottom: 1rem; }
+.sobre-text { font-size: .92rem; color: var(--text-sub); line-height: 1.8; margin-bottom: 1rem; }
 
 /* ─── VIDEO SHOWCASE ─────────────────────────────────────────────────────── */
 .video-carousel-wrap {
@@ -900,10 +902,10 @@ img { max-width: 100%; height: auto; display: block; }
   padding: 5rem 0 0;
 }
 .footer-logo {
-  height: 52px;
+  height: 48px;
   width: auto;
   margin-bottom: 1.1rem;
-  opacity: .9;
+  opacity: .88;
 }
 .main-footer p { font-size: .86rem; line-height: 1.75; }
 .main-footer h3 {
@@ -1015,7 +1017,7 @@ img { max-width: 100%; height: auto; display: block; }
 /* ─── WHATSAPP FLOAT ─────────────────────────────────────────────────────── */
 .whatsapp-float {
   position: fixed;
-  bottom: 6rem; right: 1.5rem;
+  bottom: 2rem; right: 1.5rem;
   z-index: 900;
   display: flex;
   align-items: center;
@@ -1024,10 +1026,14 @@ img { max-width: 100%; height: auto; display: block; }
   border-radius: 999px;
   padding: .5rem 1.1rem .5rem .5rem;
   box-shadow: var(--shadow-lg);
-  transition: transform .25s ease, box-shadow .25s ease;
   border: 1px solid rgba(0,0,0,.07);
   text-decoration: none;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(12px);
+  transition: opacity .35s ease, transform .35s ease, visibility .35s, box-shadow .25s ease;
 }
+.whatsapp-float.show { opacity: 1; visibility: visible; transform: translateY(0); }
 .whatsapp-float:hover { transform: scale(1.04); box-shadow: var(--shadow-xl); }
 .whatsapp-float img {
   width: 2.75rem; height: 2.75rem;
@@ -1041,6 +1047,7 @@ img { max-width: 100%; height: auto; display: block; }
 .whatsapp-float small  { font-size: .72rem; color: #25D366; font-weight: 600; }
 
 /* ─── MOBILE STICKY CTA ──────────────────────────────────────────────────── */
+/* oculto por padrão em desktop */
 #mobileStickyCta {
   position: fixed;
   bottom: 0; left: 0; right: 0;
@@ -1051,13 +1058,27 @@ img { max-width: 100%; height: auto; display: block; }
   border-top: 1px solid rgba(184,146,74,.18);
   display: none;
 }
+/* no mobile: visível mas escondido até scroll via opacity+transform */
+@media (max-width: 768px) {
+  #mobileStickyCta {
+    display: block;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(100%);
+    transition: opacity .35s ease, transform .35s ease, visibility .35s;
+  }
+  #mobileStickyCta.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+}
 #mobileStickyCta .btn-primary-gold {
   width: 100%;
   justify-content: center;
   font-size: .97rem;
   padding: .95rem 1.5rem;
 }
-@media (max-width: 768px) { #mobileStickyCta { display: block; } }
 
 /* ─── BACK TO TOP ────────────────────────────────────────────────────────── */
 .back-to-top {
@@ -1086,6 +1107,11 @@ img { max-width: 100%; height: auto; display: block; }
 /* ─── RESPONSIVE ─────────────────────────────────────────────────────────── */
 @media (max-width: 768px) {
   .section { padding: 4.5rem 0; }
+  /* extra padding no fundo para não ficar atrás do sticky CTA */
+  main > section:last-of-type,
+  .contact-banner { margin-bottom: 0; }
+  footer.main-footer { padding-bottom: calc(5rem + env(safe-area-inset-bottom)); }
+
   .hero-content { padding-top: 6.5rem; padding-bottom: 3rem; }
   .hero-frame { inset: 10px; }
   .hero-frame::before, .hero-frame::after { width: 32px; height: 32px; }
@@ -1094,12 +1120,22 @@ img { max-width: 100%; height: auto; display: block; }
   .hero-actions .btn-outline-gold-white { width: 100%; justify-content: center; }
   .scroll-indicator { display: none; }
   .portrait-wrapper { max-width: 300px; }
+
+  /* WhatsApp float vira botão circular no mobile, acima do sticky CTA */
+  .whatsapp-float {
+    bottom: 5.5rem;
+    right: 1rem;
+    padding: .55rem;
+    border-radius: 50%;
+    width: 3.25rem;
+    height: 3.25rem;
+    justify-content: center;
+  }
   .whatsapp-float span { display: none; }
-  .whatsapp-float { padding: .45rem; border-radius: 50%; }
-  .back-to-top { bottom: 5rem; }
-  .whatsapp-float { bottom: 5rem; }
+
+  .back-to-top { bottom: 5.5rem; left: 1rem; }
   .social-proof-head { flex-direction: column; align-items: flex-start; }
-  .navbar-brand img { height: 46px; }
+  .navbar-brand img { height: 44px; }
 }
 
 @media (min-width: 769px) and (max-width: 1100px) {

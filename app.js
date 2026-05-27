@@ -2,6 +2,8 @@ class SiteExperience {
     constructor() {
         this.navbar = document.getElementById('mainNavbar');
         this.backToTop = document.getElementById('backToTop');
+        this.mobileStickyCta = document.getElementById('mobileStickyCta');
+        this.whatsappFloat = document.querySelector('.whatsapp-float');
         this.cookieBanner = document.getElementById('cookieBanner');
         this.acceptCookies = document.getElementById('acceptCookies');
         this.revealItems = document.querySelectorAll('.reveal');
@@ -13,7 +15,7 @@ class SiteExperience {
     init() {
         this.bindEvents();
         this.updateNavbar();
-        this.updateBackToTop();
+        this.updateFloatingElements();
         this.initReveal();
         this.initActiveNav();
         this.initVideoCarousel();
@@ -27,7 +29,7 @@ class SiteExperience {
             this.scrollTicking = true;
             window.requestAnimationFrame(() => {
                 this.updateNavbar();
-                this.updateBackToTop();
+                this.updateFloatingElements();
                 this.scrollTicking = false;
             });
         }, { passive: true });
@@ -65,12 +67,17 @@ class SiteExperience {
         }
     }
 
-    updateBackToTop() {
-        if (!this.backToTop) return;
-        if (window.scrollY > 420) {
-            this.backToTop.classList.add('show');
-        } else {
-            this.backToTop.classList.remove('show');
+    updateFloatingElements() {
+        const scrolled = window.scrollY > 320;
+
+        if (this.backToTop) {
+            this.backToTop.classList.toggle('show', window.scrollY > 420);
+        }
+        if (this.whatsappFloat) {
+            this.whatsappFloat.classList.toggle('show', scrolled);
+        }
+        if (this.mobileStickyCta) {
+            this.mobileStickyCta.classList.toggle('show', scrolled);
         }
     }
 

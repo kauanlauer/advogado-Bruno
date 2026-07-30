@@ -1,7 +1,6 @@
 class SiteExperience {
     constructor() {
         this.navbar = document.getElementById('mainNavbar');
-        this.backToTop = document.getElementById('backToTop');
         this.mobileStickyCta = document.getElementById('mobileStickyCta');
         this.whatsappFloat = document.querySelector('.whatsapp-float');
         this.cookieBanner = document.getElementById('cookieBanner');
@@ -18,7 +17,6 @@ class SiteExperience {
         this.updateFloatingElements();
         this.initReveal();
         this.initActiveNav();
-        this.initVideoCarousel();
         this.initCookieBanner();
         this.setCurrentYear();
     }
@@ -33,12 +31,6 @@ class SiteExperience {
                 this.scrollTicking = false;
             });
         }, { passive: true });
-
-        if (this.backToTop) {
-            this.backToTop.addEventListener('click', () => {
-                window.scrollTo({ top: 0, behavior: 'smooth' });
-            });
-        }
 
         if (this.acceptCookies) {
             this.acceptCookies.addEventListener('click', () => {
@@ -70,9 +62,6 @@ class SiteExperience {
     updateFloatingElements() {
         const scrolled = window.scrollY > 320;
 
-        if (this.backToTop) {
-            this.backToTop.classList.toggle('show', window.scrollY > 420);
-        }
         if (this.whatsappFloat) {
             this.whatsappFloat.classList.toggle('show', scrolled);
         }
@@ -135,26 +124,6 @@ class SiteExperience {
         }, { rootMargin: '-35% 0px -45% 0px', threshold: 0.01 });
 
         sectionElements.forEach((section) => sectionObserver.observe(section));
-    }
-
-    initVideoCarousel() {
-        const carouselEl = document.getElementById('insightsCarousel');
-        if (!carouselEl) return;
-
-        const getVideos = () => Array.from(carouselEl.querySelectorAll('.insight-video'));
-        const pauseAllVideos = () => {
-            getVideos().forEach((video) => {
-                video.pause();
-            });
-        };
-
-        carouselEl.addEventListener('slide.bs.carousel', () => {
-            pauseAllVideos();
-        });
-
-        document.addEventListener('visibilitychange', () => {
-            if (document.hidden) pauseAllVideos();
-        });
     }
 
     setCurrentYear() {

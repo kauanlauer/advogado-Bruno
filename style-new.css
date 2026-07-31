@@ -912,9 +912,31 @@ img { max-width: 100%; height: auto; display: block; }
 .footer-bottom p { font-size: .78rem; color: rgba(255,255,255,.3); margin: 0; }
 .footer-bottom a { color: rgba(255,255,255,.4); transition: color .2s; }
 .footer-bottom a:hover { color: var(--gold-light); }
-.footer-bottom .dev-credit { margin-top: .5rem; font-size: .7rem; color: rgba(255,255,255,.22); }
-.footer-bottom .dev-credit a { color: rgba(255,255,255,.35); font-weight: 600; }
+.footer-bottom .dev-credit {
+  margin-top: .6rem;
+  font-size: .7rem;
+  color: rgba(255,255,255,.22);
+  display: inline-flex;
+  align-items: center;
+  gap: .35rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.footer-bottom .dev-credit a {
+  display: inline-flex;
+  align-items: center;
+  gap: .4rem;
+  color: rgba(255,255,255,.4);
+  font-weight: 600;
+}
 .footer-bottom .dev-credit a:hover { color: var(--gold-light); }
+.dev-credit-logo {
+  height: 15px;
+  width: auto;
+  opacity: .7;
+  transition: opacity .2s ease;
+}
+.footer-bottom .dev-credit a:hover .dev-credit-logo { opacity: 1; }
 
 /* ─── MODAL ──────────────────────────────────────────────────────────────── */
 .contact-modal { border-radius: var(--radius-lg) !important; overflow: hidden; border: none !important; }

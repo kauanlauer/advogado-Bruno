@@ -7,7 +7,7 @@ class SiteExperience {
         this.acceptCookies = document.getElementById('acceptCookies');
         this.revealItems = document.querySelectorAll('.reveal');
         this.navLinks = document.querySelectorAll('.navbar .nav-link[href^="#"]');
-        this.sectionIds = ['inicio', 'sobre', 'credenciais', 'areas', 'casos', 'metodo', 'testimonials', 'faq', 'contato'];
+        this.sectionIds = ['inicio', 'sobre', 'credenciais', 'areas', 'casos', 'metodo', 'faq', 'contato'];
         this.scrollTicking = false;
     }
 

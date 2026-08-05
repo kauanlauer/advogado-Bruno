@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- O título da página será definido pelo JavaScript -->
-    <title>Artigo - Dr. Bruno Miranda</title>
+    <title>Artigo | Bruno Miranda Sociedade de Advocacia</title>
     
     <link rel="icon" type="image/png" href="logom.png">
 
@@ -204,7 +204,7 @@
                 const articleElement = document.getElementById(`article-${articleId}`);
                 if (articleElement) {
                     articleElement.style.display = 'block';
-                    document.title = `${articleData.title} - Dr. Bruno Miranda`;
+                    document.title = `${articleData.title} | Bruno Miranda Sociedade de Advocacia`;
                     document.getElementById('article-main-title').textContent = articleData.title;
                     document.getElementById('article-meta-info').innerHTML = `<span>${articleData.category}</span> • ${articleData.date}`;
                 } else {
